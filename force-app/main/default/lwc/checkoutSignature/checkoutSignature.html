@@ -1,0 +1,23 @@
+<template>
+    <div class="slds-size_1-of-1 slds-m-top_medium">
+        <c-signature-pad signature-url={signatureUrl} title="Agreement Signature"></c-signature-pad>
+    </div>
+    <div class="slds-size_1-of-1 slds-p-around_small">
+        <p>
+            By signing I authorize Philadelphia Media Network to charge my
+            credit/debit card or bank draft in the amount noted above. At the end
+            of the introductory period, the subscription will renew and my credit or
+            debit card, or bank account will be charged automatically at the
+            prevailing home delivery rate unless I cancel by calling 215-222-2765.
+            Subscriptions are billed in advance. I also understand that I must
+            subscribe for a minimum of 2 terms to qualify for the Gift Premium as
+            noted above. If my payment declines or if my subscription is cancelled
+            prior to the completion of the agreed upon 2 term minimum, I am
+            responsible to reimburse PMN for the cost of the Gift Premium
+            provided at the time of purchase.
+        </p>
+        <div class="slds-float_right">
+            <lightning-input name="agreementCheckbox" label="I agree" type="checkbox" onchange={handleAgreementAccepted} required></lightning-input>
+        </div>
+    </div>
+</template>

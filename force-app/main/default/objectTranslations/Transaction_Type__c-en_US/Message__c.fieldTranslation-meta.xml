@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- default message text --></help>
+        <label><!-- Message --></label>
+        <name>Message__c</name>
+    </CustomFieldTranslation>

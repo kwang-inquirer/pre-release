@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Email First Response</name>
+    <style>none</style>
+    <subject>Thanks for contacting NTO</subject>
+    <textOnly>Hello, Customer! 
+
+We&apos;re committed to delivering top-notch customer service. Thank you for your inquiry; we will get back to you as soon as possible.
+
+Regards,
+Northern Trail Outfitters Team</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Cancellation Request</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Auto_Response</letterhead>
+    <name>Cancellation Request</name>
+    <style>freeForm</style>
+    <subject>Philadelphia Inquirer - Cancellation Request</subject>
+    <textOnly>Hello, {!Contact.FirstName}:
+
+
+We sincerely apologize, but subscription cancellations cannot be processed online. You must speak with a Customer Service Representative by phone for assistance.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

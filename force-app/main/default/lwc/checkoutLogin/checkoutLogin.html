@@ -1,0 +1,28 @@
+<template>
+    <template if:true={hasErrors}>
+        <div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error slds-m-vertical_x-small" role="alert">
+            <ul>
+                <template for:each={errors} for:item="error">
+                    <li key={error}>
+                        <h2>{error}</h2>
+                    </li>
+                </template>
+            </ul>
+        </div>
+    </template>
+    <h2 class="slds-border_bottom slds-theme_shade slds-p-around_xx-small">Login</h2>
+    <div class="slds-grid slds-wrap">
+        <div class="slds-size_1-of-1">
+            <lightning-input type="email" name="email" label="Email" value={credentials.email} onchange={handleChange} required></lightning-input>
+        </div>
+        <template if:true={showPasswordInput}>
+            <div class="slds-size_1-of-1">
+                <lightning-input type="password" name="password" label="Password" value={credentials.password} onchange={handleChange} required></lightning-input>
+            </div>
+        </template>
+        <div class="slds-size_1-of-1 slds-p-vertical_x-small">
+            <lightning-button variant="brand" label="Login" title="Login" onclick={handleLoginClicked} class="slds-float_right"></lightning-button>
+        </div>
+    </div>
+    <c-global-loading loading={loading}></c-global-loading>
+</template>

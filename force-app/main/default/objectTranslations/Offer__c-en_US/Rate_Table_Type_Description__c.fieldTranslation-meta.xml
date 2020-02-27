@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- Rate Table Type Description --></label>
+        <name>Rate_Table_Type_Description__c</name>
+        <picklistValues>
+            <masterLabel>10 Week Rate</masterLabel>
+            <translation><!-- 10 Week Rate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>13 Week Rate</masterLabel>
+            <translation><!-- 13 Week Rate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>15 Week Rate</masterLabel>
+            <translation><!-- 15 Week Rate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>16 Week Rate</masterLabel>
+            <translation><!-- 16 Week Rate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>20 Week Rate</masterLabel>
+            <translation><!-- 20 Week Rate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>26 Week Rate</masterLabel>
+            <translation><!-- 26 Week Rate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4 Week Rate</masterLabel>
+            <translation><!-- 4 Week Rate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5 Week Rate</masterLabel>
+            <translation><!-- 5 Week Rate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>52 Week Rate</masterLabel>
+            <translation><!-- 52 Week Rate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8 Week Rate</masterLabel>
+            <translation><!-- 8 Week Rate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alternate Pubs - 4 Week Rate</masterLabel>
+            <translation><!-- Alternate Pubs - 4 Week Rate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DF 13 Week</masterLabel>
+            <translation><!-- DF 13 Week --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DF 26 Week</masterLabel>
+            <translation><!-- DF 26 Week --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DF 5 Week</masterLabel>
+            <translation><!-- DF 5 Week --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DF 52 Week</masterLabel>
+            <translation><!-- DF 52 Week --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DF 8 Week</masterLabel>
+            <translation><!-- DF 8 Week --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DNEE 13 Week</masterLabel>
+            <translation><!-- DNEE 13 Week --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DNEE 26 Week</masterLabel>
+            <translation><!-- DNEE 26 Week --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DNEE 5 Week</masterLabel>
+            <translation><!-- DNEE 5 Week --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DNEE 52 Week</masterLabel>
+            <translation><!-- DNEE 52 Week --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DNEE 8 Week</masterLabel>
+            <translation><!-- DNEE 8 Week --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DNIN 13 Week</masterLabel>
+            <translation><!-- DNIN 13 Week --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DNIN 26 Week</masterLabel>
+            <translation><!-- DNIN 26 Week --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DNIN 5 Week</masterLabel>
+            <translation><!-- DNIN 5 Week --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DNIN 52 Week</masterLabel>
+            <translation><!-- DNIN 52 Week --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DNIN 8 Week</masterLabel>
+            <translation><!-- DNIN 8 Week --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DS 13 Week</masterLabel>
+            <translation><!-- DS 13 Week --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DS 26 Week</masterLabel>
+            <translation><!-- DS 26 Week --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DS 5 Week</masterLabel>
+            <translation><!-- DS 5 Week --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DS 52 Week</masterLabel>
+            <translation><!-- DS 52 Week --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DS 8 Week</masterLabel>
+            <translation><!-- DS 8 Week --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>INDF+EE+DE 13 Week</masterLabel>
+            <translation><!-- INDF+EE+DE 13 Week --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>INDF+EE+DE 26 Week</masterLabel>
+            <translation><!-- INDF+EE+DE 26 Week --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>INDF+EE+DE 5 Week</masterLabel>
+            <translation><!-- INDF+EE+DE 5 Week --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>INDF+EE+DE 52 Week</masterLabel>
+            <translation><!-- INDF+EE+DE 52 Week --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>INDF+EE+DE 8 Week</masterLabel>
+            <translation><!-- INDF+EE+DE 8 Week --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>INDS+EE+DE 13 Week</masterLabel>
+            <translation><!-- INDS+EE+DE 13 Week --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>INDS+EE+DE 26 Week</masterLabel>
+            <translation><!-- INDS+EE+DE 26 Week --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>INDS+EE+DE 5 Week</masterLabel>
+            <translation><!-- INDS+EE+DE 5 Week --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>INDS+EE+DE+8 Week</masterLabel>
+            <translation><!-- INDS+EE+DE+8 Week --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>INDS+EE+DS 52 Week</masterLabel>
+            <translation><!-- INDS+EE+DS 52 Week --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>INSO+EE+DE 13 Week</masterLabel>
+            <translation><!-- INSO+EE+DE 13 Week --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>INSO+EE+DE 26 Week</masterLabel>
+            <translation><!-- INSO+EE+DE 26 Week --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>INSO+EE+DE 5 Week</masterLabel>
+            <translation><!-- INSO+EE+DE 5 Week --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>INSO+EE+DE 52 Week</masterLabel>
+            <translation><!-- INSO+EE+DE 52 Week --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>INSO+EE+DE 8 Week</masterLabel>
+            <translation><!-- INSO+EE+DE 8 Week --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>INSS+EE+DE 13 Week</masterLabel>
+            <translation><!-- INSS+EE+DE 13 Week --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>INSS+EE+DE 26 Week</masterLabel>
+            <translation><!-- INSS+EE+DE 26 Week --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>INSS+EE+DE 5 Week</masterLabel>
+            <translation><!-- INSS+EE+DE 5 Week --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>INSS+EE+DE 52 Week</masterLabel>
+            <translation><!-- INSS+EE+DE 52 Week --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>INSS+EE+DE 8 Week</masterLabel>
+            <translation><!-- INSS+EE+DE 8 Week --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SO 13 Week</masterLabel>
+            <translation><!-- SO 13 Week --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SO 26 Week</masterLabel>
+            <translation><!-- SO 26 Week --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SO 5 Week</masterLabel>
+            <translation><!-- SO 5 Week --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SO 52 Week</masterLabel>
+            <translation><!-- SO 52 Week --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SO 8 Week</masterLabel>
+            <translation><!-- SO 8 Week --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SS 13 Week</masterLabel>
+            <translation><!-- SS 13 Week --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SS 26 Week</masterLabel>
+            <translation><!-- SS 26 Week --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SS 5 Week</masterLabel>
+            <translation><!-- SS 5 Week --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SS 52 Week</masterLabel>
+            <translation><!-- SS 52 Week --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SS 8 Week</masterLabel>
+            <translation><!-- SS 8 Week --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tablet 1YR</masterLabel>
+            <translation><!-- Tablet 1YR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tablet 2YR</masterLabel>
+            <translation><!-- Tablet 2YR --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

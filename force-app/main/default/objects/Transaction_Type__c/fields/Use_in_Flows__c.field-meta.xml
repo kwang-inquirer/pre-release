@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+        <fullName>Use_in_Flows__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This checkbox will be used to determine if this transaction type is allowed in flows that will be used by a CSR</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Use this field to allow this transaction type to be used in a flow that the CSR will use.</inlineHelpText>
+        <label>Use in Flows</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </CustomField>

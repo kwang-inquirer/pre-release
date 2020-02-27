@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+        <fullName>Address_Full_Street__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(NOT(ISBLANK(Address_House__c)), Address_House__c+ ' ', '') +
+IF(NOT(ISBLANK(Pre_Direction__c)), Pre_Direction__c + ' ', '') +  
+IF(NOT(ISBLANK(Address_Street__c)), Address_Street__c+ ' ', '') +
+IF(NOT(ISBLANK(Address_Suffix__c)), Address_Suffix__c+ ' ', '') +
+IF(NOT(ISBLANK(Post_Direction__c)), Post_Direction__c + ' ', '')</formula>
+        <label>Full Street</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </CustomField>

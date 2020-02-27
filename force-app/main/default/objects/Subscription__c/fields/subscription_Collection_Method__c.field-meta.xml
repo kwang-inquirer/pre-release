@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+        <fullName>subscription_Collection_Method__c</fullName>
+        <description>Stores the collection method; automatic or manual</description>
+        <externalId>false</externalId>
+        <label>Collection Method</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>automatic</fullName>
+                    <default>false</default>
+                    <label>automatic</label>
+                </value>
+                <value>
+                    <fullName>manual</fullName>
+                    <default>false</default>
+                    <label>manual</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </CustomField>

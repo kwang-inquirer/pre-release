@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <description>Set the status of the current Subscription to Active</description>
+        <name>Set_Status</name>
+        <label>Set Status</label>
+        <locationX>237</locationX>
+        <locationY>58</locationY>
+        <assignmentItems>
+            <assignToReference>thisSub.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Subscription__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>thisSub.subscription_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Active</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Subscription</targetReference>
+        </connector>
+    </assignments>
+    <interviewLabel>Vacation with Restart Status to Active {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Vacation with Restart Status to Active</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Subscription</name>
+        <label>Update Subscription</label>
+        <locationX>403</locationX>
+        <locationY>69</locationY>
+        <inputReference>thisSub</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>73</locationX>
+        <locationY>61</locationY>
+        <connector>
+            <targetReference>Set_Status</targetReference>
+        </connector>
+        <filters>
+            <field>Code_Name__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Vacation with Restart</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Is_Last_Date__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>Transaction_Log__c</object>
+        <schedule>
+            <frequency>Daily</frequency>
+            <startDate>2020-01-14</startDate>
+            <startTime>02:15:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>thisSub</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Subscription__c</objectType>
+    </variables>
+</Flow>

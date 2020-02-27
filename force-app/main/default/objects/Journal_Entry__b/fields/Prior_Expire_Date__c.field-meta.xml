@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+        <fullName>Prior_Expire_Date__c</fullName>
+        <description>Expire date prior to this transaction being posted</description>
+        <externalId>false</externalId>
+        <label>Prior Expire Date</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </CustomField>

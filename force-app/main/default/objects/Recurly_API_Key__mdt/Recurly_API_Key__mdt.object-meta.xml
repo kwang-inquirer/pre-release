@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Recurly Private API key used in the partner community for payments (NewSubscriptionsController.cls)</description>
+    <label>Recurly API Key</label>
+    <pluralLabel>Recurly API Keys</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

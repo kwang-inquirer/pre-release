@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <flexiPageRegions>
+        <appendable>enabled</appendable>
+        <componentInstances>
+            <componentInstanceProperties>
+                <name>autoPlay</name>
+                <value>false</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>autoPlayInterval</name>
+                <value>2000</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>controlsAlignment</name>
+                <value>center</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>controlsPosition</name>
+                <value>bottom</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>datasource</name>
+                <value>carousel-object</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>datasourceInput</name>
+                <value>CSLIDE-000000</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>showControls</name>
+                <value>true</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>slidesPerPage</name>
+                <value>3</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>title</name>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>titleAlign</name>
+                <value>left</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>titleSize</name>
+                <value>large</value>
+            </componentInstanceProperties>
+            <componentName>cloudx_cms:SS_cmsCarousel</componentName>
+        </componentInstances>
+        <componentInstances>
+            <componentInstanceProperties>
+                <name>autoPlay</name>
+                <value>true</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>autoPlayInterval</name>
+                <value>10000</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>controlsAlignment</name>
+                <value>center</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>controlsPosition</name>
+                <value>bottom</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>datasource</name>
+                <value>carousel-object</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>datasourceInput</name>
+                <value>SubscriberCommunityHomePage</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>showControls</name>
+                <value>true</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>slidesPerPage</name>
+                <value>1</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>title</name>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>titleAlign</name>
+                <value>left</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>titleSize</name>
+                <value>small</value>
+            </componentInstanceProperties>
+            <componentName>cloudx_cms:SS_cmsCarousel</componentName>
+        </componentInstances>
+        <name>header</name>
+        <prependable>enabled</prependable>
+        <replaceable>enabled</replaceable>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <appendable>enabled</appendable>
+        <componentInstances>
+            <componentInstanceProperties>
+                <name>richTextValue</name>
+                <value>&lt;div style=&quot;width:100%;
+            height:250px;&quot;&gt;
+&lt;div style=&quot;width: calc(100% / 4);
+            margin-right: 14%;
+    		min-height: 300px
+            border: 1px solid;
+  			box-shadow: 5px 10px 8px #888888;
+			float:left;
+            margin-bottom: 20px;
+    		padding-bottom: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 10px;&quot;&gt;
+                    &lt;h3&gt;SIGN UP FOR EASY PAY!&lt;/h3&gt;
+                    &lt;p&gt;Have your subscription automatically charged to the credit or debit card of your choice.  Save time and money by switching to Easy Pay!&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+	&lt;div style=&quot;text-align:center;&quot;&gt;
+    &lt;a href=&quot;https://redev-pmnpartners.cs53.force.com/subscribers/s/ez-pay&quot; style=&quot;background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #980000), color-stop(1, #bc3315));
+	background:-moz-linear-gradient(top, #980000 5%, #bc3315 100%);
+	background:-webkit-linear-gradient(top, #980000 5%, #bc3315 100%);
+	background:-o-linear-gradient(top, #980000 5%, #bc3315 100%);
+	background:-ms-linear-gradient(top, #980000 5%, #bc3315 100%);
+	background:linear-gradient(to bottom, #980000 5%, #bc3315 100%);
+	background-color:#980000;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	border:1px solid #942911;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:13px;
+	padding:6px 24px;
+	text-decoration:none;
+                       display:center;&quot;&gt;SIGN UP FOR EASY PAY&lt;/a&gt;
+		&lt;/div&gt;
+ &lt;/div&gt;
+&lt;div style=&quot;width: calc(100% / 4);
+            margin-right: 10%;
+    		min-height: 300px
+            border: 1px solid;
+  			box-shadow: 5px 10px 8px #888888;
+            margin-bottom: 20px;
+    		padding-bottom: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 10px;
+            float:left;&quot;&gt;
+                    &lt;h3&gt;REPLICA EDITION ACCESS&lt;/h3&gt;
+                    &lt;p&gt;If your subscription includes Unlimited Digital access, you can read The Inquirer and Daily News Replicas on your computer, tablet, or Smartphone. Click below for access to both editions&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+	&lt;div style=&quot;text-align:center;&quot;&gt;
+    &lt;a href=&quot;https://digital.olivesoftware.com/Olive/ODN/PhiladelphiaInquirer/Default.aspx&quot; style=&quot;background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #980000), color-stop(1, #bc3315));
+	background:-moz-linear-gradient(top, #980000 5%, #bc3315 100%);
+	background:-webkit-linear-gradient(top, #980000 5%, #bc3315 100%);
+	background:-o-linear-gradient(top, #980000 5%, #bc3315 100%);
+	background:-ms-linear-gradient(top, #980000 5%, #bc3315 100%);
+	background:linear-gradient(to bottom, #980000 5%, #bc3315 100%);
+	background-color:#980000;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	border:1px solid #942911;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:13px;
+	padding:6px 24px;
+	text-decoration:none;
+                       display:center;&quot;&gt;ACCESS REPLICAS&lt;/a&gt;
+	&lt;/div&gt;
+ &lt;/div&gt;
+&lt;div style=&quot;width: calc(100% / 4);
+    		min-height: 300px
+            border: 1px solid;
+  			box-shadow: 5px 10px 8px #888888;
+			float:left;
+            margin-bottom: 20px;
+    		padding-bottom: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 10px;&quot;&gt;
+                    &lt;h3&gt;GOING ON VACATION&lt;/h3&gt;
+                    &lt;p&gt;We&apos;ll put a hold on delivering the printed editions of your paper but don&apos;t forget that your subscription continues to be available digitally while you are away!&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+	&lt;div style=&quot;text-align:center;&quot;&gt;
+    &lt;a href=&quot;https://redev-pmnpartners.cs53.force.com/subscribers/s/schedule-a-vacation&quot; style=&quot;background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #980000), color-stop(1, #bc3315));
+	background:-moz-linear-gradient(top, #980000 5%, #bc3315 100%);
+	background:-webkit-linear-gradient(top, #980000 5%, #bc3315 100%);
+	background:-o-linear-gradient(top, #980000 5%, #bc3315 100%);
+	background:-ms-linear-gradient(top, #980000 5%, #bc3315 100%);
+	background:linear-gradient(to bottom, #980000 5%, #bc3315 100%);
+	background-color:#980000;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	border:1px solid #942911;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:13px;
+	padding:6px 24px;
+	text-decoration:none;
+                       display:center;&quot;&gt;VACATION DELIVERY&lt;/a&gt;
+	&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/div&gt;</value>
+            </componentInstanceProperties>
+            <componentName>forceCommunity:htmlBlock</componentName>
+        </componentInstances>
+        <name>content</name>
+        <prependable>enabled</prependable>
+        <replaceable>enabled</replaceable>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <appendable>enabled</appendable>
+        <name>sidebar</name>
+        <prependable>enabled</prependable>
+        <replaceable>enabled</replaceable>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <appendable>enabled</appendable>
+        <name>footer</name>
+        <prependable>enabled</prependable>
+        <replaceable>enabled</replaceable>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <appendable>enabled</appendable>
+        <componentInstances>
+            <componentInstanceProperties>
+                <name>description</name>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>metaTags</name>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>title</name>
+                <value>Home</value>
+            </componentInstanceProperties>
+            <componentName>forceCommunity:seoAssistant</componentName>
+        </componentInstances>
+        <name>sfdcHiddenRegion</name>
+        <prependable>enabled</prependable>
+        <replaceable>enabled</replaceable>
+        <type>Region</type>
+    </flexiPageRegions>
+    <masterLabel>Home</masterLabel>
+    <template>
+        <name>siteforce:sldsOneColLayout</name>
+    </template>
+    <type>CommAppPage</type>
+</FlexiPage>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <layouts>
+        <layout>Account Layout</layout>
+        <sections>
+            <label><!-- Audit Section --></label>
+            <section>Audit Section</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Child Account --></label>
+        <name>Child_Account</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Missed Paper --></label>
+        <name>Missed_Paper</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- New Vendor Contact --></label>
+        <name>New_Vendor_Contact</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Update Billing Address --></label>
+        <name>Update_Billing_Address</name>
+    </quickActions>
+    <recordTypes>
+        <description><!-- Business Non-Subscriber Record Type --></description>
+        <label><!-- Business Non-Subscriber --></label>
+        <name>Business_Non_Subscriber</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Business Subscriber or Prospect Record Type --></description>
+        <label><!-- Business Subscriber --></label>
+        <name>Business_Subscriber</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Household Subscriber or Prospect Record Type --></description>
+        <label><!-- Household --></label>
+        <name>Household</name>
+    </recordTypes>
+    <webLinks>
+        <label><!-- GoogleMaps --></label>
+        <name>GoogleMaps</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleNews --></label>
+        <name>GoogleNews</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleSearch --></label>
+        <name>GoogleSearch</name>
+    </webLinks>
+</CustomObjectTranslation>

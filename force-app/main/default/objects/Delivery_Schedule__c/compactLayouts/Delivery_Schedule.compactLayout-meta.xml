@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+        <fullName>Delivery_Schedule</fullName>
+        <fields>Name</fields>
+        <fields>Offer_Product__c</fields>
+        <fields>Routelookup__c</fields>
+        <fields>District__c</fields>
+        <fields>Frequency_Code__c</fields>
+        <label>Delivery_Schedule</label>
+    </CompactLayout>

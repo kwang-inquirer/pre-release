@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SamlSsoConfig xmlns="http://soap.sforce.com/2006/04/metadata">
+    <identityLocation>SubjectNameId</identityLocation>
+    <identityMapping>Username</identityMapping>
+    <issuer>urn:mg2-philly-dev.auth0.com</issuer>
+    <loginUrl>https://mg2-philly-dev.auth0.com/samlp/n0C3W9uxHlYmvr50Cg2SxAWPhzAAsMNq</loginUrl>
+    <name>Auth0</name>
+    <oauthTokenEndpoint>https://pmn--prerelease.my.salesforce.com/services/oauth2/token</oauthTokenEndpoint>
+    <redirectBinding>false</redirectBinding>
+    <requestSignatureMethod>1</requestSignatureMethod>
+    <requestSigningCertId>0P11U000006gUua</requestSigningCertId>
+    <salesforceLoginUrl>https://pmn--prerelease.my.salesforce.com</salesforceLoginUrl>
+    <samlEntityId>https://saml.saleforce.com</samlEntityId>
+    <samlVersion>SAML2_0</samlVersion>
+    <singleLogoutBinding>PostBinding</singleLogoutBinding>
+    <singleLogoutUrl>https://mg2-philly-dev.auth0.com/logout</singleLogoutUrl>
+    <userProvisioning>false</userProvisioning>
+    <validationCert>MIIDCzCCAfOgAwIBAgIJPSAowsEEO1WOMA0GCSqGSIb3DQEBCwUAMCMxITAfBgNVBAMTGG1nMi1waGlsbHktZGV2LmF1dGgwLmNvbTAeFw0xNzA1MTkxMTI2NTRaFw0zMTAxMjYxMTI2NTRaMCMxITAfBgNVBAMTGG1nMi1waGlsbHktZGV2LmF1dGgwLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAOW2/fSwf115U329YuXSdUXGnbc6kU9KnISL7r78B+iJW2lzdHcsZmT42rlH/O2QSOZb5X/R/fozRFEbaW1HcSkRaHUX28n8vyMVpfM1UPgL8sWVjq8Qdlaoz1jfHEuGCZ5PAeyhB8aRcdiMK9u4A4DuEV3a8UhbX/nnF4xkqN38tXjQETkZLdVU9Ynb/HHV9q8UvoeqvWgoLI+ZdO6QzI7a1SrBpgOHtE1rYltMiS67V3AnkLZlStuDSrPUSUYmIZ3MlcuTvoU8o+f+WhvXdTscneV2qILltZ1iJJ5a7Bkre4L5YYM2920qCMokjlD+Ed5hARwke4zevR/ZsJi77p0CAwEAAaNCMEAwDwYDVR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUshmLnbCnWf74uy3y8FZBALIhvLAwDgYDVR0PAQH/BAQDAgKEMA0GCSqGSIb3DQEBCwUAA4IBAQBRTghokN/A7mmRcF43K+brOe3TWABAD7lI53NGfMKZ4Om+qi62hcXH5NHIKoMtIeu9adWg0T76LYL6NxmyvNoYN9wWf12kFxBV/l3/UE3zg+kO2bg06EHpHDd4QCbHmITdXYMbVDS0GSp3/KmbtiYZaQyqI6CcLeDjN5SrdvKegsRBYaQJn992jzVhP075GMAmXwUr5tGVIpC9z0kbI2nuOdEvFtkyVYqRUnmNIcJtm847HbFMblXs+8c4HI5sRDV7quGiwfWVdwNFjpeA1uUpJ5Xx3WpCBmzayZ3wMCUxWINlYoGbTzsu+DYi2mCuh5GYUdkxKK1GlxRjHofzhegY</validationCert>
+</SamlSsoConfig>

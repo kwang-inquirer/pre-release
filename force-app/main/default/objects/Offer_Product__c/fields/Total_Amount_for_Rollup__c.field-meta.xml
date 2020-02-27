@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+        <fullName>Total_Amount_for_Rollup__c</fullName>
+        <description>this field is populated by a workflow field update to equal the total amount formula field</description>
+        <externalId>false</externalId>
+        <label>Total Amount for Rollup</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </CustomField>

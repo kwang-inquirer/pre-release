@@ -1,0 +1,98 @@
+<aura:component controller="DeliveryServiceIssueController" implements="force:lightningQuickActionWithoutHeader,force:hasSObjectName,force:hasRecordId,lightning:availableForFlowScreens" access="global">
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="sobjecttype" type="String" default="{!v.sObjectName}" />
+    <aura:attribute name="subscriptionId" type="String" />
+    <aura:attribute name="dateSelected" type="Date" default="" access="global"/>
+    <aura:attribute name="lockTime" type="Boolean" default="false" />
+    <aura:attribute name="submitDisabled" type="Boolean" default="false" />
+    <aura:attribute name="solutionOptions" type="List" />
+    <aura:attribute name="solutionSelected" type="String" />
+    <aura:attribute name="memo" type="String"/>
+    <aura:attribute name="applyCredit" type="Boolean" default="false" />
+
+    <aura:attribute name="serviceIssueSelected" type="String" />
+
+    <aura:attribute name="dateValidationError" type="boolean" />
+    <aura:attribute name="recordCreated" type="boolean" default="false" />
+    <aura:attribute name="deliveryValidationError" type="boolean" />
+    <aura:attribute name="subscriptionNull" type="boolean" default="true" />
+    <aura:attribute name="offerProductOptions" type="List" />
+    <aura:attribute name="selectedOfferProducts" type="List" />
+    
+    <aura:attribute name="deliveryIssueOptions" type="List" />
+    <aura:attribute name="deliveryIssueOptionSelected" type="String" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <!-- <aura:handler name="change" value="{!v.dateSelected}" action="{!c.dateChanged}" /> -->
+    <aura:handler name="change" value="{!v.dateSelected}" action="{!c.serviceDateChanged}" />
+    <aura:handler name="change" value="{!v.deliveryIssueOptionSelected}" action="{!c.issueSelectChanged}" />
+
+    <aura:attribute name="expireDate" type="String" />
+
+    <lightning:card title="Delivery Service Issue">
+        <aura:if isTrue="{!v.subscriptionNull}">
+            <ui:message severity="error" closable="false">
+                No subscription found.
+            </ui:message>
+        </aura:if>
+        <p class="slds-p-horizontal_small">
+            <div class="slds-grid slds-wrap slds-gutters">
+                <div class="slds-col slds-size_1-of-1">
+                    <lightning:checkboxGroup name="Offer Products" label="Publication" options="{!v.offerProductOptions}" value="{!v.selectedOfferProducts}" required="true" />
+                </div>
+                <br/>
+                <div class="slds-col slds-size_1-of-1">
+                    <br/>
+                    <ui:inputDate aura:id="serviceDate" label="Service Date:" class="field" value="{!v.dateSelected}" displayDatePicker="true" required="true" />
+                    <aura:if isTrue="{!or(v.dateValidationError, v.deliveryValidationError)}">
+                        <ui:message severity="error" closable="true">
+                            <aura:if isTrue="{!v.dateValidationError}">
+                                Please select a date within the last 10 days.
+                            </aura:if>
+                            <aura:if isTrue="{!and(v.dateValidationError, v.deliveryValidationError)}">
+                                <br />
+                            </aura:if>
+                            <aura:if isTrue="{!v.deliveryValidationError}">
+                                No delivery found for the selected date.
+                            </aura:if>
+                        </ui:message>
+                    </aura:if>
+                </div>
+                <br/>
+                <div class="slds-col slds-size_1-of-1">
+                    <aura:if isTrue="{!v.lockTime}">
+                        <ui:message severity="warning" closable="true">
+                            We guarantee delivery by 6:30 am weekdays and 8:00 am on the weekend. We are unable to process redelivery requests prior to our guaranteed delivery time. If you require immediate assistance, please call Customer
+                            Service
+                            at 215-222-2765.
+                        </ui:message>
+                        <aura:set attribute="else">
+                            <br/>
+                            <lightning:select aura:id="serviceIssue" name="serviceIssueSelect" label="Service Issue:" required="true" onchange="{!c.setdeliveryIssueOptionSelected}">
+                                <aura:iteration items="{! v.deliveryIssueOptions }" var="option">
+                                    <option value="{! option.value }">{! option.label}</option>
+                                </aura:iteration>
+                            </lightning:select>
+                            <br/>
+                            <lightning:radioGroup name="solution" label="" options="{! v.solutionOptions }" value="{! v.solutionSelected }" type="radio" />
+                            <lightning:input name="memoInput" label="Enter a Memo" value="{!v.memo}"/>
+                            <br/>
+                            <ui:button aura:id="submitButtonId" class="slds-button slds-button_brand slds-float_right" label="Submit" disabled="{!v.submitDisabled}" press="{!c.submitIssue}" />
+                            <aura:if isTrue="{!v.recordCreated}">
+                                <aura:if isTrue="{!v.applyCredit}">
+                                        <ui:message severity="confirm" closable="true">
+                                                Account credit has been issued extending your subscription paid through date to {!v.expireDate}
+                                        </ui:message>
+                                <aura:set attribute="else">
+                                <ui:message severity="confirm" closable="true">
+                                        The issue delivery service issue has been submitted.
+                                </ui:message>
+                                </aura:set>
+                                </aura:if>
+                            </aura:if>
+                        </aura:set>
+                    </aura:if>
+                </div>
+            </div>
+        </p>
+    </lightning:card>
+</aura:component>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WaveXmd xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <dataset>All_Complaints</dataset>
+    <dates>
+        <alias>Entry Date</alias>
+        <firstDayOfWeek>-1</firstDayOfWeek>
+        <fiscalMonthOffset>0</fiscalMonthOffset>
+        <label>Entry</label>
+        <sortIndex>0</sortIndex>
+        <type xsi:nil="true"/>
+    </dates>
+    <dates>
+        <alias>Transaction Date</alias>
+        <firstDayOfWeek>-1</firstDayOfWeek>
+        <fiscalMonthOffset>0</fiscalMonthOffset>
+        <label>Trans</label>
+        <sortIndex>1</sortIndex>
+        <type xsi:nil="true"/>
+    </dates>
+    <dates>
+        <alias>Entry_Date_f</alias>
+        <firstDayOfWeek>-1</firstDayOfWeek>
+        <fiscalMonthOffset>0</fiscalMonthOffset>
+        <label>Entry Date</label>
+        <sortIndex>2</sortIndex>
+        <type xsi:nil="true"/>
+    </dates>
+    <dates>
+        <alias>Transaction_Date_f</alias>
+        <firstDayOfWeek>-1</firstDayOfWeek>
+        <fiscalMonthOffset>0</fiscalMonthOffset>
+        <label>Effective Date</label>
+        <sortIndex>3</sortIndex>
+        <type xsi:nil="true"/>
+    </dates>
+    <dimensions>
+        <field>Subscription.DSI_Subscription_ID__c</field>
+        <isDerived>false</isDerived>
+        <label>Account</label>
+        <sortIndex>0</sortIndex>
+    </dimensions>
+    <dimensions>
+        <field>Subscription.Contact__c.Phone</field>
+        <isDerived>false</isDerived>
+        <label>Phone</label>
+        <sortIndex>1</sortIndex>
+    </dimensions>
+    <dimensions>
+        <field>Pub__c</field>
+        <isDerived>false</isDerived>
+        <label>Pub Number</label>
+        <sortIndex>2</sortIndex>
+    </dimensions>
+    <dimensions>
+        <field>Created_By_User__c</field>
+        <isDerived>false</isDerived>
+        <label>User  ID</label>
+        <sortIndex>3</sortIndex>
+    </dimensions>
+    <dimensions>
+        <field>Transaction_Date</field>
+        <isDerived>false</isDerived>
+        <label>Effective Date</label>
+        <sortIndex>4</sortIndex>
+    </dimensions>
+    <dimensions>
+        <field>Complaint_Code__c</field>
+        <isDerived>false</isDerived>
+        <label>Complaint Code</label>
+        <sortIndex>5</sortIndex>
+    </dimensions>
+    <dimensions>
+        <field>Subscription.Contact__c.Name</field>
+        <isDerived>false</isDerived>
+        <label>Subscriber</label>
+        <sortIndex>6</sortIndex>
+    </dimensions>
+    <dimensions>
+        <field>Transaction_Type</field>
+        <isDerived>false</isDerived>
+        <label>Description</label>
+        <sortIndex>7</sortIndex>
+    </dimensions>
+    <dimensions>
+        <field>CityStateZip_f</field>
+        <isDerived>false</isDerived>
+        <label>City State Zip</label>
+        <sortIndex>8</sortIndex>
+    </dimensions>
+    <dimensions>
+        <field>phone_f</field>
+        <isDerived>false</isDerived>
+        <label>Phone Number</label>
+        <sortIndex>9</sortIndex>
+    </dimensions>
+    <dimensions>
+        <field>Subscription.Offer_Product.Product__c.ProductCode</field>
+        <isDerived>false</isDerived>
+        <label>Publication</label>
+        <sortIndex>10</sortIndex>
+    </dimensions>
+    <dimensions>
+        <field>Subscription.Contact__c.MailingStreet</field>
+        <isDerived>false</isDerived>
+        <label>Address</label>
+        <sortIndex>11</sortIndex>
+    </dimensions>
+    <dimensions>
+        <field>Subscription.Subscription_Address.Delivery_Address__c.Zip__c</field>
+        <isDerived>false</isDerived>
+        <label>Zip</label>
+        <sortIndex>12</sortIndex>
+    </dimensions>
+    <dimensions>
+        <field>Subscription.Subscription_Address.Delivery_Address__c.Address_Full_Street__c</field>
+        <isDerived>false</isDerived>
+        <label>Address</label>
+        <sortIndex>13</sortIndex>
+    </dimensions>
+    <dimensions>
+        <field>Subscription.Subscription_Address.Delivery_Address__c.Route.Name</field>
+        <isDerived>false</isDerived>
+        <label>Carrier Name</label>
+        <sortIndex>14</sortIndex>
+    </dimensions>
+    <dimensions>
+        <field>Subscription.Subscription_Address.Delivery_Address__c.Route.District__c</field>
+        <isDerived>false</isDerived>
+        <label>District</label>
+        <sortIndex>15</sortIndex>
+    </dimensions>
+    <dimensions>
+        <field>Subscription.Offer_Product.Code__c</field>
+        <isDerived>false</isDerived>
+        <label>Pub Symbol</label>
+        <sortIndex>16</sortIndex>
+    </dimensions>
+    <dimensions>
+        <field>Subscription.Subscription_Address.Delivery_Address__c.Route.Route_Id__c</field>
+        <isDerived>false</isDerived>
+        <label>Route</label>
+        <sortIndex>17</sortIndex>
+    </dimensions>
+    <dimensions>
+        <field>Subscription.Subscription_Address.Delivery_Address__c.Route.Sub_District__c</field>
+        <isDerived>false</isDerived>
+        <label>Sub District</label>
+        <sortIndex>18</sortIndex>
+    </dimensions>
+    <measures>
+        <field>Subscription.Offer_Product.drawDays</field>
+        <isDerived>false</isDerived>
+        <label>Prod_drawDays</label>
+        <sortIndex>0</sortIndex>
+    </measures>
+</WaveXmd>

@@ -1,0 +1,23 @@
+<aura:component controller="c1asStreamBrokerController" implements="flexipage:availableForAllPageTypes" access="global">
+     
+    <ltng:require scripts="{!join(',', 
+    $Resource.comD + '/cometd.js', 
+    $Resource.comD + '/jquery-1.5.1.js',
+    $Resource.comD + '/json2.js',
+    $Resource.comD + '/jquery.cometd.js')}" 
+    afterScriptsLoaded="{!c.bootstrapCometD}"/>
+    
+    <aura:attribute name="user" type="String"/>
+    <aura:attribute name="sessionId" type="String"/>
+    <aura:attribute name="subject" type="String"/>
+    <aura:attribute name="status" type="String"/>
+    
+    <lightning:workspaceAPI aura:id="workspace"/>
+
+    <aura:if isTrue="{!v.status}">
+    	<div class="slds-notify slds-notify--alert slds-theme--alert-texture" role="alert">
+	    	<h2>{!v.subject}</h2>
+            <h2>{!v.status}</h2>
+	  	</div>
+    </aura:if>
+</aura:component>

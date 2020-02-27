@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+        <fullName>All_Quick_Text</fullName>
+        <columns>Name</columns>
+        <columns>Message</columns>
+        <columns>Category</columns>
+        <columns>Channel</columns>
+        <filterScope>Mine</filterScope>
+        <label>All Quick Text</label>
+    </ListView>

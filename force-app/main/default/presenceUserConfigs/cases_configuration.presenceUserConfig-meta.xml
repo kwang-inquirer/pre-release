@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PresenceUserConfig xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <profiles>
+            <profile>Admin</profile>
+            <profile>Standard</profile>
+        </profiles>
+        <users>
+            <user>amoss@philly.com</user>
+        </users>
+    </assignments>
+    <capacity>2</capacity>
+    <declineReasons>Busy</declineReasons>
+    <declineReasons>Misrouted</declineReasons>
+    <enableAutoAccept>false</enableAutoAccept>
+    <enableDecline>true</enableDecline>
+    <enableDeclineReason>true</enableDeclineReason>
+    <enableDisconnectSound>true</enableDisconnectSound>
+    <enableRequestSound>true</enableRequestSound>
+    <label>cases_configuration</label>
+</PresenceUserConfig>

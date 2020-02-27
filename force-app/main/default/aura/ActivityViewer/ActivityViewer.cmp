@@ -1,0 +1,26 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:lightningQuickActionWithoutHeader,force:hasRecordId" access="global">
+    <aura:attribute name="recordId" type="Id"/>
+    <aura:attribute name="showTransactions" type="Boolean" default="False" />
+    <aura:attribute name="showJournals" type="Boolean" default="False" />
+
+	 <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <lightning:card iconName="standard:service_report" title="Subscription Activity">
+        <span>
+            <button class="slds-button" onclick="{! c.displayTransactions }">Transactions</button>
+            <button class="slds-button" onclick="{! c.displayJournals }">Journal Entries</button>
+		</span>
+        
+        <div class="slds-p-horizontal_medium">
+            <div>
+				<aura:if isTrue="{! v.showTransactions == true}">
+					<c:TransactionLog recordId="{!v.recordId}"/>
+                </aura:if>
+				<aura:if isTrue="{! v.showJournals}">
+					<c:JournalEntryViewer recordId="{!v.recordId}"/>
+                </aura:if>
+            </div>
+        </div>
+    </lightning:card>
+	
+</aura:component>

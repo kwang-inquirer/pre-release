@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+        <fullName>Category__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Choose appropriate for transaction viewer</inlineHelpText>
+        <label>Category</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Carrier Me</fullName>
+                    <default>false</default>
+                    <label>Carrier Me</label>
+                </value>
+                <value>
+                    <fullName>CC_Request</fullName>
+                    <default>false</default>
+                    <label>CC_Request</label>
+                </value>
+                <value>
+                    <fullName>Complaint</fullName>
+                    <default>false</default>
+                    <label>Complaint</label>
+                </value>
+                <value>
+                    <fullName>Credit_Card</fullName>
+                    <default>false</default>
+                    <label>Credit_Card</label>
+                </value>
+                <value>
+                    <fullName>Journal</fullName>
+                    <default>false</default>
+                    <label>Journal</label>
+                </value>
+                <value>
+                    <fullName>Memo</fullName>
+                    <default>false</default>
+                    <label>Memo</label>
+                </value>
+                <value>
+                    <fullName>Message</fullName>
+                    <default>false</default>
+                    <label>Message</label>
+                </value>
+                <value>
+                    <fullName>Move</fullName>
+                    <default>false</default>
+                    <label>Move</label>
+                </value>
+                <value>
+                    <fullName>Product Change</fullName>
+                    <default>false</default>
+                    <label>Product Change</label>
+                </value>
+                <value>
+                    <fullName>Start</fullName>
+                    <default>false</default>
+                    <label>Start</label>
+                </value>
+                <value>
+                    <fullName>Stop</fullName>
+                    <default>false</default>
+                    <label>Stop</label>
+                </value>
+                <value>
+                    <fullName>Vacation Pack</fullName>
+                    <default>false</default>
+                    <label>Vacation Pack</label>
+                </value>
+                <value>
+                    <fullName>VH</fullName>
+                    <default>false</default>
+                    <label>VH</label>
+                </value>
+                <value>
+                    <fullName>Journel</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Journel</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </CustomField>

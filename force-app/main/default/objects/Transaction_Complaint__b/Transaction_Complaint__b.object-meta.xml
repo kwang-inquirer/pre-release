@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <indexes>
+        <fullName>Base_Index</fullName>
+        <fields>
+            <name>Subscription__c</name>
+            <sortDirection>ASC</sortDirection>
+        </fields>
+        <fields>
+            <name>SFID__c</name>
+            <sortDirection>ASC</sortDirection>
+        </fields>
+        <label>Base Index</label>
+    </indexes>
+    <label>Transaction Complaint</label>
+    <pluralLabel>Transaction Complaints</pluralLabel>
+</CustomObject>

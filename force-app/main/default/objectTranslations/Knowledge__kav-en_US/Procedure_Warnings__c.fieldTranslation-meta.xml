@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- Use this field to capture warnings and caveats that a user should know before following this procedure.  For example, you may want to include potential impacts or preparation needed before following this procedure. --></help>
+        <label><!-- Procedure Warnings --></label>
+        <name>Procedure_Warnings__c</name>
+    </CustomFieldTranslation>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    
+    
+    <caseValues>
+        <plural>false</plural>
+        <value>Organization Setting</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Organization Settings</value>
+    </caseValues>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,75 @@
+<template>
+    <template if:true={showOfferDetails}>
+        <div class="slds-box slds-theme_default slds-m-bottom_small">
+            <div class="slds-grid slds-wrap">
+                <div class="slds-size_1-of-1">
+                    <h1>
+                        {offer.Name} - <lightning-formatted-number value={offer.Per_Week__c} format-style="currency" currency-code="USD"></lightning-formatted-number> Per Week for {offer.Number_of_Weeks__c} Weeks
+                    </h1>
+                </div>
+                <div class="slds-size_1-of-2">
+                    <template if:true={offerHasLineItems}>
+                        <ul class="slds-p-left_large slds-list_dotted">
+                            <template for:each={offer.Offer_Products__r} for:item="product">
+                                <li key={product.Id}>{product.Name}</li>
+                            </template>
+                        </ul>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </template>
+    <div class="slds-card">
+        <div class="slds-card__header slds-grid slds-grid_align-center">
+            <template if:true={showCheckout}>
+                <lightning-progress-indicator class="slds-size_1-of-1" current-step={currentStep} type="path">
+                    <template for:each={steps} for:item="step">
+                        <lightning-progress-step label={step.label} value={step.value} key={step.value}></lightning-progress-step>
+                    </template>
+                </lightning-progress-indicator>
+            </template>
+        </div>
+        <div class="slds-card__body">
+            <div class="slds-grid slds-wrap slds-align_absolute-center">
+                <template if:true={hasErrors}>
+                    <div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error slds-m-vertical_x-small" role="alert">
+                        <ul>
+                            <template for:each={errors} for:item="error">
+                                <li key={error}>
+                                    <h2>{error}</h2>
+                                </li>
+                            </template>
+                        </ul>
+                    </div>
+                </template>
+                <template if:true={showCheckout}>
+                    <template if:true={loginActive}>
+                        <div class="slds-size_1-of-1 slds-p-horizontal_small">
+                            <c-checkout-login credentials={credentials} onnext={handleNext}></c-checkout-login>
+                        </div>
+                    </template>
+                    <template if:true={deliveryActive}>
+                        <div class="slds-size_1-of-1 slds-p-horizontal_small">
+                            <c-checkout-delivery subscription={subscription} address={deliveryAddress} onnext={handleNext} required></c-checkout-delivery>
+                        </div>
+                    </template>
+                    <template if:true={billingActive}>
+                        <div class="slds-size_1-of-1 slds-p-horizontal_small">
+                            <c-checkout-billing subscription={subscription} address={billingAddress} show-agreement-before-submit={showAgreementBeforeSubmit} process-payment={processPayment} onnext={handleNext} onprevious={handlePrevious}
+                                edit-payment={editPayment} tip-amount={tipAmount} is-new-subscription={isNewSubscription} show-previous={showBillingPrevious} enable-auto-pay={enableAutoPay} show-bill-me={isFlow}>
+                            </c-checkout-billing>
+                        </div>
+                    </template>
+                    <template if:true={confirmationActive}>
+                        <div class="slds-size_1-of-1 slds-p-horizontal_small">
+                            <c-checkout-confirmation subscription={subscription} tip-amount={tipAmount} payment={payment} show-subscription-start-date={showSubscriptionStartDate}
+                                show-subscription-started-message={showSubscriptionStartedMessage} show-payment-submitted-message={showPaymentSubmittedMessage} show-subscription-link={isFlow} show-ez-pay-message={showEzPayMessage}>
+                            </c-checkout-confirmation>
+                        </div>
+                    </template>
+                </template>
+                <c-global-loading loading={loading}></c-global-loading>
+            </div>
+        </div>
+    </div>
+</template>

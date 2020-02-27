@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+        <fullName>Contact_DNC</fullName>
+        <columns>CONTACT.FIRST_NAME</columns>
+        <columns>CONTACT.LAST_NAME</columns>
+        <columns>CONTACT.PHONE1</columns>
+        <columns>DNC_Phone_State__c</columns>
+        <columns>DNC_Is_Business__c</columns>
+        <columns>DNC_Is_Federal__c</columns>
+        <columns>DNC_Is_State__c</columns>
+        <columns>DNC_Is_Internal__c</columns>
+        <columns>DNC_Is_Landline_to_Wireless__c</columns>
+        <columns>DNC_Is_Wireless_Block__c</columns>
+        <columns>DNC_Is_Wireless_to_Landline__c</columns>
+        <columns>FULL_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CONTACT.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Contact.Subscriber_Contact</value>
+        </filters>
+        <label>Contact DNC</label>
+    </ListView>

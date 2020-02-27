@@ -1,0 +1,79 @@
+<template>
+    <template if:true={errorMessage}>
+        <div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error slds-m-vertical_x-small" role="alert">
+            {errorMessage}
+        </div>
+    </template>
+    <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-size_1-of-1">
+            <template if:true={paymentMethods}>
+                <div class="slds-col slds-size_1-of-1 slds-p-vertical_small">
+                    <lightning-combobox label="Payment Methods" value={paymentMethod} placeholder="Select Payment Method" options={paymentMethods} onchange={handlePaymentMethodChange}></lightning-combobox>
+                </div>
+            </template>
+            <template if:true={paymentMethodNew}>
+                <div class="slds-col slds-size_1-of-1 slds-p-vertical_small">
+                    <lightning-combobox label="Payment Type" value={paymentType} placeholder="Select Payment Type" options={paymentTypeOptions} onchange={handlePaymentTypeChange}></lightning-combobox>
+                </div>
+                <c-checkout-address label="Billing" subscription={subscription} address={address} onaddresschange={handleAddressChange} show-name required>
+                </c-checkout-address>
+                <template if:true={paymentTypeBank}>
+                    <c-checkout-payment-bank name-on-account={nameOnAccount} onbankchanged={handleBankChange}></c-checkout-payment-bank>
+                </template>
+                <div class="slds-col slds-size_1-of-1">
+                    <div class={recurlyJsStyle}>
+                        <div class="vfFrame"></div>
+                    </div>
+                </div>
+            </template>
+            <template if:true={paymentMethodExisting}>
+                <template if:true={existingPaymentMethodOptions}>
+                    <div class="slds-col slds-size_1-of-1 slds-p-vertical_small">
+                        <lightning-combobox label="Existing Payment Methods" value={selectedAccountId} placeholder="Select Existing Payment Method" options={existingPaymentMethodOptions} onchange={handleExistingPaymentMethodChange}>
+                        </lightning-combobox>
+                    </div>
+                </template>
+            </template>
+            <template if:true={paymentMethodBillMe}>
+                <c-checkout-address label="Billing" subscription={subscription} address={address} onprevious={handlePrevious} onnext={handleNext} onaddresschange={handleAddressChange} show-name required></c-checkout-address>
+            </template>
+        </div>
+        <template if:true={showAgreementBeforeSubmit}>
+            <c-checkout-signature subscription={subscription}></c-checkout-signature>
+        </template>
+        <template if:false={paymentMethodBillMe}>
+            <div class="slds-size_1-of-1 slds-p-vertical_small">
+                <div class="slds-float_right">
+                    <lightning-input type="number" formatter="currency" step="0.01" label="Tip Amount" value={tipAmount} onchange={handleTipAmountChange}></lightning-input>
+                    <template if:false={processPayment}>
+                        <lightning-combobox label="Tip Type" value="automatic" placeholder="Select Tip Type" options={tipTypeOptions} onchange={handleTipTypeChange}></lightning-combobox>
+                    </template>
+                    <template if:true={canEditPayment}>
+                        <lightning-input type="number" formatter="currency" step="0.01" label="Subscription Amount" value={paymentAmount} onchange={handlePaymentAmountChange}></lightning-input>
+                    </template>
+                    <template if:false={canEditPayment}>
+                        <div class="slds-form-element">
+                            <label class="slds-form-element__label">Subscription Amount</label>
+                            <div class="slds-form-element__control">
+                                <lightning-formatted-number value={paymentAmount} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                            </div>
+                        </div>
+                    </template>
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label">Total Charge</label>
+                        <div class="slds-form-element__control">
+                            <lightning-formatted-number value={totalCharge} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+        <div class="slds-size_1-of-1 slds-p-vertical_x-small">
+            <template if:true={showPrevious}>
+                <lightning-button variant="brand" label="Previous" title="Previous" onclick={handlePreviousClicked} class="slds-float_left"></lightning-button>
+            </template>
+            <lightning-button variant="brand" label="Submit" title="Submit" onclick={handleSubmitClicked} class="slds-float_right"></lightning-button>
+        </div>
+    </div>
+    <c-global-loading loading={loading}></c-global-loading>
+</template>
