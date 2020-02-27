@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- Postal Line-of-Travel --></label>
+        <name>Postal_Line_of_Travel__c</name>
+    </CustomFieldTranslation>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Processed Email Inquiry</fullName>
+        <default>false</default>
+        <label>Processed Email Inquiry</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Registration Issue</fullName>
+        <default>false</default>
+        <label>Registration Issue</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Password Problem</fullName>
+        <default>false</default>
+        <label>Password Problem</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Browser Compatibility Issue</fullName>
+        <default>false</default>
+        <label>Browser Compatibility Issue</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email/Daily Alert/Confirmation Response</fullName>
+        <default>false</default>
+        <label>Email/Daily Alert/Confirmation Response</label>
+    </standardValue>
+    <standardValue>
+        <fullName>App Issue - Replica</fullName>
+        <default>false</default>
+        <label>App Issue - Replica</label>
+    </standardValue>
+    <standardValue>
+        <fullName>App Issue - Philly.com</fullName>
+        <default>false</default>
+        <label>App Issue - Philly.com</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Transaction/Billing Screen Request</fullName>
+        <default>false</default>
+        <label>Transaction/Billing Screen Request</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Registration Request</fullName>
+        <default>false</default>
+        <label>Registration Request</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Digital - General Inquiry</fullName>
+        <default>false</default>
+        <label>Digital - General Inquiry</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Philly.com Commenting Complaint</fullName>
+        <default>false</default>
+        <label>Philly.com Commenting Complaint</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Inquiry - New Apps - Phone/Email</fullName>
+        <default>false</default>
+        <label>Inquiry - New Apps - Phone/Email</label>
+    </standardValue>
+</StandardValueSet>

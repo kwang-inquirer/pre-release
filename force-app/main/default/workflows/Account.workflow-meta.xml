@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?><Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <outboundMessages>
+        <fullName>Send_Household</fullName>
+        <apiVersion>46.0</apiVersion>
+        <endpointUrl>https://na1.dm-us.informaticacloud.com/saas/api/1/salesforceoutboundmessage/FNvHMNYkRD9CkJ0YXpOS20ApH3enTkyb</endpointUrl>
+        <fields>DSI_Id__c</fields>
+        <fields>Id</fields>
+        <fields>Name</fields>
+        <includeSessionId>true</includeSessionId>
+        <integrationUser>client-pmn@relationedge.com</integrationUser>
+        <name>Send Household</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <outboundMessages>
+        <fullName>testOM</fullName>
+        <apiVersion>45.0</apiVersion>
+        <endpointUrl>https://na1.dm-us.informaticacloud.com/saas/api/1/salesforceoutboundmessage/kuiuHDKvkazkdZWBtpWwMEzS0FbeWnXG</endpointUrl>
+        <fields>BillingCity</fields>
+        <fields>BillingPostalCode</fields>
+        <fields>BillingState</fields>
+        <fields>BillingStreet</fields>
+        <fields>DSI_Id__c</fields>
+        <fields>Established_Date__c</fields>
+        <fields>Id</fields>
+        <includeSessionId>false</includeSessionId>
+        <integrationUser>client-pmn@relationedge.com</integrationUser>
+        <name>testOM</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <rules>
+        <fullName>OMforZIP</fullName>
+        <actions>
+            <name>testOM</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Account.BillingPostalCode</field>
+            <operation>equals</operation>
+            <value>11379</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

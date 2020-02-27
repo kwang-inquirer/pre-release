@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+        <fullName>Rollback_if_Err__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Rollback if Error</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </CustomField>

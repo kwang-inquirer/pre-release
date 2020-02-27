@@ -1,0 +1,63 @@
+<template >
+	<div class="slds-grid slds-wrap slds-theme_default" >
+        <template if:false={confirmationPage}>
+        <div class="slds-size_1-of-1 slds-p-horizontal_xx-small">
+                    <lightning-radio-group name="radioGroup"
+                    label="Current Address selected for Shore Move:"
+                    options={options}
+                    onchange={changeSelection}
+                    value={value}
+                    type="radio" required></lightning-radio-group>
+        </div>
+
+		<div class="slds-size_1-of-1 slds-p-horizontal_xx-small">
+            <lightning-input type="date" name="startDate" label="Date to start delivery at vacation address" onchange={handleFormInputChange} required></lightning-input>
+            
+        </div>
+        <div class="slds-size_1-of-1 slds-p-horizontal_xx-small">
+			<lightning-input type="date" name="returnDate" label="Date to transfer delivery back to home address" onchange={handleFormInputChange}></lightning-input>
+        </div>
+        <div class="slds-size_1-of-1 slds-p-horizontal_xx-small">
+			Please provide your vacation address:
+        </div>
+        <div class="slds-size_1-of-1 slds-p-horizontal_xx-small">
+            <lightning-input-address
+                address-label="Address"
+                street-label="Street"
+                city-label="City"
+                country-label="Country"
+                province-label="State"
+                postal-code-label="Postal Code"
+                country={defaultCountry}
+                province={defaultState}
+                country-options={countryOptions}
+                province-options={provinceOptions}
+                onchange={handleAddressChange} 
+                required>
+            </lightning-input-address>
+        </div>
+        
+        <lightning-button label="Submit Shore Move Request" title="Submit Shore Move Request" icon-name={toggleIconName} onclick={handleSubmit} disabled={isButtonDisabled}></lightning-button>
+        <template if:true={hasErrors}>
+            <div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error slds-m-vertical_x-small" role="alert">
+                <ul>
+                    <template for:each={errors} for:item="error">
+                        <li key={error}>
+                            <h2>{error}</h2>
+                        </li>
+                    </template>
+                </ul>
+            </div>
+        </template>
+        <c-global-loading loading={isLoading}></c-global-loading>
+
+    </template>
+        <template if:true={confirmationPage}>
+            <lightning-card style="width:100%;" title="The shore move has been requested.">
+                <p class="slds-p-horizontal_small">{successMessage}.
+                </p>
+                <p class="slds-p-horizontal_small"> The delivery address is: {_address.street} {_address.city}, {_address.state}.</p>
+            </lightning-card>
+        </template>
+    </div>
+	</template>

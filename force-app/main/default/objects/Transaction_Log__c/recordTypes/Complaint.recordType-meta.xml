@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+        <fullName>Complaint</fullName>
+        <active>true</active>
+        <label>Complaint</label>
+    </RecordType>

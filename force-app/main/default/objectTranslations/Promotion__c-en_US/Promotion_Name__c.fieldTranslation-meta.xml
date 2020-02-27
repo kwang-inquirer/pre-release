@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- Name of this Promotion --></help>
+        <label><!-- Promotion Name --></label>
+        <name>Promotion_Name__c</name>
+    </CustomFieldTranslation>

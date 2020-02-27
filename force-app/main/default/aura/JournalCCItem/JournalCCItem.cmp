@@ -1,0 +1,50 @@
+<aura:component>
+
+    <aura:attribute name="transactionLogToUse" type="Object" />
+	<aura:attribute name="recordId" type="String" />
+
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}" />	
+	<hr aura:id = "TopHR" Class="Red-hr" />
+	<!-- <div Style="text-align: left;font-size:small;">  
+		<table>
+			<tr>
+				<td Style="width: 150px;"><ui:outputDate value="{!v.transactionLogToUse.First_Date}" />
+					<aura:if isTrue="{! v.transactionLogToUse.First_Date != v.transactionLogToUse.Last_Date}">
+						<br />
+						<ui:outputDate value="{!v.transactionLogToUse.Last_Date}" />
+					</aura:if>
+				</td>
+				<td Style="width: 75px;"></td>
+				<td Style="width: 75px;"><ui:outputCurrency value="{!v.transactionLogToUse.Amount}" /></td>
+			</tr>
+			<tr>
+				<td ColSpan="3">{!v.transactionLogToUse.Description}</td>
+			</tr>
+			<tr>
+				<td ColSpan="3">{!v.transactionLogToUse.EntryType}</td>
+			</tr>
+			<tr>
+				<td style="font-size:small"><ui:outputDate value="{!v.transactionLogToUse.Entry_Date}" /></td>
+				<td ColSpan="2" style="font-size:small">{!v.transactionLogToUse.CreatedByName}</td>
+			</tr>
+		</table>
+	</div> -->
+	<lightning:layout multipleRows="true">
+
+		<lightning:layoutItem size="12" mediumDeviceSize="4" class="custhead">Effective Dates</lightning:layoutItem>
+		<lightning:layoutItem size="12" mediumDeviceSize="4" class="custhead">End Date</lightning:layoutItem>
+		<lightning:layoutItem size="12" mediumDeviceSize="4" class="custhead">Amount</lightning:layoutItem>
+		<lightning:layoutItem size="12" mediumDeviceSize="4"><ui:outputDate format="MM/dd/yyyy" value="{!v.transactionLogToUse.First_Date}" /></lightning:layoutItem>
+		<lightning:layoutItem size="12" mediumDeviceSize="4"><ui:outputDate format="MM/dd/yyyy" value="{!v.transactionLogToUse.Expire_Date}" /></lightning:layoutItem>		
+		<lightning:layoutItem size="12" mediumDeviceSize="4"><ui:outputCurrency value="{!v.transactionLogToUse.Amount}" /></lightning:layoutItem>
+
+		<lightning:layoutItem size="12">{!v.transactionLogToUse.Description}</lightning:layoutItem>
+		<lightning:layoutItem size="12">{!v.transactionLogToUse.EntryType}</lightning:layoutItem>
+
+		<lightning:layoutItem size="12" mediumDeviceSize="4" class="custhead">Entered On</lightning:layoutItem>
+		<lightning:layoutItem size="12" mediumDeviceSize="8" class="custhead">Entered By</lightning:layoutItem>
+		<lightning:layoutItem size="12" mediumDeviceSize="4"><ui:outputDate format="MM/dd/yyyy" value="{!v.transactionLogToUse.Entry_Date}" /></lightning:layoutItem>
+		<lightning:layoutItem size="12" mediumDeviceSize="8">{!v.transactionLogToUse.CreatedByName}</lightning:layoutItem>
+
+	</lightning:layout>
+</aura:component>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?><Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <outboundMessages>
+        <fullName>Send_Address</fullName>
+        <apiVersion>46.0</apiVersion>
+        <endpointUrl>https://na1.dm-us.informaticacloud.com/saas/api/1/salesforceoutboundmessage/0u3FZhKSRg2GEt6Sh7OLLPnipNrQgXrX</endpointUrl>
+        <fields>Address_City__c</fields>
+        <fields>Address_Full_Street__c</fields>
+        <fields>Address_House__c</fields>
+        <fields>Address_Postal_Route__c</fields>
+        <fields>Address_State__c</fields>
+        <fields>Address_Street2__c</fields>
+        <fields>Address_Street__c</fields>
+        <fields>Address_Suffix__c</fields>
+        <fields>City_Code__c</fields>
+        <fields>Id</fields>
+        <fields>Post_Direction__c</fields>
+        <fields>Pre_Direction__c</fields>
+        <fields>Town__c</fields>
+        <fields>Unit_Type__c</fields>
+        <fields>Unit__c</fields>
+        <fields>Zip_4__c</fields>
+        <fields>Zip__c</fields>
+        <includeSessionId>true</includeSessionId>
+        <integrationUser>client-pmn@relationedge.com</integrationUser>
+        <name>Send Address</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <rules>
+        <fullName>Send Address</fullName>
+        <actions>
+            <name>Send_Address</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>true</active>
+        <formula>AND( LastModifiedBy.Username != 'infrmtc_intgrtn-acct@inquirer.com', ISCHANGED( Ready_for_DSI__c ), Ready_for_DSI__c = TRUE)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

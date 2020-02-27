@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+        <fullName>Number_of_Days_per_week__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(MondayCount__c&gt;0, 1, 0) +   
+IF(TuesdayCount__c&gt;0, 1, 0) + 
+IF(WednesdayCount__c&gt;0, 1, 0) + 
+IF(ThursdayCount__c&gt;0, 1, 0)+
+IF(FridayCount__c&gt;0, 1, 0)+
+IF(SaturdayCount__c&gt;0, 1, 0)</formula>
+        <label>Number of Days per week</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </CustomField>

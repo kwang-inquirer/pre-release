@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+        <fullName>Frequency_Code__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Day_Monday__c = true &amp;&amp; Day_Tuesday__c = true &amp;&amp; Day_Wednesday__c = true &amp;&amp; Day_Thursday__c = true &amp;&amp; Day_Friday__c = true &amp;&amp; Day_Saturday__c = true &amp;&amp; Day_Sunday__c = true, "7 Day Delivery (Monday-Sunday)",
+
+If(Day_Monday__c = true &amp;&amp; Day_Tuesday__c = true &amp;&amp; Day_Wednesday__c = true &amp;&amp; Day_Thursday__c = true &amp;&amp; Day_Friday__c = true, "Monday-Friday Delivery",
+
+If(Day_Monday__c = false &amp;&amp; Day_Tuesday__c = false &amp;&amp; Day_Wednesday__c = false &amp;&amp; Day_Thursday__c = false &amp;&amp; Day_Friday__c = false &amp;&amp; Day_Saturday__c = true &amp;&amp; Day_Sunday__c = true, "Saturday-Sunday Delivery",
+
+If(Day_Monday__c = false &amp;&amp; Day_Tuesday__c = false &amp;&amp; Day_Wednesday__c = false &amp;&amp; Day_Thursday__c = false &amp;&amp; Day_Friday__c = false &amp;&amp; Day_Saturday__c = false &amp;&amp; Day_Sunday__c = true, "Sunday Only Delivery",
+
+If(Day_Monday__c = false &amp;&amp; Day_Tuesday__c = false &amp;&amp; Day_Wednesday__c = false &amp;&amp; Day_Thursday__c = true &amp;&amp; Day_Friday__c = true &amp;&amp; Day_Saturday__c = true &amp;&amp; Day_Sunday__c = true, "Thursday-Sunday delivery","N/A" )
+
+)
+)))</formula>
+        <label>Frequency Code</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </CustomField>

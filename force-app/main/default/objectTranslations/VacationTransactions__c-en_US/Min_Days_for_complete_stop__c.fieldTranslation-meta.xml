@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- Enter the minimum days for a complete vacation stop. --></help>
+        <label><!-- Min Days for complete stop --></label>
+        <name>Min_Days_for_complete_stop__c</name>
+    </CustomFieldTranslation>

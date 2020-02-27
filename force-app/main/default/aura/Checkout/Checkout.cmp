@@ -1,0 +1,24 @@
+<aura:component implements="flexipage:availableForAllPageTypes,lightning:availableForFlowScreens" access="global">
+    <aura:attribute name="offerId" type="String" />
+    <aura:attribute name="subscriptionId" type="String" />
+    <aura:attribute name="email" type="String" />
+    <aura:attribute name="sessionId" type="String" />
+    <aura:attribute name="pianoId" type="String" />
+    <aura:attribute name="source" type="String" />
+    <aura:attribute name="tipAmount" type="String" />
+    <aura:attribute name="finishFlow" type="Boolean" default="false" />
+    <aura:attribute name="showAgreement" type="Boolean" default="false" />
+    <aura:attribute name="enableAutoPay" type="Boolean" default="false" />
+    <aura:attribute name="processPayment" type="Boolean" default="true" />
+    <aura:attribute name="waiveActivationFee" type="Boolean" default="false" />
+    <aura:attribute name="editPayment" type="Boolean" default="false" />
+    <aura:attribute name="oneTimeTip" type="Boolean" default="false" />
+    <aura:attribute name="isFlow" type="Boolean" default="false" />
+    <aura:attribute name="SourceCampaign" type="String" />
+
+    <aura:attribute name="subscription" type="Subscription__c" default="{}" />
+    <c:checkoutProcess offerId="{!v.offerId}" email="{!v.email}" sessionId="{!v.sessionId}" pianoId="{!v.pianoId}" 
+        subscriptionId="{!v.subscriptionId}" showAgreementBeforeSubmit="{!v.showAgreement}" editPayment="{!v.editPayment}"
+        processPayment="{!v.processPayment}" waiveActivationFee="{!v.waiveActivationFee}" isFlow="{!v.isFlow}" 
+		enableAutoPay="{!v.enableAutoPay}" sourceCampaign="{!v.SourceCampaign}" />
+</aura:component>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <caseValues>
+        <plural>false</plural>
+        <value>Transaction Log</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Transaction Logs</value>
+    </caseValues>
+    <startsWith>Consonant</startsWith>
+    <layouts>
+        <layout>Complaint Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Transaction Information --></label>
+            <section>Transaction Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Transaction Log Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Vacation Hold Transaction</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Vacation Hold --></label>
+            <section>Vacation Hold</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Complaint --></label>
+        <name>Complaint</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Message --></label>
+        <name>Message</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Termination --></label>
+        <name>Termination</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Vacation --></label>
+        <name>Vacation</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Vacation Hold --></label>
+        <name>Vacation_Hold</name>
+    </recordTypes>
+</CustomObjectTranslation>

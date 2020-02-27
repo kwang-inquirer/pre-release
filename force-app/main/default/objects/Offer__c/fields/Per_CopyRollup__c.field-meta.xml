@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+        <fullName>Per_CopyRollup__c</fullName>
+        <externalId>false</externalId>
+        <label>Per Copy</label>
+        <summarizedField>Offer_Product__c.Per_Copy__c</summarizedField>
+        <summaryForeignKey>Offer_Product__c.Offer__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </CustomField>

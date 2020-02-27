@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+        <fullName>Expiration_Date__c</fullName>
+        <description>Expiration Date for this Vendor Promotion Record.  Automation will be needed to set the Status field as Inactive when this date is reached.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Expiration Date for this Vendor Promotion Record</inlineHelpText>
+        <label>Expiration Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </CustomField>

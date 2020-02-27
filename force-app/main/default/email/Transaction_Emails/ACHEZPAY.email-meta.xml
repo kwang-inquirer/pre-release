@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>ACHEZPAY</name>
+    <style>none</style>
+    <subject>Thank you for signing up for EZ-Pay</subject>
+    <textOnly>Thank you for signing up for EZ-Pay, our automatic bill payment program. By signing up for EZ-Pay, you authorize the {!Subscription__c.Publication_Name__c} to continue the payment method selected by instructing your financial institution to automatically deduct subscription payments from your bank account (and renewals thereof), at the then current subscription rate for your subscription type and payment period. This authorization may be cancelled at any time by calling Customer Service.
+
+
+If your subscription package includes unlimited digital access, you can start browsing at inquirer.com or you can access The Inquirer and Daily News digital replicas available to you from anywhere at any time!
+
+
+
+Have questions? We&apos;re here to help!
+
+215-222-2765 | digitalsupport@inquirer.com
+
+Monday- Friday: 6:30 a.m - 3:00 p.m.
+
+Saturday-Sunday: 7:30 a.m. - 12:00 p.m.
+
+
+
+
+You are receiving this email because you are a subscriber of The Philadelphia Inquirer
+The Philadelphia Inquirer, 801 Market Street, Suite 300, Philadelphia, PA 19107
+About Inquirer.com | Terms of Use and Privacy Policy | Copyright
+© The Philadelphia Inquirer LLC</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

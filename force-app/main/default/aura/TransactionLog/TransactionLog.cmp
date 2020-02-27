@@ -1,0 +1,78 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:lightningQuickActionWithoutHeader,force:hasRecordId" controller="TransactionLogActions" access="global">
+
+    <aura:attribute name="tlTypes" type="List" />
+    <aura:attribute name="tlSelectedTypes" type="list" default="Transaction type 1, Transaction type 2, Access Denied - Alt Pub, Billing" />
+    <aura:attribute name="selectedTypeFilter" type="String" />
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="TransactionLogItemList" type="object[]" />
+    <aura:attribute name="useCSSClass" type="String" />
+    <aura:attribute name="sendData" type="object" />
+    <aura:attribute name="TypeSettings" type="List" />
+    <aura:attribute name="showOptions" type="Boolean" default="True" />
+
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:handler name="TransactionLogEvent" event="c.TransactionLogEvent" action="{! c.refresh }" />
+    <aura:handler event="c.RecurlyInvoiceRefundEvent" action="{! c.openRecuryInvoiceRefundModal }" />
+    
+    <lightning:card iconName="standard:service_report" title="Transaction Logs">
+        <div class="slds-p-horizontal_medium">
+            <span>
+                <div class="collapsableOptions">
+                    <aura:if isTrue="{! v.showOptions }">
+
+                        <button class="slds-button" onclick="{! c.refresh }">Refresh</button>
+                        <button class="slds-button" onclick="{! c.checkAllOptions }">All</button>
+                        <button class="slds-button" onclick="{! c.uncheckAll }">None</button>
+                        <button class="slds-button" onclick="{! c.collapseOptions }">Collapse</button>
+
+                        <lightning:checkboxGroup class="customCheckBoxGroup" aura:id="filterBy" name="filterTLBy" label="Filter By" options="{!v.tlTypes}" value="{!v.tlSelectedTypes}" onchange="{!c.reloadPage}" />
+
+                        <aura:set attribute="else">
+                            <button class="slds-button" onclick="{! c.expandOptions }">Expand</button>
+                        </aura:set>
+                    </aura:if>
+                </div>
+                <div class="slds-p-top_x-small"></div>
+            </span>
+            <div>
+                <aura:iteration items="{!v.TransactionLogItemList}" var="useTransactionLogItem">
+                    <aura:if isTrue="{! useTransactionLogItem.Category  == 'Complaints'}">
+                        <c:TransactionComplaint recordId="{!v.recordId}" transactionLogToUse="{!useTransactionLogItem}" TypeSettings="{!v.TypeSettings}" />
+                    </aura:if>
+                    <aura:if isTrue="{! useTransactionLogItem.Category  == 'Message'}">
+                        <c:TransactionMessage recordId="{!v.recordId}" transactionLogToUse="{!useTransactionLogItem}" TypeSettings="{!v.TypeSettings}" />
+                    </aura:if>
+                    <aura:if isTrue="{! useTransactionLogItem.Category  == 'Vacations'}">
+                        <c:TransactionVacation recordId="{!v.recordId}" transactionLogToUse="{!useTransactionLogItem}" TypeSettings="{!v.TypeSettings}" />
+                    </aura:if>
+                    <aura:if isTrue="{! useTransactionLogItem.Category  == 'Move/Reroute'}">
+                        <c:TransactionTermination recordId="{!v.recordId}" transactionLogToUse="{!useTransactionLogItem}" TypeSettings="{!v.TypeSettings}" />
+                    </aura:if>
+                    <aura:if isTrue="{! useTransactionLogItem.Category  == 'Product Changes'}">
+                        <c:TransactionProductChange recordId="{!v.recordId}" transactionLogToUse="{!useTransactionLogItem}" TypeSettings="{!v.TypeSettings}" />
+                    </aura:if>
+                    <aura:if isTrue="{! useTransactionLogItem.Category  == 'Financial'}">
+                        <c:JournalEntryItem recordId="{!v.recordId}" transactionLogToUse="{!useTransactionLogItem}" />
+                    </aura:if>
+                    <aura:if isTrue="{! useTransactionLogItem.Category  == 'Credit Card'}">
+                        <c:JournalCCItem recordId="{!v.recordId}" transactionLogToUse="{!useTransactionLogItem}" />
+                    </aura:if>
+                    <aura:if isTrue="{! useTransactionLogItem.Category  == 'Credit_Card'}">
+                        <c:JournalCCItem recordId="{!v.recordId}" transactionLogToUse="{!useTransactionLogItem}" />
+                    </aura:if>
+                    <aura:if isTrue="{! useTransactionLogItem.Category  == 'Activity'}">
+                        <c:TransactionActivity recordId="{!v.recordId}" transactionLogToUse="{!useTransactionLogItem}" />
+                    </aura:if>
+                    <aura:if isTrue="{! useTransactionLogItem.Category  == 'Start'}">
+                        <c:TransactionStartStop recordId="{!v.recordId}" transactionLogToUse="{!useTransactionLogItem}" TypeSettings="{!v.TypeSettings}" />
+                    </aura:if>
+                    <aura:if isTrue="{! useTransactionLogItem.Category  == 'Stop'}">
+                        <c:TransactionStartStop recordId="{!v.recordId}" transactionLogToUse="{!useTransactionLogItem}" TypeSettings="{!v.TypeSettings}" />
+                    </aura:if>
+                </aura:iteration>
+            </div>
+        </div>
+    </lightning:card>
+    <c:recurlyInvoiceRefundModal aura:id="recurlyInvoiceRefundModal"></c:recurlyInvoiceRefundModal>
+</aura:component>
