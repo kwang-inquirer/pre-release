@@ -11,27 +11,23 @@ public with sharing class SubscriptionRenewal {
     }
 
     public void processSubscriptions() {
+        List<Log__c> logs = new List<Log__c>();
         List<Billing__c> billings = new List<Billing__c>();
         for (Subscription__c sub : subscriptionsById.values()) {
             try {
+                createPurchase(sub);
+                adjustSubscription(sub);
+                billings.add(new Billing__c(Bill_Date__c = Date.today(), Amount__c = sub.subscription_Offer__r.Total_Amount__c, Subscription__c = sub.Id));
+                sub.One_Time_Tip_Amount__c = 0;
+
                 if (sub.Pending_Offer__c != null) {
                     sub.subscription_Offer__c = sub.Pending_Offer__c;
-                    sub.subscription_Offer__r = sub.Pending_Offer__r;
                     sub.Pending_Offer__c = null;
-                    sub.Pending_Offer__r = null;
                     sub.Pending_Change_Date__c = null;
                 }
-
-                if (sub.subscription_Auto_Renew__c && sub.Auto_Renew_Recurly_Account__c != null) {
-                    createPurchase(sub);
-                    adjustSubscription(sub);
-                    sub.One_Time_Tip_Amount__c = 0;
-                }
-
-                billings.add(new Billing__c(Bill_Date__c = Date.today(), Amount__c = sub.subscription_Offer__r.Total_Amount__c, Subscription__c = sub.Id, Term__c = sub.subscription_Offer__r.Number_of_Weeks__c));
-
             } catch (Exception e) {
                 System.debug(e.getMessage() + ' ' + e.getStackTraceString());
+                logs.add(new Log__c(Type__c = 'Subscription Renewal Exception', Subscription__c = sub.Id, Message__c = e.getMessage() + ' ' + e.getStackTraceString()));
             }
         }
         if (!subscriptionsById.isEmpty()) {

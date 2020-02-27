@@ -18,8 +18,7 @@
             <field>Contact__c</field>
             <type>contactLookup</type>
         </recipients>
-        <senderAddress>customerservice@philly.com</senderAddress>
-        <senderType>OrgWideEmailAddress</senderType>
+        <senderType>CurrentUser</senderType>
         <template>Transaction_Emails/CREDIT</template>
     </alerts>
     <alerts>
@@ -30,8 +29,7 @@
             <field>Contact__c</field>
             <type>contactLookup</type>
         </recipients>
-        <senderAddress>customerservice@philly.com</senderAddress>
-        <senderType>OrgWideEmailAddress</senderType>
+        <senderType>CurrentUser</senderType>
         <template>Transaction_Emails/Change_EZPay_CC</template>
     </alerts>
     <alerts>
@@ -42,8 +40,7 @@
             <field>Contact__c</field>
             <type>contactLookup</type>
         </recipients>
-        <senderAddress>customerservice@philly.com</senderAddress>
-        <senderType>OrgWideEmailAddress</senderType>
+        <senderType>CurrentUser</senderType>
         <template>Transaction_Emails/EZPAY</template>
     </alerts>
     <alerts>
@@ -54,8 +51,7 @@
             <field>Contact__c</field>
             <type>contactLookup</type>
         </recipients>
-        <senderAddress>customerservice@philly.com</senderAddress>
-        <senderType>OrgWideEmailAddress</senderType>
+        <senderType>CurrentUser</senderType>
         <template>Transaction_Emails/REDELVRND</template>
     </alerts>
     <fieldUpdates>

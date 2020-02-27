@@ -19,10 +19,6 @@
                 <behavior>Readonly</behavior>
                 <field>Activation_Fee__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Marketing_Product_List__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

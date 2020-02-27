@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <constants>
-        <name>SourceequalsPartner</name>
-        <dataType>String</dataType>
-        <value>
-            <stringValue>Partner</stringValue>
-        </value>
-    </constants>
     <dynamicChoiceSets>
         <name>Offers</name>
         <dataType>String</dataType>
@@ -144,18 +137,6 @@
                     <elementReference>varOfferID</elementReference>
                 </value>
             </inputParameters>
-            <inputParameters>
-                <name>source</name>
-                <value>
-                    <elementReference>SourceequalsPartner</elementReference>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>SourceCampaign</name>
-                <value>
-                    <elementReference>varCampaignID</elementReference>
-                </value>
-            </inputParameters>
             <isRequired>true</isRequired>
         </fields>
         <showFooter>false</showFooter>
@@ -205,13 +186,7 @@
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
     </screens>
-    <start>
-        <locationX>50</locationX>
-        <locationY>50</locationY>
-        <connector>
-            <targetReference>Get_Running_User</targetReference>
-        </connector>
-    </start>
+    <startElementReference>Get_Running_User</startElementReference>
     <status>Active</status>
     <variables>
         <name>varAccountID</name>

@@ -558,13 +558,6 @@
             <targetReference>LoopthroughDeliverySchedule</targetReference>
         </connector>
         <filters>
-            <field>Status__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>Active</stringValue>
-            </value>
-        </filters>
-        <filters>
             <field>subscription_Subscription__c</field>
             <operator>EqualTo</operator>
             <value>
@@ -648,7 +641,7 @@
         <queriedFields>Address_City__c</queriedFields>
         <queriedFields>Address_House__c</queriedFields>
         <queriedFields>Address_Street__c</queriedFields>
-        <queriedFields>Address_Postal_Route__c</queriedFields>
+        <queriedFields>Zip__c</queriedFields>
         <queriedFields>Address_State__c</queriedFields>
         <sortField>Id</sortField>
         <sortOrder>Asc</sortOrder>
@@ -765,7 +758,7 @@
         <allowPause>true</allowPause>
         <fields>
             <name>ContactSupport</name>
-            <fieldText>&lt;p&gt;More than one active delivery address has been found please contact Customer Support at 215-222-2765 to complete your vacation shore move.&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;More than one active delivery address has been found.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>false</showFooter>
@@ -858,13 +851,19 @@
         </fields>
         <fields>
             <name>Home_addressdisplay</name>
-            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;{!HouseNumberandStreet}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 14px; color: rgb(62, 62, 60);&quot;&gt;{!varDeliveryAddress.Address_City__c}&lt;/span&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;, {!varDeliveryAddress.Address_State__c} {!varDeliveryAddress.Address_Postal_Route__c}&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;{!HouseNumberandStreet}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(62, 62, 60); font-size: 14px; background-color: rgb(255, 255, 255);&quot;&gt;{!varDeliveryAddress.Address_City__c}&lt;/span&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;, {!varDeliveryAddress.Address_State__c} {!varDeliveryAddress.Zip__c}&lt;/span&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
     </screens>
-    <startElementReference>GetActiveSubscription</startElementReference>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>GetActiveSubscription</targetReference>
+        </connector>
+    </start>
     <status>Active</status>
     <variables>
         <name>caserecordId</name>

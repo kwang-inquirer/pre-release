@@ -1,5 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <assignments>
+        <name>AssignRoutetovariable</name>
+        <label>AssignRoutetovariable</label>
+        <locationX>1577</locationX>
+        <locationY>807</locationY>
+        <assignmentItems>
+            <assignToReference>varRoute</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>DeliveryAddressforRoute.Route_Number__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>RouteNotRull</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>TotalDeliverySchedules</name>
+        <label>TotalDeliverySchedules</label>
+        <locationX>862</locationX>
+        <locationY>233</locationY>
+        <assignmentItems>
+            <assignToReference>varTotalAddresses</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>varCountofRecords</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CountofDeliveryAddresses</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>varCount</name>
+        <label>varCount</label>
+        <locationX>656</locationX>
+        <locationY>415</locationY>
+        <assignmentItems>
+            <assignToReference>varCountofRecords</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varDelAddress</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>VarLoopDeliverySchedule.Delivery_Address__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varDelSchedule</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>VarLoopDeliverySchedule.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>LoopthroughDeliverySchedule</targetReference>
+        </connector>
+    </assignments>
     <choices>
         <name>ChoiceAlternatePub</name>
         <choiceText>Alternate Pub</choiceText>
@@ -80,6 +142,53 @@
             <stringValue>Verification</stringValue>
         </value>
     </choices>
+    <decisions>
+        <name>CountofDeliveryAddresses</name>
+        <label>CountofDeliveryAddresses</label>
+        <locationX>1054</locationX>
+        <locationY>235</locationY>
+        <defaultConnector>
+            <targetReference>GetDeliveryAddress</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>1 schedule</defaultConnectorLabel>
+        <rules>
+            <name>morethan1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>varTotalAddresses</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <numberValue>2.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Morethan1addressScreen</targetReference>
+            </connector>
+            <label>2ormoreschedules</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>RouteNotRull</name>
+        <label>RouteNotRull</label>
+        <locationX>1741</locationX>
+        <locationY>811</locationY>
+        <defaultConnector>
+            <targetReference>UpdateDelSchedule</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>IsNull</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>varRoute</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>AddressnotRoutable</targetReference>
+            </connector>
+            <label>IsNull</label>
+        </rules>
+    </decisions>
     <dynamicChoiceSets>
         <name>ChoiceTypeName</name>
         <dataType>String</dataType>
@@ -103,7 +212,7 @@
     <formulas>
         <name>EndDateplus1</name>
         <dataType>Date</dataType>
-        <expression>{!$Flow.CurrentDate}</expression>
+        <expression>{!End_Date} + 1</expression>
     </formulas>
     <formulas>
         <name>HouseNumberandStreet</name>
@@ -118,7 +227,7 @@
     <formulas>
         <name>StartDateminus1</name>
         <dataType>Date</dataType>
-        <expression>{!$Flow.CurrentDate}</expression>
+        <expression>{!Begin_Date} -1</expression>
     </formulas>
     <formulas>
         <name>VacationShoreMoveCode</name>
@@ -127,6 +236,21 @@
     </formulas>
     <interviewLabel>Vacation Shore Move {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Vacation Shore Move</label>
+    <loops>
+        <name>LoopthroughDeliverySchedule</name>
+        <label>LoopthroughDeliverySchedule</label>
+        <locationX>654</locationX>
+        <locationY>238</locationY>
+        <assignNextValueToReference>VarLoopDeliverySchedule</assignNextValueToReference>
+        <collectionReference>VarColDeliverySchedule</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>varCount</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>TotalDeliverySchedules</targetReference>
+        </noMoreValuesConnector>
+    </loops>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -140,6 +264,247 @@
         </value>
     </processMetadataValues>
     <processType>Flow</processType>
+    <recordCreates>
+        <name>CreateDeliveryAddress</name>
+        <label>CreateDeliveryAddress</label>
+        <locationX>1380</locationX>
+        <locationY>665</locationY>
+        <assignRecordIdToReference>NewDeliveryAddress</assignRecordIdToReference>
+        <connector>
+            <targetReference>ConfirmDelAddressScreen</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Address_City__c</field>
+            <value>
+                <elementReference>City1</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Address_Postal_Route__c</field>
+            <value>
+                <elementReference>Postal_Code</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Address_State__c</field>
+            <value>
+                <elementReference>StateValues</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Address_Street__c</field>
+            <value>
+                <elementReference>Street</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Delivery_Address__c</object>
+    </recordCreates>
+    <recordCreates>
+        <name>CreateDeliverySchedule</name>
+        <label>CreateDeliverySchedule</label>
+        <locationX>1894</locationX>
+        <locationY>669</locationY>
+        <connector>
+            <targetReference>CreateDeliverySchedule_0</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Customer_Notes__c</field>
+            <value>
+                <elementReference>RecordVarDelSch.Customer_Notes__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>DSI_Id__c</field>
+            <value>
+                <elementReference>RecordVarDelSch.DSI_Id__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Day_Friday__c</field>
+            <value>
+                <elementReference>RecordVarDelSch.Day_Friday__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Day_Monday__c</field>
+            <value>
+                <elementReference>RecordVarDelSch.Day_Monday__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Day_Saturday__c</field>
+            <value>
+                <elementReference>RecordVarDelSch.Day_Saturday__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Day_Sunday__c</field>
+            <value>
+                <elementReference>RecordVarDelSch.Day_Sunday__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Day_Thursday__c</field>
+            <value>
+                <elementReference>RecordVarDelSch.Day_Thursday__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Day_Tuesday__c</field>
+            <value>
+                <elementReference>RecordVarDelSch.Day_Tuesday__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Day_Wednesday__c</field>
+            <value>
+                <elementReference>RecordVarDelSch.Day_Wednesday__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Delivery_Address__c</field>
+            <value>
+                <elementReference>NewDeliveryAddress</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>End_Date__c</field>
+            <value>
+                <elementReference>End_Date</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Offer_Product__c</field>
+            <value>
+                <elementReference>RecordVarDelSch.Offer_Product__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Start_Date__c</field>
+            <value>
+                <elementReference>Begin_Date</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <stringValue>Inactive</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>subscription_Subscription__c</field>
+            <value>
+                <elementReference>varSubscription.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Delivery_Schedule__c</object>
+    </recordCreates>
+    <recordCreates>
+        <name>CreateDeliverySchedule_0</name>
+        <label>CreateDeliverySchedule</label>
+        <locationX>2025</locationX>
+        <locationY>668</locationY>
+        <connector>
+            <targetReference>Success_Screen</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Customer_Notes__c</field>
+            <value>
+                <elementReference>RecordVarDelSch.Customer_Notes__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>DSI_Id__c</field>
+            <value>
+                <elementReference>RecordVarDelSch.DSI_Id__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Day_Friday__c</field>
+            <value>
+                <elementReference>RecordVarDelSch.Day_Friday__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Day_Monday__c</field>
+            <value>
+                <elementReference>RecordVarDelSch.Day_Monday__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Day_Saturday__c</field>
+            <value>
+                <elementReference>RecordVarDelSch.Day_Saturday__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Day_Sunday__c</field>
+            <value>
+                <elementReference>RecordVarDelSch.Day_Sunday__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Day_Thursday__c</field>
+            <value>
+                <elementReference>RecordVarDelSch.Day_Thursday__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Day_Tuesday__c</field>
+            <value>
+                <elementReference>RecordVarDelSch.Day_Tuesday__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Day_Wednesday__c</field>
+            <value>
+                <elementReference>RecordVarDelSch.Day_Wednesday__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Delivery_Address__c</field>
+            <value>
+                <elementReference>varDeliveryAddress.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Delivery_Instructions__c</field>
+            <value>
+                <elementReference>RecordVarDelSch.Delivery_Instructions__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Offer_Product__c</field>
+            <value>
+                <elementReference>RecordVarDelSch.Offer_Product__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Routelookup__c</field>
+            <value>
+                <elementReference>RecordVarDelSch.Routelookup__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Start_Date__c</field>
+            <value>
+                <elementReference>EndDateplus1</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <stringValue>Inactive</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>subscription_Subscription__c</field>
+            <value>
+                <elementReference>varSubscription.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Delivery_Schedule__c</object>
+    </recordCreates>
     <recordLookups>
         <name>GetActiveSubscription</name>
         <label>GetActiveSubscription</label>
@@ -147,7 +512,7 @@
         <locationY>50</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Vacation_Shore_Move</targetReference>
+            <targetReference>GetDeliverSchedule</targetReference>
         </connector>
         <filters>
             <field>subscription_Account__c</field>
@@ -190,6 +555,132 @@
         </outputAssignments>
     </recordLookups>
     <recordLookups>
+        <name>GetDeliverSchedule</name>
+        <label>GetDeliverSchedule</label>
+        <locationX>654</locationX>
+        <locationY>51</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>LoopthroughDeliverySchedule</targetReference>
+        </connector>
+        <filters>
+            <field>Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Active</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>subscription_Subscription__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varSubscription.Id</elementReference>
+            </value>
+        </filters>
+        <object>Delivery_Schedule__c</object>
+        <outputReference>VarColDeliverySchedule</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Delivery_Address__c</queriedFields>
+        <queriedFields>Status__c</queriedFields>
+        <queriedFields>subscription_Subscription__c</queriedFields>
+        <queriedFields>Day_Monday__c</queriedFields>
+        <queriedFields>Day_Tuesday__c</queriedFields>
+        <queriedFields>Day_Wednesday__c</queriedFields>
+        <queriedFields>Day_Thursday__c</queriedFields>
+        <queriedFields>Day_Friday__c</queriedFields>
+        <queriedFields>Day_Saturday__c</queriedFields>
+        <queriedFields>Day_Sunday__c</queriedFields>
+        <queriedFields>DSI_Id__c</queriedFields>
+        <queriedFields>Start_Date__c</queriedFields>
+        <queriedFields>Routelookup__c</queriedFields>
+        <queriedFields>Offer_Product__c</queriedFields>
+        <queriedFields>Delivery_Instructions__c</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <name>GetDeliverSchedule_0</name>
+        <label>GetDeliverSchedule</label>
+        <locationX>1221</locationX>
+        <locationY>665</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>CreateDeliveryAddress</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varDelSchedule</elementReference>
+            </value>
+        </filters>
+        <object>Delivery_Schedule__c</object>
+        <outputReference>RecordVarDelSch</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Customer_Notes__c</queriedFields>
+        <queriedFields>Day_Friday__c</queriedFields>
+        <queriedFields>Day_Monday__c</queriedFields>
+        <queriedFields>Day_Saturday__c</queriedFields>
+        <queriedFields>Day_Sunday__c</queriedFields>
+        <queriedFields>Day_Thursday__c</queriedFields>
+        <queriedFields>Day_Tuesday__c</queriedFields>
+        <queriedFields>Day_Wednesday__c</queriedFields>
+        <queriedFields>Offer_Product__c</queriedFields>
+        <queriedFields>subscription_Subscription__c</queriedFields>
+        <queriedFields>DSI_Id__c</queriedFields>
+        <queriedFields>Routelookup__c</queriedFields>
+        <queriedFields>Delivery_Instructions__c</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <name>GetDeliveryAddress</name>
+        <label>GetDeliveryAddress</label>
+        <locationX>1066</locationX>
+        <locationY>512</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Transfer</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>FaultMessage1</targetReference>
+        </faultConnector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varDelAddress</elementReference>
+            </value>
+        </filters>
+        <object>Delivery_Address__c</object>
+        <outputReference>varDeliveryAddress</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Address_City__c</queriedFields>
+        <queriedFields>Address_House__c</queriedFields>
+        <queriedFields>Address_Street__c</queriedFields>
+        <queriedFields>Zip__c</queriedFields>
+        <queriedFields>Address_State__c</queriedFields>
+        <sortField>Id</sortField>
+        <sortOrder>Asc</sortOrder>
+    </recordLookups>
+    <recordLookups>
+        <name>GetDeliveryAddressforRoute</name>
+        <label>GetDeliveryAddressforRoute</label>
+        <locationX>1382</locationX>
+        <locationY>800</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>AssignRoutetovariable</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>NewDeliveryAddress</elementReference>
+            </value>
+        </filters>
+        <object>Delivery_Address__c</object>
+        <outputReference>DeliveryAddressforRoute</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Route_Number__c</queriedFields>
+    </recordLookups>
+    <recordLookups>
         <name>GetRunningUser</name>
         <label>GetRunningUser</label>
         <locationX>171</locationX>
@@ -211,28 +702,195 @@
             <field>ContactId</field>
         </outputAssignments>
     </recordLookups>
+    <recordUpdates>
+        <name>UpdateDelSchedule</name>
+        <label>UpdateDelSchedule</label>
+        <locationX>1755</locationX>
+        <locationY>673</locationY>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varDelSchedule</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>End_Date__c</field>
+            <value>
+                <elementReference>StartDateminus1</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Delivery_Schedule__c</object>
+    </recordUpdates>
     <screens>
-        <name>Vacation_Shore_Move</name>
-        <label>Vacation Shore Move</label>
-        <locationX>643</locationX>
-        <locationY>50</locationY>
+        <name>AddressnotRoutable</name>
+        <label>AddressnotRoutable</label>
+        <locationX>1554</locationX>
+        <locationY>1123</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Transfer</targetReference>
+        </connector>
+        <fields>
+            <name>NoRoute</name>
+            <fieldText>&lt;p&gt;&lt;b style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;There is not a current route available for this address.  Next click next to return to create a new address.&lt;/b&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>ConfirmDelAddressScreen</name>
+        <label>ConfirmDelAddressScreen</label>
+        <locationX>1266</locationX>
+        <locationY>789</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>GetDeliveryAddressforRoute</targetReference>
+        </connector>
+        <fields>
+            <name>Confirm</name>
+            <fieldText>&lt;p&gt;Please Confirm Address.  If not correct click previous.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;{!Street}&lt;/p&gt;&lt;p&gt;{!City}, {!State} {!Postal_Code}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>FaultMessage1</name>
+        <label>FaultMessage</label>
+        <locationX>1369</locationX>
+        <locationY>509</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <fields>
-            <name>shoreMove</name>
-            <extensionName>c:shoreMove</extensionName>
-            <fieldType>ComponentInstance</fieldType>
-            <inputParameters>
-                <name>recordId</name>
-                <value>
-                    <elementReference>varSubscription.Id</elementReference>
-                </value>
-            </inputParameters>
-            <isRequired>true</isRequired>
+            <name>FaultMessage</name>
+            <fieldText>&lt;p&gt;No active delivery address found.  Please contact Customer Support at 215-222-2765&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>false</showFooter>
-        <showHeader>true</showHeader>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Morethan1addressScreen</name>
+        <label>Morethan1addressScreen</label>
+        <locationX>1304</locationX>
+        <locationY>231</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>ContactSupport</name>
+            <fieldText>&lt;p&gt;More than one active delivery address has been found please contact Customer Support at 215-222-2765 to complete your vacation shore move.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>false</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Success_Screen</name>
+        <label>Success Screen</label>
+        <locationX>2144</locationX>
+        <locationY>668</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Success</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Successful Transfer&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Dates: {!Begin_Date} - {!End_Date}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Vacation Address:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;{!Street}&lt;/p&gt;&lt;p&gt;{!City1}, {!StatePicklist} {!Postal_Code}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>false</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Transfer</name>
+        <label>Transfer</label>
+        <locationX>1067</locationX>
+        <locationY>659</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>GetDeliverSchedule_0</targetReference>
+        </connector>
+        <fields>
+            <name>Transfer_your_Subscription</name>
+            <fieldText>&lt;p&gt;&lt;b style=&quot;font-size: 18px;&quot;&gt;Transfer Your Subscription&lt;span class=&quot;ql-cursor&quot;&gt;﻿&lt;/span&gt;&lt;/b&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Begin_Date</name>
+            <dataType>Date</dataType>
+            <fieldText>Date to start delivery at vacation address</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>End_Date</name>
+            <dataType>Date</dataType>
+            <fieldText>Date to transfer delivery back to home address</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>VacationAddress</name>
+            <fieldText>&lt;p&gt;Please provide your vacation address:&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>House_Number1</name>
+            <dataType>String</dataType>
+            <fieldText>House Number</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Street</name>
+            <dataType>String</dataType>
+            <fieldText>Street</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>City1</name>
+            <dataType>String</dataType>
+            <fieldText>City</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>StatePicklist</name>
+            <choiceReferences>StateValues</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>State</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Postal_Code</name>
+            <dataType>String</dataType>
+            <fieldText>Postal Code</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>HomeAddress</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Current Home Address:&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Home_addressdisplay</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;{!HouseNumberandStreet}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(62, 62, 60); font-size: 14px; background-color: rgb(255, 255, 255);&quot;&gt;{!varDeliveryAddress.Address_City__c}&lt;/span&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;, {!varDeliveryAddress.Address_State__c} {!varDeliveryAddress.Zip__c}}&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
     </screens>
     <start>
         <locationX>50</locationX>

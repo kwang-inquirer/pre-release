@@ -17,16 +17,4 @@ private class CutOffManagerTest {
 		String testResult = CutOffManager.DeliveryDayType(Date.today());
 		return testResult;
 	}
-	
-	@isTest
-	private static void testCommunityDeliveryHelper(){
-		 Date currentDate = Date.today();
-		 TestDataFactory.createTestRecords(3);
-		DateTime transDateDT = DateTime.newInstance(currentDate.year(), currentDate.month(), currentDate.day(), 12, 0, 0);
-		List<Transaction_Type__c> transTypeList = [SELECT Id from Transaction_Type__c];
-		for(Transaction_Type__c tt : transTypeList){
-			CutOffManager.communityDeliveryHelper(tt.Id, currentDate);
-		}
-		
-	}
 }

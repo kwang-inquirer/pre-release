@@ -7,8 +7,7 @@
             <field>Email</field>
             <type>email</type>
         </recipients>
-        <senderAddress>customerservice@philly.com</senderAddress>
-        <senderType>OrgWideEmailAddress</senderType>
+        <senderType>CurrentUser</senderType>
         <template>Transaction_Emails/CREDIT</template>
     </alerts>
     <alerts>
@@ -19,8 +18,7 @@
             <field>Email</field>
             <type>email</type>
         </recipients>
-        <senderAddress>customerservice@philly.com</senderAddress>
-        <senderType>OrgWideEmailAddress</senderType>
+        <senderType>CurrentUser</senderType>
         <template>Transaction_Emails/CHGADDR</template>
     </alerts>
     <alerts>
@@ -31,8 +29,7 @@
             <field>Email</field>
             <type>email</type>
         </recipients>
-        <senderAddress>customerservice@philly.com</senderAddress>
-        <senderType>OrgWideEmailAddress</senderType>
+        <senderType>CurrentUser</senderType>
         <template>Transaction_Emails/EZPAY</template>
     </alerts>
     <alerts>
@@ -43,8 +40,7 @@
             <field>Email</field>
             <type>email</type>
         </recipients>
-        <senderAddress>customerservice@philly.com</senderAddress>
-        <senderType>OrgWideEmailAddress</senderType>
+        <senderType>CurrentUser</senderType>
         <template>Feedback/FEEDCIR</template>
     </alerts>
     <alerts>
@@ -55,8 +51,7 @@
             <field>Email</field>
             <type>email</type>
         </recipients>
-        <senderAddress>customerservice@philly.com</senderAddress>
-        <senderType>OrgWideEmailAddress</senderType>
+        <senderType>CurrentUser</senderType>
         <template>Transaction_Emails/REDELVRND</template>
     </alerts>
     <alerts>
@@ -67,8 +62,7 @@
             <field>Email</field>
             <type>email</type>
         </recipients>
-        <senderAddress>customerservice@philly.com</senderAddress>
-        <senderType>OrgWideEmailAddress</senderType>
+        <senderType>CurrentUser</senderType>
         <template>Transaction_Emails/Vacation</template>
     </alerts>
     <alerts>
@@ -79,8 +73,7 @@
             <field>Email</field>
             <type>email</type>
         </recipients>
-        <senderAddress>customerservice@philly.com</senderAddress>
-        <senderType>OrgWideEmailAddress</senderType>
+        <senderType>CurrentUser</senderType>
         <template>Transaction_Emails/VACPAC</template>
     </alerts>
     <alerts>
@@ -91,8 +84,7 @@
             <field>Email</field>
             <type>email</type>
         </recipients>
-        <senderAddress>customerservice@philly.com</senderAddress>
-        <senderType>OrgWideEmailAddress</senderType>
+        <senderType>CurrentUser</senderType>
         <template>Transaction_Emails/STOPVAC</template>
     </alerts>
     <outboundMessages>
@@ -179,7 +171,7 @@
             <name>Modify_Contact</name>
             <type>OutboundMessage</type>
         </actions>
-        <active>false</active>
+        <active>true</active>
         <formula>AND(   LastModifiedBy.Username != 'infrmtc_intgrtn-acct@inquirer.com',  NOT(ISBLANK( DSI_Person_Id__c )),  OR(ISCHANGED( FirstName ), ISCHANGED( LastName ), ISCHANGED(MiddleName))  )</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
@@ -189,13 +181,13 @@
             <name>Contact_OBM</name>
             <type>OutboundMessage</type>
         </actions>
-        <active>false</active>
+        <active>true</active>
         <formula>AND(CreatedBy.Username != 'infrmtc_intgrtn-acct@inquirer.com',  ISBLANK( DSI_Person_Id__c ))</formula>
         <triggerType>onCreateOnly</triggerType>
     </rules>
     <rules>
         <fullName>Send OBM</fullName>
-        <active>true</active>
+        <active>false</active>
         <formula>true</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>

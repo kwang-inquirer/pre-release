@@ -25,28 +25,24 @@ public class SplitDeliveryController  {
 	}
 
     @AuraEnabled
-    public static void rebuildDeliverySchedules(Id subId, Date startDate, Date endDate, Id weekdaySelection, Id weekendSelection){
-		// init for cutoff rule
-		Date currentDate = Date.today();
-		Date theDayAfter = Date.today().addDays(1);
-
-		Boolean beforeCutOff = CutOffManager.isBeforeCutOff('Carrier Memo');
-		// apply cutoff rule
-		if (currentDate == startDate) {
-			if(beforeCutOff){
-				startDate = startDate.addDays(1);
-			} else {
-				startDate = startDate.addDays(2);
-			}
-		} else if (theDayAfter == startDate){
-			if(!beforeCutOff) {
-				startDate = startDate.addDays(1);
-			}
+    public static Id createNewDeliveryAddress(Id subId, Map<String, String> address) {
+		try{
+			Delivery_Address__c toInsert = new Delivery_Address__c(	
+			Address_City__c = address.get('city'),
+			Zip__c = address.get('postalCode'),
+			Address_State__c = address.get('state'),
+			Address_Street__c = address.get('street'));
+			insert toInsert;
+			return toInsert.Id;
 		}
-		//system.debug('--SplitDeliveryController--rebuildDeliverySchedules---');
-		//system.debug('--startDate--' + startDate);
-		//system.debug('--endDate----' + endDate);
-
+		catch(Exception e){
+			System.debug(e);
+			return null;
+		}
+    }
+    @AuraEnabled
+    public static void rebuildDeliverySchedules(Id subId, Date startDate, Date endDate, Id weekdaySelection, Id weekendSelection){
+		system.debug('in rebuild');
 		List<Delivery_Schedule__c> toUpsert = new List<Delivery_Schedule__c>();
 		Map<Id, List<Delivery_Schedule__c>> dsByPublication = new Map<Id, List<Delivery_Schedule__c>>();
 		List<Delivery_Schedule__c> dsList = [
@@ -95,7 +91,6 @@ public class SplitDeliveryController  {
 				if(ds.Day_Saturday__c)
 					scheduleMap.put('Day_Saturday__c', true);
 			}
-			system.debug('==SplitDelivery: ' + startDate + ' | ' + endDate);
 
 			Delivery_Schedule__c existingDs = dsByPublication.get(pubId)[0];
 			Delivery_Schedule__c weekdayDs = new Delivery_Schedule__c(
@@ -156,5 +151,16 @@ public class SplitDeliveryController  {
 		Subscription__c toUpdate = new Subscription__c(Id = subId, Ready_for_DSI__c = true);
 		update toUpdate;
 		upsert toUpsert;
+		system.debug('in end of rebuild');
+		
+    }
+
+	@AuraEnabled
+	public static Boolean hasValidDeliveryAddress(Id newAddressId) {
+		Delivery_Address__c deliveryAddress = [SELECT Melissa_Response__c FROM Delivery_Address__c WHERE Id = :newAddressId LIMIT 1];
+         if (String.isEmpty(deliveryAddress.Melissa_Response__c) && !Test.isRunningTest()) {
+            throw new GenericException('Melissa response is invalid');
+        }
+        return deliveryAddress.Melissa_Response__c.contains('AS01');
     }
 }

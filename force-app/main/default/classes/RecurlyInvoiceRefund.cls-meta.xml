@@ -3,7 +3,7 @@
     <apiVersion>47.0</apiVersion>
     <packageVersions>
         <majorNumber>2</majorNumber>
-        <minorNumber>31</minorNumber>
+        <minorNumber>29</minorNumber>
         <namespace>recurly_v2</namespace>
     </packageVersions>
     <status>Active</status>

@@ -112,11 +112,26 @@
                 <default>false</default>
             </values>
         </picklistValues>
-        
         <picklistValues>
-            <picklist>Promotion_Code__c</picklist>
+            <picklist>Name</picklist>
             <values>
-                <fullName>Other</fullName>
+                <fullName>Dr%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mr%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mrs%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ms%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prof%2E</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -141,13 +156,6 @@
         </picklistValues>
         <picklistValues>
             <picklist>Status__c</picklist>
-            <values>
-                <fullName>Other</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Sub_Type__c</picklist>
             <values>
                 <fullName>Other</fullName>
                 <default>false</default>

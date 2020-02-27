@@ -14,5 +14,4 @@
     <design:attribute name="editPayment" label="Allow Editable Payment" />
     <design:attribute name="oneTimeTip" label="No longer used" />
     <design:attribute name="isFlow" label="Is coming from a flow to show flow specifics" />
-    <design:attribute name="SourceCampaign" label="Campaign the Offer was selected from" />
 </design:component>

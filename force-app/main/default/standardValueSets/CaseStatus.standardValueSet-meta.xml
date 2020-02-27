@@ -8,9 +8,9 @@
         <closed>false</closed>
     </standardValue>
     <standardValue>
-        <fullName>Pending</fullName>
+        <fullName>On Hold</fullName>
         <default>false</default>
-        <label>Pending</label>
+        <label>On Hold</label>
         <closed>false</closed>
     </standardValue>
     <standardValue>

@@ -5,17 +5,17 @@
     <changePasswordTemplate>unfiled$public/CommunityChangePasswordEmailTemplate</changePasswordTemplate>
     <communityRoles/>
     <disableReputationRecordConversations>true</disableReputationRecordConversations>
-    <emailSenderAddress>mbailey@relationedge.com</emailSenderAddress>
-    <emailSenderName>PMN-Partners</emailSenderName>
+    <emailSenderAddress>client-pmn@relationedge.com</emailSenderAddress>
+    <emailSenderName>PMN Partners</emailSenderName>
     <enableCustomVFErrorPageOverrides>false</enableCustomVFErrorPageOverrides>
     <enableDirectMessages>true</enableDirectMessages>
     <enableGuestChatter>false</enableGuestChatter>
     <enableGuestFileAccess>false</enableGuestFileAccess>
-    <enableGuestMemberVisibility>true</enableGuestMemberVisibility>
+    <enableGuestMemberVisibility>false</enableGuestMemberVisibility>
     <enableInvitation>false</enableInvitation>
     <enableKnowledgeable>false</enableKnowledgeable>
-    <enableMemberVisibility>true</enableMemberVisibility>
-    <enableNicknameDisplay>false</enableNicknameDisplay>
+    <enableMemberVisibility>false</enableMemberVisibility>
+    <enableNicknameDisplay>true</enableNicknameDisplay>
     <enablePrivateMessages>false</enablePrivateMessages>
     <enableReputation>false</enableReputation>
     <enableShowAllNetworkSettings>false</enableShowAllNetworkSettings>
@@ -28,25 +28,23 @@
     <gatherCustomerSentimentData>false</gatherCustomerSentimentData>
     <networkMemberGroups>
         <profile>Admin</profile>
-        <profile>Partner Community- Custom</profile>
     </networkMemberGroups>
     <networkPageOverrides>
         <changePasswordPageOverrideSetting>Standard</changePasswordPageOverrideSetting>
-        <forgotPasswordPageOverrideSetting>Designer</forgotPasswordPageOverrideSetting>
-        <homePageOverrideSetting>Designer</homePageOverrideSetting>
-        <loginPageOverrideSetting>Designer</loginPageOverrideSetting>
-        <selfRegProfilePageOverrideSetting>Designer</selfRegProfilePageOverrideSetting>
+        <forgotPasswordPageOverrideSetting>Standard</forgotPasswordPageOverrideSetting>
+        <homePageOverrideSetting>Standard</homePageOverrideSetting>
+        <loginPageOverrideSetting>Standard</loginPageOverrideSetting>
+        <selfRegProfilePageOverrideSetting>Standard</selfRegProfilePageOverrideSetting>
     </networkPageOverrides>
-    <newSenderAddress>customerservice@inquirer.com</newSenderAddress>
-    <picassoSite>PMN_Partners1</picassoSite>
+    <picassoSite>PMN_Partners_C</picassoSite>
     <selfRegistration>false</selfRegistration>
-    <sendWelcomeEmail>false</sendWelcomeEmail>
-    <site>PMN_Partners</site>
+    <sendWelcomeEmail>true</sendWelcomeEmail>
+    <site>PMN_Partners2</site>
     <status>UnderConstruction</status>
     <tabs>
         <defaultTab>home</defaultTab>
         <standardTab>Chatter</standardTab>
     </tabs>
-    <urlPathPrefix>Partners</urlPathPrefix>
+    <urlPathPrefix>partners</urlPathPrefix>
     <welcomeTemplate>unfiled$public/CommunityWelcomeEmailTemplate</welcomeTemplate>
 </Network>

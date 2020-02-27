@@ -24,7 +24,7 @@ private class ShoreMoveControllerTest {
         address.put('state', 'PA');
         address.put('street', '2030 W Hagert St');
 
-        Id addressId = DeliveryAddressDataAccessor.createNewDeliveryAddress(subscription.Id, address);
+        Id addressId = ShoreMoveController.createNewDeliveryAddress(subscription.Id, address);
         Delivery_Address__c toUpdate = new Delivery_Address__c(Id = addressId, Melissa_Response__c = 'AS01');
         update toUpdate;
 
@@ -33,12 +33,12 @@ private class ShoreMoveControllerTest {
         ds.Delivery_Address__c = toUpdate.Id;
         insert ds;
         
-        Id addressId2 = DeliveryAddressDataAccessor.createNewDeliveryAddress(subscription.Id, address);
+        Id addressId2 = ShoreMoveController.createNewDeliveryAddress(subscription.Id, address);
         Delivery_Address__c toUpdate2 = new Delivery_Address__c(Id = addressId2, Melissa_Response__c = 'AS01');
         update toUpdate2;
 
-        DeliveryAddressDataAccessor.getDeliveryAddresses(subscription.Id);
-        DeliveryAddressDataAccessor.hasValidDeliveryAddress(addressId);
+        ShoreMoveController.getDeliveryAddresses(subscription.Id);
+        ShoreMoveController.hasValidDeliveryAddress(addressId);
         ShoreMoveController.createDeliverySchedule(addressId, addressId2, subscription.Id, Date.today(), Date.today().addDays(2));
     }
 

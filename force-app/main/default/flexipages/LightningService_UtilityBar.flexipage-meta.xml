@@ -6,9 +6,6 @@
             <componentName>console:history</componentName>
         </componentInstances>
         <componentInstances>
-            <componentName>macros:macroUtilityItem</componentName>
-        </componentInstances>
-        <componentInstances>
             <componentInstanceProperties>
                 <name>eager</name>
                 <type>decorator</type>
@@ -40,6 +37,9 @@
                 <value>340</value>
             </componentInstanceProperties>
             <componentName>opencti:softPhone</componentName>
+        </componentInstances>
+        <componentInstances>
+            <componentName>macros:macroUtilityItem</componentName>
         </componentInstances>
         <name>utilityItems</name>
         <type>Region</type>

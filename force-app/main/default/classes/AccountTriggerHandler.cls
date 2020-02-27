@@ -9,12 +9,10 @@ public class AccountTriggerHandler {
 
     public void runMelissaDataPersonator() {
         try {
-            if (!System.isFuture() && !System.isBatch() && accounts.size() == 1) {
+            if (!Test.isRunningTest() && !System.isFuture() && !System.isBatch() && accounts.size() == 1) {
                 Account acct = accounts.values()[0];
                 if (oldAccounts == null || addressFieldsChanged(acct)) {
-                    if (!Test.isRunningTest()) {
-                        MDPERSONATOR.MD_PersonatorWSExt.doOnePersonator((String)acct.Id);
-                    }
+                    MDPERSONATOR.MD_PersonatorWSExt.doOnePersonator((String)acct.Id);
                 }
             }
         } catch (Exception e) {

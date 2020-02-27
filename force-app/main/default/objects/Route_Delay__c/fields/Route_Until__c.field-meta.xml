@@ -3,7 +3,7 @@
         <fullName>Route_Until__c</fullName>
         <externalId>false</externalId>
         <label>Route Until</label>
-        <length>8</length>
+        <length>15</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>

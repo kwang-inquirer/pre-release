@@ -20,7 +20,7 @@ public with sharing class RecurlyInvoiceRefund {
     }
 
     public void refundByLineItems(List<Id> lineItems) {
-        validateByLineItems(lineItems);
+        validateByLineItems(lineItems);System.debug(1);
         
         List<RecurlyApiObjects.RefundLineItem> refundLineItems = new List<RecurlyApiObjects.RefundLineItem>();
         for (recurly_v2__Recurly_Line_Item__c lineItem : invoice.recurly_v2__Recurly_Line_Items__r) {
@@ -30,15 +30,17 @@ public with sharing class RecurlyInvoiceRefund {
                     lineItem.Refunded__c = true;
                 }
             }
-        }
+        }System.debug(2);
 
-        if (refundLineItems == null || refundLineItems.isEmpty()) {
+        if (refundLineItems.isEmpty()) {
             throw new GenericException(REFUND_ERROR_LINE_ITEMS);
         }
+        System.debug(3);
         recurlyApi.refundInvoice(invoice.Name, new RecurlyApiObjects.Refund(refundLineItems));
+        System.debug(4);
         invoice.Refund_Type__c = 'Line Items';
-        update invoice;
-        update invoice.recurly_v2__Recurly_Line_Items__r;
+        update invoice;System.debug(5);
+        update invoice.recurly_v2__Recurly_Line_Items__r;System.debug(6);
     }
 
     private void validateByAmount(Decimal amount) {

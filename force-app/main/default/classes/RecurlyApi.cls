@@ -27,7 +27,31 @@ public with sharing class RecurlyApi {
         }
     }
 
+    public Map<String, Object> getInvoice(String invoiceName) {
+        Http http = new Http();
+        HttpRequest request = new HttpRequest();
+        request.setHeader('Authorization','Basic '+ EncodingUtil.base64Encode(Blob.valueOf(recurlyApiKey.API_Key__c)) );
+        request.setHeader('Content-Type','application/json; charset=utf-8');
+        request.setHeader('Accept','application/vnd.recurly.v2019-10-10+json');
+        request.setHeader('Recurly-Version','recurly.v2019-10-10');
+        request.setEndpoint('https://v3.recurly.com/sites/subdomain-' + recurlyApiKey.Subdomain__c + '/invoices/number-' + invoiceName);
+        request.setMethod('GET');
+        HttpResponse response = http.send(request);
+
+        System.debug(response.getBody());
+
+        if (response.getStatusCode() == 200) {
+            return (Map<String, Object>)JSON.deserializeUntyped(response.getBody());
+        } else if (String.isNotEmpty(response.getBody())) {
+            Map<String, Object> error = (Map<String, Object>)JSON.deserializeUntyped(response.getBody());
+            throw new GenericException((String)error.get('message'));
+        } else {
+            throw new GenericException('Failed to retrieve the invoice');
+        }
+    }
+
     public void refundInvoice(String invoiceName, RecurlyApiObjects.Refund refund) {
+        System.debug(refund);
         Http http = new Http();
         HttpRequest request = new HttpRequest();
         request.setHeader('Authorization','Basic '+ EncodingUtil.base64Encode(Blob.valueOf(recurlyApiKey.API_Key__c)) );
@@ -38,6 +62,9 @@ public with sharing class RecurlyApi {
         request.setMethod('POST');
         request.setBody(JSON.serialize(refund, true));
         HttpResponse response = http.send(request);
+
+        System.debug(response);
+        System.debug(response.getBody());
 
         if (response.getStatusCode() != 201) {
              if (String.isNotEmpty(response.getBody())) {
@@ -60,6 +87,8 @@ public with sharing class RecurlyApi {
         request.setMethod('POST');
         request.setBody(purchase.getXmlString());
         HttpResponse response = http.send(request);
+
+        System.debug(response.getBody());
 
         if (response.getStatusCode() == 201) {
             return;

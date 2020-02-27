@@ -31,7 +31,6 @@ export default class CheckoutProcess extends LightningElement {
     @api offerId;
     @api sessionId;
     @api subscriptionId;
-	@api sourceCampaign;
     @api isFlow = false;
     @api editPayment = false;
     @api enableAutoPay = false;
@@ -101,7 +100,7 @@ export default class CheckoutProcess extends LightningElement {
     loginSuccess() {
         this.errors = null;
         this.loading = true;
-        this.getNewSubscription(this.offerId, this.credentials.email, this.source, this.credentials.password, this.waiveActivationFee, this.sourceCampaign)
+        this.getNewSubscription(this.offerId, this.credentials.email, this.source, this.credentials.password, this.waiveActivationFee)
             .then(subscription => this.onGetDefaultNewSubscriptionSuccess(subscription))
             .catch(errors => this.onGetDefaultNewSubscriptionError(errors));
     }
@@ -252,10 +251,9 @@ export default class CheckoutProcess extends LightningElement {
         });
     }
 
-    getNewSubscription(offerId, email, source, password, waiveActivationFee, sourceCampaign) {
+    getNewSubscription(offerId, email, source, password, waiveActivationFee) {
         return new Promise((resolve, reject) => {
-			alert("the sc-" + sourceCampaign);	
-            getNewSubscription({ offerId: offerId, email: email, source: source, password: password, waiveActivationFee: waiveActivationFee, sourceCampaign })
+            getNewSubscription({ offerId: offerId, email: email, source: source, password: password, waiveActivationFee: waiveActivationFee })
                 .then(subscription => { resolve(subscription) })
                 .catch(error => { reject([error.body.message]) })
         });

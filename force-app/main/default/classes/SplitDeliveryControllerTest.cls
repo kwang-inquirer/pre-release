@@ -24,7 +24,7 @@ private class SplitDeliveryControllerTest {
         address.put('state', 'PA');
         address.put('street', '2030 W Hagert St');
 
-        Id addressId = DeliveryAddressDataAccessor.createNewDeliveryAddress(subscription.Id, address);
+        Id addressId = SplitDeliveryController.createNewDeliveryAddress(subscription.Id, address);
         Delivery_Address__c toUpdate = new Delivery_Address__c(Id = addressId, Melissa_Response__c = 'AS01');
         update toUpdate;
 
@@ -44,7 +44,7 @@ private class SplitDeliveryControllerTest {
         insert ds;
         
         List<Delivery_Schedule__c> dsList = SplitDeliveryController.getDeliverySchedules(subscription.Id);
-        Id resultAddress = DeliveryAddressDataAccessor.hasValidDeliveryAddress(addressId);
+        Boolean result = SplitDeliveryController.hasValidDeliveryAddress(addressId);
         SplitDeliveryController.rebuildDeliverySchedules(subscription.Id, Date.today().addDays(10), Date.today().addDays(25), addressId, addressId);
     }
 

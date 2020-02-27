@@ -106,10 +106,6 @@
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
-        <flow>Marketing_Product_List_Name_Update</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
         <flow>Missed_Paper_on_Subscription</flow>
     </flowAccesses>
     <flowAccesses>
@@ -208,6 +204,7 @@
         <enabled>false</enabled>
         <flow>Vacation_with_Restart_Status_to_Inactive</flow>
     </flowAccesses>
+    <userLicense>Guest User License</userLicense>
     <pageAccesses>
         <apexPage>BandwidthExceeded</apexPage>
         <enabled>true</enabled>
@@ -265,21 +262,11 @@
         <enabled>true</enabled>
     </pageAccesses>
     <pageAccesses>
-<apexPage>UnderConstruction</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
+        <apexPage>UnderConstruction</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
     <applicationVisibilities>
         <application>C1ASSteamBroker</application>
-        <default>false</default>
-        <visible>false</visible>
-    </applicationVisibilities>
-    <applicationVisibilities>
-        <application>C1AStest</application>
-        <default>false</default>
-        <visible>false</visible>
-    </applicationVisibilities>
-    <applicationVisibilities>
-        <application>Partner</application>
         <default>false</default>
         <visible>false</visible>
     </applicationVisibilities>
@@ -300,11 +287,6 @@
     </applicationVisibilities>
     <applicationVisibilities>
         <application>standard__Community</application>
-        <default>false</default>
-        <visible>false</visible>
-    </applicationVisibilities>
-    <applicationVisibilities>
-        <application>standard__Insights</application>
         <default>false</default>
         <visible>false</visible>
     </applicationVisibilities>
@@ -696,11 +678,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Case.IsEscalated</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Case.Language</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2223,12 +2200,6 @@
         <recordType>Contact.Subscriber_Contact</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>ContactPointEmail-Contact Point Email Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>ContactPointPhone-Contact Point Phone Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>ContentVersion-Content Version</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -2241,10 +2212,7 @@
         <layout>Cut_Offs_Time__mdt-Cut-Offs Time Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>DayOfWeek_Setting__mdt-DayOfWeek Setting Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Delivery_Address__c-Shipping Address Layout</layout>
+        <layout>Delivery_Address__c-Delivery Address Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Delivery_Schedule__c-Delivery Schedule Layout</layout>
@@ -2318,7 +2286,7 @@
         <layout>Melissa_Data_User_Ignore__mdt-Melissa Data User Ignore Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Newspaper__c-Newspaper Layout</layout>
+        <layout>Newspaper__c-DNU - Newspaper Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Offer_Product__c-Offer Product Layout</layout>
@@ -2363,9 +2331,6 @@
         <layout>Product2-Product Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Product_Code__mdt-Product Code Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>ProfileSkill-Skill Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -2375,7 +2340,7 @@
         <layout>ProfileSkillUser-Skill User Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Promotion__c-Promotion Layout</layout>
+        <layout>Promotion__c-DNU - Promotion Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>QuickText-Quick Text Layout</layout>
@@ -2385,6 +2350,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>QuoteLineItem-Quote Line Item Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Rate__c-Rate Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Recurly_API_Key__mdt-Recurly API Key Layout</layout>
@@ -2408,9 +2376,6 @@
         <layout>ScorecardMetric-Scorecard Metric Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Shipping_Address__c-Shipping Address Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>SocialPersona-Social Persona Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -2420,7 +2385,7 @@
         <layout>Stop_Source__mdt-Stop Source Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Subscription_Settings__mdt-Subscription Setting Layout</layout>
+        <layout>Subscription_Settings__mdt-Subscription Settings Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Subscription__c-Subscription Layout</layout>
@@ -2446,10 +2411,6 @@
     <layoutAssignments>
         <layout>Transaction_Log__c-Transaction Log Layout</layout>
         <recordType>Transaction_Log__c.Vacation</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Transaction_Log__c-Transaction Log Layout</layout>
-        <recordType>Transaction_Log__c.Vacation_Hold</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Transaction_Type_Setting__mdt-Transaction Type Setting Layout</layout>
@@ -2568,11 +2529,6 @@
         <recordType>Transaction_Log__c.Vacation</recordType>
         <visible>false</visible>
     </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>false</default>
-        <recordType>Transaction_Log__c.Vacation_Hold</recordType>
-        <visible>false</visible>
-    </recordTypeVisibilities>
     <tabVisibilities>
         <tab>Checkout</tab>
         <visibility>Hidden</visibility>
@@ -2606,10 +2562,6 @@
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>Offer_Product__c</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
         <tab>Offer__c</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
@@ -2622,11 +2574,11 @@
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>Route__c</tab>
+        <tab>Rate__c</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>Shipping_Address__c</tab>
+        <tab>Route__c</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
@@ -2643,10 +2595,6 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>Vendor_Promotions__c</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>et4ae5__Configuration__c</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
@@ -2774,10 +2722,6 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>standard-QuickText</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
         <tab>standard-Quote</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
@@ -2821,7 +2765,6 @@
         <tab>standard-WorkOrder</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
-    <userLicense>Guest User License</userLicense>
     <userPermissions>
         <enabled>true</enabled>
         <name>EnableNotifications</name>

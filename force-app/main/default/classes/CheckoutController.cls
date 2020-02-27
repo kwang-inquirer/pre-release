@@ -44,9 +44,9 @@ public with sharing class CheckoutController {
     }
 
     @AuraEnabled
-    public static Subscription__c getNewSubscription(String offerId, String email, String source, String password, Boolean waiveActivationFee, String sourceCampaign) {
+    public static Subscription__c getNewSubscription(String offerId, String email, String source, String password, Boolean waiveActivationFee) {
         try {
-            return CheckoutSubscriptionCreator.getNewSubscription(offerId, email, source, password, waiveActivationFee, sourceCampaign);
+            return CheckoutSubscriptionCreator.getNewSubscription(offerId, email, source, password, waiveActivationFee);
         } catch (GenericException e) {
             System.debug(e.getMessage() + ' ' + e.getStackTraceString());
             throw new AuraHandledException(e.getMessage());

@@ -14,4 +14,8 @@
         <field>Term_Name__c</field>
         <value xsi:type="xsd:string">Digital+access</value>
     </values>
+    <values>
+        <field>Token__c</field>
+        <value xsi:nil="true"/>
+    </values>
 </CustomMetadata>
