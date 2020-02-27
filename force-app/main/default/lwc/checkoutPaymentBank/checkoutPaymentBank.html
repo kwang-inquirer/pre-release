@@ -1,0 +1,16 @@
+<template>
+    <h2 class="slds-border_bottom slds-theme_shade slds-p-around_xx-small">
+        Bank Information
+    </h2>
+    <div class="slds-grid slds-wrap">
+        <div class="slds-size_1-of-2 slds-p-horizontal_xx-small">
+            <lightning-input type="text" data-id="routingNumber" name="routingNumber" label="Routing Number" value={payment.routingNumber} onchange={handleChange} max-length="9" min-length="9" required></lightning-input>
+        </div>
+        <div class="slds-size_1-of-2 slds-p-horizontal_xx-small">
+            <lightning-input type="text" data-id="accountNumber" name="accountNumber" label="Account Number" value={payment.accountNumber} onchange={handleChange} max-length="17" min-length="4" required></lightning-input>
+        </div>
+        <div class="slds-size_1-of-2 slds-p-horizontal_xx-small">
+            <lightning-combobox data-id="accountType" name="accountType" label="Account Type" value={payment.accountType} placeholder="Select Type" options={accountTypeOptions} onchange={handleChange} required></lightning-combobox>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+        <fullName>Rate_Table_Type_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Rate Table Type Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>10 Week Rate</fullName>
+                    <default>false</default>
+                    <label>10 Week Rate</label>
+                </value>
+                <value>
+                    <fullName>13 Week Rate</fullName>
+                    <default>false</default>
+                    <label>13 Week Rate</label>
+                </value>
+                <value>
+                    <fullName>15 Week Rate</fullName>
+                    <default>false</default>
+                    <label>15 Week Rate</label>
+                </value>
+                <value>
+                    <fullName>16 Week Rate</fullName>
+                    <default>false</default>
+                    <label>16 Week Rate</label>
+                </value>
+                <value>
+                    <fullName>20 Week Rate</fullName>
+                    <default>false</default>
+                    <label>20 Week Rate</label>
+                </value>
+                <value>
+                    <fullName>26 Week Rate</fullName>
+                    <default>false</default>
+                    <label>26 Week Rate</label>
+                </value>
+                <value>
+                    <fullName>4 Week Rate</fullName>
+                    <default>false</default>
+                    <label>4 Week Rate</label>
+                </value>
+                <value>
+                    <fullName>52 Week Rate</fullName>
+                    <default>false</default>
+                    <label>52 Week Rate</label>
+                </value>
+                <value>
+                    <fullName>5 Week Rate</fullName>
+                    <default>false</default>
+                    <label>5 Week Rate</label>
+                </value>
+                <value>
+                    <fullName>8 Week Rate</fullName>
+                    <default>false</default>
+                    <label>8 Week Rate</label>
+                </value>
+                <value>
+                    <fullName>Alternate Pubs - 4 Week Rate</fullName>
+                    <default>false</default>
+                    <label>Alternate Pubs - 4 Week Rate</label>
+                </value>
+                <value>
+                    <fullName>DF 13 Week</fullName>
+                    <default>false</default>
+                    <label>DF 13 Week</label>
+                </value>
+                <value>
+                    <fullName>DF 26 Week</fullName>
+                    <default>false</default>
+                    <label>DF 26 Week</label>
+                </value>
+                <value>
+                    <fullName>DF 52 Week</fullName>
+                    <default>false</default>
+                    <label>DF 52 Week</label>
+                </value>
+                <value>
+                    <fullName>DF 5 Week</fullName>
+                    <default>false</default>
+                    <label>DF 5 Week</label>
+                </value>
+                <value>
+                    <fullName>DF 8 Week</fullName>
+                    <default>false</default>
+                    <label>DF 8 Week</label>
+                </value>
+                <value>
+                    <fullName>DNEE 13 Week</fullName>
+                    <default>false</default>
+                    <label>DNEE 13 Week</label>
+                </value>
+                <value>
+                    <fullName>DNEE 26 Week</fullName>
+                    <default>false</default>
+                    <label>DNEE 26 Week</label>
+                </value>
+                <value>
+                    <fullName>DNEE 52 Week</fullName>
+                    <default>false</default>
+                    <label>DNEE 52 Week</label>
+                </value>
+                <value>
+                    <fullName>DNEE 5 Week</fullName>
+                    <default>false</default>
+                    <label>DNEE 5 Week</label>
+                </value>
+                <value>
+                    <fullName>DNEE 8 Week</fullName>
+                    <default>false</default>
+                    <label>DNEE 8 Week</label>
+                </value>
+                <value>
+                    <fullName>DNIN 13 Week</fullName>
+                    <default>false</default>
+                    <label>DNIN 13 Week</label>
+                </value>
+                <value>
+                    <fullName>DNIN 26 Week</fullName>
+                    <default>false</default>
+                    <label>DNIN 26 Week</label>
+                </value>
+                <value>
+                    <fullName>DNIN 52 Week</fullName>
+                    <default>false</default>
+                    <label>DNIN 52 Week</label>
+                </value>
+                <value>
+                    <fullName>DNIN 5 Week</fullName>
+                    <default>false</default>
+                    <label>DNIN 5 Week</label>
+                </value>
+                <value>
+                    <fullName>DNIN 8 Week</fullName>
+                    <default>false</default>
+                    <label>DNIN 8 Week</label>
+                </value>
+                <value>
+                    <fullName>DS 13 Week</fullName>
+                    <default>false</default>
+                    <label>DS 13 Week</label>
+                </value>
+                <value>
+                    <fullName>DS 26 Week</fullName>
+                    <default>false</default>
+                    <label>DS 26 Week</label>
+                </value>
+                <value>
+                    <fullName>DS 52 Week</fullName>
+                    <default>false</default>
+                    <label>DS 52 Week</label>
+                </value>
+                <value>
+                    <fullName>DS 5 Week</fullName>
+                    <default>false</default>
+                    <label>DS 5 Week</label>
+                </value>
+                <value>
+                    <fullName>DS 8 Week</fullName>
+                    <default>false</default>
+                    <label>DS 8 Week</label>
+                </value>
+                <value>
+                    <fullName>INDF+EE+DE 13 Week</fullName>
+                    <default>false</default>
+                    <label>INDF+EE+DE 13 Week</label>
+                </value>
+                <value>
+                    <fullName>INDF+EE+DE 26 Week</fullName>
+                    <default>false</default>
+                    <label>INDF+EE+DE 26 Week</label>
+                </value>
+                <value>
+                    <fullName>INDF+EE+DE 52 Week</fullName>
+                    <default>false</default>
+                    <label>INDF+EE+DE 52 Week</label>
+                </value>
+                <value>
+                    <fullName>INDF+EE+DE 5 Week</fullName>
+                    <default>false</default>
+                    <label>INDF+EE+DE 5 Week</label>
+                </value>
+                <value>
+                    <fullName>INDF+EE+DE 8 Week</fullName>
+                    <default>false</default>
+                    <label>INDF+EE+DE 8 Week</label>
+                </value>
+                <value>
+                    <fullName>INDS+EE+DE+8 Week</fullName>
+                    <default>false</default>
+                    <label>INDS+EE+DE+8 Week</label>
+                </value>
+                <value>
+                    <fullName>INDS+EE+DE 13 Week</fullName>
+                    <default>false</default>
+                    <label>INDS+EE+DE 13 Week</label>
+                </value>
+                <value>
+                    <fullName>INDS+EE+DE 26 Week</fullName>
+                    <default>false</default>
+                    <label>INDS+EE+DE 26 Week</label>
+                </value>
+                <value>
+                    <fullName>INDS+EE+DE 5 Week</fullName>
+                    <default>false</default>
+                    <label>INDS+EE+DE 5 Week</label>
+                </value>
+                <value>
+                    <fullName>INDS+EE+DS 52 Week</fullName>
+                    <default>false</default>
+                    <label>INDS+EE+DS 52 Week</label>
+                </value>
+                <value>
+                    <fullName>INSO+EE+DE 13 Week</fullName>
+                    <default>false</default>
+                    <label>INSO+EE+DE 13 Week</label>
+                </value>
+                <value>
+                    <fullName>INSO+EE+DE 26 Week</fullName>
+                    <default>false</default>
+                    <label>INSO+EE+DE 26 Week</label>
+                </value>
+                <value>
+                    <fullName>INSO+EE+DE 52 Week</fullName>
+                    <default>false</default>
+                    <label>INSO+EE+DE 52 Week</label>
+                </value>
+                <value>
+                    <fullName>INSO+EE+DE 5 Week</fullName>
+                    <default>false</default>
+                    <label>INSO+EE+DE 5 Week</label>
+                </value>
+                <value>
+                    <fullName>INSO+EE+DE 8 Week</fullName>
+                    <default>false</default>
+                    <label>INSO+EE+DE 8 Week</label>
+                </value>
+                <value>
+                    <fullName>INSS+EE+DE 13 Week</fullName>
+                    <default>false</default>
+                    <label>INSS+EE+DE 13 Week</label>
+                </value>
+                <value>
+                    <fullName>INSS+EE+DE 26 Week</fullName>
+                    <default>false</default>
+                    <label>INSS+EE+DE 26 Week</label>
+                </value>
+                <value>
+                    <fullName>INSS+EE+DE 52 Week</fullName>
+                    <default>false</default>
+                    <label>INSS+EE+DE 52 Week</label>
+                </value>
+                <value>
+                    <fullName>INSS+EE+DE 5 Week</fullName>
+                    <default>false</default>
+                    <label>INSS+EE+DE 5 Week</label>
+                </value>
+                <value>
+                    <fullName>INSS+EE+DE 8 Week</fullName>
+                    <default>false</default>
+                    <label>INSS+EE+DE 8 Week</label>
+                </value>
+                <value>
+                    <fullName>SO 13 Week</fullName>
+                    <default>false</default>
+                    <label>SO 13 Week</label>
+                </value>
+                <value>
+                    <fullName>SO 26 Week</fullName>
+                    <default>false</default>
+                    <label>SO 26 Week</label>
+                </value>
+                <value>
+                    <fullName>SO 52 Week</fullName>
+                    <default>false</default>
+                    <label>SO 52 Week</label>
+                </value>
+                <value>
+                    <fullName>SO 5 Week</fullName>
+                    <default>false</default>
+                    <label>SO 5 Week</label>
+                </value>
+                <value>
+                    <fullName>SO 8 Week</fullName>
+                    <default>false</default>
+                    <label>SO 8 Week</label>
+                </value>
+                <value>
+                    <fullName>SS 13 Week</fullName>
+                    <default>false</default>
+                    <label>SS 13 Week</label>
+                </value>
+                <value>
+                    <fullName>SS 26 Week</fullName>
+                    <default>false</default>
+                    <label>SS 26 Week</label>
+                </value>
+                <value>
+                    <fullName>SS 52 Week</fullName>
+                    <default>false</default>
+                    <label>SS 52 Week</label>
+                </value>
+                <value>
+                    <fullName>SS 5 Week</fullName>
+                    <default>false</default>
+                    <label>SS 5 Week</label>
+                </value>
+                <value>
+                    <fullName>SS 8 Week</fullName>
+                    <default>false</default>
+                    <label>SS 8 Week</label>
+                </value>
+                <value>
+                    <fullName>Tablet 1YR</fullName>
+                    <default>false</default>
+                    <label>Tablet 1YR</label>
+                </value>
+                <value>
+                    <fullName>Tablet 2YR</fullName>
+                    <default>false</default>
+                    <label>Tablet 2YR</label>
+                </value>
+                <value>
+                    <fullName>NO CHARGE</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>NO CHARGE</label>
+                </value>
+                <value>
+                    <fullName>REGULAR</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>REGULAR</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </CustomField>

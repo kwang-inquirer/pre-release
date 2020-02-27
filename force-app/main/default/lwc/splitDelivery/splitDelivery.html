@@ -1,0 +1,101 @@
+<template>
+        <template if:false={existingSplitDelivery}>
+            <template if:false={confirmationPage}>
+                <div class="slds-grid slds-wrap slds-theme_default" >
+                        <div class="slds-size_1-of-1 slds-p-horizontal_xx-small">
+                                    <lightning-radio-group name="radioGroup"
+                                    label="Choose Weekday Delivery Address:"
+                                    options={options}
+                                    value={weekdaySelection}
+                                    onchange={changeWeekdaySelection}
+                                    type="radio" required></lightning-radio-group>
+                        </div>
+
+                        <div class="slds-size_1-of-1 slds-p-horizontal_xx-small">
+                            <template if:true={showCreateWeekday}>
+                                <div class="slds-size_1-of-1 slds-p-horizontal_xx-small">
+                                        <lightning-input-address
+                                            address-label="Address"
+                                            street-label="Street"
+                                            city-label="City"
+                                            country-label="Country"
+                                            province-label="State"
+                                            postal-code-label="Postal Code"
+                                            country={defaultCountry}
+                                            province={defaultState}
+                                            country-options={countryOptions}
+                                            province-options={provinceOptions}
+                                            onchange={handleWeekdayAddressChange} 
+                                            required>
+                                        </lightning-input-address>
+                                    
+                                    </div>
+                            </template>
+                        </div>
+                </div>
+                <div class="slds-grid slds-wrap slds-theme_default" >
+                        <div class="slds-size_1-of-1 slds-p-horizontal_xx-small">
+                                    <lightning-radio-group name="radioGroupWeekend"
+                                    label="Choose Weekend Delivery Address:"
+                                    options={options}
+                                    value={weekendSelection}
+                                    onchange={changeWeekendSelection}
+                                    type="radio" required></lightning-radio-group>
+                        </div>
+
+                        <div class="slds-size_1-of-1 slds-p-horizontal_xx-small">
+
+                            <template if:true={showCreateWeekend}>
+                                <div class="slds-size_1-of-1 slds-p-horizontal_xx-small">
+                                        <lightning-input-address
+                                            address-label="Address"
+                                            street-label="Street"
+                                            city-label="City"
+                                            country-label="Country"
+                                            province-label="State"
+                                            postal-code-label="Postal Code"
+                                            country={defaultCountry}
+                                            province={defaultState}
+                                            country-options={countryOptions}
+                                            province-options={provinceOptions}
+                                            onchange={handleWeekendAddressChange} 
+                                            required>
+                                        </lightning-input-address>
+                                        
+                                    </div>
+                            </template>
+                        </div>
+                        <div class="slds-size_1-of-1 slds-p-horizontal_xx-small">
+                                <lightning-input type="date" name="startDate" label="Please select the beginning date for this Split Delivery." onchange={handleFormInputChange} required></lightning-input>
+                                
+                            </div>
+                            <div class="slds-size_1-of-1 slds-p-horizontal_xx-small">
+                                <lightning-input type="date" name="returnDate" label="Please select the end date for this Split Delivery. " onchange={handleFormInputChange}></lightning-input>
+                            </div>
+
+                            
+                            
+
+                            <lightning-button style="padding:5px;" label="Submit Split Delivery Request" title="Submit Split Delivery Request"  onclick={handleSubmit} disabled={isButtonDisabled}></lightning-button>
+                            <c-global-loading loading={isLoading}></c-global-loading>
+
+                        </div>
+        </template>
+    </template>
+    <template if:true={confirmationPage}>
+        <lightning-card style="width:100%;" title="The split delivery has successfully created.">
+        </lightning-card>
+    </template>
+    <template if:true={hasErrors}>
+            <div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error slds-m-vertical_x-small" role="alert">
+                <ul>
+                    <template for:each={errors} for:item="error">
+                        <li key={error}>
+                            <h2>{error}</h2>
+                        </li>
+                    </template>
+                </ul>
+            </div>
+        </template>
+        
+</template>

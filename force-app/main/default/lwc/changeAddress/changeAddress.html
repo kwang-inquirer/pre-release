@@ -1,0 +1,72 @@
+<template>
+   
+    <div class="slds-size_1-of-1 slds-p-horizontal_xx-small">
+        <template if:false={confirmationPage}>
+        <div class="slds-size_1-of-1 slds-p-horizontal_xx-small">
+            <lightning-radio-group name="radioGroup"
+            label="Address Selection"
+            options={options}
+            value={radioValue}
+            onchange={changeSelection}
+            type="radio" required></lightning-radio-group>
+        </div>
+    
+        <lightning-input-address
+            address-label="Billing Address"
+            street-label="Street"
+            city-label="City"
+            country-label="Country"
+            province-label="State"
+            postal-code-label="Postal Code"
+            country={defaultCountry}
+            province={defaultState}
+            country-options={countryOptions}
+            province-options={provinceOptions}
+            onchange={handleAddressChange} 
+            required>
+        </lightning-input-address>
+        <template if:true={updateDeliveryAddress}>
+                <div class="slds-size_1-of-1 slds-p-horizontal_xx-small">
+                        <lightning-input type="date" name="effectiveDate" label="Please select effective date for this delivery address change." onchange={handleFormInputChange} required></lightning-input>
+                </div>
+            <lightning-input type="checkbox"
+                        label="My delivery address and billing address are the same." checked onchange={sameAddressChange}>
+            </lightning-input>
+            <template if:false={sameAddress}>
+                <lightning-input-address
+                    address-label="Delivery Address"
+                    street-label="Street"
+                    city-label="City"
+                    country-label="Country"
+                    province-label="State"
+                    postal-code-label="Postal Code"
+                    country={defaultCountry}
+                    province={defaultState}
+                    country-options={countryOptions}
+                    province-options={provinceOptions}
+                    onchange={handleDeliveryAddressChange} 
+                    required>
+                </lightning-input-address>
+            </template>
+        </template>
+        <lightning-button style="padding:5px;" label="Submit Address Change" title="Submit Address Change"  onclick={handleSubmit} disabled={submitDisabled}></lightning-button>
+        <template if:true={hasErrors}>
+            <div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error slds-m-vertical_x-small" role="alert">
+                <ul>
+                    <template for:each={errors} for:item="error">
+                        <li key={error}>
+                            <h2>{error}</h2>
+                        </li>
+                    </template>
+                </ul>
+            </div>
+        </template>
+        <c-global-loading loading={isLoading}></c-global-loading>
+        </template> 
+        <template if:true={confirmationPage}>
+            <lightning-card style="width:100%;" title={successMessage}>
+            </lightning-card>
+        </template>
+    </div>
+
+</template>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AnalyticsSettings xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <alwaysGenPreviews>false</alwaysGenPreviews>
+    <analyticsAdoptionMetadata>false</analyticsAdoptionMetadata>
+    <canAccessAnalyticsViaAPI>false</canAccessAnalyticsViaAPI>
+    <canAnnotateDashboards>false</canAnnotateDashboards>
+    <canEnableSavedView>false</canEnableSavedView>
+    <canExploreDataConversationally>false</canExploreDataConversationally>
+    <canShareAppsWithCommunities>false</canShareAppsWithCommunities>
+    <canSubscribeDashboardWidgets>false</canSubscribeDashboardWidgets>
+    <canViewThumbnailAssets>false</canViewThumbnailAssets>
+    <enableAutoCompleteCombo>true</enableAutoCompleteCombo>
+    <enableDashboardComponentSnapshot>true</enableDashboardComponentSnapshot>
+    <enableDashboardFlexiTable>true</enableDashboardFlexiTable>
+    <enableEmailReportsToPortalUsers>false</enableEmailReportsToPortalUsers>
+    <enableFloatingReportHeaders>true</enableFloatingReportHeaders>
+    <enableInsights>false</enableInsights>
+    <enableLightningReportBuilder>false</enableLightningReportBuilder>
+    <enableLotusNotesImages>false</enableLotusNotesImages>
+    <enableMassEnableReportBuilder>true</enableMassEnableReportBuilder>
+    <enableNewChartsEngine>true</enableNewChartsEngine>
+    <enablePowerInsights>false</enablePowerInsights>
+    <enableRemoveFooterForRepDisplay>false</enableRemoveFooterForRepDisplay>
+    <enableRemoveFooterFromRepExp>true</enableRemoveFooterFromRepExp>
+    <enableReportFieldToFieldPref xsi:nil="true"/>
+    <enableReportNotificationsEnable>true</enableReportNotificationsEnable>
+    <enableS1AnalyticsEclairEnable>true</enableS1AnalyticsEclairEnable>
+    <enableSFXJoinedReportsEnable>false</enableSFXJoinedReportsEnable>
+    <enableSmartDataDiscovery>false</enableSmartDataDiscovery>
+    <enableUseOldChartsLookAndFeel>false</enableUseOldChartsLookAndFeel>
+    <enableWaveReplication>false</enableWaveReplication>
+    <enableWaveSharingInheritance>false</enableWaveSharingInheritance>
+    <enableWaveTemplate>false</enableWaveTemplate>
+</AnalyticsSettings>

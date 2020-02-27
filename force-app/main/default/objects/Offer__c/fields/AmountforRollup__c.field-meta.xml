@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+        <fullName>AmountforRollup__c</fullName>
+        <description>This field rolls up from Amount on Offer Product</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This value represents total weekly amount excluding any Sunday Amount multiplied by the number of weeks</inlineHelpText>
+        <label>Weekly Amount</label>
+        <summarizedField>Offer_Product__c.AmountforRollup__c</summarizedField>
+        <summaryFilterItems>
+            <field>Offer_Product__c.Is_Activation_Fee__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Offer_Product__c.Offer__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </CustomField>

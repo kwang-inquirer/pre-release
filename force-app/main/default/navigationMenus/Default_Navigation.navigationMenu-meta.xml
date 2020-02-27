@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NavigationMenu xmlns="http://soap.sforce.com/2006/04/metadata">
+    <container>PMN Subscribers</container>
+    <containerType>Network</containerType>
+    <label>Default Navigation</label>
+    <navigationMenuItem>
+        <label>Manage Account</label>
+        <position>1</position>
+        <publiclyAvailable>true</publiclyAvailable>
+        <subMenu>
+            <navigationMenuItem>
+                <label>Missed Paper</label>
+                <position>0</position>
+                <publiclyAvailable>true</publiclyAvailable>
+                <target>/missed-paper</target>
+                <type>InternalLink</type>
+            </navigationMenuItem>
+            <navigationMenuItem>
+                <label>Change My Password</label>
+                <position>1</position>
+                <publiclyAvailable>false</publiclyAvailable>
+                <target>/change-password</target>
+                <type>InternalLink</type>
+            </navigationMenuItem>
+            <navigationMenuItem>
+                <label>Change your Address</label>
+                <position>2</position>
+                <publiclyAvailable>true</publiclyAvailable>
+                <target>/change-your-address</target>
+                <type>InternalLink</type>
+            </navigationMenuItem>
+            <navigationMenuItem>
+                <label>Add User to Account</label>
+                <position>3</position>
+                <publiclyAvailable>true</publiclyAvailable>
+                <target>/add-user-to-account</target>
+                <type>InternalLink</type>
+            </navigationMenuItem>
+        </subMenu>
+        <type>MenuLabel</type>
+    </navigationMenuItem>
+    <navigationMenuItem>
+        <label>Manage Payments</label>
+        <position>2</position>
+        <publiclyAvailable>true</publiclyAvailable>
+        <subMenu>
+            <navigationMenuItem>
+                <label>Payment</label>
+                <position>0</position>
+                <publiclyAvailable>true</publiclyAvailable>
+                <target>/payment</target>
+                <type>InternalLink</type>
+            </navigationMenuItem>
+            <navigationMenuItem>
+                <label>EZPay</label>
+                <position>1</position>
+                <publiclyAvailable>true</publiclyAvailable>
+                <target>/ez-pay</target>
+                <type>InternalLink</type>
+            </navigationMenuItem>
+        </subMenu>
+        <type>MenuLabel</type>
+    </navigationMenuItem>
+    <navigationMenuItem>
+        <label>Vacations</label>
+        <position>3</position>
+        <publiclyAvailable>true</publiclyAvailable>
+        <subMenu>
+            <navigationMenuItem>
+                <label>Schedule a Vacation</label>
+                <position>0</position>
+                <publiclyAvailable>true</publiclyAvailable>
+                <target>/schedule-a-vacation</target>
+                <type>InternalLink</type>
+            </navigationMenuItem>
+            <navigationMenuItem>
+                <label>Vacation Shore Move</label>
+                <position>1</position>
+                <publiclyAvailable>true</publiclyAvailable>
+                <target>/vacation-shore-move</target>
+                <type>InternalLink</type>
+            </navigationMenuItem>
+        </subMenu>
+        <type>MenuLabel</type>
+    </navigationMenuItem>
+    <navigationMenuItem>
+        <label>Digital Access</label>
+        <position>4</position>
+        <publiclyAvailable>false</publiclyAvailable>
+        <subMenu>
+            <navigationMenuItem>
+                <label>Inquirer.com</label>
+                <position>0</position>
+                <publiclyAvailable>false</publiclyAvailable>
+                <target>https://www.inquirer.com/</target>
+                <type>ExternalLink</type>
+            </navigationMenuItem>
+            <navigationMenuItem>
+                <label>Inquirer Digital Replica: Pennsylvania</label>
+                <position>1</position>
+                <publiclyAvailable>false</publiclyAvailable>
+                <target>https://digital.olivesoftware.com/Olive/ODN/PhiladelphiaInquirer/</target>
+                <type>ExternalLink</type>
+            </navigationMenuItem>
+            <navigationMenuItem>
+                <label>Inquirer Digital Replica: New Jersey</label>
+                <position>2</position>
+                <publiclyAvailable>false</publiclyAvailable>
+                <target>https://digital.olivesoftware.com/Olive/ODN/PhiladelphiaInquirerNJ/</target>
+                <type>ExternalLink</type>
+            </navigationMenuItem>
+            <navigationMenuItem>
+                <label>Daily News Digital Replica</label>
+                <position>3</position>
+                <publiclyAvailable>false</publiclyAvailable>
+                <target>https://digital.olivesoftware.com/Olive/ODN/PhiladelphiaDailyNews/</target>
+                <type>ExternalLink</type>
+            </navigationMenuItem>
+        </subMenu>
+        <type>MenuLabel</type>
+    </navigationMenuItem>
+    <navigationMenuItem>
+        <label>Contact Us</label>
+        <position>5</position>
+        <publiclyAvailable>false</publiclyAvailable>
+        <subMenu>
+            <navigationMenuItem>
+                <label>Feedback</label>
+                <position>0</position>
+                <publiclyAvailable>false</publiclyAvailable>
+                <target>/contactsupport</target>
+                <type>InternalLink</type>
+            </navigationMenuItem>
+            <navigationMenuItem>
+                <label>FAQ</label>
+                <position>1</position>
+                <publiclyAvailable>false</publiclyAvailable>
+                <target>/topiccatalog</target>
+                <type>InternalLink</type>
+            </navigationMenuItem>
+        </subMenu>
+        <type>MenuLabel</type>
+    </navigationMenuItem>
+</NavigationMenu>

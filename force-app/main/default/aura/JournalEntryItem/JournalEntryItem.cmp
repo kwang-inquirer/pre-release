@@ -1,0 +1,59 @@
+<aura:component>
+
+    <aura:attribute name="transactionLogToUse" type="Object" />
+	<aura:attribute name="recordId" type="String" />
+
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}" />	
+
+	<hr aura:id = "TopHR" Class="Green-hr" />
+	<lightning:layout multipleRows="true">
+		<lightning:layoutItem size="12" mediumDeviceSize="3" class="custhead">Effective Dates</lightning:layoutItem>
+		<lightning:layoutItem size="12" mediumDeviceSize="3" class="custhead">End Date</lightning:layoutItem>
+		<lightning:layoutItem size="12" mediumDeviceSize="3" class="custhead">Amount</lightning:layoutItem>
+		<lightning:layoutItem size="12" mediumDeviceSize="3" class="custhead">Money at Expire</lightning:layoutItem>
+		<lightning:layoutItem size="12" mediumDeviceSize="3"><ui:outputDate format="MM/dd/yyyy" value="{!v.transactionLogToUse.First_Date}" /></lightning:layoutItem>
+		<lightning:layoutItem size="12" mediumDeviceSize="3"><ui:outputDate format="MM/dd/yyyy" value="{!v.transactionLogToUse.Expire_Date}" /></lightning:layoutItem>		
+		<lightning:layoutItem size="12" mediumDeviceSize="3"><ui:outputCurrency value="{!v.transactionLogToUse.Amount}" /></lightning:layoutItem>
+		<lightning:layoutItem size="12" mediumDeviceSize="3"><ui:outputCurrency value="{!v.transactionLogToUse.Expire_Balance}" /></lightning:layoutItem>
+
+		<lightning:layoutItem size="12" mediumDeviceSize="4" class="custhead">Type</lightning:layoutItem>
+		<lightning:layoutItem size="12" mediumDeviceSize="8" class="custhead">Pub/Memo</lightning:layoutItem>
+		<lightning:layoutItem size="12" mediumDeviceSize="4">{!v.transactionLogToUse.EntryType}</lightning:layoutItem>
+		<lightning:layoutItem size="12" mediumDeviceSize="8">{!v.transactionLogToUse.Publication}</lightning:layoutItem>
+
+		<lightning:layoutItem size="12" mediumDeviceSize="8">{!v.transactionLogToUse.Message} </lightning:layoutItem>
+		<lightning:layoutItem size="12" mediumDeviceSize="4">{!v.transactionLogToUse.Transaction_Type_Type_Name}</lightning:layoutItem>
+
+		<lightning:layoutItem size="12" class="custhead">Description</lightning:layoutItem>
+		<lightning:layoutItem size="12">{!v.transactionLogToUse.Description}</lightning:layoutItem>
+
+		<lightning:layoutItem size="12" mediumDeviceSize="4" class="custhead">Entered On</lightning:layoutItem>
+		<lightning:layoutItem size="12" mediumDeviceSize="8" class="custhead">Entered By</lightning:layoutItem>
+		<lightning:layoutItem size="12" mediumDeviceSize="4"><ui:outputDate format="MM/dd/yyyy" value="{!v.transactionLogToUse.Entry_Date}" /></lightning:layoutItem>
+		<lightning:layoutItem size="12" mediumDeviceSize="8">{!v.transactionLogToUse.CreatedByName}</lightning:layoutItem>
+		
+		<aura:if isTrue="{!v.transactionLogToUse.items}">
+			<lightning:layoutItem size="8" class="slds-p-vertical_x-small">
+				<lightning:layoutItem size="12" class="custhead">Recurly Invoice Line Items</lightning:layoutItem>
+				<lightning:layout multipleRows="true">
+					<lightning:layoutItem size="12" mediumDeviceSize="4" class="custhead">Amount</lightning:layoutItem>
+					<lightning:layoutItem size="12" mediumDeviceSize="4" class="custhead">Status</lightning:layoutItem>
+					<lightning:layoutItem size="12" mediumDeviceSize="4" class="custhead">Description</lightning:layoutItem>
+					<aura:iteration items="{!v.transactionLogToUse.items}" var="item">
+						<lightning:layoutItem size="12" mediumDeviceSize="4"><ui:outputCurrency value="{!item.amount}" /></lightning:layoutItem>
+						<lightning:layoutItem size="12" mediumDeviceSize="4">{!item.status}</lightning:layoutItem>
+						<lightning:layoutItem size="12" mediumDeviceSize="4">{!item.description}</lightning:layoutItem>
+					</aura:iteration>
+				</lightning:layout>
+			</lightning:layoutItem>
+			<lightning:layoutItem size="4" class="slds-p-vertical_x-small">
+				<aura:if isTrue="{!and(v.transactionLogToUse.InvoiceId, v.transactionLogToUse.Transaction_Type_name == 'Purchase')}">
+					<lightning:layoutItem size="12" class="custhead">Actions</lightning:layoutItem>
+					<lightning:layoutItem size="12">
+						<lightning:button variant="neutral" label="Refund" title="Refund" onclick="{! c.handleRefundClicked }"/>
+					</lightning:layoutItem>
+				</aura:if>
+			</lightning:layoutItem>
+		</aura:if>
+	</lightning:layout>
+</aura:component>

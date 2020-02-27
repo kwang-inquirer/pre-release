@@ -1,0 +1,24 @@
+<aura:component controller="TransactionLogActions">
+
+    <aura:attribute name="transactionLogToUse" type="Transaction_Log__c" />
+	<aura:attribute name="recordId" type="String" />
+	<aura:attribute name="UseCSS" type="String" default="this.green-upper" />
+	<aura:attribute name="TypeSettings" type="List" />
+
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}" />	
+	<br />
+	<hr aura:id = "TopHR" />
+	<div Style="text-align: left;">                
+		<p  style="font-size:large; text-decoration:none;color:blue;cursor: pointer;" onclick="{!c.redirectToTransLog}">{!v.transactionLogToUse.Name} </p>
+			 - {!v.transactionLogToUse.Transaction_Type__r.Name}<br />
+		<span style="font-size:small"> 
+			{!v.transactionLogToUse.Description__c} <br /> 
+			{!v.transactionLogToUse.CreatedBy.Name} - <ui:outputDateTime value="{!v.transactionLogToUse.CreatedDate}" />
+		</span>
+		<!--<p><ui:outputRichText aura:id="outputRT" value="{!v.transactionLogToUse.Notes__c}" /></p>
+		<b>Total Hours: </b>{!v.transactionLogToUse.Hours_Worked__c}
+		-->
+	</div>            
+	<hr aura:id = "BottomHR" />
+
+</aura:component>

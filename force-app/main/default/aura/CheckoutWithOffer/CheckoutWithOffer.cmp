@@ -1,0 +1,13 @@
+<aura:component implements="flexipage:availableForAllPageTypes,lightning:availableForFlowScreens" access="global">
+    <aura:attribute name="offerId" type="String" />
+    <aura:attribute name="subscriptionId" type="String" />
+    <aura:attribute name="email" type="String" />
+    <aura:attribute name="sessionId" type="String" />
+    <aura:attribute name="pianoId" type="String" />
+    <aura:attribute name="showAgreement" type="Boolean" default="false" />
+    <aura:attribute name="processPayment" type="Boolean" default="true" />
+    <aura:attribute name="finishFlow" type="Boolean" default="false" />
+    <aura:attribute name="source" type="String"/>
+
+    <c:checkoutProcess onsuccess="{!c.onSuccess}" offerId="{!v.offerId}" email="{!v.email}" sessionId="{!v.sessionId}" pianoId="{!v.pianoId}" subscriptionId="{!v.subscriptionId}" showAgreementBeforeSubmit="{!v.showAgreement}" processPayment="{!v.processPayment}" />
+</aura:component>

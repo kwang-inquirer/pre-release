@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- Use this field to document the answer to the question discussed in the Knowledge Article. --></help>
+        <label><!-- Answer --></label>
+        <name>Answer__c</name>
+    </CustomFieldTranslation>

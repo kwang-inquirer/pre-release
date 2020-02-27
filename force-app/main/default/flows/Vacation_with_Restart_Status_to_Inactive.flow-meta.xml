@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <name>Update_Subscription</name>
+        <label>Update Subscription</label>
+        <locationX>263</locationX>
+        <locationY>49</locationY>
+        <assignmentItems>
+            <assignToReference>thisSub.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Subscription__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>thisSub.subscription_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>INACTIVE</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Sub</targetReference>
+        </connector>
+    </assignments>
+    <interviewLabel>Vacation with Restart Status to Inactive {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Vacation with Restart Status to Inactive</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Sub</name>
+        <label>Update Sub</label>
+        <locationX>437</locationX>
+        <locationY>49</locationY>
+        <inputReference>thisSub</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Update_Subscription</targetReference>
+        </connector>
+        <filters>
+            <field>Code_Name__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Vacation with Restart</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Is_First_Date__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>Transaction_Log__c</object>
+        <schedule>
+            <frequency>Daily</frequency>
+            <startDate>2019-12-04</startDate>
+            <startTime>02:00:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>thisSub</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Subscription__c</objectType>
+    </variables>
+</Flow>

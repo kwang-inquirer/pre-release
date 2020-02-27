@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- If transaction needs to be transmitted to DSI then checkbox. --></help>
+        <label><!-- DSI? --></label>
+        <name>DSI__c</name>
+    </CustomFieldTranslation>

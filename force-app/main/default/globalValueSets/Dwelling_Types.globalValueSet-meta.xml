@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>S</fullName>
+        <default>false</default>
+        <label>S</label>
+    </customValue>
+    <customValue>
+        <fullName>A</fullName>
+        <default>false</default>
+        <label>A</label>
+    </customValue>
+    <customValue>
+        <fullName>P</fullName>
+        <default>false</default>
+        <label>P</label>
+    </customValue>
+    <customValue>
+        <fullName>M</fullName>
+        <default>false</default>
+        <label>M</label>
+    </customValue>
+    <masterLabel>Dwelling Types</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

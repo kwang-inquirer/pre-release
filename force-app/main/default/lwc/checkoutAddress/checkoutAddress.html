@@ -1,0 +1,18 @@
+<template>
+    <h2 class="slds-border_bottom slds-theme_shade slds-p-around_xx-small">{label} Address</h2>
+    <div class="slds-grid slds-wrap">
+        <template if:true={showName}>
+            <div class="slds-size_1-of-2">
+                <lightning-input name="firstName" label="First Name" value={address.firstName} onchange={handleNameChange} required={required} disabled={disabled}></lightning-input>
+            </div>
+            <div class="slds-size_1-of-2 slds-p-left_x-small">
+                <lightning-input name="lastName" label="Last Name" value={address.lastName} onchange={handleNameChange} required={required} disabled={disabled}></lightning-input>
+            </div>
+        </template>
+        <div class="slds-size_1-of-1">
+            <lightning-input-address street-label="Street" city-label="City" country-label="Country" province-label="State" postal-code-label="PostalCode" street={address.street} city={address.city} country={address.country}
+                province={address.state} postal-code={address.postalCode} country-options={getCountryOptions} province-options={getProvinceOptions} onchange={handleAddressChange} disabled={disabled} required={required}>
+            </lightning-input-address>
+        </div>
+    </div>
+</template>

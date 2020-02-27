@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- Location is active and available for Partners to select for events. --></help>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </CustomFieldTranslation>

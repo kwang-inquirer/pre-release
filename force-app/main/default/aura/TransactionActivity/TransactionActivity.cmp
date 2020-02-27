@@ -1,0 +1,67 @@
+<aura:component controller="TransactionLogActions">
+
+    <aura:attribute name="transactionLogToUse" type="object" />
+	<aura:attribute name="recordId" type="String" />
+	<aura:attribute name="UseCSS" type="String" default="this.green-upper" />
+	<aura:attribute name="TypeSettings" type="List" />
+
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}" />	
+	<br />
+	<hr aura:id = "TopHR" />
+	<!-- <div>
+		<table>
+			<tr>
+				<th Style="width: 150px;">Effective Dates</th>
+				<th Style="width: 75px;"></th>
+				<th Style="width: 75px;">End Date</th>
+				<th Style="width: 75px;"></th>
+			</tr>
+			<tr>
+				<td Style="width: 150px;">
+					<ui:outputDate value="{!v.transactionLogToUse.First_Date}" />
+					<aura:if isTrue="{! v.transactionLogToUse.First_Date != v.transactionLogToUse.Last_Date}">
+						<br />
+						<ui:outputDate value="{!v.transactionLogToUse.Last_Date}" />
+					</aura:if>
+				</td>
+				<td Style="width: 75px;"><ui:outputCurrency value="{!v.transactionLogToUse.Expire_Balance}" /></td>
+				<td Style="width: 75px;"><ui:outputDate value="{!v.transactionLogToUse.Expire_Date}" /></td>
+				<td Style="width: 75px;"><ui:outputCurrency value="{!v.transactionLogToUse.Amount}" /></td>
+			</tr>
+			<tr>
+				<th ColSpan="1">Type</th>
+				<th ColSpan="3">Pub/Memo</th>
+			</tr>
+			<tr>
+				<td ColSpan="1">{!v.transactionLogToUse.Transaction_Type_name}</td>
+				<td ColSpan="3">{!v.transactionLogToUse.Publication}</td>
+			</tr>
+			<tr>
+				<td ColSpan="3">{!v.transactionLogToUse.Message}</td>
+				<td>{!v.transactionLogToUse.Transaction_Type_Type_Name}</td>
+			</tr>
+			<tr>
+				<td ColSpan="4">{!v.transactionLogToUse.Description}</td>
+			</tr>
+			<tr>
+				<td ColSpan="2" style="font-size:small"><ui:outputDate value="{!v.transactionLogToUse.Entry_Date}" /></td>
+				<td ColSpan="2" style="font-size:small">{!v.transactionLogToUse.CreatedByName}</td>
+			</tr>
+		</table>
+	</div> -->
+	<lightning:layout multipleRows="true">
+
+	<lightning:layoutItem size="12" mediumDeviceSize="6" class="custhead">Type</lightning:layoutItem>
+	<lightning:layoutItem size="12" mediumDeviceSize="6" class="custhead">Memo</lightning:layoutItem>
+	<lightning:layoutItem size="12" mediumDeviceSize="6">{!v.transactionLogToUse.Transaction_Type_name}</lightning:layoutItem>
+    <lightning:layoutItem size="12" mediumDeviceSize="6">{!v.transactionLogToUse.Message} {!v.transactionLogToUse.Memo}</lightning:layoutItem>
+	
+	<lightning:layoutItem size="12" class="border">{!v.transactionLogToUse.Description}</lightning:layoutItem>
+
+	<lightning:layoutItem size="12" mediumDeviceSize="4" class="custhead">Entered On</lightning:layoutItem>
+	<lightning:layoutItem size="12" mediumDeviceSize="8" class="custhead">Entered By</lightning:layoutItem>
+	<lightning:layoutItem size="12" mediumDeviceSize="4"><ui:outputDate format="MM/dd/yyyy" value="{!v.transactionLogToUse.Entry_Date}" /></lightning:layoutItem>
+    <lightning:layoutItem size="12" mediumDeviceSize="8">{!v.transactionLogToUse.CreatedByName}</lightning:layoutItem>
+    <!-- <lightning:layoutItem size="12" class="border">fullsize = 12</lightning:layoutItem> -->
+	</lightning:layout> 
+</aura:component>

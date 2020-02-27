@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- This is the user friendly name of the Termination Code. To populate create a Stop Transaction --></help>
+        <label><!-- Expiration Reason --></label>
+        <name>Expiration_Reason_UserFriendlyName__c</name>
+    </CustomFieldTranslation>

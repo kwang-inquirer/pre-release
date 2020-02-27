@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>This custom settings is used to store the Code for the Vacation Transactions used in the Vacation Request Flows</description>
+    <enableFeeds>false</enableFeeds>
+    <label>Vacation Transactions</label>
+    <visibility>Public</visibility>
+</CustomObject>

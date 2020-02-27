@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?><EscalationRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <escalationRule>
+        <fullName>Rule 1</fullName>
+        <active>true</active>
+        <ruleEntry>
+            <businessHoursSource>None</businessHoursSource>
+            <criteriaItems>
+                <field>Case.Status</field>
+                <operation>equals</operation>
+                <value>New</value>
+            </criteriaItems>
+            <disableEscalationWhenModified>true</disableEscalationWhenModified>
+            <escalationAction>
+                <assignedTo>Executive_Escalations</assignedTo>
+                <assignedToType>Queue</assignedToType>
+                <minutesToEscalation>4320</minutesToEscalation>
+                <notifyCaseOwner>false</notifyCaseOwner>
+            </escalationAction>
+            <escalationStartTime>CaseCreation</escalationStartTime>
+        </ruleEntry>
+    </escalationRule>
+</EscalationRules>

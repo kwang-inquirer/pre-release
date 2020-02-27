@@ -1,0 +1,26 @@
+<template>
+    <h2 class="slds-border_bottom slds-theme_shade slds-p-around_xx-small">
+        Card Information
+    </h2>
+    <div class="slds-grid slds-wrap">
+        <div class="slds-size_9-of-12 slds-p-horizontal_xx-small">
+            <lightning-input type="text" name="cardNumber" label="Card Number" value={payment.cardNumber} onchange={handleCardNumberChange} max-length="19" min-length="19" required>
+            </lightning-input>
+        </div>
+        <div class="slds-size_3-of-12 slds-p-horizontal_xx-small">
+            <lightning-combobox name="type" label="Type" placeholder="Choose Type" value={payment.type} onchange={handleChange} options={typeOptions} required disabled>
+            </lightning-combobox>
+        </div>
+        <div class="slds-size_1-of-3 slds-p-horizontal_xx-small">
+            <lightning-combobox name="month" label="Month" placeholder="Choose month" value={payment.month} onchange={handleChange} options={monthOptions} required>
+            </lightning-combobox>
+        </div>
+        <div class="slds-size_1-of-3 slds-p-horizontal_xx-small">
+            <lightning-combobox name="year" label="Year" placeholder="Choose year" value={payment.year} onchange={handleChange} options={yearOptions} required>
+            </lightning-combobox>
+        </div>
+        <div class="slds-size_1-of-3 slds-p-horizontal_xx-small">
+            <lightning-input type="text" name="cvc" label="CVC" value={payment.cvc} onchange={handleNumericTextChange} max-length="3" min-length="3" required></lightning-input>
+        </div>
+    </div>
+</template>

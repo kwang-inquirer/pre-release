@@ -1,0 +1,158 @@
+<aura:component controller="NewSubscriptionCmpController" implements="force:lightningQuickActionWithoutHeader,force:hasSObjectName,force:hasRecordId,lightning:availableForFlowScreens"  access="global">
+    <aura:attribute name="rcBillingCode" type="String" />
+    <aura:attribute name="nameOnCard" type="String"/>
+    <aura:attribute name="cardNumber" type="String"/>
+    <aura:attribute name="ccv" type="String"/>
+    <aura:attribute name="streetAddress" type="String"/>
+    <aura:attribute name="city" type="String"/>
+    <aura:attribute name="zip" type="String"/>
+
+    
+    <div class="slds-scope slds-grid slds-grid_align-center">
+        <div id="paymentDetails">
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col">
+                    <div class="slds-form slds-form_stacked">
+                        
+                        
+                            <div class="slds-form-element">
+                                <lightning:select aura:id="paymentType" label="Payment Type:" required="true" name="paymentTypeSelector" >         
+                                    <option value="Credit">Credit</option>
+                                </lightning:select>
+                                
+                                <lightning:select aura:id="cardTypeSelector" label="Card Type:" required="true" name="cardTypeSelector">         
+                                    <option value="American Express">American Express</option>
+                                    <option value="Discover">Discover</option>
+                                    <option value="Mastercard">Mastercard</option>
+                                    <option value="Visa">Visa</option>
+                                </lightning:select>
+                                
+                                <div class="slds-form-eleme nt__control">
+                                    <lightning:input name="nameOnCardInput" label="Name On Card:" required="true" value="{! v.nameOnCard }"/>
+                                </div>
+                                
+                                <div class="slds-form-element__control">
+                                    <lightning:input name="cardNumberInput" label="Card Number:" required="true" value="{! v.cardNumber }"/>
+                                </div>
+                                <div class="slds-form-element__control">
+                                    <lightning:input name="cvvInput" label="CCV:" required="true" value="{! v.ccv }"/>
+                                </div>
+                                
+                                <div class="slds-form-element__control">
+                                    <div class="slds-grid slds-gutters">
+                                        <div class="slds-col">
+                                            
+                                            <lightning:select aura:id="monthInput" label="Expiration Month" required="true" name="monthInput">         
+                                                <option value="Month">Month</option>
+                                                <option value="01">01</option>
+                                                <option value="02">02</option>
+                                                <option value="03">03</option>
+                                                <option value="04">04</option>
+                                                <option value="05">05</option>
+                                                <option value="06">06</option>
+                                                <option value="07">07</option>
+                                                <option value="08">08</option>
+                                                <option value="09">09</option>
+                                                <option value="10">10</option>
+                                                <option value="11">11</option>
+                                                <option value="12">12</option>
+                                            </lightning:select>
+                                        </div>
+                                        <div class="slds-col">
+                                            
+                                            <lightning:select aura:id="yearInput" label="Expiration Year" required="true" name="yearInput">         
+                                                <option value="Year">Year</option>
+                                                <option value="2019">2019</option>
+                                                <option value="2020">2020</option>
+                                                <option value="2021">2021</option>
+                                                <option value="2022">2022</option>
+                                                <option value="2023">2023</option>
+                                                <option value="2024">2024</option>
+                                                <option value="2025">2025</option>
+                                                <option value="2026">2026</option>
+                                                <option value="2027">2027</option>
+                                                <option value="2028">2028</option>
+                                                <option value="2029">2029</option>
+                                                <option value="2030">2030</option>
+                                                <option value="2031">2031</option>
+                                                <option value="2032">2032</option>
+                                                <option value="2033">2033</option>
+                                                <option value="2034">2034</option>
+                                                <option value="2035">2035</option>
+                                            </lightning:select>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="slds-form-element__control">
+                                        <lightning:input name="addressInput" label="Street Address:" required="true" value="{! v.streetAddress }"/>
+                                    </div>
+                                    <div class="slds-form-element__control">
+                                        <lightning:input name="cityInput" label="City:" required="true" value="{! v.city }"/>
+                                    </div>
+                                    <div class="slds-form-element__control">
+                                        <lightning:input name="zipInput" label="Zip:" required="true" value="{! v.zip }"/>
+                                    </div>
+                                    <lightning:select aura:id="stateSelector" label="State:" required="true" name="stateSelector">         
+                                        <option value="AL">Alabama</option>
+                                        <option value="AK">Alaska</option>
+                                        <option value="AZ">Arizona</option>
+                                        <option value="AR">Arkansas</option>
+                                        <option value="CA">California</option>
+                                        <option value="CO">Colorado</option>
+                                        <option value="CT">Connecticut</option>
+                                        <option value="DE">Delaware</option>
+                                        <option value="DC">District Of Columbia</option>
+                                        <option value="FL">Florida</option>
+                                        <option value="GA">Georgia</option>
+                                        <option value="HI">Hawaii</option>
+                                        <option value="ID">Idaho</option>
+                                        <option value="IL">Illinois</option>
+                                        <option value="IN">Indiana</option>
+                                        <option value="IA">Iowa</option>
+                                        <option value="KS">Kansas</option>
+                                        <option value="KY">Kentucky</option>
+                                        <option value="LA">Louisiana</option>
+                                        <option value="ME">Maine</option>
+                                        <option value="MD">Maryland</option>
+                                        <option value="MA">Massachusetts</option>
+                                        <option value="MI">Michigan</option>
+                                        <option value="MN">Minnesota</option>
+                                        <option value="MS">Mississippi</option>
+                                        <option value="MO">Missouri</option>
+                                        <option value="MT">Montana</option>
+                                        <option value="NE">Nebraska</option>
+                                        <option value="NV">Nevada</option>
+                                        <option value="NH">New Hampshire</option>
+                                        <option value="NJ">New Jersey</option>
+                                        <option value="NM">New Mexico</option>
+                                        <option value="NY">New York</option>
+                                        <option value="NC">North Carolina</option>
+                                        <option value="ND">North Dakota</option>
+                                        <option value="OH">Ohio</option>
+                                        <option value="OK">Oklahoma</option>
+                                        <option value="OR">Oregon</option>
+                                        <option value="PA">Pennsylvania</option>
+                                        <option value="RI">Rhode Island</option>
+                                        <option value="SC">South Carolina</option>
+                                        <option value="SD">South Dakota</option>
+                                        <option value="TN">Tennessee</option>
+                                        <option value="TX">Texas</option>
+                                        <option value="UT">Utah</option>
+                                        <option value="VT">Vermont</option>
+                                        <option value="VA">Virginia</option>
+                                        <option value="WA">Washington</option>
+                                        <option value="WV">West Virginia</option>
+                                        <option value="WI">Wisconsin</option>
+                                        <option value="WY">Wyoming</option>
+                                    </lightning:select>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <lightning:button variant="brand" label="Submit" onclick="{! c.handleSubmit }" />
+        </div>
+    </div>
+    
+    <!-- END Payment Details -->
+</aura:component>

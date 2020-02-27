@@ -1,0 +1,3 @@
+<aura:event type="APPLICATION" description="Triggers when a recurly refund needs to occur">
+    <aura:attribute name="invoiceId" type="String" />
+</aura:event>

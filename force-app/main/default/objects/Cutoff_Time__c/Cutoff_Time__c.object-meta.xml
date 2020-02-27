@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>This custom setting is used to set the cut off time for same day redelivery</description>
+    <enableFeeds>false</enableFeeds>
+    <label>Re-Delivery Cutoff Time</label>
+    <visibility>Public</visibility>
+</CustomObject>

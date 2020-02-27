@@ -1,0 +1,8 @@
+<design:component label="Delivery Service Issue">
+    <design:attribute name="dateSelected" label="Selected Date" />
+    <design:attribute name="serviceIssueSelected" label="Service Issue" />
+    <design:attribute name="solutionSelected" label="Solution Requested" />    
+    <design:attribute name="subscriptionId" label="Subscription Id" />
+    <design:attribute name="dateValidationError" label="Date Validation Error" />
+    <design:attribute name="deliveryValidationError" label="Delivery Validation Error" />
+</design:component>
