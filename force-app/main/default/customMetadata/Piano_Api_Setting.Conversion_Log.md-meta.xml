@@ -4,14 +4,18 @@
     <protected>false</protected>
     <values>
         <field>Base_URI__c</field>
-        <value xsi:type="xsd:string">https://sandbox.tinypass.com/api/v3</value>
+        <value xsi:type="xsd:string">https://dashboard.tinypass.com/publisher</value>
     </values>
     <values>
         <field>Term_Id__c</field>
-        <value xsi:type="xsd:string">TM28HV3RFIY2</value>
+        <value xsi:type="xsd:string">TMP8D1STZUAQ</value>
     </values>
     <values>
         <field>Term_Name__c</field>
         <value xsi:type="xsd:string">ConversionReportingPlaceholder</value>
+    </values>
+    <values>
+        <field>Token__c</field>
+        <value xsi:type="xsd:string">OpKzuulqo2mUaf1OjK09MEer8ELpBoVGdyBY5Lg9</value>
     </values>
 </CustomMetadata>

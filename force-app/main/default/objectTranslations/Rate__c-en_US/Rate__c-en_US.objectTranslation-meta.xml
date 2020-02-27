@@ -17,23 +17,13 @@
     
     
     
-    <layouts>
-        <layout>Rate Layout</layout>
-        <sections>
-            <label><!-- Audit --></label>
-            <section>Audit</section>
-        </sections>
-        <sections>
-            <label><!-- Custom Links --></label>
-            <section>Custom Links</section>
-        </sections>
-        <sections>
-            <label><!-- Delivery Days --></label>
-            <section>Delivery Days</section>
-        </sections>
-        <sections>
-            <label><!-- Pricing --></label>
-            <section>Pricing</section>
-        </sections>
-    </layouts>
+    <caseValues>
+        <plural>false</plural>
+        <value>Rate</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Rates</value>
+    </caseValues>
+    <startsWith>Consonant</startsWith>
 </CustomObjectTranslation>

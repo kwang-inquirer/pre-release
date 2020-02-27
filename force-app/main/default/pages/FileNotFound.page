@@ -18,10 +18,6 @@
                   <br/>
                   <br/>
                   <apex:outputText value="{!$Label.site.stay_tuned}"/>
-                  <apex:outputText escape="false" value=" {!$Label.site.get_in_touch}">
-                   <apex:param value="mailto:{!HTMLENCODE($Site.AdminEmailAddress)}"/>
-                   <apex:param value="{!$Label.site.email_us}"/>
-                  </apex:outputText>
                 </apex:panelGroup>
               </apex:panelGrid>
              </apex:outputPanel>

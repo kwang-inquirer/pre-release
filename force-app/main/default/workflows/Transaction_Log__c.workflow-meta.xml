@@ -7,8 +7,7 @@
             <field>Contact__c</field>
             <type>contactLookup</type>
         </recipients>
-        <senderAddress>customerservice@philly.com</senderAddress>
-        <senderType>OrgWideEmailAddress</senderType>
+        <senderType>CurrentUser</senderType>
         <template>Transaction_Emails/Vacation</template>
     </alerts>
     <fieldUpdates>
@@ -106,6 +105,7 @@
         <fields>First_Date__c</fields>
         <fields>Id</fields>
         <fields>Memo__c</fields>
+        <fields>Message__c</fields>
         <includeSessionId>true</includeSessionId>
         <integrationUser>client-pmn@relationedge.com</integrationUser>
         <name>Send Carrier Memo</name>
@@ -413,7 +413,7 @@
             <name>Clear_Restart_Source</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>false</active>
+        <active>true</active>
         <formula>AND( Clear_Restart_Date__c = TRUE, ISCHANGED( Clear_Restart_Date__c ))</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
@@ -423,7 +423,7 @@
             <name>Delete_Complaint</name>
             <type>OutboundMessage</type>
         </actions>
-        <active>false</active>
+        <active>true</active>
         <formula>AND(ISCHANGED(Cancelled__c), Cancelled__c = TRUE, ISPICKVAL(Transaction_Type__r.Category__c,'Complaint'), LastModifiedBy.Username != 'infrmtc_intgrtn-acct@inquirer.com')</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
@@ -433,7 +433,7 @@
             <name>Modify_Start</name>
             <type>OutboundMessage</type>
         </actions>
-        <active>false</active>
+        <active>true</active>
         <formula>AND( LastModifiedBy.Username != 'infrmtc_intgrtn-acct@inquirer.com',   OR( Complaint_Code__c = 'TVR', Complaint_Code__c = 'TVW'), ISCHANGED( First_Date__c ))</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
@@ -443,7 +443,7 @@
             <name>Send_Modify_Stop</name>
             <type>OutboundMessage</type>
         </actions>
-        <active>false</active>
+        <active>true</active>
         <formula>AND( LastModifiedBy.Username != 'infrmtc_intgrtn-acct@inquirer.com',   OR( Complaint_Code__c = 'TVR', Complaint_Code__c = 'TVW', ISPICKVAL(Transaction_Type__r.Category__c, 'Stop')), ISCHANGED( Last_Date__c ))</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
@@ -453,7 +453,7 @@
             <name>Modify_Vacation_Hold</name>
             <type>OutboundMessage</type>
         </actions>
-        <active>false</active>
+        <active>true</active>
         <formula>AND( LastModifiedBy.Username != 'infrmtc_intgrtn-acct@inquirer.com',  Complaint_Code__c = 'VH', OR(ISCHANGED( First_Date__c ), ISCHANGED( Last_Date__c )))</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
@@ -463,7 +463,7 @@
             <name>Modify_Vacation_Package</name>
             <type>OutboundMessage</type>
         </actions>
-        <active>false</active>
+        <active>true</active>
         <formula>AND( LastModifiedBy.Username != 'infrmtc_intgrtn-acct@inquirer.com',  Complaint_Code__c = 'VPA', OR(ISCHANGED( Last_Date__c ), ISCHANGED( First_Date__c )))</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
@@ -473,7 +473,7 @@
             <name>Send_Carrier_Memo</name>
             <type>OutboundMessage</type>
         </actions>
-        <active>false</active>
+        <active>true</active>
         <formula>AND(Complaint_Code__c = 'ME', CreatedBy.Username != 'infrmtc_intgrtn-acct@inquirer.com')</formula>
         <triggerType>onCreateOnly</triggerType>
     </rules>
@@ -483,7 +483,7 @@
             <name>Send_Transaction_Complaint</name>
             <type>OutboundMessage</type>
         </actions>
-        <active>false</active>
+        <active>true</active>
         <formula>AND(ISPICKVAL(Transaction_Type__r.Category__c, 'Complaint'), CreatedBy.Username != 'infrmtc_intgrtn-acct@inquirer.com')</formula>
         <triggerType>onCreateOnly</triggerType>
     </rules>
@@ -493,7 +493,7 @@
             <name>Send_Permanent_Stop</name>
             <type>OutboundMessage</type>
         </actions>
-        <active>false</active>
+        <active>true</active>
         <formula>AND(ISPICKVAL(Transaction_Type__r.Category__c, 'Stop'), CreatedBy.Username != 'infrmtc_intgrtn-acct@inquirer.com')</formula>
         <triggerType>onCreateOnly</triggerType>
     </rules>
@@ -503,7 +503,7 @@
             <name>Send_Vacation_Hold</name>
             <type>OutboundMessage</type>
         </actions>
-        <active>false</active>
+        <active>true</active>
         <formula>AND(Complaint_Code__c = 'VH', CreatedBy.Username != 'infrmtc_intgrtn-acct@inquirer.com')</formula>
         <triggerType>onCreateOnly</triggerType>
     </rules>
@@ -513,7 +513,7 @@
             <name>Send_Vacation_Package</name>
             <type>OutboundMessage</type>
         </actions>
-        <active>false</active>
+        <active>true</active>
         <formula>AND( Complaint_Code__c = 'VPA', CreatedBy.Username != 'infrmtc_intgrtn-acct@inquirer.com')</formula>
         <triggerType>onCreateOnly</triggerType>
     </rules>
@@ -523,7 +523,7 @@
             <name>Send_Vacation_Restart</name>
             <type>OutboundMessage</type>
         </actions>
-        <active>false</active>
+        <active>true</active>
         <formula>AND(Complaint_Code__c = 'TVR', CreatedBy.Username != 'infrmtc_intgrtn-acct@inquirer.com')</formula>
         <triggerType>onCreateOnly</triggerType>
     </rules>
@@ -533,7 +533,7 @@
             <name>Send_Vacation_without_Restart</name>
             <type>OutboundMessage</type>
         </actions>
-        <active>false</active>
+        <active>true</active>
         <formula>AND(Complaint_Code__c = 'TVW', CreatedBy.Username != 'infrmtc_intgrtn-acct@inquirer.com')</formula>
         <triggerType>onCreateOnly</triggerType>
     </rules>
@@ -543,7 +543,7 @@
             <name>Send_Complaint_Update</name>
             <type>OutboundMessage</type>
         </actions>
-        <active>false</active>
+        <active>true</active>
         <formula>AND(OR(ISCHANGED(First_Date__c), ISCHANGED(Complaint_Code__c)),  ISPICKVAL(Transaction_Type__r.Category__c, 'Complaint') , LastModifiedBy.Username != 'infrmtc_intgrtn-acct@inquirer.com')</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>

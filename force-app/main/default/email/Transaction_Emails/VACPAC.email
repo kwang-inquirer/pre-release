@@ -5,8 +5,7 @@
 <td width="500">
 <p style="text-align: center;"><span style="font-family: Arial, Helvetica, sans-serif;"><img src="https://s3.amazonaws.com/cms.philly/2019%20Inquirer%20Logo%20(1).jpg" alt="" width="250" /></span></p>
 <center><center>
-<p style="text-align: center; width: 75%;"><span style="color: #000000; font-family: Arial, Helvetica, sans-serif; font-size: medium;">Thank you for visiting Subscriber Services. Your vacation hold request has been processed. Your print delivery is scheduled to stop on {!Transaction_Log__c.First_Date__c}  and all deliveries are schedule to resume on {!Transaction_Log__c.Last_Date__c}</span></p>
-<center>
+<p style="text-align: center; width: 75%;"><span style="color: #000000; font-family: Arial, Helvetica, sans-serif; font-size: medium;">Thank you for visiting Subscriber Services. Your vacation package request has been processed. Your print delivery is scheduled to stop on {!Transaction_Log__c.Stop_Date__c} and all deliveries are scheduled to resume on {!Transaction_Log__c.Start_Date__c}</span></p><center>
 <p style="text-align: center; width: 75%;"><span style="font-family: Arial, Helvetica, sans-serif; font-size: medium; text-align: center;">Don't forget, while you are away you can browse&nbsp;<a href="https://inquirer.com/">inquirer.com</a> or you can access the <a href="https://inquirer.com/replica">Inquirer</a> and <a href="https://phillydailynews.com/replica">Daily News</a> replica editions from anywhere, at any time!</span></p>
 <br /><hr size="1" width="75%" /><br />
 <p style="text-align: center;"><span style="font-family: Arial, Helvetica, sans-serif;"><strong>Have questions? We're here to help!</strong></span></p>

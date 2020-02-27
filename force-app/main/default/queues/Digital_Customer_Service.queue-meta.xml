@@ -4,9 +4,6 @@
     <email>digitalsupport@philly.com</email>
     <name>Digital Customer Service</name>
     <queueMembers>
-        <publicGroups>
-            <publicGroup>Digital_Customer_Service_Team</publicGroup>
-        </publicGroups>
         <roles>
             <role>Customer_Service_Management</role>
             <role>Customer_Service_Supervisor</role>

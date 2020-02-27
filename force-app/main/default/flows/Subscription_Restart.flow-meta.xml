@@ -92,12 +92,6 @@
             </value>
         </filters>
         <inputAssignments>
-            <field>Source_Campaign__c</field>
-            <value>
-                <elementReference>varCampaignID</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
             <field>subscription_Offer__c</field>
             <value>
                 <elementReference>varOfferID</elementReference>
@@ -145,12 +139,6 @@
                 <name>subscriptionId</name>
                 <value>
                     <elementReference>varSubscriptionId</elementReference>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>SourceCampaign</name>
-                <value>
-                    <elementReference>varCampaignID</elementReference>
                 </value>
             </inputParameters>
             <isRequired>true</isRequired>
@@ -216,7 +204,7 @@
             <targetReference>Select_Promo_Screen</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>varAccountID</name>
         <dataType>String</dataType>

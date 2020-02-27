@@ -197,7 +197,7 @@
         <showHeader>false</showHeader>
     </screens>
     <startElementReference>GetUser</startElementReference>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>caserecordId</name>
         <dataType>SObject</dataType>

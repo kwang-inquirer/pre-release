@@ -69,11 +69,11 @@
         <schedule>
             <frequency>Daily</frequency>
             <startDate>2019-12-04</startDate>
-            <startTime>14:30:00.000Z</startTime>
+            <startTime>02:00:00.000Z</startTime>
         </schedule>
         <triggerType>Scheduled</triggerType>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>thisSub</name>
         <dataType>SObject</dataType>

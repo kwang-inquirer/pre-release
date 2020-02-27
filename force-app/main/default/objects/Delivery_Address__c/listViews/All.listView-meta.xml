@@ -10,7 +10,6 @@
         <columns>Unit__c</columns>
         <columns>Address_Full_Street__c</columns>
         <columns>Route_Number__c</columns>
-        <columns>CREATED_DATE</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </ListView>

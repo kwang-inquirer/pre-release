@@ -617,7 +617,7 @@
             <targetReference>GetUser</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>caserecordId</name>
         <dataType>SObject</dataType>

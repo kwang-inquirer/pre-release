@@ -64,10 +64,6 @@ trigger TransactionLogTrigger on Transaction_Log__c (before insert,after insert,
                     if(Trigger.isBefore && tl.Category__c.contains('Vacation') && !tl.Cancelled__c){
                         vacationTransLogs.add(tl);
                     }
-                    // product change
-                    if(Trigger.isBefore && tl.Category__c.contains('Product Change')){
-                        productChangeLogs.add(tl);
-                    }
                     // digital opt-out
                     if(Trigger.isAfter && complaintType == 'RETN' && transTypeCode == 'DO'){
                         digOptOutTransLogs.add(tl);
@@ -84,10 +80,6 @@ trigger TransactionLogTrigger on Transaction_Log__c (before insert,after insert,
                     TransactionLogHandler.validateExisting(vacationTransLogs, subscriptionIds);
                 if(triggerSwitchMap.get('tl_setActualDateFields'))
                     TransactionLogHandler.setActualDateFields(vacationTransLogs, subscriptionIds);
-            }
-            if (productChangeLogs.size() > 0){
-                if(triggerSwitchMap.get('tl_setProductChangeDate'))
-                    TransactionLogHandler.setProductChangeDate(productChangeLogs, subscriptionIds);
             }
             if (deliveryCreditTransLogs.size() > 0){
                 if(triggerSwitchMap.get('tl_ApplyCreditSingleDay'))
