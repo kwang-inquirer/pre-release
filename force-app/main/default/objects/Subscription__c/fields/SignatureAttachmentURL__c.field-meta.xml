@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+        <fullName>SignatureAttachmentURL__c</fullName>
+        <description>Holds the Signature Attachment URL for signatures from the partner community</description>
+        <externalId>false</externalId>
+        <label>SignatureAttachmentURL</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </CustomField>

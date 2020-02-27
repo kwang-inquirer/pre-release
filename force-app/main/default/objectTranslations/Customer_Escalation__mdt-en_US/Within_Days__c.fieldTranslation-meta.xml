@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- Number of days since today the complaints have occured --></help>
+        <label><!-- Within Days --></label>
+        <name>Within_Days__c</name>
+    </CustomFieldTranslation>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- Total Subscription Amount minus Activation Fee --></help>
+        <label><!-- Renewal Amount --></label>
+        <name>Renewal_Amount__c</name>
+    </CustomFieldTranslation>

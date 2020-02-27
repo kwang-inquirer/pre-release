@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+        <fullName>Delivery_Address_formula__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK("/" &amp; Delivery_Address__r.Id ,  Full_Street__c )</formula>
+        <label>Delivery Address</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </CustomField>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+        <fullName>Digital_Case</fullName>
+        <active>true</active>
+        <businessProcess>Customer Support</businessProcess>
+        <description>This record type will be used for all Digital Support Cases</description>
+        <label>Digital Case</label>
+        <picklistValues>
+            <picklist>Category__c</picklist>
+            <values>
+                <fullName>Billing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delivery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Membership</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eEdition</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin</picklist>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Publication__c</picklist>
+            <values>
+                <fullName>The Daily News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>The Philadelphia Inquirer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason</picklist>
+            <values>
+                <fullName>Complex functionality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Existing problem</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instructions not clear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New problem</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>User didn%27t attend training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>App Issue - Philly%2Ecom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>App Issue - Replica</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Browser Compatibility Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital - General Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email%2FDaily Alert%2FConfirmation Response</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inquiry - New Apps - Phone%2FEmail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Password Problem</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Philly%2Ecom Commenting Complaint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Processed Email Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Registration Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Registration Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transaction%2FBilling Screen Request</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </RecordType>

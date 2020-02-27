@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+        <fullName>Value5__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Value to be stored away for later query, value 1-5 will be Concatenated and returned as 1 string</inlineHelpText>
+        <label>Value5</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </CustomField>

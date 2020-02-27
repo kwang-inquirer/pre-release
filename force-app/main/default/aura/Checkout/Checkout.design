@@ -1,0 +1,17 @@
+<design:component>
+    <design:attribute name="subscriptionId" label="Subscription Id"/>
+    <design:attribute name="offerId" label="Offer Id"/>
+    <design:attribute name="email" label="Email" />
+    <design:attribute name="sessionId" label="Auth0 Session Id" />
+    <design:attribute name="pianoId" label="Piano Id" />
+    <design:attribute name="finishFlow" label="Finish Flow" />
+    <design:attribute name="processPayment" label="Process payment on submit" />
+    <design:attribute name="showAgreement" label="Show Agreement Before Submit" />
+    <design:attribute name="tipAmount" label="No longer used" />
+    <design:attribute name="enableAutoPay" label="Enable Auto Pay on Payment Success" />
+    <design:attribute name="waiveActivationFee" label="Waive activation fee" />
+    <design:attribute name="source" label="Source" />
+    <design:attribute name="editPayment" label="Allow Editable Payment" />
+    <design:attribute name="oneTimeTip" label="No longer used" />
+    <design:attribute name="isFlow" label="Is coming from a flow to show flow specifics" />
+</design:component>

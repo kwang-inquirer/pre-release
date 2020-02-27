@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <caseValues>
+        <plural>false</plural>
+        <value>Offer Product</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Offer Products</value>
+    </caseValues>
+    <startsWith>Consonant</startsWith>
+    <layouts>
+        <layout>Offer Product Layout</layout>
+        <sections>
+            <label><!-- Audit Section --></label>
+            <section>Audit Section</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Delivery Days --></label>
+            <section>Delivery Days</section>
+        </sections>
+        <sections>
+            <label><!-- Frequency --></label>
+            <section>Frequency</section>
+        </sections>
+        <sections>
+            <label><!-- Rates --></label>
+            <section>Rates</section>
+        </sections>
+    </layouts>
+</CustomObjectTranslation>

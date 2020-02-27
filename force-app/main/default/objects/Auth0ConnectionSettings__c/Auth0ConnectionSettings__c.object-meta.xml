@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>Connection Details for Auth0 Rest Callouts in Auth0Connection Apex Class.</description>
+    <enableFeeds>false</enableFeeds>
+    <label>Auth0ConnectionSettings</label>
+    <visibility>Public</visibility>
+</CustomObject>

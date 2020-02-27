@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+        <fullName>Termination_Types</fullName>
+        <columns>NAME</columns>
+        <columns>Code__c</columns>
+        <columns>Message__c</columns>
+        <columns>Type_Name__c</columns>
+        <columns>Type_Complaint__c</columns>
+        <columns>Use_in_Flows__c</columns>
+        <columns>Category__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Code__c</field>
+            <operation>startsWith</operation>
+            <value>T</value>
+        </filters>
+        <filters>
+            <field>Use_in_Flows__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Category__c</field>
+            <operation>equals</operation>
+            <value>Stop</value>
+        </filters>
+        <label>Termination Types</label>
+    </ListView>

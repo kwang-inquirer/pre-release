@@ -1,0 +1,51 @@
+<aura:component controller="CreditCalculatorController" description="CreditCalculator" implements="force:lightningQuickActionWithoutHeader,force:hasRecordId,lightning:availableForFlowScreens" access="global">
+
+    <aura:attribute name="startDate" type="Date" />
+    <aura:attribute name="endDate" type="Date" />
+    <aura:attribute name="creditAmount" type="Decimal" />
+    <aura:attribute name="existingCreditAmount" type="Decimal" />
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="successMessage" type="String" />
+    <aura:attribute name="errorMessage" type="String" />
+    <aura:attribute name="dayAfterSubExpDate" type="DateTime" />
+    <aura:attribute name="message" type="String" />
+    <aura:attribute name="transactionTypeId" type="String" />
+    <aura:attribute name="paymentType" type="String" default="Credit" />
+    <aura:attribute name="paymentTypeOptions" type="List" />
+
+    <aura:attribute name="offerProductOptions" type="List" />
+    <aura:attribute name="selectedOfferProducts" type="List" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <div class="slds-text-color_success">{!v.successMessage}</div>
+    <div class="slds-text-color_error">{!v.errorMessage}</div>
+
+    <div class="slds-grid slds-wrap slds-gutters">
+        <div class="slds-col slds-size_1-of-2">
+            <lightning:input type="date" name="startDate" label="Start Date" value="{!v.startDate}" />
+        </div>
+        <div class="slds-col slds-size_1-of-2">
+            <lightning:input type="date" name="endDate" label="End Date" value="{!v.endDate}" />
+        </div>
+        <div class="slds-col slds-size_1-of-2">
+            <lightning:input disabled="true" type="number" name="existingCreditAmount" label="Outstanding Credit" value="{!v.existingCreditAmount}" formatter="currency" step="0.01" />
+        </div>
+        <div class="slds-col slds-size_1-of-2">
+            <lightning:input type="number" name="creditAmount" label="{!v.paymentType + ' Amount'}" value="{!v.creditAmount}" formatter="currency" step="0.01" disabled="{!v.selectedOfferProducts.length > 0}" />
+        </div>
+        <div class="slds-col slds-size_1-of-1">
+            <lightning:input name="messageInput" value="{!v.message}" label="Message" />
+        </div>
+        <div class="slds-col slds-size_1-of-1">
+            <lightning:radioGroup label="Credit or Debit?" options="{!v.paymentTypeOptions}" value="{!v.paymentType}" type="radio" />
+        </div>
+        <div class="slds-col slds-size_1-of-1">
+            <lightning:checkboxGroup label="Offer Products" options="{!v.offerProductOptions}" value="{!v.selectedOfferProducts}" />
+        </div>
+    </div>
+    <div class="buttons slds-p-around_small">
+        <lightning:button variant="brand" label="Calculate" onclick="{! c.onCalculate }" />
+        <lightning:button variant="brand" aura:id="submitButton" label="Submit" onclick="{! c.onSubmit }" disabled="{!!v.creditAmount}" />
+    </div>
+</aura:component>

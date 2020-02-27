@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+        <fullName>Complaint_Codes__c</fullName>
+        <description>Comma separated list of complaint codes for this escalation.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Comma separated list of complaint codes for this escalation.</inlineHelpText>
+        <label>Complaint Codes</label>
+        <length>150</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </CustomField>

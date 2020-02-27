@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- Add the number of days you would like to extend the Grace Period beyond what it currently.  Do not exceed 14 days. --></help>
+        <label><!-- Extend Grace by Days --></label>
+        <name>Extend_Grace_by_Days__c</name>
+    </CustomFieldTranslation>

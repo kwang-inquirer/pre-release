@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+        <fullName>Delivery_Day_Type__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Controls if the day of the week factors into displaying the complaint. All (will always display), Weekday (only M-F), Saturday only, Sunday only.</inlineHelpText>
+        <label>Delivery Day Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>All</fullName>
+                    <default>true</default>
+                    <label>All</label>
+                </value>
+                <value>
+                    <fullName>Weekday</fullName>
+                    <default>false</default>
+                    <label>Weekday</label>
+                </value>
+                <value>
+                    <fullName>Saturday</fullName>
+                    <default>false</default>
+                    <label>Saturday</label>
+                </value>
+                <value>
+                    <fullName>Sunday</fullName>
+                    <default>false</default>
+                    <label>Sunday</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </CustomField>

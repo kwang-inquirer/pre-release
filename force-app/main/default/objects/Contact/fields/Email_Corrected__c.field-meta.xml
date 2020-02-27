@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+        <fullName>Email_Corrected__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Check this box after correcting a bounced email address</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Check this box after correcting a bounced email address</inlineHelpText>
+        <label>Email Corrected</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </CustomField>

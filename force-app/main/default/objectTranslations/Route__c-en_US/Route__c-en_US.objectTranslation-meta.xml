@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <caseValues>
+        <plural>false</plural>
+        <value>Route</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Route</value>
+    </caseValues>
+    <startsWith>Consonant</startsWith>
+    <layouts>
+        <layout>Route Layout</layout>
+        <sections>
+            <label><!-- Audit Info --></label>
+            <section>Audit Info</section>
+        </sections>
+        <sections>
+            <label><!-- Carrier Complaint --></label>
+            <section>Carrier Complaint</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Location Info --></label>
+            <section>Location Info</section>
+        </sections>
+        <sections>
+            <label><!-- Route Info --></label>
+            <section>Route Info</section>
+        </sections>
+    </layouts>
+</CustomObjectTranslation>
