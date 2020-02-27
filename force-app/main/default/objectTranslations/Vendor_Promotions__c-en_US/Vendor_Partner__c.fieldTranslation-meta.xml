@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- Link the Vendor Partner to this Vendor Promotion --></help>
+        <label><!-- Vendor Partner --></label>
+        <name>Vendor_Partner__c</name>
+        <relationshipLabel><!-- Vendor Promotions --></relationshipLabel>
+    </CustomFieldTranslation>

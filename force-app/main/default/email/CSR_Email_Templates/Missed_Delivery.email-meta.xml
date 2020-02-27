@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Missed Delivery</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Auto_Response</letterhead>
+    <name>Missed Delivery</name>
+    <style>freeForm</style>
+    <subject>Philadelphia Inquirer - Missed Delivery</subject>
+    <textOnly>Hello, {!Contact.FirstName}:
+
+
+We sincerely apologize for the missed delivery you experienced. A credit has been applied to your account for the missed delivery, and a message has been sent to the field in order to ensure this is resolved for you going forward. Again, we apologize for any inconvenience this may have caused you.
+
+
+Don&apos;t forget you may report a missed delivery, schedule a vacation, and access the Digital Replica Editions by going to the Subscriber Service Website: https://myaccount.philly.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

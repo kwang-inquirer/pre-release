@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+        <fullName>subscription_Auto_Renew__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Controls Auto Renew of Subscription</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If true, this denotes that the subscription is on EZ-pay</inlineHelpText>
+        <label>Auto Renew</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </CustomField>

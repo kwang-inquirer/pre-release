@@ -1,0 +1,73 @@
+<template>
+    <h2 class="slds-border_bottom slds-theme_shade slds-p-around_xx-small">Review Information</h2>
+    <div class="slds-grid slds-wrap">
+        <template if:true={payment.sendBill}>
+            <div class="slds-m-top_xx-small">Bill will be mailed out for further payment</div>
+        </template>
+        <template if:false={payment.sendBill}>
+            <template if:true={showEzPayMessage}>
+                <div class="slds-m-top_xx-small">EZ Pay submitted successfully</div>
+            </template>
+            <template if:true={showSubscriptionStartedMessage}>
+                <div class="slds-m-top_xx-small">The subscription has been started</div>
+            </template>
+            <template if:true={showPaymentSubmittedMessage}>
+                <div class="slds-m-top_xx-small">The payment has been submitted</div>
+            </template>
+            <template if:true={showTipAmount}>
+                <div class="slds-size_1-of-1">
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label">{tipLabel}</label>
+                        <div class="slds-form-element__control">
+                            <lightning-formatted-number value={payment.tipAmount} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                        </div>
+                    </div>
+                </div>
+            </template>
+            <div class="slds-size_1-of-1">
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label">Subscription Amount</label>
+                    <div class="slds-form-element__control">
+                        <lightning-formatted-number value={subscriptionAmount} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-size_1-of-1">
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label">Total Charge</label>
+                    <div class="slds-form-element__control">
+                        <lightning-formatted-number value={totalCharge} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-size_1-of-1">
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label" for="endDate">{endDateLabel}</label>
+                    <div class="slds-form-element__control">
+                        <template if:true={hasEndDate}>
+                            <lightning-formatted-date-time name="endDate" value={subscription.subscription_Current_Period_Ends_At__c}>
+                            </lightning-formatted-date-time>
+                        </template>
+                    </div>
+                </div>
+            </div>
+            <template if:true={hasDeliveryDays}>
+                <div class="slds-size_1-of-1">
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label" for="deliverydays">Delivery Days</label>
+                        <div class="slds-form-element__control">
+                            {deliveryDays}
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </template>
+        <div class="slds-size_1-of-1 slds-p-vertical_small">
+            <div><a href="https://www.inquirer.com" target="_blank">Click here for Inquirer.com</a></div>
+            <!--<div><a href="#" target="_blank">Click here to manage your profile</a></div>-->
+            <template if:true={showSubscriptionLink}>
+                <div><a href={subscriptionUrl} target="_blank">Click here to manage your subscription</a></div>
+            </template>
+        </div>
+    </div>
+</template>

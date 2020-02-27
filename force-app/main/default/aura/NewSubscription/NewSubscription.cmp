@@ -1,0 +1,59 @@
+<aura:component controller="NewSubscriptionCmpController" implements="force:lightningQuickActionWithoutHeader,force:hasSObjectName,force:hasRecordId,lightning:availableForFlowScreens"  access="global">
+    <aura:attribute name="recurlyAccount" type="recurly_v2__Recurly_Account__c"/>  
+    <aura:attribute name="subscriptionRecord" type="Subscription__c"/>  
+    <aura:attribute name="subscriptionId" type="String" default="a0F0j000001jgxIEAQ"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="nameOnCard" type="String"/>
+    <aura:attribute name="cardNumber" type="String"/>
+    <aura:attribute name="ccv" type="String"/>
+    <aura:attribute name="streetAddress" type="String"/>
+    <aura:attribute name="city" type="String"/>
+    <aura:attribute name="zip" type="String"/>
+    <!-- START Payment Details -->
+    <aura:attribute name="options" type="List" default="[
+                                                        {'label': 'Existing Payment', 'value': 'Existing Payment'},
+                                                        {'label': 'Update Payment Details', 'value': 'Update Payment Details'}
+                                                        ]"/>
+    <aura:attribute name="NewOrExisting" type="String" default="option1"/>
+    <aura:attribute name="NewPayment" type="Boolean" default="false"/>
+    <aura:attribute name="forceNewPayment" type="Boolean" default="true"/>
+    
+    <div class="slds-scope slds-grid slds-grid_align-center">
+        
+        <div id="paymentDetails">
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col">
+                    <div>
+                        
+                     Renewal Amount: <ui:outputCurrency value="{!v.subscriptionRecord.Subscription_Amount__c}"/> for X Weeks
+                                
+                    </div>
+                    <div class="slds-form slds-form_stacked">
+                        <div>
+                            <lightning:radioGroup name="radioButtonGroupDisabled"
+                                                  label=""
+                                                  options="{! v.options }"
+                                                  value="{! v.NewOrExisting }"
+                                                  type="button"
+                                                  disabled="{!v.forceNewPayment}"
+                                                  onchange="{! c.NewVsExistingPaymentChange }"/></div>
+                        <aura:if isTrue="{!v.NewPayment}">
+                           <c:UpdateRecurlyBillingInformation rcBillingCode="a040j000002sK38" />
+                            
+                            <aura:set attribute="else">
+                                <div>
+                                    Existing card on file: {!v.recurlyAccount.recurly_v2__Card_Type__c} ending in <ui:outputText value="{!v.recurlyAccount.recurly_v2__Last_Four__c}"/>
+                                </div>
+                                <div>
+                                    <lightning:button variant="brand" label="Submit" onclick="{! c.handleSubmitPayment }" />
+                                </div>
+                            </aura:set>
+                        </aura:if>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- END Payment Details -->
+</aura:component>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?><CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Customer_Community_URL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Customer Community URL</shortDescription>
+        <value>https://redev-pmnpartners.cs53.force.com/subscribers/s/</value>
+    </labels>
+    <labels>
+        <fullName>Free_Trial_Days</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Free Trial Days</shortDescription>
+        <value>7</value>
+    </labels>
+    <labels>
+        <fullName>PMN_DEBUG</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PMN_DEBUG</shortDescription>
+        <value>PMN_DEBUG</value>
+    </labels>
+    <labels>
+        <fullName>RECURLYJS_VFP_URL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RecurlyJs VFP Url</shortDescription>
+        <value>https://pmn--redev--c.visualforce.com/apex/RecurlyJs</value>
+    </labels>
+    <labels>
+        <fullName>Recurly_Public_Key</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Recurly Public Key</shortDescription>
+        <value>ewr1-zm62ktz2lQTKc72iliAgpI</value>
+    </labels>
+    <labels>
+        <fullName>SubscriptionNewStartRestartTransactionCode</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SubscriptionNewStartRestartTransactionCode</shortDescription>
+        <value>VO</value>
+    </labels>
+</CustomLabels>

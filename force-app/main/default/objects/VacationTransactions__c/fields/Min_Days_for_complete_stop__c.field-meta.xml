@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+        <fullName>Min_Days_for_complete_stop__c</fullName>
+        <description>This field is used to store the minimum days for a complete vacation stop, used to display the digital subscription offer in the vacation request flows.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the minimum days for a complete vacation stop.</inlineHelpText>
+        <label>Min Days for complete stop</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </CustomField>

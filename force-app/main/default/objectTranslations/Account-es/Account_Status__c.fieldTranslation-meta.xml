@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- Account Status --></label>
+        <name>Account_Status__c</name>
+        <picklistValues>
+            <masterLabel>Active (A)</masterLabel>
+            <translation><!-- Active (A) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inactive/Vacation (I)</masterLabel>
+            <translation><!-- Inactive/Vacation (I) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Terminated (T)</masterLabel>
+            <translation><!-- Terminated (T) --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

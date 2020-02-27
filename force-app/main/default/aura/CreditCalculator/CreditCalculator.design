@@ -1,0 +1,10 @@
+<design:component label="Credit Calculator">
+    <design:attribute name="startDate" label="Start Date" />
+    <design:attribute name="endDate" label="End Date" />
+    <design:attribute name="creditAmount" label="Credit Amount" />
+    <design:attribute name="existingCreditAmount" label="Existing Credit Amount" />
+    <design:attribute name="recordId" label="Record Id" /> 
+    <design:attribute name="dayAfterSubExpDate" label="Day After Sub Exp Date" />
+    <design:attribute name="message" label="Message" />
+    <design:attribute name="transactionTypeId" label="Transaction Type Id" />
+</design:component>

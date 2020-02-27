@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+        <fullName>subscriptions_Remaining_Pause_Cycles__c</fullName>
+        <description>Stores the remaining cycles that can be paused</description>
+        <externalId>false</externalId>
+        <label>Remaining Pause Cycles</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </CustomField>

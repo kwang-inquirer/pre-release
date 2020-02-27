@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- Value to be stored away for later query, value 1-5 will be Concatenated and returned as 1 string --></help>
+        <label><!-- Value5 --></label>
+        <name>Value5__c</name>
+    </CustomFieldTranslation>

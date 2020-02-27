@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SocialCustomerServiceSettings xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseSubjectOption>SocialPostSource</caseSubjectOption>
+    <enableSocialApprovals>false</enableSocialApprovals>
+    <enableSocialCaseAssignmentRules>false</enableSocialCaseAssignmentRules>
+    <enableSocialCustomerService>true</enableSocialCustomerService>
+    <enableSocialPersonaHistoryTracking>false</enableSocialPersonaHistoryTracking>
+    <enableSocialPostHistoryTracking>false</enableSocialPostHistoryTracking>
+    <enableSocialReceiveParentPost>false</enableSocialReceiveParentPost>
+</SocialCustomerServiceSettings>

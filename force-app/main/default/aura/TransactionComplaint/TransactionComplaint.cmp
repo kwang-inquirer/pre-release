@@ -1,0 +1,87 @@
+<aura:component controller="TransactionLogActions">
+
+    <aura:attribute name="transactionLogToUse" type="object" />
+	<aura:attribute name="recordId" type="String" />
+	<aura:attribute name="UseCSS" type="String" default="this.green-upper" />
+	<aura:attribute name="TypeSettings" type="List" />
+
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}" />	
+	<br />
+	<hr aura:id = "TopHR" />
+	<!-- <div>
+		<table>
+			<tr style="font-size:11px;color:#999;font-style:italic;">
+				<th Style="width: 140px;">Effective Dates</th>
+				<th Style="width: 65px;">End Date</th>
+				<th Style="width: 65px;">Amount</th>
+				<th Style="width: 65px; white-space:nowrap;">Money at Expire</th>
+			</tr>
+			<tr style="padding:2px;">
+				<td Style="width: 140px;">
+					<ui:outputDate format="MM/dd/yyyy" value="{!v.transactionLogToUse.First_Date}" />
+					<aura:if isTrue="{! v.transactionLogToUse.First_Date != v.transactionLogToUse.Last_Date}">
+						<br/>
+						<ui:outputDate format="MM/dd/yyyy" value="{!v.transactionLogToUse.Last_Date}" />
+					</aura:if>
+				</td>
+				<td Style="width: 65px;"><ui:outputDate format="MM/dd/yyyy" value="{!v.transactionLogToUse.Expire_Date}" /></td>
+				<td Style="width: 65px;"><ui:outputCurrency value="{!v.transactionLogToUse.Amount}" /></td>
+				<td Style="width: 65px;"><ui:outputCurrency value="{!v.transactionLogToUse.Expire_Balance}" /></td>
+			</tr>
+			<tr style="font-size:11px;color:#999;font-style:italic;">
+				<th ColSpan="1">Publication</th>
+				<th ColSpan="3">Type</th>
+			</tr>
+			<tr>
+				<td ColSpan="1">{!v.transactionLogToUse.Publication}</td>
+				<td ColSpan="3" Align="left">{!v.transactionLogToUse.Transaction_Type_name}</td>
+			</tr>
+			<tr style="font-size:11px;color:#999;font-style:italic;">
+				<th ColSpan="3">Memo</th>
+				<th ColSpan="1"></th>
+			</tr>
+			<tr>
+				<td ColSpan="3">{!v.transactionLogToUse.Message} {!v.transactionLogToUse.Memo}</td>
+				<td ColSpan="1"></td>
+			</tr>
+			<tr>
+				<td ColSpan="4">{!v.transactionLogToUse.Description}</td>
+			</tr>
+			<tr style="font-size:11px;color:#999;font-style:italic;">
+				<th ColSpan="1">Entered On</th>
+				<th ColSpan="3">Entered By</th>
+			</tr>
+			<tr>
+				<td ColSpan="1" style="font-size:small"><ui:outputDate format="MM/dd/yyyy" value="{!v.transactionLogToUse.Entry_Date}" /></td>
+				<td ColSpan="3" style="font-size:small">{!v.transactionLogToUse.CreatedByName}</td>
+			</tr>
+		</table>
+	</div>         -->
+	<lightning:layout multipleRows="true">
+
+		<lightning:layoutItem size="12" mediumDeviceSize="3" class="custhead">Effective Dates</lightning:layoutItem>
+		<lightning:layoutItem size="12" mediumDeviceSize="3" class="custhead">End Date</lightning:layoutItem>
+		<lightning:layoutItem size="12" mediumDeviceSize="3" class="custhead">Amount</lightning:layoutItem>
+		<lightning:layoutItem size="12" mediumDeviceSize="3" class="custhead">Money at Expire</lightning:layoutItem>
+		<lightning:layoutItem size="12" mediumDeviceSize="3"><ui:outputDate format="MM/dd/yyyy" value="{!v.transactionLogToUse.First_Date}" /></lightning:layoutItem>
+		<lightning:layoutItem size="12" mediumDeviceSize="3"><ui:outputDate format="MM/dd/yyyy" value="{!v.transactionLogToUse.Expire_Date}" /></lightning:layoutItem>		
+		<lightning:layoutItem size="12" mediumDeviceSize="3"><ui:outputCurrency value="{!v.transactionLogToUse.Amount}" /></lightning:layoutItem>
+		<lightning:layoutItem size="12" mediumDeviceSize="3"><ui:outputCurrency value="{!v.transactionLogToUse.Expire_Balance}" /></lightning:layoutItem>
+
+		<lightning:layoutItem size="12" mediumDeviceSize="4" class="custhead">Publication</lightning:layoutItem>
+		<lightning:layoutItem size="12" mediumDeviceSize="8" class="custhead">Type</lightning:layoutItem>
+		<lightning:layoutItem size="12" mediumDeviceSize="4">{!v.transactionLogToUse.Publication}</lightning:layoutItem>
+		<lightning:layoutItem size="12" mediumDeviceSize="8">{!v.transactionLogToUse.Transaction_Type_name}</lightning:layoutItem>
+
+		<lightning:layoutItem size="12" class="custhead">Memo</lightning:layoutItem>
+		<lightning:layoutItem size="12">{!v.transactionLogToUse.Message} {!v.transactionLogToUse.Memo}</lightning:layoutItem>
+
+		<lightning:layoutItem size="12">{!v.transactionLogToUse.Description}</lightning:layoutItem>
+
+		<lightning:layoutItem size="12" mediumDeviceSize="4" class="custhead">Entered On</lightning:layoutItem>
+		<lightning:layoutItem size="12" mediumDeviceSize="8" class="custhead">Entered By</lightning:layoutItem>
+		<lightning:layoutItem size="12" mediumDeviceSize="4"><ui:outputDate format="MM/dd/yyyy" value="{!v.transactionLogToUse.Entry_Date}" /></lightning:layoutItem>
+		<lightning:layoutItem size="12" mediumDeviceSize="8">{!v.transactionLogToUse.CreatedByName}</lightning:layoutItem>
+
+	</lightning:layout>
+</aura:component>

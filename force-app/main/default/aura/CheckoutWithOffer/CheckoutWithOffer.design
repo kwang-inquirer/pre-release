@@ -1,0 +1,10 @@
+<design:component>
+    <design:attribute name="offerId" label="Offer Id"/>
+    <design:attribute name="subscriptionId" label="Offer Id"/>
+    <design:attribute name="email" label="Email" />
+    <design:attribute name="sessionId" label="Auth0 Session Id" />
+    <design:attribute name="pianoId" label="Piano Id" />
+    <design:attribute name="processPayment" label="Process payment on submit" />
+    <design:attribute name="showAgreement" label="Show Agreement Before Submit" />
+    <design:attribute name="source" label="Source" />
+</design:component>

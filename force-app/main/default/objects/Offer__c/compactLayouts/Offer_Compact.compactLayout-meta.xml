@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+        <fullName>Offer_Compact</fullName>
+        <fields>Name</fields>
+        <fields>Per_CopyRollup__c</fields>
+        <fields>Per_Copy_SundayRollup__c</fields>
+        <fields>Per_Week__c</fields>
+        <fields>Total_Amount__c</fields>
+        <label>Offer Compact</label>
+    </CompactLayout>

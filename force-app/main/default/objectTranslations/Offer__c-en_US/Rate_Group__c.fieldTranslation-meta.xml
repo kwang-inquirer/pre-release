@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- Rate Group --></label>
+        <name>Rate_Group__c</name>
+        <picklistValues>
+            <masterLabel>10WEEK</masterLabel>
+            <translation><!-- 10WEEK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>20WEEK</masterLabel>
+            <translation><!-- 20WEEK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4WEEK</masterLabel>
+            <translation><!-- 4WEEK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DEFGRP</masterLabel>
+            <translation><!-- DEFGRP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DNEE</masterLabel>
+            <translation><!-- DNEE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DNIN</masterLabel>
+            <translation><!-- DNIN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>INDFDE</masterLabel>
+            <translation><!-- INDFDE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>INDFE5</masterLabel>
+            <translation><!-- INDFE5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>INDSDE</masterLabel>
+            <translation><!-- INDSDE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>INDSE7</masterLabel>
+            <translation><!-- INDSE7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>INSODE</masterLabel>
+            <translation><!-- INSODE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>INSOE1</masterLabel>
+            <translation><!-- INSOE1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>INSSDE</masterLabel>
+            <translation><!-- INSSDE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>INSSE2</masterLabel>
+            <translation><!-- INSSE2 --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

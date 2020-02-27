@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- Collection Method --></label>
+        <name>subscription_Collection_Method__c</name>
+        <picklistValues>
+            <masterLabel>automatic</masterLabel>
+            <translation><!-- automatic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>manual</masterLabel>
+            <translation><!-- manual --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

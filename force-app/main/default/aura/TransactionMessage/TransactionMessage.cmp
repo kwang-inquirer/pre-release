@@ -1,0 +1,26 @@
+<aura:component controller="TransactionLogActions">
+
+    <aura:attribute name="transactionLogToUse" type="object" />
+	<aura:attribute name="recordId" type="String" />
+	<aura:attribute name="UseCSS" type="String" default="this.green-upper" />
+	<aura:attribute name="TypeSettings" type="List" />
+
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}" />	
+	<br />
+	<hr aura:id = "TopHR" />
+	<lightning:layout multipleRows="true">
+
+	<lightning:layoutItem size="12" class="custhead">Effective Dates</lightning:layoutItem>
+	<lightning:layoutItem size="12"><ui:outputDate format="MM/dd/yyyy" value="{!v.transactionLogToUse.First_Date}" /></lightning:layoutItem>
+
+	<lightning:layoutItem size="12" mediumDeviceSize="4" class="custhead">Type</lightning:layoutItem>
+	<lightning:layoutItem size="12" mediumDeviceSize="8" class="custhead">Memo</lightning:layoutItem>
+	<lightning:layoutItem size="12" mediumDeviceSize="4">{!v.transactionLogToUse.Transaction_Type_name}</lightning:layoutItem>
+    <lightning:layoutItem size="12" mediumDeviceSize="8">{!v.transactionLogToUse.Message} {!v.transactionLogToUse.Memo}</lightning:layoutItem>
+  
+	<lightning:layoutItem size="12" mediumDeviceSize="4" class="custhead">Entered On</lightning:layoutItem>
+	<lightning:layoutItem size="12" mediumDeviceSize="8" class="custhead">Entered By</lightning:layoutItem>
+	<lightning:layoutItem size="12" mediumDeviceSize="4"><ui:outputDate format="MM/dd/yyyy" value="{!v.transactionLogToUse.Entry_Date}" /></lightning:layoutItem>
+    <lightning:layoutItem size="12" mediumDeviceSize="8">{!v.transactionLogToUse.CreatedByName}</lightning:layoutItem>
+	</lightning:layout>    
+</aura:component>

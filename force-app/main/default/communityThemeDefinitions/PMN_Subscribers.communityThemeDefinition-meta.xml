@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CommunityThemeDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <bundlesInfo>
+        <description>Test</description>
+        <order>1</order>
+        <title>Menu Bar</title>
+        <type>Highlight</type>
+    </bundlesInfo>
+    <bundlesInfo>
+        <image>siteAsset_e07ff723ac154036a40168c9f59966ca</image>
+        <order>1</order>
+        <title>siteAsset_e07ff723ac154036a40168c9f59966ca</title>
+        <type>PreviewImage</type>
+    </bundlesInfo>
+    <defaultBrandingSet>PMN_Subscribers</defaultBrandingSet>
+    <description>Subscribers</description>
+    <enableExtendedCleanUpOnDelete>true</enableExtendedCleanUpOnDelete>
+    <masterLabel>PMN Subscribers</masterLabel>
+    <publisher>PMN</publisher>
+    <themeSetting>
+        <themeLayout>PMN_Subscribers_themeLayout_Login</themeLayout>
+        <themeLayoutType>Login</themeLayoutType>
+    </themeSetting>
+    <themeSetting>
+        <themeLayout>PMN_Subscribers_themeLayout_Default</themeLayout>
+        <themeLayoutType>Inner</themeLayoutType>
+    </themeSetting>
+</CommunityThemeDefinition>

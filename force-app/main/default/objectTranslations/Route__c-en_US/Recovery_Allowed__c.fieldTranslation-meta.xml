@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- Recovery Allowed --></label>
+        <name>Recovery_Allowed__c</name>
+    </CustomFieldTranslation>

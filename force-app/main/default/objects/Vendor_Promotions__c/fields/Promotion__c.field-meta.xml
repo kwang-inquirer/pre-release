@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+        <fullName>Promotion__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Look up to the Promotion linked to this Vendor Promotion record.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Promotion to link this Vendor Promotion to</inlineHelpText>
+        <label>Promotion</label>
+        <referenceTo>Promotion__c</referenceTo>
+        <relationshipLabel>Vendor Promotions</relationshipLabel>
+        <relationshipName>Vendor_Promotions</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </CustomField>

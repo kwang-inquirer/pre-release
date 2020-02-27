@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- Never Scrub --></label>
+        <name>Never_Scrub__c</name>
+    </CustomFieldTranslation>
