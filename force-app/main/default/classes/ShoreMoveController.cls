@@ -1,25 +1,39 @@
 public class ShoreMoveController  {
+    @AuraEnabled(Cacheable=true)
+    public static List<Delivery_Address__c> getDeliveryAddresses(Id subId) {
+        return [SELECT Id, Address_City__c, Address_House__c, Address_Street__c, Address_Postal_Route__c, Address_State__c 
+		FROM Delivery_Address__c WHERE Id IN (SELECT Delivery_Address__c FROM Delivery_Schedule__c WHERE subscription_Subscription__c = :subId)];
+    }
 
 	@AuraEnabled
-	public static String createDeliverySchedule(Id oldAddressId, Id newAddressId, Id subId, Date startDate, Date endDate){
-		Date currentDate = Date.today();
-		Date theDayAfter = Date.today().addDays(1);
-
-		Boolean beforeCutOff = CutOffManager.isBeforeCutOff('Carrier Memo');
-		// apply cutoff rule
-		if (currentDate == startDate) {
-			if(beforeCutOff){
-				startDate = startDate.addDays(1);
-				
-			} else {
-				startDate = startDate.addDays(2);
-			}
-		} else if (theDayAfter == startDate){
-			if(!beforeCutOff) {
-				startDate = startDate.addDays(1);
-			}
+    public static Id createNewDeliveryAddress(Id subId, Map<String, String> address) {
+		try{
+			Delivery_Address__c toInsert = new Delivery_Address__c(	
+			Address_City__c = address.get('city'),
+			Zip__c = address.get('postalCode'),
+			Address_State__c = address.get('state'),
+			Address_Street__c = address.get('street'));
+			insert toInsert;
+			return toInsert.Id;
 		}
+		catch(Exception e){
+			System.debug(e);
+			return null;
+		}
+	
+		
+    }
+	@AuraEnabled
+	public static Boolean hasValidDeliveryAddress(Id newAddressId) {
+		Delivery_Address__c deliveryAddress = [SELECT Melissa_Response__c FROM Delivery_Address__c WHERE Id = :newAddressId LIMIT 1];
+        if (String.isEmpty(deliveryAddress.Melissa_Response__c) && !Test.isRunningTest()) {
+            throw new GenericException('Melissa response is invalid');
+        }
+        return deliveryAddress.Melissa_Response__c.contains('AS01');
+    }
 
+	@AuraEnabled
+	public static void createDeliverySchedule(Id oldAddressId, Id newAddressId, Id subId, Date startDate, Date endDate){
 		List<Delivery_Schedule__c> toUpsert = new List<Delivery_Schedule__c>();
 		List<Delivery_Schedule__c> oldDeliveryScheduleList = [SELECT Id, Customer_Notes__c, DSI_Id__c,
 		Day_Friday__c, Day_Monday__c, Day_Saturday__c, Day_Sunday__c, Day_Thursday__c, Day_Tuesday__c, Day_Wednesday__c,
@@ -54,8 +68,10 @@ public class ShoreMoveController  {
 		if(!toUpsert.isEmpty()){
 			upsert toUpsert;
 		}
-		
-		return startDate.format();
+		if(subId != null){
+			Subscription__c toUpdate = new Subscription__c(Id = subId, Ready_for_DSI__c = true);
+			update toUpdate;
+		}
 	}
 
 }

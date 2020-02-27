@@ -405,27 +405,9 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Category__c</field>
-            <value>
-                <stringValue>Vacation Pack</stringValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
             <field>Contact__c</field>
             <value>
                 <elementReference>varSubscription.Contact__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>First_Date__c</field>
-            <value>
-                <elementReference>Begin_Date</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Last_Date__c</field>
-            <value>
-                <elementReference>End_Date</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -438,6 +420,18 @@
             <field>RecordTypeId</field>
             <value>
                 <elementReference>vacationrecordtypeid</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Restart_Date__c</field>
+            <value>
+                <elementReference>End_Date</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Stop_Date__c</field>
+            <value>
+                <elementReference>Begin_Date</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -476,27 +470,9 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Category__c</field>
-            <value>
-                <stringValue>Vacation Pack</stringValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
             <field>Contact__c</field>
             <value>
                 <elementReference>varSubscription.Contact__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>First_Date__c</field>
-            <value>
-                <elementReference>Begin_Date</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Last_Date__c</field>
-            <value>
-                <elementReference>End_Date</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -509,6 +485,18 @@
             <field>RecordTypeId</field>
             <value>
                 <elementReference>vacationrecordtypeid</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Restart_Date__c</field>
+            <value>
+                <elementReference>End_Date</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Stop_Date__c</field>
+            <value>
+                <elementReference>Begin_Date</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -547,27 +535,9 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Category__c</field>
-            <value>
-                <stringValue>Vacation Pack</stringValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
             <field>Contact__c</field>
             <value>
                 <elementReference>varSubscription.Contact__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>First_Date__c</field>
-            <value>
-                <elementReference>Begin_Date</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Last_Date__c</field>
-            <value>
-                <elementReference>End_Date</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -580,6 +550,18 @@
             <field>RecordTypeId</field>
             <value>
                 <elementReference>vacationrecordtypeid</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Restart_Date__c</field>
+            <value>
+                <elementReference>End_Date</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Stop_Date__c</field>
+            <value>
+                <elementReference>Begin_Date</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>

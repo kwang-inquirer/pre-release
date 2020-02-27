@@ -23,45 +23,6 @@
         <notifyOwnerOnNewCaseEmail>true</notifyOwnerOnNewCaseEmail>
         <overEmailLimitAction>Bounce</overEmailLimitAction>
         <preQuoteSignature>true</preQuoteSignature>
-        <routingAddresses>
-            <addressType>EmailToCase</addressType>
-            <caseOrigin>Email</caseOrigin>
-            <caseOwner>Customer_Service</caseOwner>
-            <caseOwnerType>Queue</caseOwnerType>
-            <casePriority>Medium</casePriority>
-            <createTask>false</createTask>
-            <emailAddress>customerservice@philly.com</emailAddress>
-            <emailServicesAddress>customerservice@15wimqjsdccbrophzzpznojzvlczrutltoz76hy8jo6ux23dfp.0j-dhykeao.cs53.case.sandbox.salesforce.com</emailServicesAddress>
-            <isVerified>false</isVerified>
-            <routingName>Customer Service</routingName>
-            <saveEmailHeaders>false</saveEmailHeaders>
-        </routingAddresses>
-        <routingAddresses>
-            <addressType>EmailToCase</addressType>
-            <caseOrigin>Email</caseOrigin>
-            <caseOwner>Digital_Customer_Service</caseOwner>
-            <caseOwnerType>Queue</caseOwnerType>
-            <casePriority>Medium</casePriority>
-            <createTask>false</createTask>
-            <emailAddress>digitalsupport@philly.com</emailAddress>
-            <emailServicesAddress>digitalsupport@e-2pnto3hpgmpqapdfiy01fobpdbiluw82yziplhpw8ye0fntfz4.0j-dhykeao.cs53.case.sandbox.salesforce.com</emailServicesAddress>
-            <isVerified>false</isVerified>
-            <routingName>Digital Customer Service</routingName>
-            <saveEmailHeaders>false</saveEmailHeaders>
-        </routingAddresses>
-        <routingAddresses>
-            <addressType>EmailToCase</addressType>
-            <caseOrigin>Email</caseOrigin>
-            <caseOwner>Executive_Escalations</caseOwner>
-            <caseOwnerType>Queue</caseOwnerType>
-            <casePriority>High</casePriority>
-            <createTask>false</createTask>
-            <emailAddress>executivecomplaints@philly.com</emailAddress>
-            <emailServicesAddress>executivecomplaints@jemrro844zd06vw589ouiwk4lox6jrjec2diovf61w2o9s3nb.0j-dhykeao.cs53.case.sandbox.salesforce.com</emailServicesAddress>
-            <isVerified>false</isVerified>
-            <routingName>Executive Complaints</routingName>
-            <saveEmailHeaders>false</saveEmailHeaders>
-        </routingAddresses>
         <unauthorizedSenderAction>Discard</unauthorizedSenderAction>
     </emailToCase>
     <enableCaseFeed>true</enableCaseFeed>
@@ -81,7 +42,7 @@
     <notifyOwnerOnCaseOwnerChange>false</notifyOwnerOnCaseOwnerChange>
     <showEmailAttachmentsInCaseAttachmentsRL>true</showEmailAttachmentsInCaseAttachmentsRL>
     <showFewerCloseActions>false</showFewerCloseActions>
-    <systemUserEmail>jbeha@inquirer.com</systemUserEmail>
+    <systemUserEmail>noreply@00d1u000000xvlmuaa</systemUserEmail>
     <useSystemEmailAddress>true</useSystemEmailAddress>
     <useSystemUserAsDefaultCaseUser>true</useSystemUserAsDefaultCaseUser>
     <webToCase>

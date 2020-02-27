@@ -14,12 +14,12 @@
     <enableDashboardFlexiTable>true</enableDashboardFlexiTable>
     <enableEmailReportsToPortalUsers>false</enableEmailReportsToPortalUsers>
     <enableFloatingReportHeaders>true</enableFloatingReportHeaders>
-    <enableInsights>true</enableInsights>
+    <enableInsights>false</enableInsights>
     <enableLightningReportBuilder>false</enableLightningReportBuilder>
     <enableLotusNotesImages>false</enableLotusNotesImages>
     <enableMassEnableReportBuilder>true</enableMassEnableReportBuilder>
     <enableNewChartsEngine>true</enableNewChartsEngine>
-    <enablePowerInsights>true</enablePowerInsights>
+    <enablePowerInsights>false</enablePowerInsights>
     <enableRemoveFooterForRepDisplay>false</enableRemoveFooterForRepDisplay>
     <enableRemoveFooterFromRepExp>true</enableRemoveFooterFromRepExp>
     <enableReportFieldToFieldPref xsi:nil="true"/>
@@ -28,8 +28,7 @@
     <enableSFXJoinedReportsEnable>false</enableSFXJoinedReportsEnable>
     <enableSmartDataDiscovery>false</enableSmartDataDiscovery>
     <enableUseOldChartsLookAndFeel>false</enableUseOldChartsLookAndFeel>
-    <enableWaveReplication>true</enableWaveReplication>
+    <enableWaveReplication>false</enableWaveReplication>
     <enableWaveSharingInheritance>false</enableWaveSharingInheritance>
     <enableWaveTemplate>false</enableWaveTemplate>
-    <enableWaveTrendedDatasetCleanup>false</enableWaveTrendedDatasetCleanup>
 </AnalyticsSettings>

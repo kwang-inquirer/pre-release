@@ -303,6 +303,11 @@
         <expression>{!Effective_Date} - 1</expression>
     </formulas>
     <formulas>
+        <name>HouseNumberandStreet</name>
+        <dataType>String</dataType>
+        <expression>{!House_Number}+&quot; &quot;+{!Street}</expression>
+    </formulas>
+    <formulas>
         <name>RunningUser</name>
         <dataType>String</dataType>
         <expression>{!$User.Id}</expression>
@@ -345,16 +350,22 @@
     <recordCreates>
         <name>CreateDeliveryAddress</name>
         <label>CreateDeliveryAddress</label>
-        <locationX>1824</locationX>
-        <locationY>588</locationY>
+        <locationX>1822</locationX>
+        <locationY>531</locationY>
         <assignRecordIdToReference>varDeliveryAddress</assignRecordIdToReference>
         <connector>
-            <targetReference>ConfirmDelAddressScreen</targetReference>
+            <targetReference>GetDeliveryAddressforRoute</targetReference>
         </connector>
         <inputAssignments>
             <field>Address_City__c</field>
             <value>
                 <elementReference>varDelCity</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Address_House__c</field>
+            <value>
+                <elementReference>House_Number</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -384,7 +395,7 @@
         <locationY>700</locationY>
         <assignRecordIdToReference>varDeliveryAddress</assignRecordIdToReference>
         <connector>
-            <targetReference>ConfirmDelAddressScreen_0</targetReference>
+            <targetReference>GetDeliveryAddressforRoute_0</targetReference>
         </connector>
         <inputAssignments>
             <field>Address_City__c</field>
@@ -393,15 +404,15 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Address_Postal_Route__c</field>
+            <field>Address_House__c</field>
             <value>
-                <elementReference>Postal_Code</elementReference>
+                <elementReference>House_Number</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Address_State__c</field>
+            <field>Address_Postal_Route__c</field>
             <value>
-                <elementReference>State</elementReference>
+                <elementReference>Postal_Code</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -881,7 +892,7 @@
         <inputAssignments>
             <field>BillingStreet</field>
             <value>
-                <elementReference>Street</elementReference>
+                <elementReference>HouseNumberandStreet</elementReference>
             </value>
         </inputAssignments>
         <object>Account</object>
@@ -986,7 +997,7 @@
         </connector>
         <fields>
             <name>NoRoute</name>
-            <fieldText>&lt;p&gt;&lt;b style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;There is not a current route available for this address. Next click to return to create a new address.&lt;/b&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;b style=&quot;color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt;There is not a current route available for this address. Next click next to return to create a new address.&lt;/b&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -1062,7 +1073,7 @@
     <screens>
         <name>Change_My_Address</name>
         <label>Change My Address</label>
-        <locationX>1450</locationX>
+        <locationX>1451</locationX>
         <locationY>520</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -1081,6 +1092,13 @@
             <name>NewDeliveryAddress</name>
             <fieldText>&lt;p&gt;My new delivery address is:&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>House_Number</name>
+            <dataType>String</dataType>
+            <fieldText>House Number</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
         </fields>
         <fields>
             <name>Street</name>
@@ -1233,44 +1251,6 @@
             <dataType>String</dataType>
             <fieldType>RadioButtons</fieldType>
             <isRequired>true</isRequired>
-        </fields>
-        <showFooter>true</showFooter>
-        <showHeader>false</showHeader>
-    </screens>
-    <screens>
-        <name>ConfirmDelAddressScreen</name>
-        <label>ConfirmDelAddressScreen</label>
-        <locationX>1667</locationX>
-        <locationY>394</locationY>
-        <allowBack>true</allowBack>
-        <allowFinish>true</allowFinish>
-        <allowPause>true</allowPause>
-        <connector>
-            <targetReference>GetDeliveryAddressforRoute</targetReference>
-        </connector>
-        <fields>
-            <name>Confirm</name>
-            <fieldText>&lt;p&gt;Please Confirm Address.  If not correct click previous.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;{!Street}&lt;/p&gt;&lt;p&gt;{!City}, {!State} {!Postal_Code}&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <showFooter>true</showFooter>
-        <showHeader>false</showHeader>
-    </screens>
-    <screens>
-        <name>ConfirmDelAddressScreen_0</name>
-        <label>ConfirmDelAddressScreen</label>
-        <locationX>1337</locationX>
-        <locationY>610</locationY>
-        <allowBack>true</allowBack>
-        <allowFinish>true</allowFinish>
-        <allowPause>true</allowPause>
-        <connector>
-            <targetReference>GetDeliveryAddressforRoute_0</targetReference>
-        </connector>
-        <fields>
-            <name>Confirm_0</name>
-            <fieldText>&lt;p&gt;Please Confirm Address.  If not correct click previous.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;{!Street}&lt;/p&gt;&lt;p&gt;{!City}, {!State} {!Postal_Code}&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>

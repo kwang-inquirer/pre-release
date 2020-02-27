@@ -16,6 +16,10 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>Cut_Off_Type__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>Day_of_Week__c</field>
             </layoutItems>
             <layoutItems>
@@ -33,12 +37,12 @@
                 <field>IsProtected</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Delivery_Type__c</field>
+                <behavior>Required</behavior>
+                <field>NamespacePrefix</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Cut_Off_Type__c</field>
+                <field>Delivery_Type__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -54,18 +58,14 @@
         <label>System Information</label>
         <layoutColumns>
             <layoutItems>
-                <behavior>Required</behavior>
-                <field>NamespacePrefix</field>
+                <behavior>Readonly</behavior>
+                <field>CreatedById</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>LastModifiedById</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>CreatedById</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
@@ -86,7 +86,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h0j000000NpFs</masterLabel>
+        <masterLabel>00h0j000000ROLp</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

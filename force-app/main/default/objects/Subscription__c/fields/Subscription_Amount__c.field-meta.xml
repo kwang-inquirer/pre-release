@@ -2,8 +2,8 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
         <fullName>Subscription_Amount__c</fullName>
         <externalId>false</externalId>
-        <formula>subscription_Offer__r.Subscription_Amount__c</formula>
-        <inlineHelpText>Subscription Amount of Offer (Without Activation Fee)</inlineHelpText>
+        <formula>subscription_Offer__r.Total_Amount__c +  subscription_Offer__r.Activation_Fee__c</formula>
+        <inlineHelpText>Total Subscription Amount plus Activation Fee</inlineHelpText>
         <label>Subscription Amount</label>
         <precision>18</precision>
         <required>false</required>

@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <Network xmlns="http://soap.sforce.com/2006/04/metadata">
     <allowInternalUserLogin>false</allowInternalUserLogin>
     <allowMembersToFlag>false</allowMembersToFlag>
     <changePasswordTemplate>unfiled$public/CommunityChangePasswordEmailTemplate</changePasswordTemplate>
-    <communityRoles />
+    <communityRoles/>
     <disableReputationRecordConversations>true</disableReputationRecordConversations>
     <emailSenderAddress>client-pmn@relationedge.com</emailSenderAddress>
-    <emailSenderName>PMN-Partners</emailSenderName>
+    <emailSenderName>PMN Partners</emailSenderName>
     <enableCustomVFErrorPageOverrides>false</enableCustomVFErrorPageOverrides>
     <enableDirectMessages>true</enableDirectMessages>
     <enableGuestChatter>false</enableGuestChatter>
@@ -31,20 +31,20 @@
     </networkMemberGroups>
     <networkPageOverrides>
         <changePasswordPageOverrideSetting>Standard</changePasswordPageOverrideSetting>
-        <forgotPasswordPageOverrideSetting>Designer</forgotPasswordPageOverrideSetting>
-        <homePageOverrideSetting>Designer</homePageOverrideSetting>
-        <loginPageOverrideSetting>Designer</loginPageOverrideSetting>
-        <selfRegProfilePageOverrideSetting>Designer</selfRegProfilePageOverrideSetting>
+        <forgotPasswordPageOverrideSetting>Standard</forgotPasswordPageOverrideSetting>
+        <homePageOverrideSetting>Standard</homePageOverrideSetting>
+        <loginPageOverrideSetting>Standard</loginPageOverrideSetting>
+        <selfRegProfilePageOverrideSetting>Standard</selfRegProfilePageOverrideSetting>
     </networkPageOverrides>
     <picassoSite>PMN_Partners_C</picassoSite>
     <selfRegistration>false</selfRegistration>
     <sendWelcomeEmail>true</sendWelcomeEmail>
-    <site>PMN_Partners</site>
+    <site>PMN_Partners2</site>
     <status>UnderConstruction</status>
     <tabs>
         <defaultTab>home</defaultTab>
         <standardTab>Chatter</standardTab>
     </tabs>
-    <urlPathPrefix>Partners</urlPathPrefix>
+    <urlPathPrefix>partners</urlPathPrefix>
     <welcomeTemplate>unfiled$public/CommunityWelcomeEmailTemplate</welcomeTemplate>
 </Network>

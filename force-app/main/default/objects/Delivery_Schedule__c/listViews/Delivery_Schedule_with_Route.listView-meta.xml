@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+        <fullName>Delivery_Schedule_with_Route</fullName>
+        <columns>NAME</columns>
+        <columns>Routelookup__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Routelookup__c</field>
+            <operation>notEqual</operation>
+        </filters>
+        <label>Delivery Schedule with Route</label>
+    </ListView>

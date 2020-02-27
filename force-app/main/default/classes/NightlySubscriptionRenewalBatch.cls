@@ -6,8 +6,8 @@ global class NightlySubscriptionRenewalBatch implements Database.Batchable<sObje
 				subscription_Current_Period_Started_At__c, subscription_Current_Period_Ends_At__c, Sunday__c, Monday__c, Tuesday__c, Wednesday__c, 
 				Thursday__c, Friday__c, Saturday__c, Auto_Renew_Tip__c, subscription_Auto_Renew__c, Number_of_Active_Delivery_Schedules__c, 
 				Contact__r.FirstName, Contact__r.LastName, Expire_Balance__c, Outstanding_Credit__c, Expires_On__c, Ready_for_DSI__c, One_Time_Tip_Amount__c, 
-				Auto_Renew_Recurly_Account__c, Auto_Renew_Recurly_Account__r.recurly_v2__Code__c, subscription_Offer__r.Total_Amount__c, subscription_Offer__r.Number_of_Weeks__c,
-				Pending_Offer__c, Pending_Offer__r.Total_Amount__c, Pending_Offer__r.Number_of_Weeks__c, Pending_Change_Date__c, 
+				Auto_Renew_Recurly_Account__c, Auto_Renew_Recurly_Account__r.recurly_v2__Code__c, subscription_Offer__r.Total_Amount__c, Pending_Offer__c, 
+				Pending_Offer__r.Total_Amount__c, Pending_Change_Date__c, 
 				subscription_Account__r.BillingStreet, subscription_Account__r.BillingCity, subscription_Account__r.BillingState, subscription_Next_Bill_Date__c, 
 				subscription_Account__r.BillingCountry, subscription_Account__r.BillingPostalCode,  subscription_Offer__r.Free_Trial__c, 
 				(SELECT Id, Delivery_Address__c, Delivery_Address__r.Id, Delivery_Address__r.Address_Full_Street__c, Delivery_Address__r.Address_House__c, 
@@ -20,6 +20,8 @@ global class NightlySubscriptionRenewalBatch implements Database.Batchable<sObje
             FROM Subscription__c
             WHERE subscription_Status__c = 'Active' 
 			AND subscription_Current_Period_Ends_At__c = TODAY
+			AND subscription_Auto_Renew__c = TRUE
+			AND Auto_Renew_Recurly_Account__c != NULL
         ]);
     }
 
