@@ -14,4 +14,12 @@
         <label><!-- ViewCampaignInfluenceReport --></label>
         <name>ViewCampaignInfluenceReport</name>
     </webLinks>
+    <webLinks>
+        <label><!-- Send_ExactTarget_Email --></label>
+        <name>et4ae5__Send_ExactTarget_Email</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- ViewCampaignInfluenceReport --></label>
+        <name>et4ae5__ViewCampaignInfluenceReport</name>
+    </webLinks>
 </CustomObjectTranslation>
