@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- Recurly Average Last 3 Invoices --></label>
+        <name>recurly_v2__Average_Last_3_Invoices__c</name>
+    </CustomFieldTranslation>
