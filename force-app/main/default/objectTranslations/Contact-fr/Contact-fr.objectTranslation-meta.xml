@@ -56,6 +56,8 @@
     
     
     
+    
+    
     <layouts>
         <layout>Business Contact</layout>
         <sections>
@@ -110,5 +112,45 @@
     <webLinks>
         <label><!-- GoogleSearch --></label>
         <name>GoogleSearch</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- ExpressEntry_Mobile --></label>
+        <name>MDPERSONATOR__ExpressEntry_Mobile</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Global_Address_Verification --></label>
+        <name>MDPERSONATOR__Global_Address_Verification</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Personate --></label>
+        <name>MDPERSONATOR__Personate</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Personator --></label>
+        <name>MDPERSONATOR__Personator</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Property --></label>
+        <name>MDPERSONATOR__Property</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- ExactTarget_Resubscribe --></label>
+        <name>et4ae5__ExactTarget_Resubscribe</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- ExactTarget_Unsubscribe --></label>
+        <name>et4ae5__ExactTarget_Unsubscribe</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_ExactTarget_Email --></label>
+        <name>et4ae5__Send_ExactTarget_Email</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_ExactTarget_SMS --></label>
+        <name>et4ae5__Send_ExactTarget_SMS</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- View_ExactTarget_Analytics --></label>
+        <name>et4ae5__View_ExactTarget_Analytics</name>
     </webLinks>
 </CustomObjectTranslation>

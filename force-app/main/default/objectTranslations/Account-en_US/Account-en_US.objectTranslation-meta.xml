@@ -18,6 +18,15 @@
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <layouts>
         <layout>Account Layout</layout>
         <sections>
@@ -67,5 +76,37 @@
     <webLinks>
         <label><!-- GoogleSearch --></label>
         <name>GoogleSearch</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Business_Coder --></label>
+        <name>MDPERSONATOR__Business_Coder</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Business_Lookup --></label>
+        <name>MDPERSONATOR__Business_Lookup</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- ExpressEntry_Mobile_Account --></label>
+        <name>MDPERSONATOR__ExpressEntry_Mobile_Account</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Personate --></label>
+        <name>MDPERSONATOR__Personate</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- ExactTarget_Resubscribe --></label>
+        <name>et4ae5__ExactTarget_Resubscribe</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- ExactTarget_Unsubscribe --></label>
+        <name>et4ae5__ExactTarget_Unsubscribe</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_ExactTarget_Email --></label>
+        <name>et4ae5__Send_ExactTarget_Email</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- View_ExactTarget_Analytics --></label>
+        <name>et4ae5__View_ExactTarget_Analytics</name>
     </webLinks>
 </CustomObjectTranslation>
