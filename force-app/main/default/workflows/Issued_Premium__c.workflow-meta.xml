@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?><Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Update_Issue_Premium_Name</fullName>
+        <field>Name</field>
+        <formula>Premium__r.Name</formula>
+        <name>Update Issue Premium Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <rules>
+        <fullName>Update Issued Premium Name</fullName>
+        <actions>
+            <name>Update_Issue_Premium_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>This workflow rule updates the name of the Issued Premium to match the name of the Premium itself</description>
+        <formula>OR(
+ISNEW(),
+ISCHANGED( Premium__c )
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

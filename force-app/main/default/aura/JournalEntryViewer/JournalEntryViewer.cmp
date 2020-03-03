@@ -1,0 +1,24 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:lightningQuickActionWithoutHeader,force:hasRecordId" controller="JournalEntryActions" access="global">
+    <aura:attribute name="selectedTypeFilter" type="String"/>
+    <aura:attribute name="recordId" type="Id"/>
+    <aura:attribute name="getJournalEntryList" type="object[]" />
+
+    <!-- Imports -->
+	
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <lightning:card iconName="standard:service_report" title="Journal Entries">
+		<div>
+			<table>
+			</table> 
+			<aura:iteration items="{!v.getJournalEntryList}" var="useJournalEntry">
+				<aura:if isTrue="{! useJournalEntry.Source  == 'Journal'}">
+					<c:JournalEntryItem recordId="{!v.recordId}" transactionLogToUse="{!useJournalEntry}"/>
+				</aura:if>
+				<aura:if isTrue="{! useJournalEntry.Source  == 'Credit Card'}">
+					<c:JournalCCItem recordId="{!v.recordId}" transactionLogToUse="{!useJournalEntry}"/>
+				</aura:if>
+			</aura:iteration>
+		</div>
+	</lightning:card>
+</aura:component>

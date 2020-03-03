@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>22</activeVersionNumber>
+    <description>This flow will create a transaction for a vacation hold in the customer community.  It includes the subflow: Vacation Request on Account</description>
+    <masterLabel>Vacation Request</masterLabel>
+</FlowDefinition>

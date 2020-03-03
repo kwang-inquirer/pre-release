@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+        <fullName>Vacation_with_Restart</fullName>
+        <columns>NAME</columns>
+        <columns>Subscription__c</columns>
+        <columns>Category__c</columns>
+        <columns>First_Date__c</columns>
+        <columns>Last_Date__c</columns>
+        <columns>Actual_Restart__c</columns>
+        <columns>Actual_Start__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Code_Name__c</field>
+            <operation>equals</operation>
+            <value>Vacation with Restart</value>
+        </filters>
+        <label>Vacation with Restart</label>
+    </ListView>

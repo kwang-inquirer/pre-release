@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?><SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>Default_Account_Sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>Edit</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>Edit</opportunityAccessLevel>
+        </accountSettings>
+        <description>This rule is the default account sharing rule</description>
+        <label>Default Account Sharing</label>
+        <sharedTo>
+            <roleAndSubordinates>Customer_Service_Management</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <group>All_Internal_User</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

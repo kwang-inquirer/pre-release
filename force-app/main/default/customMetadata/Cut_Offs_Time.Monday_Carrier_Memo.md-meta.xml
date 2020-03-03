@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Monday Carrier Memo</label>
+    <protected>false</protected>
+    <values>
+        <field>Community_Redeliver__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Cut_Off_Type__c</field>
+        <value xsi:type="xsd:string">Carrier Memo</value>
+    </values>
+    <values>
+        <field>Day_of_Week__c</field>
+        <value xsi:type="xsd:string">Monday</value>
+    </values>
+    <values>
+        <field>DayofWeekNumber__c</field>
+        <value xsi:type="xsd:string">2</value>
+    </values>
+    <values>
+        <field>Delivery_Type__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Hour__c</field>
+        <value xsi:type="xsd:double">14.0</value>
+    </values>
+    <values>
+        <field>Minute__c</field>
+        <value xsi:type="xsd:double">30.0</value>
+    </values>
+    <values>
+        <field>Sunday_Delivery__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+</CustomMetadata>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+        <fullName>Vendor_Partner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Links the Vendor Partner to this Vendor Promotion</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link the Vendor Partner to this Vendor Promotion</inlineHelpText>
+        <label>Vendor Partner</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Vendor Promotions</relationshipLabel>
+        <relationshipName>Vendor_Promotions</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </CustomField>

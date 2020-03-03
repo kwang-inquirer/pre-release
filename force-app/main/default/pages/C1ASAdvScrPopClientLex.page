@@ -1,0 +1,76 @@
+<apex:page id="C1ASAdvScrPopClientLex" controller="C1ASScrpopRuleManagerLex" action="{!SecondSearch}"  sidebar="true" showHeader="true">
+	<script> 
+    var previousOnload = window.onload; 
+    window.onload = function() { 
+        if (previousOnload) { 
+          previousOnload(); 
+          } 
+        					
+        						init(); 
+    							} 
+    </script>
+    
+    
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <apex:includeScript value="/support/console/25.0/integration.js"/>
+    <apex:includeScript value="support/api/38.0/lightning/opencti_min.js"/>
+    <script type="text/javascript">
+   
+    function init()
+    {
+               
+        
+    }
+  
+    var openSuccess = function openSuccess(result) {
+       
+    };
+    
+    </script>
+    
+ 
+   
+    <apex:form id="frm">
+
+
+
+        <apex:pageMessages />
+          <apex:pageBlock title="Accounts ({!AccountSize})" rendered="{!NOT(ISNULL(AccountResults))}">
+            <apex:actionStatus id="statusSave">
+               <apex:facet name="start">
+                  <span style="font-weight:bold; color: red;">
+                      Saving...<img src="/img/loading.gif" />
+                  </span>
+               </apex:facet>
+           </apex:actionStatus>
+           <apex:pageBlockTable value="{!AccountResults}" var="record" id="thepageBlock" >
+           
+           <apex:column headerValue="Action" width="30">
+                <apex:outputLink style="color:blue" value="/{!record.ID}/e">Edit</apex:outputLink>
+            </apex:column>
+            
+           
+           
+           <apex:column headerValue="Account Name" width="150">
+                <apex:outputLink value="/{!record.ID}">{!record.Name}</apex:outputLink>
+            </apex:column>
+            
+            <apex:column headerValue="Phone Number" width="50"> 
+                         <support:clickToDial number="{!record.Phone}"
+                            params="{'DN='{!record.Phone}"/>
+            </apex:column>
+
+            
+           </apex:pageBlockTable>
+           <apex:pageBlockButtons >
+
+           </apex:pageBlockButtons>
+        </apex:pageBlock>
+        
+        
+      
+        
+   </apex:form>
+
+</apex:page>

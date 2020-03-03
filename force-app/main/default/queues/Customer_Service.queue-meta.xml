@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <email>customerservice@philly.com</email>
+    <name>Customer Service</name>
+    <queueMembers>
+        <publicGroups>
+            <publicGroup>Non_digital_Customer_Team</publicGroup>
+        </publicGroups>
+        <roles>
+            <role>Customer_Service_Management</role>
+            <role>Customer_Service_Supervisor</role>
+            <role>Digital_Customer_Service_Rep</role>
+            <role>Digital_Customer_Service_Supervisor</role>
+            <role>Non_digital_Customer_Service</role>
+            <role>PMN</role>
+        </roles>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

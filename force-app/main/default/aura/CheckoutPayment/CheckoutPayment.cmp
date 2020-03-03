@@ -1,0 +1,5 @@
+<aura:component implements="flexipage:availableForAllPageTypes,lightning:availableForFlowScreens" access="global">
+    <ltng:require scripts="{!$Resource.RecurlyJs + '/recurlyjs/recurly.js'}" afterScriptsLoaded="{!c.init}" />
+    <div>test</div>
+    <div data-recurly="card"></div>
+</aura:component>

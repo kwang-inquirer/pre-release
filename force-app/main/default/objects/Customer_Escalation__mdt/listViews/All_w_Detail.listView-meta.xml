@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+        <fullName>All_w_Detail</fullName>
+        <columns>MasterLabel</columns>
+        <columns>DeveloperName</columns>
+        <columns>Complaint_Code__c</columns>
+        <columns>Escalation_Code__c</columns>
+        <columns>Escalstion_Code__c</columns>
+        <columns>Occurances__c</columns>
+        <columns>Within_Days__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All w/ Detail</label>
+    </ListView>

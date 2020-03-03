@@ -1,0 +1,141 @@
+<apex:page id="SubscriptionReceipt" controller="SubscriptionReceiptController" standardStylesheets="false" showHeader="false" sidebar="false" applyBodyTag="false" applyHtmlTag="false" renderas="pdf">
+
+    <head>
+        <style type="text/css">
+
+            .top {
+                max-width: 100%;
+                height: auto;
+                margin-left: 30%;
+            }
+            .receiptText{
+                border-top-style: solid;
+                border-top-color: black;
+                font-size: 11pt;
+                margin-top: 5pt;
+                margin-left: 30pt;
+                margin-right: 30pt;
+                border-bottom-style: solid;
+                border-bottom-color: black;
+            }
+            table{
+                margin-top: 4px;
+                table-layout: fixed;
+                border-spacing: 5px 0px;
+
+            }
+            td.header {
+                 color:white;
+                 font-weight: bold;
+                 background-color:black;
+                font-size: 11pt;
+             }
+            td.detail {
+                font-size: 10pt;
+            }
+        </style>
+    </head>
+
+
+    <div class="top" >
+
+        <img src="{!$Resource.pmnLogo}" height="40" width="300"/>
+    </div>
+
+        <div class="receiptText">
+            Dear SUBSCRIBER, <br/>
+            <p>Thank you for your subscription! Please take a minute to activate your account at<br/>
+            ACTIVATION LINK<br/>
+            </p>
+            <p>
+                Activating your subscription provides you with the convenience of 24 x 7 Customer Care- where<br/>
+                you can report a delivery issue, process a vacation hold, make a payment <b>AND</b> get unlimited<br/>
+                access to Philly.com plus The Inquirer and Daily News Replica Editions.<br/>
+            </p>
+            <p>
+                Digital Access allows you to access your news content from anywhere, at any time, and the<br/>
+                replica editions also come with a 3 years of archives so you have access to past issues.<br/>
+            </p>
+            <p>
+                So please don't delay - activate now at:<br/><br/>
+                ACTIVATION LINK<br/>
+            </p>
+            <p>
+                If you have additional questions regarding your subscription, please call Customer Support at:<br/>
+                <b>215-222-2765</b><br/><br/>
+                Thank You
+            </p>
+
+
+        </div>
+        <table>
+            <tr>
+                <td class="header">Subscription Receipt:</td>
+                <td class="header">Sales Detail:</td>
+            </tr>
+            <tr>
+                <td class="detail">{!NOW()}</td>
+                <td class="detail">Solicitor: {!sub.subscription_Account__r.Owner.Name} <br/> Location: {!sub.subscription_Account__r.Owner.location__c}<br/></td>
+            </tr>
+            <tr>
+                <td class="header">Deliver To:</td>
+                <td class="detail" rowspan="2" style="font-size:7pt">
+                    Your subscription will automatically renew unless you call customer service to cancel.Promotional offers are for new subscribers only.
+                    Our product offerings, terms and subscription rates may change at any time. Weekend or Sunday print subscribers may receive certain bonus editions,
+                    which will be charged at the applicable daily rate. Print subscribers may also receive premium editions throughout the year,
+                    which are charged at the applicable Sunday rate. These additional charges for bonus and/or premium editions and other product offerings will be
+                    reflected on your account and will accelerate the expiration date of your subscription. New print subscriptions are subject to an additional,
+                    non-refundable activation fee of $4.00. With 72 hours’ notice, you may suspend your print subscription while on vacation.
+                    Vacation stops of less than 22 days will not change the expiration date of your subscription or entitle you to a credit.
+                    During a vacation stop, we will provide you with digital access to your subscription content. To opt-out of bonus and/or premium editions or to change, upgrade, cancel or vacation stop your subscription, call Customer Service at 215-222-2765,
+                    Weekdays from 6:30 a.m. to 3 p.m. and Weekends 7:30 a.m. to 12 p.m. For complete subscription terms, please visit www.philly.com/terms.Thank you for subscribing, we value and appreciate your business and loyalty
+                </td>
+            </tr>
+            <tr>
+                <td class="detail">
+                    {!sub.subscription_Account__r.Name} <br/>
+                    {!sub.subscription_Account__r.ShippingStreet}<br/>
+                    {!sub.subscription_Account__r.ShippingCity}, {!sub.subscription_Account__r.ShippingState} {!sub.subscription_Account__r.ShippingPostalCode} <br/>
+                    {!sub.subscription_Account__r.Phone}<br/>
+                    {!sub.contact__r.Email}<br/>
+                </td>
+            </tr>
+            <tr>
+                <td class="header">Billing Address:</td>
+                <td class="header" >Signature:</td>
+            </tr>
+            <tr>
+                <td class="detail">
+                    {!sub.subscription_Account__r.Name}<br/>
+                    {!sub.subscription_Account__r.BillingStreet}<br/>
+                    {!sub.subscription_Account__r.BillingCity}, {!sub.subscription_Account__r.BillingState} {!sub.subscription_Account__r.BillingPostalCode}<br/>
+                </td>
+                <td class="detail" rowspan="3">
+                    <apex:image value="{!sub.SignatureAttachmentURL__c}"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="header">Subscription Detail:</td>
+            </tr>
+            <tr>
+                <td class="detail">
+                    Activation Fee: $0.00<br/>
+                    Subscription Rate: {!sub.subscription_Offer__r.Total_Amount__c}<br/>
+                    Total Price: {!totalFee} <br/>
+                </td>
+            </tr>
+            <tr>
+                <td class="header">Payment Information:</td>
+            </tr>
+            <tr>
+                <td class="detail">Credit Card: Phyllis Moony, VISA ending in 2924</td>
+            </tr>
+            <tr>
+                <td class="header">Confirmation Code:</td>
+            </tr>
+            <tr>
+                <td class="detail">{!sub.Name}</td>
+            </tr>
+        </table>
+
+</apex:page>

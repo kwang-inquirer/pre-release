@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+        <fullName>Billing_Address__c</fullName>
+        <externalId>false</externalId>
+        <formula>subscription_Account__r.BillingStreet &amp; BR()   
+&amp;subscription_Account__r.BillingCity  &amp; ","&amp; " " &amp;subscription_Account__r.BillingState   &amp; " "&amp;subscription_Account__r.BillingPostalCode</formula>
+        <label>Billing Address</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </CustomField>

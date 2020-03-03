@@ -1,0 +1,16 @@
+<template>
+    <div class="slds-grid">
+        <div class="slds-col slds-size_1-of-1">
+            <div class="slds-text-color_success">{successMessage}</div>
+            <div class="slds-text-color_error">{errorMessage}</div>
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+            <lightning-input type="text" name="password" label="New Password" value={credentials.newPassword} onchange={handleChange} required></lightning-input>
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+            <lightning-input type="text" name="confirmPassword" label="Confirm New Password" value={credentials.confirmNewPassword} onchange={handleChange} required></lightning-input>
+        </div>
+    </div>
+    <lightning-button label="Update" title="Update" onclick={handleUpdate} class="slds-m-left_x-small"></lightning-button>
+    <lightning-button label="Cancel" title="Cancel" onclick={handleCancel} class="slds-m-left_x-small"></lightning-button>
+</template>

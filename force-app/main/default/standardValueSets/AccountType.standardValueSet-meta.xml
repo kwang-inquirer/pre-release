@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Subscriber - Household</fullName>
+        <default>false</default>
+        <label>Subscriber - Household</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Subscriber - Business</fullName>
+        <default>false</default>
+        <label>Subscriber - Business</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Partner</fullName>
+        <default>false</default>
+        <label>Partner</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Distributor</fullName>
+        <default>false</default>
+        <label>Distributor</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Alt Pub (Alternate Publication)</fullName>
+        <default>false</default>
+        <label>Alt Pub (Alternate Publication)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </standardValue>
+</StandardValueSet>

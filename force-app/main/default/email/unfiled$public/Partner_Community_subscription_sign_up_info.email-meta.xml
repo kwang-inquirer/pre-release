@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Goes out to new subscribers after signing up through Partner community</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Partner Community: subscription sign up info</name>
+    <style>none</style>
+    <subject>Thank you for your subscription</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

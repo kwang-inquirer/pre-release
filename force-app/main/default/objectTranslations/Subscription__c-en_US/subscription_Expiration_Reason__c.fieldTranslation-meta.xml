@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- Expiration Reason --></label>
+        <name>subscription_Expiration_Reason__c</name>
+        <picklistValues>
+            <masterLabel>TAC</masterLabel>
+            <translation><!-- TAC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TAD</masterLabel>
+            <translation><!-- TAD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TAS</masterLabel>
+            <translation><!-- TAS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TBP</masterLabel>
+            <translation><!-- TBP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TBS</masterLabel>
+            <translation><!-- TBS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TCM</masterLabel>
+            <translation><!-- TCM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TDB</masterLabel>
+            <translation><!-- TDB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TDE</masterLabel>
+            <translation><!-- TDE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TDN</masterLabel>
+            <translation><!-- TDN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TDU</masterLabel>
+            <translation><!-- TDU --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TDV</masterLabel>
+            <translation><!-- TDV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TEC</masterLabel>
+            <translation><!-- TEC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TEM</masterLabel>
+            <translation><!-- TEM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>THO</masterLabel>
+            <translation><!-- THO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TIA</masterLabel>
+            <translation><!-- TIA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TIE</masterLabel>
+            <translation><!-- TIE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TIP</masterLabel>
+            <translation><!-- TIP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TIS</masterLabel>
+            <translation><!-- TIS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TMR</masterLabel>
+            <translation><!-- TMR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TMV</masterLabel>
+            <translation><!-- TMV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TNP</masterLabel>
+            <translation><!-- TNP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TNR</masterLabel>
+            <translation><!-- TNR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TNS</masterLabel>
+            <translation><!-- TNS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TNT</masterLabel>
+            <translation><!-- TNT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TOB</masterLabel>
+            <translation><!-- TOB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TOP</masterLabel>
+            <translation><!-- TOP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TOT</masterLabel>
+            <translation><!-- TOT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TPP</masterLabel>
+            <translation><!-- TPP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TPS</masterLabel>
+            <translation><!-- TPS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TRI</masterLabel>
+            <translation><!-- TRI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TRM</masterLabel>
+            <translation><!-- TRM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TSB</masterLabel>
+            <translation><!-- TSB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TSC</masterLabel>
+            <translation><!-- TSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TSD</masterLabel>
+            <translation><!-- TSD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TSS</masterLabel>
+            <translation><!-- TSS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TSW</masterLabel>
+            <translation><!-- TSW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TTB</masterLabel>
+            <translation><!-- TTB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TTI</masterLabel>
+            <translation><!-- TTI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TTO</masterLabel>
+            <translation><!-- TTO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TTR</masterLabel>
+            <translation><!-- TTR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TTS</masterLabel>
+            <translation><!-- TTS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TVC</masterLabel>
+            <translation><!-- TVC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TVH</masterLabel>
+            <translation><!-- TVH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TVR</masterLabel>
+            <translation><!-- TVR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TVW</masterLabel>
+            <translation><!-- TVW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TWC</masterLabel>
+            <translation><!-- TWC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TXP</masterLabel>
+            <translation><!-- TXP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TZP</masterLabel>
+            <translation><!-- TZP --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

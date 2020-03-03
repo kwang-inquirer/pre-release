@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>VACPAC</name>
+    <style>none</style>
+    <subject>Your vacation package has been processed</subject>
+    <textOnly>Thank you for visiting Subscriber Services. Your vacation package request has been processed. Your print delivery is scheduled to stop on {!Transaction_Log__c.Stop_Date__c} and all deliveries are scheduled to resume on {!Transaction_Log__c.Start_Date__c}
+
+Don&apos;t forget, while you are away you can browse inquirer.com or you can access the Inquirer and Daily News replica editions from anywhere, at any time!
+
+
+
+Have questions? We&apos;re here to help!
+
+215-222-2765 | digitalsupport@inquirer.com
+
+Monday- Friday: 6:30 a.m - 3:00 p.m.
+
+Saturday-Sunday: 7:30 a.m. - 12:00 p.m.
+
+
+
+You are receiving this email because you are a subscriber of The Philadelphia Inquirer
+Philadelphia Inquirer, 801 Market Street, Suite 300, Philadelphia, PA 19107
+About Inquirer.com | Terms of Use and Privacy Policy | Copyright
+© The Philadelphia Inquirer LLC</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

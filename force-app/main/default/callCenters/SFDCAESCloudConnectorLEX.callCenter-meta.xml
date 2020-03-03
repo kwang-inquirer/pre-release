@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CallCenter xmlns="http://soap.sforce.com/2006/04/metadata">
+    <adapterUrl>https://cti-dev.phillynews.com:8443/CloudConnectorUI/</adapterUrl>
+    <customSettings>{&quot;reqTimeout&quot;:&quot;10000&quot;,&quot;reqStandbyUrl&quot;:&quot;https://cti-dev.phillynews.com:8443/CloudConnectorUI/&quot;,&quot;reqSoftphoneHeight&quot;:&quot;600&quot;,&quot;reqUseApi&quot;:&quot;true&quot;,&quot;reqSoftphoneWidth&quot;:&quot;200&quot;,&quot;reqSalesforceCompatibilityMode&quot;:&quot;Lightning&quot;}</customSettings>
+    <displayName>C1AS SFDC AES CloudConnector Lightning</displayName>
+    <displayNameLabel>Display Name</displayNameLabel>
+    <internalNameLabel>InternalNameAAA</internalNameLabel>
+    <sections>
+        <items>
+            <label>CTI Adapter URL</label>
+            <name>reqAdapterUrl</name>
+            <value>https://cti-dev.phillynews.com:8443/CloudConnectorUI/</value>
+        </items>
+        <items>
+            <label>Use CTI API</label>
+            <name>reqUseApi</name>
+            <value>true</value>
+        </items>
+        <items>
+            <label>Softphone Height</label>
+            <name>reqSoftphoneHeight</name>
+            <value>600</value>
+        </items>
+        <items>
+            <label>Softphone Width</label>
+            <name>reqSoftphoneWidth</name>
+            <value>200</value>
+        </items>
+        <items>
+            <label>CTI Standby Adapter URL</label>
+            <name>reqStandbyUrl</name>
+            <value>https://cti-dev.phillynews.com:8443/CloudConnectorUI/</value>
+        </items>
+        <items>
+            <label>TimeoutInMSecs</label>
+            <name>reqTimeout</name>
+            <value>10000</value>
+        </items>
+        <items>
+            <label>Primary Config URL</label>
+            <name>configurl1</name>
+            <value>https://cti-dev.phillynews.com:8443/CloudConnectorAES01/</value>
+        </items>
+        <items>
+            <label>Standby Config URL</label>
+            <name>configurl2</name>
+            <value>https://cti-dev.phillynews.com:8443/CloudConnectorAES01/</value>
+        </items>
+        <items>
+            <label>Salesforce Compatibility Mode</label>
+            <name>reqSalesforceCompatibilityMode</name>
+            <value>Lightning</value>
+        </items>
+        <label>General Information</label>
+        <name>reqGeneralInfo</name>
+    </sections>
+</CallCenter>

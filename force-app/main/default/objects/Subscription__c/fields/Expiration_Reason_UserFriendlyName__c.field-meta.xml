@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+        <fullName>Expiration_Reason_UserFriendlyName__c</fullName>
+        <description>This is the user friendly name of the termination code reasons.  It is driven from subscription_Expiration_Reason__c that is set on a Stop Transaction</description>
+        <externalId>false</externalId>
+        <formula>CASE(
+subscription_Expiration_Reason__c,
+"TAC","American Circ Issue",
+"TAD","Digital Upcharge",
+"TAS","Already a subscriber ",
+"TBP","Bad Phone (Solicited Orders)",
+"TBS","Stop due to bonus day",
+"TCM","Changed Mind",
+"TDB","Database Correction",
+"TDE","Deceased",
+"TDN","Did not order",
+"TDU","Duplicate Account",
+"TEC","Editorial Content",
+"TEM","Employee no longer w PMN",
+"THO","Hospital/Health Related Issues",
+"TIA","Incorrect address",
+"TIE","Incorrect e-mail address",
+"TIP","Incorrect Phone",
+"TIS","Reads On Internet",
+"TMR","Misrepresented offer",
+"TMV","Moving",
+"TNP","Expired Grace period",
+"TNR","No reason given",
+"TNS","No Service Area",
+"TNT","No time to read",
+"TOB","Outbound 5 Week Rtn Cancel FD",
+"TOP","Receives other paper",
+"TOT","Other",
+"TPP","Price of Paper",
+"TPS","Poor Service",
+"TRI","Rate Increase ",
+"TRM","Returned Mail",
+"TSB","Service Charge - Billing",
+"TSC","Buys Single Copy",
+"TSD","Switched to Home Delivery ",
+"TSS","Sample Stop",
+"TSW","Switched to All Digital",
+"TTB","Ordered the Tablet",
+"TTI","Technical or User Experience",
+"TTO","Term at expiration",
+"TTR","Tablet Return",
+"TTS","Travel Section Cancellation",
+"TVC","Vacation Charge Cancellation",
+"TVH","Vacation Hold",
+"TVR","Vacation with Restart",
+"TVW","Vacation without Restart",
+"TWC","Wrote Cancel on Subscrbr Bill",
+"TXP","Shoppers Express Stop",
+"TZP","Alternate Publication Stop",
+NULL)</formula>
+        <inlineHelpText>This is the user friendly name of the Termination Code. To populate create a Stop Transaction</inlineHelpText>
+        <label>Expiration Reason</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </CustomField>

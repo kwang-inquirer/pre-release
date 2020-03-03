@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFeedFilter xmlns="http://soap.sforce.com/2006/04/metadata">
+    <criteria>
+        <feedItemType>CreateRecordEvent</feedItemType>
+        <relatedSObjectType>Transaction_Log__c</relatedSObjectType>
+    </criteria>
+    <label>Transaction Log</label>
+</CustomFeedFilter>

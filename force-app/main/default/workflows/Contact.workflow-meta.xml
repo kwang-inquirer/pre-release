@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?><Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Change_of_Address</fullName>
+        <description>Change of Address</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>customerservice@philly.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Transaction_Emails/CHGADDR</template>
+    </alerts>
+    <alerts>
+        <fullName>FeedbackResponse</fullName>
+        <description>FeedbackResponse</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>customerservice@philly.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Feedback/FEEDCIR</template>
+    </alerts>
+    <alerts>
+        <fullName>Vacation_Hold</fullName>
+        <description>Vacation Hold</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>customerservice@philly.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Transaction_Emails/Vacation</template>
+    </alerts>
+    <alerts>
+        <fullName>Vacation_Pac</fullName>
+        <description>Vacation Pac</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>customerservice@philly.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Transaction_Emails/VACPAC</template>
+    </alerts>
+    <alerts>
+        <fullName>Vacation_Stop</fullName>
+        <description>Vacation Stop</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>customerservice@philly.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Transaction_Emails/STOPVAC</template>
+    </alerts>
+    <outboundMessages>
+        <fullName>Contact_OBM</fullName>
+        <apiVersion>46.0</apiVersion>
+        <endpointUrl>https://na1.dm-us.informaticacloud.com/saas/api/1/salesforceoutboundmessage/J6txtSEu0W1QyEDimmo5WjSlbx3Z8cOf</endpointUrl>
+        <fields>AccountId</fields>
+        <fields>FirstName</fields>
+        <fields>Household_DSI_Id__c</fields>
+        <fields>Id</fields>
+        <fields>LastName</fields>
+        <fields>MiddleName</fields>
+        <includeSessionId>true</includeSessionId>
+        <integrationUser>client-pmn@relationedge.com</integrationUser>
+        <name>Send Contact</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <outboundMessages>
+        <fullName>Contact_Phone_DNC_update_via_Informatica</fullName>
+        <apiVersion>46.0</apiVersion>
+        <endpointUrl>https://na1.dm-us.informaticacloud.com/saas/api/1/salesforceoutboundmessage/UbsnwIi6t2a5WW6nUJJSY0lDjxcWjowS</endpointUrl>
+        <fields>Id</fields>
+        <fields>Phone</fields>
+        <includeSessionId>false</includeSessionId>
+        <integrationUser>infrmtc_intgrtn-acct@inquirer.com</integrationUser>
+        <name>Contact Phone DNC update via Informatica</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <outboundMessages>
+        <fullName>Modify_Contact</fullName>
+        <apiVersion>47.0</apiVersion>
+        <endpointUrl>https://na1.dm-us.informaticacloud.com/saas/api/1/salesforceoutboundmessage/crraMO2VPt6i1ZT6ZopWVjcnaUTq7p2n</endpointUrl>
+        <fields>DSI_Person_Id__c</fields>
+        <fields>FirstName</fields>
+        <fields>Id</fields>
+        <fields>LastName</fields>
+        <fields>MiddleName</fields>
+        <includeSessionId>true</includeSessionId>
+        <integrationUser>client-pmn@relationedge.com</integrationUser>
+        <name>Modify Contact</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <outboundMessages>
+        <fullName>Send_Contact</fullName>
+        <apiVersion>46.0</apiVersion>
+        <endpointUrl>https://na1.dm-us.informaticacloud.com/saas/api/1/salesforceoutboundmessage/2uyHNzwE3vsfBbudVTF5RllmYVmpWXg8</endpointUrl>
+        <fields>FirstName</fields>
+        <fields>HomePhone</fields>
+        <fields>Id</fields>
+        <fields>LastName</fields>
+        <fields>MailingCity</fields>
+        <fields>MailingCountry</fields>
+        <fields>MailingGeocodeAccuracy</fields>
+        <fields>MailingLatitude</fields>
+        <fields>MailingLongitude</fields>
+        <fields>MailingPostalCode</fields>
+        <fields>MailingState</fields>
+        <fields>MailingStreet</fields>
+        <fields>Phone</fields>
+        <fields>Suffix</fields>
+        <fields>Title</fields>
+        <includeSessionId>false</includeSessionId>
+        <integrationUser>client-pmn@relationedge.com</integrationUser>
+        <name>Send Contact</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <rules>
+        <fullName>Contact Phone DNC update  using OBM to Informatica</fullName>
+        <actions>
+            <name>Contact_Phone_DNC_update_via_Informatica</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>false</active>
+        <formula>AND(   ISCHANGED(Phone),   LEN(Phone) &gt; 0,   NOT(     CONTAINS(       $Profile.Name &amp; $User.FirstName &amp; $User.LastName,       'Integration'     )   ) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Modify Contact</fullName>
+        <actions>
+            <name>Modify_Contact</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>false</active>
+        <formula>AND(   LastModifiedBy.Username != 'infrmtc_intgrtn-acct@inquirer.com',  NOT(ISBLANK( DSI_Person_Id__c )),  OR(ISCHANGED( FirstName ), ISCHANGED( LastName ), ISCHANGED(MiddleName))  )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Send Contact</fullName>
+        <actions>
+            <name>Contact_OBM</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>false</active>
+        <formula>AND(CreatedBy.Username != 'infrmtc_intgrtn-acct@inquirer.com',  ISBLANK( DSI_Person_Id__c ))</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Send OBM</fullName>
+        <active>false</active>
+        <formula>true</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>
