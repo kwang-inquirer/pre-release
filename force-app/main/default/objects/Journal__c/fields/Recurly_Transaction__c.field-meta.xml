@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+        <fullName>Recurly_Transaction__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Recurly Transaction</label>
+        <referenceTo>recurly_v2__Recurly_Transaction__c</referenceTo>
+        <relationshipLabel>Journal Entries</relationshipLabel>
+        <relationshipName>Journal_Entries</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </CustomField>

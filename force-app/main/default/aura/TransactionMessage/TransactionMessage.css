@@ -1,0 +1,71 @@
+.THIS .custhead {
+    font-size:11px;
+    color:#999;
+    font-style:italic;
+}    
+    .THIS.White-hr {
+        background: white;
+        height: 5px;
+        margin: 0px;
+        border: 0px;
+    }
+    .THIS.Green-hr {
+        background: green;
+        height: 5px;
+        margin: 0px;
+        border: 0px;
+    }
+    .THIS.Lawngreen-hr {
+        background: lawngreen;
+        height: 5px;
+        margin: 0px;
+        border: 0px;
+    }
+    .THIS.Red-hr {
+        background: red; 
+        height: 5px;
+        margin: 0px;
+        border: 0px;
+    }
+    .THIS.Black-hr {
+        background: black;
+        height: 5px;
+        margin: 0px;
+        border: 0px;
+    }
+    .THIS.Blue-hr {
+        background:blue; 
+        height: 5px;
+        margin: 0px;
+        border: 0px;
+    }
+    .THIS.Purple-hr {
+        background: purple;
+        height: 5px;
+        margin: 0px;
+        border: 0px;
+    }
+    .THIS.Pink-hr {
+        background: pink;
+        height: 5px;
+        margin: 0px;
+        border: 0px;
+    }
+    .THIS.Yellow-hr {
+        background: yellow;
+        height: 5px;
+        margin: 0px;
+        border: 0px;
+    }
+    .THIS.Aqua-hr {
+        background: Aqua;
+        height: 5px;
+        margin: 0px;
+        border: 0px;
+    }
+    .THIS.Indigo-hr {
+        background: Indigo;
+        height: 5px;
+        margin: 0px;
+        border: 0px;
+    }

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- Use this field to document the question being answered by this article.  Include important keywords to help users find this article. --></help>
+        <label><!-- Question --></label>
+        <name>Question__c</name>
+    </CustomFieldTranslation>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+        <fullName>Procedure_Purpose__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Use this field to describe the purpose of this procedure.</inlineHelpText>
+        <label>Procedure Purpose</label>
+        <length>32768</length>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </CustomField>

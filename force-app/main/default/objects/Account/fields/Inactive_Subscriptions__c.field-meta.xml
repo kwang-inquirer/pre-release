@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+        <fullName>Inactive_Subscriptions__c</fullName>
+        <externalId>false</externalId>
+        <label>Inactive Subscriptions</label>
+        <summaryFilterItems>
+            <field>Subscription__c.subscription_Status__c</field>
+            <operation>equals</operation>
+            <value>Cancelled, Expired</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Subscription__c.subscription_Account__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </CustomField>

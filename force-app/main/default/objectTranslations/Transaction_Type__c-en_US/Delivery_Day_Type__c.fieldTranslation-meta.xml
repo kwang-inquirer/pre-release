@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- Controls if the day of the week factors into displaying the complaint. All (will always display), Weekday (only M-F), Saturday only, Sunday only. --></help>
+        <label><!-- Delivery Day Type --></label>
+        <name>Delivery_Day_Type__c</name>
+        <picklistValues>
+            <masterLabel>All</masterLabel>
+            <translation><!-- All --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Saturday</masterLabel>
+            <translation><!-- Saturday --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sunday</masterLabel>
+            <translation><!-- Sunday --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weekday</masterLabel>
+            <translation><!-- Weekday --></translation>
+        </picklistValues>
+    </CustomFieldTranslation>

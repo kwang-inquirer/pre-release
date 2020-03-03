@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+        <fullName>Internet_Trans__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Internet Transaction</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </CustomField>

@@ -1,0 +1,41 @@
+<apex:page id="RecentSales" controller="RecentSalesController" standardStylesheets="true" lightningStylesheets="true" showHeader="false" sidebar="false">
+
+    <apex:slds />
+
+    <div class="slds-scope">
+        <h1 class="slds-section__title">Recent Sales</h1><br/>
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+        <thead>
+        <tr class="slds-line-height_reset">
+            <th class="" scope="col">
+                <div class="slds-truncate" title="Subscriber" >Subscriber</div>
+            </th>
+            <th class="" scope="col">
+                <div class="slds-truncate" title="Offer">Offer</div>
+            </th>
+            <th class="" scope="col">
+                <div class="slds-truncate" title="Date Added">Date Added</div>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <apex:repeat value="{!subs}" var="s" rows="10">
+        <tr class="slds-hint-parent">
+            <th data-label="Subscriber" scope="row">
+                <div class="slds-truncate" title="Subscriber">{!s.Contact__r.Name}</div>
+            </th>
+            <td data-label="Offer">
+                <div class="slds-truncate" title="Offer">{!s.subscription_Offer__r.Offer_Name__c}</div>
+            </td>
+            <td data-label="Date Added">
+                <div class="slds-truncate" title="Date Added">
+                    <apex:outputText value="{0,date,MM/dd/yyyy hh:mm:ss a}"> <apex:param value="{!s.CreatedDate}" /> </apex:outputText>
+                </div>
+            </td>
+        </tr>
+        </apex:repeat>
+        </tbody>
+    </table>
+    </div>
+
+</apex:page>

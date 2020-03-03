@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>FEEDCIR</name>
+    <style>none</style>
+    <subject>Thank you for your Circulation Feedback</subject>
+    <textOnly>Thank you for visiting Subscriber Services. Your comments have been forwarded to Customer Service. If you have any questions, please call Customer Service at 215-222-2765
+
+Don&apos;t forget if your subscription package includes unlimited digital access, you can start browsing at Philly.com or you can access The Inquirer and Daily News replica&apos;s available to you from anywhere at any time!
+
+
+
+Have questions? We&apos;re here to help!
+
+215-222-2765 | digitalsupport@inquirer.com
+
+Monday- Friday: 6:30 a.m - 3:00 p.m.
+
+Saturday-Sunday: 7:30 a.m. - 12:00 p.m.
+
+
+
+You are receiving this email because you are a subscriber of The Philadelphia Inquirer
+Philadelphia Inquirer, 801 Market Street, Suite 300, Philadelphia, PA 19107
+About Inquirer.com | Terms of Use and Privacy Policy | Copyright
+© The Philadelphia Inquirer LLC</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

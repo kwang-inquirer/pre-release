@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- Per Copy price not including Sunday --></help>
+        <label><!-- Per Copy --></label>
+        <name>Per_Copy__c</name>
+    </CustomFieldTranslation>

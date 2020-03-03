@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- This value represents the Subscription Amount divided by the number of weeks --></help>
+        <label><!-- Per Week --></label>
+        <name>Per_Week__c</name>
+    </CustomFieldTranslation>

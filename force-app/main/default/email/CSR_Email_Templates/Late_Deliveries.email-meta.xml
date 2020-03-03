@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Late Deliveries</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Auto_Response</letterhead>
+    <name>Late Deliveries</name>
+    <style>freeForm</style>
+    <subject>Philadelphia Inquirer - Late Deliveries</subject>
+    <textOnly>Hello, {!Contact.FirstName}:
+
+
+We sincerely apologize for the late deliveries you experienced. A message has been sent to the field in order to ensure your deliveries will be made by our guaranteed delivery time of 6:30am on the weekdays and 8:00am on the weekends going forward. Again, we apologize for any inconvenience this may have caused you.
+
+
+Don&apos;t forget you may report a missed delivery, schedule a vacation, and access the Digital Replica Edition by going to the Subscriber Service Website: https://myaccount.philly.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

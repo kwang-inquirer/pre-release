@@ -1,0 +1,17 @@
+.THIS .collapsableOptions {
+    text-align:right;
+}
+
+.THIS .customCheckBoxGroup .slds-form-element__control {
+    display: inline-flex;
+    flex-wrap: wrap;
+}
+
+.THIS .customCheckBoxGroup .slds-form-element__control .slds-checkbox {
+    width: 33%;
+    text-align: left;
+}
+
+.THIS .customCheckBoxGroup .slds-form-element__control .slds-checkbox .slds-checkbox__label .slds-form-element__label {
+    font-size: 95%;
+}

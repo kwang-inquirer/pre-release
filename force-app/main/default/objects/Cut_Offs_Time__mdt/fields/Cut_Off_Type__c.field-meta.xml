@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+        <fullName>Cut_Off_Type__c</fullName>
+        <description>Type of deadline</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Cut Off Type</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Re-delivery</fullName>
+                    <default>true</default>
+                    <label>Re-delivery</label>
+                </value>
+                <value>
+                    <fullName>Press Run</fullName>
+                    <default>false</default>
+                    <label>Press Run</label>
+                </value>
+                <value>
+                    <fullName>Carrier Memo</fullName>
+                    <default>false</default>
+                    <label>Carrier Memo</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </CustomField>

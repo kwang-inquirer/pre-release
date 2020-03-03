@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>This email template is used for the auto response email</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Auto_Response</letterhead>
+    <name>Auto Response</name>
+    <style>freeForm</style>
+    <subject>Thanks for contacting Philadelphia Media Network</subject>
+    <textOnly>Thanks for your Message
+
+We&apos;re here to help! Please allow 23-48 hours for our team to research and knowledgably respond to your request. Your unique case reference number is {!Case.CaseNumber}.
+
+You can browse through our selection of support articles or visit our self service portal where we have several automated options to quickly service your needs - register for digital access, reset your password, report a service issue, make a payment or process a vacation hold.
+
+Visit myaccount.inquirer.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+        <fullName>Status__c</fullName>
+        <description>Status of the Vendor Promotion.  Inactive values should not be found when a Partner looks for the the Promotion to link their selling activities to.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Current Status of the Vendor Promotion.  Set the Status as Inactive if this Vendor should no longer be able to sell using this Promotion.</inlineHelpText>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Active</fullName>
+                    <default>true</default>
+                    <label>Active</label>
+                </value>
+                <value>
+                    <fullName>Inactive</fullName>
+                    <default>false</default>
+                    <label>Inactive</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </CustomField>

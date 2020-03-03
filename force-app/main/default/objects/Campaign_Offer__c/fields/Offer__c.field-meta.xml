@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+        <fullName>Offer__c</fullName>
+        <description>Offer being grouped under this promotion, an Offer may be part of multiple promotions.</description>
+        <externalId>false</externalId>
+        <label>Offer</label>
+        <referenceTo>Offer__c</referenceTo>
+        <relationshipLabel>Campaign Offers</relationshipLabel>
+        <relationshipName>Campaign_Offers</relationshipName>
+        <relationshipOrder>1</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </CustomField>

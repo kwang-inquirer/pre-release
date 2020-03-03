@@ -1,0 +1,5 @@
+<design:component>
+    <design:attribute name="subscriptionId" label="Subscription Id" required="true" />
+    <design:attribute name="tipAmount" label="Tip Amount" />
+    <design:attribute name="source" label="Source" />
+</design:component>
