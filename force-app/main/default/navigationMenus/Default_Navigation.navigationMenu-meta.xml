@@ -32,7 +32,7 @@
             <navigationMenuItem>
                 <label>Add User to Account</label>
                 <position>3</position>
-                <publiclyAvailable>true</publiclyAvailable>
+                <publiclyAvailable>false</publiclyAvailable>
                 <target>/add-user-to-account</target>
                 <type>InternalLink</type>
             </navigationMenuItem>
@@ -86,33 +86,33 @@
     <navigationMenuItem>
         <label>Digital Access</label>
         <position>4</position>
-        <publiclyAvailable>false</publiclyAvailable>
+        <publiclyAvailable>true</publiclyAvailable>
         <subMenu>
             <navigationMenuItem>
                 <label>Inquirer.com</label>
                 <position>0</position>
-                <publiclyAvailable>false</publiclyAvailable>
+                <publiclyAvailable>true</publiclyAvailable>
                 <target>https://www.inquirer.com/</target>
                 <type>ExternalLink</type>
             </navigationMenuItem>
             <navigationMenuItem>
                 <label>Inquirer Digital Replica: Pennsylvania</label>
                 <position>1</position>
-                <publiclyAvailable>false</publiclyAvailable>
+                <publiclyAvailable>true</publiclyAvailable>
                 <target>https://digital.olivesoftware.com/Olive/ODN/PhiladelphiaInquirer/</target>
                 <type>ExternalLink</type>
             </navigationMenuItem>
             <navigationMenuItem>
                 <label>Inquirer Digital Replica: New Jersey</label>
                 <position>2</position>
-                <publiclyAvailable>false</publiclyAvailable>
+                <publiclyAvailable>true</publiclyAvailable>
                 <target>https://digital.olivesoftware.com/Olive/ODN/PhiladelphiaInquirerNJ/</target>
                 <type>ExternalLink</type>
             </navigationMenuItem>
             <navigationMenuItem>
                 <label>Daily News Digital Replica</label>
                 <position>3</position>
-                <publiclyAvailable>false</publiclyAvailable>
+                <publiclyAvailable>true</publiclyAvailable>
                 <target>https://digital.olivesoftware.com/Olive/ODN/PhiladelphiaDailyNews/</target>
                 <type>ExternalLink</type>
             </navigationMenuItem>
@@ -122,19 +122,19 @@
     <navigationMenuItem>
         <label>Contact Us</label>
         <position>5</position>
-        <publiclyAvailable>false</publiclyAvailable>
+        <publiclyAvailable>true</publiclyAvailable>
         <subMenu>
             <navigationMenuItem>
                 <label>Feedback</label>
                 <position>0</position>
-                <publiclyAvailable>false</publiclyAvailable>
+                <publiclyAvailable>true</publiclyAvailable>
                 <target>/contactsupport</target>
                 <type>InternalLink</type>
             </navigationMenuItem>
             <navigationMenuItem>
                 <label>FAQ</label>
                 <position>1</position>
-                <publiclyAvailable>false</publiclyAvailable>
+                <publiclyAvailable>true</publiclyAvailable>
                 <target>/topiccatalog</target>
                 <type>InternalLink</type>
             </navigationMenuItem>

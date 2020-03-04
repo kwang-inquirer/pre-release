@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label><!-- Recurly Most Recent Invoice Amount --></label>
+        <name>recurly_v2__Recurly_Most_Recent_Invoice_Amount__c</name>
+    </CustomFieldTranslation>

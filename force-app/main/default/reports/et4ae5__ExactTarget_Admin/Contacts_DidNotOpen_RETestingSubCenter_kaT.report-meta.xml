@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>et4ae5__IndividualEmailResult__c.et4ae5__Contact_ID__c</field>
+    </columns>
+    <columns>
+        <field>et4ae5__IndividualEmailResult__c.et4ae5__Lead_ID__c</field>
+    </columns>
+    <columns>
+        <field>et4ae5__IndividualEmailResult__c.et4ae5__SubjectLine__c</field>
+    </columns>
+    <columns>
+        <field>et4ae5__IndividualEmailResult__c.et4ae5__DateSent__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>CUST_NAME</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>RE Testing Sub Center</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>et4ae5__IndividualEmailResult__c.et4ae5__DateSent__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>6/28/2019 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>et4ae5__IndividualEmailResult__c.et4ae5__Opened__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>0</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Contacts_DidNotOpen_RETestingSubCenter</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$et4ae5__IndividualEmailResult__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>et4ae5__IndividualEmailResult__c.et4ae5__DateBounced__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<WaveDataset xmlns="http://soap.sforce.com/2006/04/metadata">
-    <application>PMN_Reports</application>
-    <description>Created from the Subscription_Offers recipe.</description>
-    <masterLabel>Subscription_Offers_Delivery</masterLabel>
-</WaveDataset>

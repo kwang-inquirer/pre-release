@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+        <fullName>Hung</fullName>
+        <columns>MasterLabel</columns>
+        <columns>DeveloperName</columns>
+        <columns>NamespacePrefix</columns>
+        <columns>IsProtected</columns>
+        <columns>myList__c</columns>
+        <columns>myNum__c</columns>
+        <columns>MyText__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>Hung</label>
+    </ListView>

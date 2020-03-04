@@ -2,5 +2,5 @@
 <WaveDashboard xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <content xsi:nil="true"/>
     <application>SharedApp</application>
-    <masterLabel>PN-2078 Weekly Z Complaints</masterLabel>
+    <masterLabel>PN-2078 Weekly Z Complaints(Not Used)</masterLabel>
 </WaveDashboard>

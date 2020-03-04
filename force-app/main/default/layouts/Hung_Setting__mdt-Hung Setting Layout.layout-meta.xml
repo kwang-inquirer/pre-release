@@ -16,11 +16,15 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>txtHung__c</field>
+                <field>MyText__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>ckBox__c</field>
+                <field>myNum__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>myList__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
