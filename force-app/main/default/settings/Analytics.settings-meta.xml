@@ -14,7 +14,7 @@
     <enableDashboardFlexiTable>true</enableDashboardFlexiTable>
     <enableEmailReportsToPortalUsers>false</enableEmailReportsToPortalUsers>
     <enableFloatingReportHeaders>true</enableFloatingReportHeaders>
-    <enableInsights>false</enableInsights>
+    <enableInsights>true</enableInsights>
     <enableLightningReportBuilder>false</enableLightningReportBuilder>
     <enableLotusNotesImages>false</enableLotusNotesImages>
     <enableMassEnableReportBuilder>true</enableMassEnableReportBuilder>
@@ -28,7 +28,8 @@
     <enableSFXJoinedReportsEnable>false</enableSFXJoinedReportsEnable>
     <enableSmartDataDiscovery>false</enableSmartDataDiscovery>
     <enableUseOldChartsLookAndFeel>false</enableUseOldChartsLookAndFeel>
-    <enableWaveReplication>false</enableWaveReplication>
+    <enableWaveReplication>true</enableWaveReplication>
     <enableWaveSharingInheritance>false</enableWaveSharingInheritance>
     <enableWaveTemplate>false</enableWaveTemplate>
+    <enableWaveTrendedDatasetCleanup>false</enableWaveTrendedDatasetCleanup>
 </AnalyticsSettings>
