@@ -124,4 +124,8 @@
         <name>Salesforce1_for_Windows</name>
         <type>ConnectedApp</type>
     </appMenuItems>
+    <appMenuItems>
+        <name>standard__Insights</name>
+        <type>CustomApplication</type>
+    </appMenuItems>
 </AppMenu>
