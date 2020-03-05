@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WaveApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <folder>MySaqlApp</folder>
+    <masterLabel>MySaqlApp</masterLabel>
+    <shares>
+        <accessLevel>Manage</accessLevel>
+        <sharedTo>hdao@inquirer.com.prelease</sharedTo>
+        <sharedToType>User</sharedToType>
+    </shares>
+</WaveApplication>
