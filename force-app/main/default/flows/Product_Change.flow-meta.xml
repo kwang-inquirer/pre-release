@@ -3,8 +3,8 @@
     <assignments>
         <name>AssignEndDatee</name>
         <label>AssignEndDatee</label>
-        <locationX>287</locationX>
-        <locationY>53</locationY>
+        <locationX>310</locationX>
+        <locationY>55</locationY>
         <assignmentItems>
             <assignToReference>SubscriptionEndDate</assignToReference>
             <operator>Assign</operator>
@@ -88,10 +88,11 @@
     <recordCreates>
         <name>CreateTransactionLog</name>
         <label>CreateTransactionLog</label>
-        <locationX>1055</locationX>
-        <locationY>51</locationY>
+        <locationX>486</locationX>
+        <locationY>260</locationY>
+        <assignRecordIdToReference>TransactionLogID.Id</assignRecordIdToReference>
         <connector>
-            <targetReference>GetOffer</targetReference>
+            <targetReference>New_Transaction</targetReference>
         </connector>
         <inputAssignments>
             <field>Account__c</field>
@@ -140,11 +141,11 @@
     <recordLookups>
         <name>GetOffer</name>
         <label>GetOffer</label>
-        <locationX>1207</locationX>
-        <locationY>51</locationY>
+        <locationX>745</locationX>
+        <locationY>271</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Success</targetReference>
+            <targetReference>ConfirmationScreenProdChange</targetReference>
         </connector>
         <filters>
             <field>Id</field>
@@ -162,8 +163,8 @@
     <recordLookups>
         <name>GetSubscription</name>
         <label>GetSubscription</label>
-        <locationX>155</locationX>
-        <locationY>50</locationY>
+        <locationX>183</locationX>
+        <locationY>53</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>AssignEndDatee</targetReference>
@@ -188,8 +189,8 @@
     <recordLookups>
         <name>GetTransactionType</name>
         <label>GetTransactionType</label>
-        <locationX>895</locationX>
-        <locationY>51</locationY>
+        <locationX>358</locationX>
+        <locationY>260</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>CreateTransactionLog</targetReference>
@@ -206,11 +207,34 @@
         <queriedFields>Id</queriedFields>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordLookups>
+        <name>New_Transaction</name>
+        <label>New Transaction</label>
+        <locationX>621</locationX>
+        <locationY>267</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>GetOffer</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>TransactionLogID.Id</elementReference>
+            </value>
+        </filters>
+        <object>Transaction_Log__c</object>
+        <outputReference>varTransactionLog</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>First_Date__c</queriedFields>
+        <sortField>Id</sortField>
+        <sortOrder>Asc</sortOrder>
+    </recordLookups>
     <recordUpdates>
         <name>UpdateSubscription</name>
         <label>UpdateSubscription</label>
-        <locationX>781</locationX>
-        <locationY>51</locationY>
+        <locationX>228</locationX>
+        <locationY>259</locationY>
         <connector>
             <targetReference>GetTransactionType</targetReference>
         </connector>
@@ -236,10 +260,26 @@
         <object>Subscription__c</object>
     </recordUpdates>
     <screens>
+        <name>ConfirmationScreenProdChange</name>
+        <label>ConfirmationScreenProdChange</label>
+        <locationX>843</locationX>
+        <locationY>271</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>ProductChangeSuccess</name>
+            <fieldText>&lt;p&gt;A Product Change has successfully completed.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;New Offer: {!GetOffer.Name}&lt;/p&gt;&lt;p&gt;Effective Date: {!varTransactionLog.First_Date__c}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
         <name>Select_Offer_Screen</name>
         <label>Select Offer Screen</label>
-        <locationX>616</locationX>
-        <locationY>51</locationY>
+        <locationX>100</locationX>
+        <locationY>175</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -277,8 +317,8 @@
     <screens>
         <name>Select_Promo</name>
         <label>Select Promo</label>
-        <locationX>439</locationX>
-        <locationY>51</locationY>
+        <locationX>411</locationX>
+        <locationY>146</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -296,22 +336,6 @@
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
     </screens>
-    <screens>
-        <name>Success</name>
-        <label>Success</label>
-        <locationX>1313</locationX>
-        <locationY>51</locationY>
-        <allowBack>true</allowBack>
-        <allowFinish>true</allowFinish>
-        <allowPause>true</allowPause>
-        <fields>
-            <name>ProductChangeSuccess</name>
-            <fieldText>&lt;p&gt;A Product Change has successfully completed.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;New Offer: {!GetOffer.Name}&lt;/p&gt;&lt;p&gt;Effective Date: {!Pending_Change_Date}&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <showFooter>false</showFooter>
-        <showHeader>false</showHeader>
-    </screens>
     <start>
         <locationX>50</locationX>
         <locationY>50</locationY>
@@ -319,13 +343,21 @@
             <targetReference>GetSubscription</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>SubscriptionEndDate</name>
         <dataType>Date</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>TransactionLogID</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Transaction_Log__c</objectType>
     </variables>
     <variables>
         <name>varCampaignsID</name>
@@ -347,5 +379,13 @@
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varTransactionLog</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Transaction_Log__c</objectType>
     </variables>
 </Flow>

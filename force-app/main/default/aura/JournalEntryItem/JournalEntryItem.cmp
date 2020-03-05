@@ -24,14 +24,36 @@
 		<lightning:layoutItem size="12" mediumDeviceSize="8">{!v.transactionLogToUse.Message} </lightning:layoutItem>
 		<lightning:layoutItem size="12" mediumDeviceSize="4">{!v.transactionLogToUse.Transaction_Type_Type_Name}</lightning:layoutItem>
 
+		<lightning:layoutItem size="12" class="custhead">Description</lightning:layoutItem>
 		<lightning:layoutItem size="12">{!v.transactionLogToUse.Description}</lightning:layoutItem>
 
 		<lightning:layoutItem size="12" mediumDeviceSize="4" class="custhead">Entered On</lightning:layoutItem>
 		<lightning:layoutItem size="12" mediumDeviceSize="8" class="custhead">Entered By</lightning:layoutItem>
 		<lightning:layoutItem size="12" mediumDeviceSize="4"><ui:outputDate format="MM/dd/yyyy" value="{!v.transactionLogToUse.Entry_Date}" /></lightning:layoutItem>
 		<lightning:layoutItem size="12" mediumDeviceSize="8">{!v.transactionLogToUse.CreatedByName}</lightning:layoutItem>
+		
+		<aura:if isTrue="{!v.transactionLogToUse.items}">
+			<lightning:layoutItem size="8" class="slds-p-vertical_x-small">
+				<lightning:layoutItem size="12" class="custhead">Recurly Invoice Line Items</lightning:layoutItem>
+				<lightning:layout multipleRows="true">
+					<lightning:layoutItem size="12" mediumDeviceSize="4" class="custhead">Amount</lightning:layoutItem>
+					<lightning:layoutItem size="12" mediumDeviceSize="4" class="custhead">Status</lightning:layoutItem>
+					<lightning:layoutItem size="12" mediumDeviceSize="4" class="custhead">Description</lightning:layoutItem>
+					<aura:iteration items="{!v.transactionLogToUse.items}" var="item">
+						<lightning:layoutItem size="12" mediumDeviceSize="4"><ui:outputCurrency value="{!item.amount}" /></lightning:layoutItem>
+						<lightning:layoutItem size="12" mediumDeviceSize="4">{!item.status}</lightning:layoutItem>
+						<lightning:layoutItem size="12" mediumDeviceSize="4">{!item.description}</lightning:layoutItem>
+					</aura:iteration>
+				</lightning:layout>
+			</lightning:layoutItem>
+			<lightning:layoutItem size="4" class="slds-p-vertical_x-small">
+				<aura:if isTrue="{!and(v.transactionLogToUse.InvoiceId, v.transactionLogToUse.Transaction_Type_name == 'Purchase')}">
+					<lightning:layoutItem size="12" class="custhead">Actions</lightning:layoutItem>
+					<lightning:layoutItem size="12">
+						<lightning:button variant="neutral" label="Refund" title="Refund" onclick="{! c.handleRefundClicked }"/>
+					</lightning:layoutItem>
+				</aura:if>
+			</lightning:layoutItem>
+		</aura:if>
 	</lightning:layout>
-	<aura:if isTrue="{!and(v.transactionLogToUse.InvoiceId, v.transactionLogToUse.Transaction_Type_name != 'refund')}">
-		<lightning:button variant="base" label="Refund" title="Refund" onclick="{! c.handleRefundClicked }"/>
-	</aura:if>
 </aura:component>

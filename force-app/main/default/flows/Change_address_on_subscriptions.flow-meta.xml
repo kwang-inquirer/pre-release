@@ -1271,7 +1271,7 @@
         <showHeader>false</showHeader>
     </screens>
     <startElementReference>GetActiveSubscription</startElementReference>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>ContactEmail</name>
         <dataType>String</dataType>

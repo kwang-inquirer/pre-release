@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help><!-- District From and District Until match flag --></help>
+        <label><!-- District Match --></label>
+        <name>District_Match__c</name>
+    </CustomFieldTranslation>

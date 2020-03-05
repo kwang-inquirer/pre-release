@@ -1243,7 +1243,7 @@
         <showHeader>false</showHeader>
     </screens>
     <startElementReference>GetActiveSubscription</startElementReference>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>ActiveDelSchedule</name>
         <dataType>String</dataType>

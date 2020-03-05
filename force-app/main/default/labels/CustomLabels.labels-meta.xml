@@ -25,7 +25,7 @@
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>RecurlyJs VFP Url</shortDescription>
-        <value>https://pmn--redev--c.visualforce.com/apex/RecurlyJs</value>
+        <value>https://pmn--reqa--c.visualforce.com/apex/RecurlyJs</value>
     </labels>
     <labels>
         <fullName>Recurly_Public_Key</fullName>
@@ -39,6 +39,6 @@
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>SubscriptionNewStartRestartTransactionCode</shortDescription>
-        <value>VO</value>
+        <value>VR</value>
     </labels>
 </CustomLabels>

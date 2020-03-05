@@ -50,52 +50,6 @@ global class RecurlyApiTest {
     }
 
     @IsTest
-    private static void test_getInvoice() {
-        Test.setMock(HttpCalloutMock.class, new RecurlyApiMock());
-
-        Test.startTest();
-            RecurlyApi recurlyApi = new RecurlyApi();
-            recurlyApi.getInvoice('testInvoiceId');
-        Test.stopTest();
-
-        System.assert(true); // would throw an exception if false
-    }
-
-    @IsTest
-    private static void test_getInvoice_errorEmptyBody() {
-        Test.setMock(HttpCalloutMock.class, new RecurlyApiMock(0, ''));
-
-        Test.startTest();
-        Boolean hasGenericException = false;
-        try {
-            RecurlyApi recurlyApi = new RecurlyApi();
-            recurlyApi.getInvoice('testInvoiceId');
-        } catch (GenericException e) {
-            hasGenericException = true;
-        }
-        Test.stopTest();
-
-        System.assert(true, hasGenericException);
-    }
-
-    @IsTest
-    private static void test_getInvoice_errorBody() {
-        Test.setMock(HttpCalloutMock.class, new RecurlyApiMock(0, '<error><symbol>not_found</symbol><description>The record could not be located.</description></error>'));
-
-        Test.startTest();
-        Boolean hasGenericException = false;
-        try {
-            RecurlyApi recurlyApi = new RecurlyApi();
-            recurlyApi.getInvoice('testInvoiceId');
-        } catch (GenericException e) {
-            hasGenericException = true;
-        }
-        Test.stopTest();
-
-        System.assert(true, hasGenericException);
-    }
-
-    @IsTest
     private static void test_createPurchase() {
         Test.setMock(HttpCalloutMock.class, new RecurlyApiMock());
 
@@ -159,13 +113,13 @@ global class RecurlyApiTest {
         Test.setMock(HttpCalloutMock.class, new RecurlyApiMock());
 
         Test.startTest();
-            RecurlyApi.InvoiceRefund refundWithAmt = new RecurlyApi.InvoiceRefund('test', 5);
-            RecurlyApiObjects.AdjustmentDetails adj2 = new RecurlyApiObjects.AdjustmentDetails(1, 1, 'test');
-            RecurlyApi.InvoiceRefund refundWithLineItems = new RecurlyApi.InvoiceRefund('test', new List<RecurlyApiObjects.AdjustmentDetails>{adj2});
+            RecurlyApiObjects.Refund refundWithAmt = new RecurlyApiObjects.Refund(5);
+            RecurlyApiObjects.RefundLineItem lineItems = new RecurlyApiObjects.RefundLineItem('test', 1);
+            RecurlyApiObjects.Refund refundWithLineItems = new RecurlyApiObjects.Refund(new List<RecurlyApiObjects.RefundLineItem>{lineItems});
 
             RecurlyApi recurlyApi = new RecurlyApi();
-            recurlyApi.refundInvoice(refundWithAmt);
-            recurlyApi.refundInvoice(refundWithLineItems);
+            recurlyApi.refundInvoice('test', refundWithAmt);
+            recurlyApi.refundInvoice('test', refundWithLineItems);
         Test.stopTest();
 
         System.assert(true); // would throw an exception if false
@@ -178,13 +132,13 @@ global class RecurlyApiTest {
         Test.startTest();
         Boolean hasGenericException = false;
         try {
-            RecurlyApi.InvoiceRefund refundWithAmt = new RecurlyApi.InvoiceRefund('test', 5);
-            RecurlyApiObjects.AdjustmentDetails adj2 = new RecurlyApiObjects.AdjustmentDetails(1, 1, 'test');
-            RecurlyApi.InvoiceRefund refundWithLineItems = new RecurlyApi.InvoiceRefund('test', new List<RecurlyApiObjects.AdjustmentDetails>{adj2});
+            RecurlyApiObjects.Refund refundWithAmt = new RecurlyApiObjects.Refund(5);
+            RecurlyApiObjects.RefundLineItem lineItems = new RecurlyApiObjects.RefundLineItem('test', 1);
+            RecurlyApiObjects.Refund refundWithLineItems = new RecurlyApiObjects.Refund(new List<RecurlyApiObjects.RefundLineItem>{lineItems});
 
             RecurlyApi recurlyApi = new RecurlyApi();
-            recurlyApi.refundInvoice(refundWithAmt);
-            recurlyApi.refundInvoice(refundWithLineItems);
+            recurlyApi.refundInvoice('test', refundWithAmt);
+            recurlyApi.refundInvoice('test', refundWithLineItems);
         } catch (GenericException e) {
             hasGenericException = true;
         }
@@ -195,56 +149,23 @@ global class RecurlyApiTest {
 
     @IsTest
     private static void test_refundInvoice_errorBody() {
-        Test.setMock(HttpCalloutMock.class, new RecurlyApiMock(0, '<error><symbol>not_found</symbol><description>The record could not be located.</description></error>'));
+        Test.setMock(HttpCalloutMock.class, new RecurlyApiMock(0, '{"message":"error"}'));
 
         Test.startTest();
         Boolean hasGenericException = false;
         try {
-            RecurlyApi.InvoiceRefund refundWithAmt = new RecurlyApi.InvoiceRefund('test', 5);
-            RecurlyApiObjects.AdjustmentDetails adj2 = new RecurlyApiObjects.AdjustmentDetails(1, 1, 'test');
-            RecurlyApi.InvoiceRefund refundWithLineItems = new RecurlyApi.InvoiceRefund('test', new List<RecurlyApiObjects.AdjustmentDetails>{adj2});
+            RecurlyApiObjects.Refund refundWithAmt = new RecurlyApiObjects.Refund(5);
+            RecurlyApiObjects.RefundLineItem lineItems = new RecurlyApiObjects.RefundLineItem('test', 1);
+            RecurlyApiObjects.Refund refundWithLineItems = new RecurlyApiObjects.Refund(new List<RecurlyApiObjects.RefundLineItem>{lineItems});
 
             RecurlyApi recurlyApi = new RecurlyApi();
-            recurlyApi.refundInvoice(refundWithAmt);
-            recurlyApi.refundInvoice(refundWithLineItems);
+            recurlyApi.refundInvoice('test', refundWithAmt);
+            recurlyApi.refundInvoice('test', refundWithLineItems);
         } catch (GenericException e) {
             hasGenericException = true;
         }
         Test.stopTest();
 
         System.assert(true, hasGenericException);
-    }
-
-    @IsTest
-    private static void test_misc() {
-        Test.startTest();
-            RecurlyApiObjects.InvoiceLineItem invLineItem = new RecurlyApiObjects.InvoiceLineItem();
-            invLineItem.adjustment = new List<RecurlyApiObjects.AdjustmentDetails>{new RecurlyApiObjects.AdjustmentDetails('test', 1)};
-
-            RecurlyApiObjects.InvoiceDetails details = new RecurlyApiObjects.InvoiceDetails();
-            details.uuid = 'test';
-            details.state = 'test';
-            details.invoice_number = 1;
-            details.type = 'test';
-            details.total_in_cents = 100;
-            details.line_items = invLineItem;
-
-            RecurlyApiObjects.Invoice invoice = new RecurlyApiObjects.Invoice();
-            invoice.invoice = details;
-
-            RecurlyApiObjects.InvoiceDetails details_0 = new RecurlyApiObjects.InvoiceDetails();
-            details_0.uuid = 'test';
-            details_0.state = 'test';
-            details_0.invoice_number = 1;
-            details_0.type = 'test';
-            details_0.total_in_cents = null;
-            details_0.line_items = invLineItem;
-
-            Decimal total = details.total;
-            Decimal total0 = details_0.total;
-        Test.stopTest();
-
-        System.assertEquals(0, total0);
-        System.assertEquals(1, total);
     }
 }

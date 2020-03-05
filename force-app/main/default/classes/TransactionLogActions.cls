@@ -762,7 +762,8 @@ public with sharing class TransactionLogActions {
     }
 
 	private static List<SuperTransaction> addRecurlyPaymentSObjects(Id subId, List<string> FilterList){
-        List<SuperTransaction> lstResult = new List<SuperTransaction>();
+		List<SuperTransaction> superTransactions = new List<SuperTransaction>();
+		/*
         List<recurly_v2__Recurly_Transaction__c> pulledJE = [
 			SELECT Check_Number__c, recurly_v2__Amount__c, recurly_v2__Collected_At__c, recurly_v2__Payment_Card_Type__c, recurly_v2__Payment_Last_Four__c, Created_By_User__c, Expire_Balance__c, Expire_Date__c,
 				recurly_v2__Recurly_Invoice__c, recurly_v2__Recurly_Invoice__r.recurly_v2__Total__c, recurly_v2__Type__c
@@ -791,10 +792,49 @@ public with sharing class TransactionLogActions {
 				superJE.Category =TransactionLogActions.FilterCategory('Credit_Card');
 				if(thisJE.Expire_Balance__c != null){ superJE.Expire_Balance = thisJE.Expire_Balance__c; }
 				if(thisJE.Expire_Date__c != null){ superJE.Expire_Date = thisJE.Expire_Date__c; }
-				lstResult.add(superJE);
+				superTransactions.add(superJE);
 			}
-        }
-        return lstResult;
+		}
+		*/
+		List<recurly_v2__Recurly_Invoice__c> invoices = [
+			SELECT Id, Name, CreatedDate, recurly_v2__Closed_At__c, recurly_v2__Total__c, recurly_v2__Type__c, recurly_v2__Invoice_Type__c, 
+				(SELECT Id, recurly_v2__Amount__c, recurly_v2__State__c, recurly_v2__Line_Item_Description__c FROM recurly_v2__Recurly_Line_Items__r) 
+			FROM recurly_v2__Recurly_Invoice__c
+			WHERE recurly_v2__Recurly_Account__c IN (SELECT Id FROM recurly_v2__Recurly_Account__c WHERE Subscription__c = :subId)
+			LIMIT 1000
+		];
+
+		for (recurly_v2__Recurly_Invoice__c invoice : invoices) {
+			if(filterList.contains(TransactionLogActions.FilterCategory('Credit_Card'))) {
+				SuperTransaction superTrans = new SuperTransaction();
+				if(invoice.recurly_v2__Total__c > 0){
+					superTrans.Credit = invoice.recurly_v2__Total__c;
+				}else{
+					superTrans.Debit = -invoice.recurly_v2__Total__c;				
+				}
+
+				superTrans.Transaction_Type_name = invoice.recurly_v2__Invoice_Type__c;
+				superTrans.InvoiceId = invoice.Id;
+				superTrans.First_Date = (invoice.recurly_v2__Closed_At__c != null && invoice.recurly_v2__Closed_At__c.date() != null) ? invoice.recurly_v2__Closed_At__c.date() : invoice.CreatedDate.date();
+				superTrans.Amount = invoice.recurly_v2__Total__c;
+				superTrans.Entry_Date = (invoice.recurly_v2__Closed_At__c != null && invoice.recurly_v2__Closed_At__c.date() != null) ? invoice.recurly_v2__Closed_At__c.date() : invoice.CreatedDate.date();
+				superTrans.EntryType = invoice.recurly_v2__Type__c;
+				superTrans.Description = 'Recurly invoice ' + invoice.Name;
+				superTrans.Record_Type_Name = 'Credit Card';
+				superTrans.Category = TransactionLogActions.FilterCategory('Credit_Card');
+
+				if (invoice.recurly_v2__Recurly_Line_Items__r != null) {
+					superTrans.items = new List<SuperTransactionItem>();
+					for (recurly_v2__Recurly_Line_Item__c lineItem : invoice.recurly_v2__Recurly_Line_Items__r) {
+						superTrans.items.add(new SuperTransactionItem(lineItem.recurly_v2__Amount__c, lineItem.recurly_v2__State__c, lineItem.recurly_v2__Line_Item_Description__c));
+					}
+				}
+
+				superTransactions.add(superTrans);
+			}
+		}
+
+        return superTransactions;
 	}
 
 	public class SuperTransaction implements Comparable{
@@ -825,7 +865,8 @@ public with sharing class TransactionLogActions {
         @AuraEnabled public Double Amount {get;set;}
 		@AuraEnabled public Double Expire_Balance {get;set;} 
 		@AuraEnabled public Date Expire_Date {get;set;} 
-        @AuraEnabled public Boolean isBigObject {get;set;}
+		@AuraEnabled public Boolean isBigObject {get;set;}
+		@AuraEnabled public List<SuperTransactionItem> items {get;set;}
 
 		public Integer compareTo(Object compareTo){
 			Integer intResult = 1;
@@ -833,6 +874,18 @@ public with sharing class TransactionLogActions {
 			if(First_Date == st.First_Date) return 0;
 			if(First_Date > st.First_Date) return -1;
             return 1;
+		}
+	}
+
+	public class SuperTransactionItem {
+		@AuraEnabled public Decimal amount {get;set;}
+		@AuraEnabled public String status {get;set;}
+		@AuraEnabled public String description {get;set;}
+
+		public SuperTransactionItem(Decimal amount, String status, String description) {
+			this.amount = amount;
+			this.status = status;
+			this.description = description;
 		}
 	}
 }

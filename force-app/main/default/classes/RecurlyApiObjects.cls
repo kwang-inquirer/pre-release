@@ -4,53 +4,36 @@ public with sharing class RecurlyApiObjects {
         String getXmlString();
     }
 
-    public class Invoice {
-        @AuraEnabled public InvoiceDetails invoice {get;set;}
-    }
+    public class Refund {
+        public String type {get;set;}
+        public Decimal amount {get;set;}
+        public List<RefundLineItem> line_items {get;set;}
 
-    public class InvoiceDetails {
-        @AuraEnabled public String uuid {get;set;}
-        @AuraEnabled public String state {get;set;}
-        @AuraEnabled public Integer invoice_number {get;set;}
-        @AuraEnabled public String type {get;set;}
-        @AuraEnabled public Decimal total_in_cents {get;set;}
-        @AuraEnabled public InvoiceLineItem line_items {get;set;}
+        public Refund(Decimal amount) {
+            this.type = 'amount';
+            this.amount = amount;
+        }
 
-        @AuraEnabled public Decimal total {
-            get {
-                if (total_in_cents == null) {
-                    return 0;
-                }
-                return total_in_cents / 100;
-            }
+        public Refund(List<RefundLineItem> line_items) {
+            this.type = 'line_items';
+            this.line_items = line_items;
         }
     }
 
-    public class InvoiceLineItem {
-        @AuraEnabled public List<AdjustmentDetails> adjustment {get;set;}
+    public class RefundLineItem {
+        public String id {get;set;}
+        public Decimal quantity {get;set;}
+
+        public RefundLineItem(String id, Decimal quantity) {
+            this.id = id;
+            this.quantity = quantity;
+        }
     }
 
     public class AdjustmentDetails {
-        @AuraEnabled public String uuid {get;set;}
-        @AuraEnabled public String state {get;set;}
         @AuraEnabled public String description {get;set;}
         @AuraEnabled public Decimal quantity {get;set;}
         @AuraEnabled public Decimal unit_amount_in_cents {get;set;}
-        @AuraEnabled public Decimal total_in_cents {get;set;}
-
-        @AuraEnabled public Decimal total {
-            get {
-                if (total_in_cents == null) {
-                    return 0;
-                }
-                return total_in_cents / 100;
-            }
-        }
-
-        public AdjustmentDetails(String uuid, Decimal quantity) {
-            this.uuid = uuid;
-            this.quantity = quantity;
-        }
 
         public AdjustmentDetails(Decimal unit_amount_in_cents, Decimal quantity, String description) {
             this.unit_amount_in_cents = unit_amount_in_cents;
@@ -81,7 +64,6 @@ public with sharing class RecurlyApiObjects {
                 xml += billing_info.getXmlString();
             }
             xml += '</account>';
-            System.debug(xml);
             return xml;
         }
     }
@@ -109,7 +91,6 @@ public with sharing class RecurlyApiObjects {
             xml += '<account>';
             xml += '<account_code>' + accountCode + '</account_code>';
             if (billing_info != null && billing_info.isValid()) {
-                System.debug('billing info valid');
                 xml += billing_info.getXmlString();
             }
             xml += '</account>';
@@ -121,7 +102,6 @@ public with sharing class RecurlyApiObjects {
                 xml += '</adjustments>';
             }
             xml += '</purchase>';
-            System.debug(xml);
             return xml;
         }
     }
@@ -130,7 +110,6 @@ public with sharing class RecurlyApiObjects {
         public String token_id {get;set;}
 
         public Boolean isValid() {
-            System.debug(token_id);
             return String.isNotEmpty(token_id);
         }
 
@@ -142,66 +121,4 @@ public with sharing class RecurlyApiObjects {
             return xml;
         }
     }
-
-/*
-    public class CardBillingInfo implements BillingInfoInterface {
-        public String first_name {get;set;}
-        public String last_name {get;set;}
-        public String address1 {get;set;}
-        public String city {get;set;}
-        public String state {get;set;}
-        public String zip {get;set;}
-        public String country {get;set;}
-        public String card_number {get;set;}
-        public String verification_value {get;set;}
-        public String month {get;set;}
-        public String year {get;set;}
-
-        public String getXmlString() {
-            String xml = '';
-            xml += '<billing_info>';
-            xml += '<first_name>' + first_name + '</first_name>';
-            xml += '<last_name>' + last_name + '</last_name>';
-            xml += '<address1>' + address1 + '</address1>';
-            xml += '<city>' + city + '</city>';
-            xml += '<state>' + state + '</state>';
-            xml += '<zip>' + zip + '</zip>';
-            xml += '<country>' + country + '</country>';
-            xml += '<number>' + card_number + '</number>';
-            xml += '<verification_value>' + verification_value + '</verification_value>';
-            xml += '<month>' + month + '</month>';
-            xml += '<year>' + year + '</year>';
-            xml += '</billing_info>';
-            return xml;
-        }
-    }
-
-    public class BankBillingInfo implements BillingInfoInterface {
-        public String name_on_account {get;set;}
-        public String address1 {get;set;}
-        public String city {get;set;}
-        public String state {get;set;}
-        public String zip {get;set;}
-        public String country {get;set;}
-        public String account_type {get;set;}
-        public String account_number {get;set;}
-        public String routing_number {get;set;}
-
-        public String getXmlString() {
-            String xml = '';
-            xml += '<billing_info>';
-            xml += '<name_on_account>' + name_on_account + '</name_on_account>';
-            xml += '<address1>' + address1 + '</address1>';
-            xml += '<city>' + city + '</city>';
-            xml += '<state>' + state + '</state>';
-            xml += '<zip>' + zip + '</zip>';
-            xml += '<country>' + country + '</country>';
-            xml += '<account_type>' + account_type + '</account_type>';
-            xml += '<account_number>' + account_number + '</account_number>';
-            xml += '<routing_number>' + routing_number + '</routing_number>';
-            xml += '</billing_info>';
-            return xml;
-        }
-    }
-*/
 }

@@ -116,4 +116,8 @@
         <name>VoicePort_API</name>
         <type>ConnectedApp</type>
     </appMenuItems>
+    <appMenuItems>
+        <name>C1AStest</name>
+        <type>CustomApplication</type>
+    </appMenuItems>
 </AppMenu>
