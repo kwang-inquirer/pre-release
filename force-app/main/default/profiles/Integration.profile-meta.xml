@@ -948,6 +948,11 @@
         <visible>false</visible>
     </applicationVisibilities>
     <applicationVisibilities>
+        <application>Partner</application>
+        <default>false</default>
+        <visible>false</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
         <application>Sales</application>
         <default>false</default>
         <visible>false</visible>
@@ -966,6 +971,11 @@
         <application>standard__Community</application>
         <default>false</default>
         <visible>false</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
+        <application>standard__Insights</application>
+        <default>false</default>
+        <visible>true</visible>
     </applicationVisibilities>
     <applicationVisibilities>
         <application>standard__LightningBolt</application>
@@ -1130,6 +1140,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.Rating</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Recurly_Link__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1814,6 +1829,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Contact.Email_Corrected__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Contact.Email_Validity__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2319,7 +2339,17 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Delivery_Address__c.Post_Direction__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Delivery_Address__c.Postal_Line_of_Travel__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Delivery_Address__c.Pre_Direction__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2539,6 +2569,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Delivery_Schedule__c.Recurly_Subscription__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Delivery_Schedule__c.Route_Service_Group__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2633,10 +2668,10 @@
     <field>Event.ScreenPopResult__c</field>
 </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>Event.Type</field>
-        <readable>true</readable>
-    </fieldPermissions>
+    <editable>false</editable>
+    <readable>false</readable>
+    <field>Event.Type</field>
+</fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>Event.WhatId</field>
@@ -2980,6 +3015,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Journal__c.Publication__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Journal__c.Recurly_Transaction__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -4014,6 +4054,171 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>ReCurly_Transaction__b.Category__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ReCurly_Transaction__b.Check_Number__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ReCurly_Transaction__b.Created_By_User__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ReCurly_Transaction__b.Created_in_Salesforce__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ReCurly_Transaction__b.Debit_Card__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ReCurly_Transaction__b.Deleted_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ReCurly_Transaction__b.Expire_Balance__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ReCurly_Transaction__b.Expire_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ReCurly_Transaction__b.LastModifiedDate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ReCurly_Transaction__b.Last_Updated_in_Salesforce__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ReCurly_Transaction__b.NIE_Code__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ReCurly_Transaction__b.Prior_Expire_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ReCurly_Transaction__b.Solicitor_Account__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ReCurly_Transaction__b.Solicitor_Contact__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ReCurly_Transaction__b.Tip_Amount__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ReCurly_Transaction__b.recurly_Account__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ReCurly_Transaction__b.recurly_Amount__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ReCurly_Transaction__b.recurly_Billing_City__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ReCurly_Transaction__b.recurly_Billing_First_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ReCurly_Transaction__b.recurly_Billing_Last_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ReCurly_Transaction__b.recurly_Collected_At__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ReCurly_Transaction__b.recurly_Created_At__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ReCurly_Transaction__b.recurly_Expiration_Month__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ReCurly_Transaction__b.recurly_Expiration_Year__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ReCurly_Transaction__b.recurly_Payment_Card_Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ReCurly_Transaction__b.recurly_Payment_First_Six__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ReCurly_Transaction__b.recurly_Payment_Last_Four__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ReCurly_Transaction__b.recurly_Status_Message__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ReCurly_Transaction__b.recurly_Subscription_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ReCurly_Transaction__b.recurly_Success__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ReCurly_Transaction__b.recurly_Transaction_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ReCurly_Transaction__b.recurly_Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ReCurly_Transaction__b.recurly_Voided_At__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Route_Delay__c.Broadcast_Num__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -4079,6 +4284,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Route_Street__c.First_Direction__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Route_Street__c.From__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -4100,6 +4310,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Route_Street__c.Route__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Route_Street__c.Second_Direction__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -4150,6 +4365,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Route__c.Division__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Route__c.Recovery_Allowed__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -4574,6 +4794,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Subscription__c.Auto_Renew_Recurly_Account__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Subscription__c.Auto_Renew_Tip_Flag__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -4768,6 +4993,16 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Subscription__c.Recurly_Subscription_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Subscription__c.Recurly_Subscription__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Subscription__c.Renewal_Amount__c</field>
         <readable>true</readable>
@@ -4865,6 +5100,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Subscription__c.subscription_Coupon_Code__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Subscription__c.subscription_Created_in_Recurly_At__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -5003,10 +5243,10 @@
     <field>Task.ScreenPopResult__c</field>
 </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>Task.Type</field>
-        <readable>true</readable>
-    </fieldPermissions>
+    <editable>false</editable>
+    <readable>false</readable>
+    <field>Task.Type</field>
+</fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>Task.WhatId</field>
@@ -5468,6 +5708,16 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Transaction_Log__c.Record_Type_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Transaction_Log__c.Recurly_Subscription__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Transaction_Log__c.Redelivery_Requested__c</field>
         <readable>true</readable>
@@ -5570,6 +5820,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Transaction_Log__c.Subrates__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Transaction_Log__c.Subrec__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -5984,6 +6239,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Transaction_Type__c.Adhere_To_Recovery_Time__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Transaction_Type__c.Alert_CSR__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -6145,6 +6405,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Transaction_Type__c.Popup_Func__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Transaction_Type__c.Recovery_Flag__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -7513,14 +7778,14 @@
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
-        <allowCreate>true</allowCreate>
-        <allowDelete>true</allowDelete>
-        <allowEdit>true</allowEdit>
-        <allowRead>true</allowRead>
-        <modifyAllRecords>true</modifyAllRecords>
-        <object>Rate__c</object>
-        <viewAllRecords>true</viewAllRecords>
-    </objectPermissions>
+    <object>Rate__c</object>
+    <allowCreate>false</allowCreate>
+    <allowDelete>false</allowDelete>
+    <allowEdit>false</allowEdit>
+    <allowRead>false</allowRead>
+    <modifyAllRecords>false</modifyAllRecords>
+    <viewAllRecords>false</viewAllRecords>
+</objectPermissions>
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
@@ -8454,9 +8719,9 @@
         <name>ManageHealthCheck</name>
     </userPermissions>
     <userPermissions>
-        <enabled>true</enabled>
-        <name>ManageHubConnections</name>
-    </userPermissions>
+    <enabled>false</enabled>
+    <name>ManageHubConnections</name>
+</userPermissions>
     <userPermissions>
         <enabled>true</enabled>
         <name>ManageInteraction</name>
@@ -8702,9 +8967,9 @@
         <name>SubscribeToLightningReports</name>
     </userPermissions>
     <userPermissions>
-        <enabled>true</enabled>
-        <name>TraceXdsQueries</name>
-    </userPermissions>
+    <enabled>false</enabled>
+    <name>TraceXdsQueries</name>
+</userPermissions>
     <userPermissions>
         <enabled>true</enabled>
         <name>TransactionalEmailSend</name>
@@ -8794,7 +9059,7 @@
         <name>ViewSetup</name>
     </userPermissions>
     <userPermissions>
-        <enabled>true</enabled>
-        <name>ViewUserPII</name>
-    </userPermissions>
+    <enabled>false</enabled>
+    <name>ViewUserPII</name>
+</userPermissions>
 </Profile>

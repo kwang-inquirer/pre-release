@@ -6,6 +6,8 @@
             <componentInstanceProperties>
                 <name>richTextValue</name>
                 <value>&lt;p&gt;&lt;img class=&quot;sfdcCbImage&quot; src=&quot;{!contentAsset.inqlogo05x21.1}&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;</value>
             </componentInstanceProperties>
             <componentName>forceCommunity:richTextInline</componentName>

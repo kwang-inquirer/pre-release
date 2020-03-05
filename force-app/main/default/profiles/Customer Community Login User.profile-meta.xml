@@ -264,6 +264,11 @@
         <visible>false</visible>
     </applicationVisibilities>
     <applicationVisibilities>
+        <application>Partner</application>
+        <default>false</default>
+        <visible>false</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
         <application>Sales</application>
         <default>false</default>
         <visible>false</visible>
@@ -282,6 +287,11 @@
         <application>standard__Community</application>
         <default>false</default>
         <visible>false</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
+        <application>standard__Insights</application>
+        <default>false</default>
+        <visible>true</visible>
     </applicationVisibilities>
     <applicationVisibilities>
         <application>standard__LightningBolt</application>
@@ -1575,6 +1585,26 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>ReCurly_Transaction__b.Created_in_Salesforce__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ReCurly_Transaction__b.Deleted_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ReCurly_Transaction__b.Last_Updated_in_Salesforce__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ReCurly_Transaction__b.NIE_Code__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>SocialPersona.AreWeFollowing</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1936,6 +1966,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Solution.SolutionNote</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Subscription__c.Auto_Renew_Recurly_Account__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

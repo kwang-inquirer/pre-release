@@ -264,6 +264,11 @@
         <visible>false</visible>
     </applicationVisibilities>
     <applicationVisibilities>
+        <application>Partner</application>
+        <default>false</default>
+        <visible>false</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
         <application>Sales</application>
         <default>false</default>
         <visible>false</visible>
@@ -282,6 +287,11 @@
         <application>standard__Community</application>
         <default>false</default>
         <visible>false</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
+        <application>standard__Insights</application>
+        <default>false</default>
+        <visible>true</visible>
     </applicationVisibilities>
     <applicationVisibilities>
         <application>standard__LightningBolt</application>
@@ -964,10 +974,10 @@
     <field>Event.ScreenPopResult__c</field>
 </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>Event.Type</field>
-        <readable>true</readable>
-    </fieldPermissions>
+    <editable>false</editable>
+    <readable>false</readable>
+    <field>Event.Type</field>
+</fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>Event.WhatId</field>
@@ -1634,6 +1644,26 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>ReCurly_Transaction__b.Created_in_Salesforce__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ReCurly_Transaction__b.Deleted_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ReCurly_Transaction__b.Last_Updated_in_Salesforce__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ReCurly_Transaction__b.NIE_Code__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Route_Delay__c.Broadcast_Num__c</field>
         <readable>true</readable>
@@ -1700,6 +1730,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Route_Street__c.First_Direction__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Route_Street__c.From__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1721,6 +1756,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Route_Street__c.Route__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Route_Street__c.Second_Direction__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2125,6 +2165,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Subscription__c.Auto_Renew_Recurly_Account__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Subscription__c.ContactTextSearch__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2209,10 +2254,10 @@
     <field>Task.ScreenPopResult__c</field>
 </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>Task.Type</field>
-        <readable>true</readable>
-    </fieldPermissions>
+    <editable>false</editable>
+    <readable>false</readable>
+    <field>Task.Type</field>
+</fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>Task.WhatId</field>

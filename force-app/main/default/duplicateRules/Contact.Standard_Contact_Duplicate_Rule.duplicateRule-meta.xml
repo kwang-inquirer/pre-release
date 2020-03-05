@@ -36,6 +36,10 @@
                 <outputField>LastName</outputField>
             </mappingFields>
             <mappingFields>
+                <inputField>Phone</inputField>
+                <outputField>Phone</outputField>
+            </mappingFields>
+            <mappingFields>
                 <inputField>MailingStreet</inputField>
                 <outputField>Street</outputField>
             </mappingFields>
@@ -46,10 +50,6 @@
             <mappingFields>
                 <inputField>MailingPostalCode</inputField>
                 <outputField>PostalCode</outputField>
-            </mappingFields>
-            <mappingFields>
-                <inputField>Phone</inputField>
-                <outputField>Phone</outputField>
             </mappingFields>
             <outputObject>Lead</outputObject>
         </objectMapping>
