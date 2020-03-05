@@ -114,13 +114,14 @@ export default class SplitDelivery extends LightningElement {
             if(this.showCreateWeekday){
                  createNewDeliveryAddress({ subId: this.subscriptionId, address : this._weekdayAddress})
                 .then(createdId => {
+                    console.log('her2222e' + createdId);
                     const validateParams = { newAddressId: createdId };
                        this.retry(hasValidDeliveryAddress, validateParams)
                            .then(valid => {
                                if (!valid) {
                                   reject('There is not a current route available for this address.');
                                } else {
-                                    this.finalWeekdayAddress = valid;
+                                    this.finalWeekdayAddress = createdId;
                                     resolve('');
                                     }
                                 })
@@ -148,7 +149,7 @@ export default class SplitDelivery extends LightningElement {
                                    if (!valid) {
                                       reject('There is not a current route available for this address.');
                                    } else {
-                                        this.finalWeekendAddress = valid;
+                                        this.finalWeekendAddress = createdId;
                                         resolve();
                                         }
                                     })

@@ -4,36 +4,53 @@ public with sharing class RecurlyApiObjects {
         String getXmlString();
     }
 
-    public class Refund {
-        public String type {get;set;}
-        public Decimal amount {get;set;}
-        public List<RefundLineItem> line_items {get;set;}
+    public class Invoice {
+        @AuraEnabled public InvoiceDetails invoice {get;set;}
+    }
 
-        public Refund(Decimal amount) {
-            this.type = 'amount';
-            this.amount = amount;
-        }
+    public class InvoiceDetails {
+        @AuraEnabled public String uuid {get;set;}
+        @AuraEnabled public String state {get;set;}
+        @AuraEnabled public Integer invoice_number {get;set;}
+        @AuraEnabled public String type {get;set;}
+        @AuraEnabled public Decimal total_in_cents {get;set;}
+        @AuraEnabled public InvoiceLineItem line_items {get;set;}
 
-        public Refund(List<RefundLineItem> line_items) {
-            this.type = 'line_items';
-            this.line_items = line_items;
+        @AuraEnabled public Decimal total {
+            get {
+                if (total_in_cents == null) {
+                    return 0;
+                }
+                return total_in_cents / 100;
+            }
         }
     }
 
-    public class RefundLineItem {
-        public String id {get;set;}
-        public Decimal quantity {get;set;}
-
-        public RefundLineItem(String id, Decimal quantity) {
-            this.id = id;
-            this.quantity = quantity;
-        }
+    public class InvoiceLineItem {
+        @AuraEnabled public List<AdjustmentDetails> adjustment {get;set;}
     }
 
     public class AdjustmentDetails {
+        @AuraEnabled public String uuid {get;set;}
+        @AuraEnabled public String state {get;set;}
         @AuraEnabled public String description {get;set;}
         @AuraEnabled public Decimal quantity {get;set;}
         @AuraEnabled public Decimal unit_amount_in_cents {get;set;}
+        @AuraEnabled public Decimal total_in_cents {get;set;}
+
+        @AuraEnabled public Decimal total {
+            get {
+                if (total_in_cents == null) {
+                    return 0;
+                }
+                return total_in_cents / 100;
+            }
+        }
+
+        public AdjustmentDetails(String uuid, Decimal quantity) {
+            this.uuid = uuid;
+            this.quantity = quantity;
+        }
 
         public AdjustmentDetails(Decimal unit_amount_in_cents, Decimal quantity, String description) {
             this.unit_amount_in_cents = unit_amount_in_cents;

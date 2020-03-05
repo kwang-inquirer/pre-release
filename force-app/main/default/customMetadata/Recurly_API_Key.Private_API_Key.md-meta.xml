@@ -6,8 +6,4 @@
         <field>API_Key__c</field>
         <value xsi:type="xsd:string">96c9aa359b2f4d5db3b159cd076b965b</value>
     </values>
-    <values>
-        <field>Subdomain__c</field>
-        <value xsi:type="xsd:string">inquirer</value>
-    </values>
 </CustomMetadata>

@@ -5,7 +5,6 @@
         <description>This field is used by the CSR is flag whether to Send Auto Renew Notifications</description>
         <externalId>false</externalId>
         <label>Send Renew Notification</label>
-        <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>

@@ -3,6 +3,6 @@
     <description>Member criteria matches members who haven&apos;t  posted or commented</description>
     <lastChatterActivityAgeInSeconds>-1</lastChatterActivityAgeInSeconds>
     <masterLabel>Members Without Contributions</masterLabel>
-    <userTypes>Customer</userTypes>
     <userTypes>Partner</userTypes>
+    <userTypes>Customer</userTypes>
 </UserCriteria>

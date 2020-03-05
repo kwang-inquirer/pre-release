@@ -1,14 +1,5 @@
 @isTest
 global class CheckoutControllerTest {
-    @isTest(SeeAllData=true)
-    private static void test_getRecurlyJsUrl() {
-        Test.startTest();
-        String recurlyUrl = CheckoutController.getRecurlyJsUrl();
-        Test.stopTest();
-
-        System.assertEquals(Label.RECURLYJS_VFP_URL, recurlyUrl);
-    }
-
     @isTest
     private static void test_getUserInfo() {
         Test.startTest();

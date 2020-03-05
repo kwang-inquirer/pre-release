@@ -3,7 +3,7 @@
         <fullName>House_High__c</fullName>
         <externalId>false</externalId>
         <label>House High</label>
-        <precision>8</precision>
+        <precision>5</precision>
         <required>false</required>
         <scale>0</scale>
         <trackTrending>false</trackTrending>

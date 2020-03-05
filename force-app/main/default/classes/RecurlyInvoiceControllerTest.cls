@@ -7,7 +7,7 @@ global class RecurlyInvoiceControllerTest {
         insert invoice;
 
         Test.startTest();
-        recurly_v2__Recurly_Invoice__c invoiceFromRecurly = RecurlyInvoiceController.getInvoice(invoice.Id);
+            RecurlyApiObjects.Invoice invoiceFromRecurly = RecurlyInvoiceController.getInvoice(invoice.Id);
         Test.stopTest();
 
         System.assertEquals(true, invoiceFromRecurly != null, 'Recurly invoice should be returned');

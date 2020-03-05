@@ -118,10 +118,6 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
-        <relatedList>Rate__c.Product__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
         <relatedList>Press_Run__c.Publication__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>

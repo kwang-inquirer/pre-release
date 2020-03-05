@@ -1268,7 +1268,7 @@
         <showHeader>false</showHeader>
     </screens>
     <startElementReference>GetRunningUser</startElementReference>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>ContactEmail</name>
         <dataType>String</dataType>

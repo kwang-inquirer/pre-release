@@ -39,7 +39,7 @@
         <showHeader>true</showHeader>
     </screens>
     <startElementReference>Credit_Memo</startElementReference>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>recordId</name>
         <dataType>String</dataType>

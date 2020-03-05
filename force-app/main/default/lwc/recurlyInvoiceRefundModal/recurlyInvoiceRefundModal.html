@@ -1,5 +1,6 @@
 <template>
     <template if:true={showModal}>
+        <div class="demo-only" style="height: 640px;">
             <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
                 <div class="slds-modal__container">
                     <header class="slds-modal__header">
@@ -7,21 +8,13 @@
                             <lightning-icon icon-name="utility:close" size="medium">
                             </lightning-icon>
                             <span class="slds-assistive-text">Close</span>
-                        </button>
-                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Refund Invoice #{invoice.invoice_number}</h2>
+                        </button>                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Refund Invoice #{invoice.invoice_number}</h2>
                     </header>
+
                     <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
-                        <template if:true={warningMessage}>
-                            <div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_warning slds-m-bottom_small" role="alert">{warningMessage}</div>
-                        </template>
-                        <div>Original Amount: <lightning-formatted-number value={invoice.recurly_v2__Total__c} format-style="currency" currency-code="USD"></lightning-formatted-number></div>
-                        <lightning-input class="refundAmount slds-p-vertical_small" type="number" formatter="currency" label="Refund Amount" value={refundAmount} placeholder="Amount to refund..." onchange={setCustomAmount} disabled={disableRefundCustomAmount}></lightning-input>
-                        <div style="height:auto;">
-                            <template if:true={invoice.recurly_v2__Recurly_Line_Items__r}>
-                                <lightning-datatable class="slds-p-vertical_small" data={invoice.recurly_v2__Recurly_Line_Items__r} columns={lineItemColumns} key-field="id" onrowselection={setSelected} hide-checkbox-column={disableRefundLineItems}>
-                                </lightning-datatable>
-                            </template>
-                        </div>
+                        <lightning-input class="slds-p-vertical_small" type="number" formatter="currency" label="Refund Amount" value={invoice.total} placeholder="Amount to refund..." onchange={setRefundAmount} disabled={hasSelected}></lightning-input>
+                        <lightning-datatable class="slds-p-vertical_small" data={lineItems} columns={lineItemColumns} key-field="Id" onrowselection={setSelectedIds}>
+                        </lightning-datatable>
                     </div>
                     <footer class="slds-modal__footer">
                         <lightning-button label="Cancel" variant="neutral" onclick={close}></lightning-button>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -30,5 +23,6 @@
                 </div>
             </section>
             <div class="slds-backdrop slds-backdrop_open"></div>
+        </div>
     </template>
 </template>

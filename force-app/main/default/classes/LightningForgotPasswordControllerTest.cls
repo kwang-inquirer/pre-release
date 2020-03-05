@@ -14,7 +14,6 @@ public with sharing class LightningForgotPasswordControllerTest {
  static void testLightningForgotPasswordControllerWithNullCheckEmailRef() {
   System.assertEquals(LightningForgotPasswordController.forgotPassword('a', null), 'Argument 1 cannot be null');
   System.assertEquals(LightningForgotPasswordController.forgotPassword('a@salesforce.com', null), 'Argument 1 cannot be null');
-  LightningForgotPasswordController.setExperienceId('1');
  }
 
  /* Verifies that LightningForgotPasswordController object is instantiated correctly. */

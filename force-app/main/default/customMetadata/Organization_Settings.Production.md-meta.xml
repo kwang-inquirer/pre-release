@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <label>Public Api Key</label>
+    <label>Production</label>
     <protected>false</protected>
     <values>
-        <field>API_Key__c</field>
-        <value xsi:type="xsd:string">ewr1-zm62ktz2lQTKc72iliAgpI</value>
+        <field>Organization_Id__c</field>
+        <value xsi:type="xsd:string">00D1U000000xvlm</value>
     </values>
     <values>
-        <field>Subdomain__c</field>
-        <value xsi:nil="true"/>
+        <field>Validate_DSI_ID_on_New_Delivery_Address__c</field>
+        <value xsi:type="xsd:boolean">false</value>
     </values>
 </CustomMetadata>

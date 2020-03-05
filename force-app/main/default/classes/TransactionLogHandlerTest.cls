@@ -129,45 +129,32 @@ public with sharing class TransactionLogHandlerTest {
 	}
 
 	@isTest static void testValidateExisting() {
-		Transaction_Log__c transLogList  = new Transaction_Log__c();
-		Transaction_Log__c transLogList2 = new Transaction_Log__c();
-		List<Delivery_Schedule__c> scheduleList = [SELECT Id, subscription_Subscription__c, Start_Date__c, End_Date__c 
-					FROM Delivery_Schedule__c
-					WHERE Day_Sunday__c = True];
+		List<Transaction_Log__c> transLogList = new List<Transaction_Log__c>();
+		List<Subscription__c> subList = [SELECT Id, subscription_Account__c FROM Subscription__c LIMIT 1];
+		List<Delivery_Schedule__c> scheduleList = [SELECT Id, subscription_Subscription__c FROM Delivery_Schedule__c LIMIT 1];
 		Transaction_Type__c transType = [SELECT Id FROM Transaction_Type__c WHERE Code__c = 'VH' LIMIT 1];
-
-		system.debug('--test--scheduleList: '+ scheduleList);
-
-		
-		transLogList.First_Date__c = System.today().addDays(1);
-		transLogList.Last_Date__c = System.today().addDays(7);
-		transLogList.Entry_Date__c = System.today();
-		transLogList.Transaction_Type__c = transType.Id;
-		transLogList.Category__c = 'Vacation Pack';
-		transLogList.Cancelled__c = false;
-		transLogList.Subscription__c = scheduleList[0].subscription_Subscription__c;
-		system.debug('--test--transLogList: ' +transLogList);
-		insert transLogList;
-
-		transLogList2.First_Date__c = System.today().addDays(2);
-		transLogList2.Last_Date__c = System.today().addDays(9);
-		transLogList2.Entry_Date__c = System.today();
-		transLogList2.Transaction_Type__c = transType.Id;
-		transLogList2.Category__c = 'Vacation Pack';
-		transLogList2.Cancelled__c = false;
-		transLogList2.Subscription__c = scheduleList[0].subscription_Subscription__c;
-		try{
-			insert transLogList2;	
+		Set<Id> subscriptionIds = new Set<Id>();
+		for(Subscription__c sub : subList){
+			for(Integer i = 0; i < 4; i++){
+				transLogList.add(new Transaction_Log__c(
+					First_Date__c = System.today().addDays(-i),
+					Last_Date__c = System.today().addDays(i),
+					Entry_Date__c = System.today().addDays(-i),
+					Transaction_Type__c = transType.Id,
+					Category__c = 'Vacation Pack',
+					Cancelled__c = false,
+					Subscription__c = sub.Id
+				));
+			}
+			subscriptionIds.add(sub.Id);
 		}
-		catch (Exception  e){
-			System.assert(e.getMessage().contains('A vacation request for this time already exists:'));
-		}
+		// system.debug('--test--scheduleList: ' +scheduleList);
+		//insert transLogList;
 
-		
-		
-		// TransactionLogHandler.validateExisting(transLogList,subscriptionIds);
+        // system.debug('--test--transLogList: ' +transLogList);
+		// system.debug('--test--subIDs: ' + subscriptionIds);
 
-		system.debug('--test--done');
+		TransactionLogHandler.validateExisting(transLogList,subscriptionIds);
 	}
 
 }

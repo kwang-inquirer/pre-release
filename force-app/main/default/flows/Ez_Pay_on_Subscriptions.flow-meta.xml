@@ -120,7 +120,7 @@
             <targetReference>GetSubscription</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>Count</name>
         <dataType>Number</dataType>
