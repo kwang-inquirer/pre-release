@@ -208,7 +208,7 @@
             <targetReference>GetOfferProduct</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>OfferProductId</name>
         <dataType>String</dataType>

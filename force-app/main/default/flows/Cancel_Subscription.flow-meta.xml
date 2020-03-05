@@ -159,7 +159,7 @@
             <targetReference>Cancel_Subscription</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>varSubscription</name>
         <dataType>String</dataType>

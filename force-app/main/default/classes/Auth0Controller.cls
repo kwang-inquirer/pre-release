@@ -1,4 +1,5 @@
 public with sharing class Auth0Controller {
+    /*
     @AuraEnabled
     public static void updatePassword(String password) {
         try {
@@ -15,11 +16,11 @@ public with sharing class Auth0Controller {
         Auth0Manager authManager = new Auth0Manager();
         authManager.updateUser(userId, new Map<String, Object>{'password' => password});
     }
+    */
 
     @AuraEnabled
     public static string confirmPasswordReset(Id contactId){
-        Contact contact = [SELECT Id, Email  
-            FROM Contact WHERE Id = :contactId LIMIT 1];
+        Contact contact = [SELECT Id, Email FROM Contact WHERE Id = :contactId LIMIT 1];
         Auth0Manager authManager = new Auth0Manager();
         return authManager.passwordChange(contact.email);
     }

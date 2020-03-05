@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
     <contactEmail>cbruckert@relationedge.com</contactEmail>
     <label>VoicePort API</label>
     <oauthConfig>
         <callbackUrl>https://pmn--prerelease.lightning.force.com</callbackUrl>
-        <consumerKey>3MVG9PE4xB9wtoY.3Inn1dD4i_306VYXQMR9VO_gSP3NKgZVlPnCiv_eLszrP7AVh6m7TPvEumgvZS7ILg0kd</consumerKey>
+        
         <isAdminApproved>false</isAdminApproved>
         <scopes>Full</scopes>
     </oauthConfig>

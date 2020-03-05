@@ -78,7 +78,7 @@ export default class ChangeAddress extends LightningElement {
                                if (!valid) {
                                   reject('There is not a current route available for this address.');
                                } else {
-                                    resolve(valid);
+                                    resolve(createdId);
                                     }
                                 })
                                 .catch(() => {

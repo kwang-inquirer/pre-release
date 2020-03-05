@@ -3,13 +3,4 @@
     
     
     
-    <caseValues>
-        <plural>false</plural>
-        <value>Log</value>
-    </caseValues>
-    <caseValues>
-        <plural>true</plural>
-        <value>Logs</value>
-    </caseValues>
-    <startsWith>Consonant</startsWith>
 </CustomObjectTranslation>

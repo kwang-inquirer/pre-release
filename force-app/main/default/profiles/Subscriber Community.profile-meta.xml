@@ -174,14 +174,6 @@
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
-        <flow>Vacation_Request_on_Account</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>Vacation_Request_on_Cases</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
         <flow>Vacation_Request_on_Subscription</flow>
     </flowAccesses>
     <flowAccesses>
@@ -204,15 +196,15 @@
         <enabled>false</enabled>
         <flow>Vacation_with_Restart_Status_to_Inactive</flow>
     </flowAccesses>
-    <userLicense>Partner Community</userLicense>
+    <userLicense>Customer Community Login</userLicense>
     <classAccesses>
-        <apexClass>AccountDataAccessor</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>AccountDataAccessor</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>AccountTriggerHandler</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>AccountTriggerHandler</apexClass>
+</classAccesses>
     <classAccesses>
         <apexClass>Apex_C1ASExtendedConfig</apexClass>
         <enabled>true</enabled>
@@ -222,33 +214,33 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>Auth0Connection</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>Auth0Connection</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>Auth0ConnectionMock</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>Auth0ConnectionMock</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>Auth0ConnectionTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>Auth0ConnectionTest</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>Auth0Controller</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>Auth0Controller</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>Auth0Manager</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>Auth0Manager</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>AutoRenewSetupApi</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>AutoRenewSetupApi</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>BillingInfoApi</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>BillingInfoApi</apexClass>
+</classAccesses>
     <classAccesses>
         <apexClass>C1ASExtendedConfigTest</apexClass>
         <enabled>true</enabled>
@@ -262,121 +254,121 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>ChangeAddressControllerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>ChangeAddressControllerTest</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>ChangePasswordController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>ChangePasswordController</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>ChangePasswordControllerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>ChangePasswordControllerTest</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>ChangePhoneApi</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>ChangePhoneApi</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>CheckoutController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>CheckoutController</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>CheckoutPaymentInformation</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>CheckoutPaymentInformation</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>CheckoutProcess</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>CheckoutProcess</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>CheckoutSubscriptionCreator</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>CheckoutSubscriptionCreator</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>CleanFlowErrorMessage</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>CleanFlowErrorMessage</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>CleanFlowErrorMessageTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>CleanFlowErrorMessageTest</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>CommunitiesLandingController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>CommunitiesLandingController</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>CommunitiesLandingControllerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>CommunitiesLandingControllerTest</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>CommunitiesLoginController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>CommunitiesLoginController</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>CommunitiesLoginControllerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>CommunitiesLoginControllerTest</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>CommunitiesSelfRegConfirmController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>CommunitiesSelfRegConfirmController</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>CommunitiesSelfRegConfirmControllerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>CommunitiesSelfRegConfirmControllerTest</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>CommunitiesSelfRegController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>CommunitiesSelfRegController</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>CommunitiesSelfRegControllerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>CommunitiesSelfRegControllerTest</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>ContactAddressValidator</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>ContactAddressValidator</apexClass>
+</classAccesses>
     <classAccesses>
         <apexClass>ContactController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>ContactDataAccessor</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>ContactDataAccessor</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>ContactTriggerHandler</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>ContactTriggerHandler</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>CreateAccountApi</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>CreateAccountApi</apexClass>
+</classAccesses>
     <classAccesses>
         <apexClass>CreateSubscriptionApi</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>CreditCalculatorController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>CreditCalculatorController</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>Customer</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>Customer</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>CustomerApi</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>CustomerApi</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>CutOffManager</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>CutOffManager</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>CutOffManagerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>CutOffManagerTest</apexClass>
+</classAccesses>
     <classAccesses>
         <apexClass>DeleteComplaints</apexClass>
         <enabled>true</enabled>
@@ -386,117 +378,117 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>DeliveryAddressDataAccessor</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>DeliveryAddressDataAccessor</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>DeliveryAddressDataAccessorTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>DeliveryAddressDataAccessorTest</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>DeliveryAddressTriggerHandler</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>DeliveryAddressTriggerHandler</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>DeliveryIssueApi</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>DeliveryIssueApi</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>DeliverySchedule</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>DeliverySchedule</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>DeliveryScheduleDataAccessor</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>DeliveryScheduleDataAccessor</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>DeliveryServiceIssueController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>DeliveryServiceIssueController</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>DeliveryServiceIssueControllerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>DeliveryServiceIssueControllerTest</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>EmailHistoryTracker</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>EmailHistoryTracker</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>ForgotPasswordController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>ForgotPasswordController</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>ForgotPasswordControllerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>ForgotPasswordControllerTest</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>GenericException</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>GenericException</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>HoldAndStopApi</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>HoldAndStopApi</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>JournalEntryActions</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>JournalEntryActions</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>JournalTriggerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>JournalTriggerTest</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>LightningForgotPasswordController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>LightningForgotPasswordController</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>LightningForgotPasswordControllerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>LightningForgotPasswordControllerTest</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>LightningLoginFormController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>LightningLoginFormController</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>LightningLoginFormControllerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>LightningLoginFormControllerTest</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>LightningSelfRegisterController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>LightningSelfRegisterController</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>LightningSelfRegisterControllerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>LightningSelfRegisterControllerTest</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>LocationApi</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>LocationApi</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>ManageSubscriptionsController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>ManageSubscriptionsController</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>ManageSubscriptionsControllerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>ManageSubscriptionsControllerTest</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>MyProfilePageController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>MyProfilePageController</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>MyProfilePageControllerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>MyProfilePageControllerTest</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>NewSubscriptionCmpController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>NewSubscriptionCmpController</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>NewSubscriptionController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>NewSubscriptionController</apexClass>
+</classAccesses>
     <classAccesses>
         <apexClass>NewSubscriptionInfoApi</apexClass>
         <enabled>true</enabled>
@@ -514,9 +506,9 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>OfferDataAccessor</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>OfferDataAccessor</apexClass>
+</classAccesses>
     <classAccesses>
         <apexClass>OfferUtil</apexClass>
         <enabled>true</enabled>
@@ -526,73 +518,73 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>PianoCalloutMock</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>PianoCalloutMock</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>PianoClient</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>PianoClient</apexClass>
+</classAccesses>
     <classAccesses>
         <apexClass>PianoController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>PressRunDigitalProcess</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>PressRunDigitalProcess</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>PressRunProcess</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>PressRunProcess</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>PressRunProcessTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>PressRunProcessTest</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>PressRunScheduler</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>PressRunScheduler</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>PressRunSync</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>PressRunSync</apexClass>
+</classAccesses>
     <classAccesses>
         <apexClass>ProfileUtil</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>RecentSalesController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>RecentSalesController</apexClass>
+</classAccesses>
     <classAccesses>
         <apexClass>RecurlyAccount</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>RecurlyAccountDataAccessor</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>RecurlyAccountDataAccessor</apexClass>
+</classAccesses>
     <classAccesses>
         <apexClass>RecurlyAccountManager</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>RecurlyAccountTriggerHandler</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>RecurlyAccountTriggerHandler</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>RecurlyApi</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>RecurlyApi</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>RecurlyApiObjects</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>RecurlyApiObjects</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>RecurlyInvoiceController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>RecurlyInvoiceController</apexClass>
+</classAccesses>
     <classAccesses>
         <apexClass>RecurlyTransaction</apexClass>
         <enabled>true</enabled>
@@ -602,125 +594,125 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>ResponseError</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>ResponseError</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>Route</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>Route</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>RouteApi</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>RouteApi</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>RouteDataAccessor</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>RouteDataAccessor</apexClass>
+</classAccesses>
     <classAccesses>
         <apexClass>SSO_Tester</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>ServiceInfo</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>ServiceInfo</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>ServiceInfoApi</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>ServiceInfoApi</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>ShoreMoveController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>ShoreMoveController</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>ShoreMoveControllerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>ShoreMoveControllerTest</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>SiteLoginController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>SiteLoginController</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>SiteLoginControllerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>SiteLoginControllerTest</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>SiteRegisterController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>SiteRegisterController</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>SiteRegisterControllerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>SiteRegisterControllerTest</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>SoftphoneContactSearchController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>SoftphoneContactSearchController</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>SoftphoneContactSearchControllerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>SoftphoneContactSearchControllerTest</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>SoftphoneProviderController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>SoftphoneProviderController</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>SoftphoneProviderControllerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>SoftphoneProviderControllerTest</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>SoftphoneProviderHelper</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>SoftphoneProviderHelper</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>SoftphoneProviderHelperTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>SoftphoneProviderHelperTest</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>SplitDeliveryController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>SplitDeliveryController</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>SplitDeliveryControllerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>SplitDeliveryControllerTest</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>Subscription</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>Subscription</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>SubscriptionApi</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>SubscriptionApi</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>SubscriptionBilling</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>SubscriptionBilling</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>SubscriptionCampaign</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>SubscriptionCampaign</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>SubscriptionController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>SubscriptionController</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>SubscriptionCreditCalculator</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>SubscriptionCreditCalculator</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>SubscriptionDataAccessor</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>SubscriptionDataAccessor</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>SubscriptionDelivery</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>SubscriptionDelivery</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>SubscriptionReceiptController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>SubscriptionReceiptController</apexClass>
+</classAccesses>
     <classAccesses>
         <apexClass>SubscriptionTriggerHandler</apexClass>
         <enabled>true</enabled>
@@ -734,57 +726,57 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>TestDataFactory</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>TestDataFactory</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>TransactionDataAccessor</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>TransactionDataAccessor</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>TransactionLogActions</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>TransactionLogActions</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>TransactionLogActionsTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>TransactionLogActionsTest</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>TransactionLogHandler</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>TransactionLogHandler</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>TransactionLogHandlerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>TransactionLogHandlerTest</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>VacationInfoApi</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>VacationInfoApi</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>XMLDom</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>XMLDom</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>XMLSerializer</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>XMLSerializer</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>XmlToJson</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>XmlToJson</apexClass>
+</classAccesses>
     <classAccesses>
-        <apexClass>XmlToJsonTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>XmlToJsonTest</apexClass>
+</classAccesses>
     <classAccesses>
         <apexClass>c1asStreamBrokerController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>changeAddressController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    <enabled>false</enabled>
+    <apexClass>changeAddressController</apexClass>
+</classAccesses>
     <classAccesses>
         <apexClass>deleteCustomerSP</apexClass>
         <enabled>true</enabled>
@@ -794,113 +786,113 @@
         <enabled>true</enabled>
     </classAccesses>
     <pageAccesses>
-        <apexPage>AnswersHome</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>AnswersHome</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
-        <apexPage>BandwidthExceeded</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>BandwidthExceeded</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
         <apexPage>C1ASAdvScrPopClientLex</apexPage>
         <enabled>true</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>ChangePassword</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>ChangePassword</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
-        <apexPage>CommunitiesLanding</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>CommunitiesLanding</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
-        <apexPage>CommunitiesLogin</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>CommunitiesLogin</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
-        <apexPage>CommunitiesSelfReg</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>CommunitiesSelfReg</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
-        <apexPage>CommunitiesSelfRegConfirm</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>CommunitiesSelfRegConfirm</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
-        <apexPage>CommunitiesTemplate</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>CommunitiesTemplate</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
-        <apexPage>Exception</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>Exception</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
-        <apexPage>FileNotFound</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>FileNotFound</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
-        <apexPage>ForgotPassword</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>ForgotPassword</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
-        <apexPage>ForgotPasswordConfirm</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>ForgotPasswordConfirm</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
-        <apexPage>IdeasHome</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>IdeasHome</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
-        <apexPage>InMaintenance</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>InMaintenance</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
         <apexPage>ManageSubscriptions</apexPage>
         <enabled>true</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>MyProfilePage</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>MyProfilePage</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
         <apexPage>OrderCheckout</apexPage>
         <enabled>true</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>RecentSales</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>RecentSales</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
-        <apexPage>SiteLogin</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>SiteLogin</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
-        <apexPage>SiteRegister</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>SiteRegister</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
-        <apexPage>SiteRegisterConfirm</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>SiteRegisterConfirm</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
-        <apexPage>SiteTemplate</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>SiteTemplate</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
-        <apexPage>StdExceptionTemplate</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>StdExceptionTemplate</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
-        <apexPage>SubscriptionReceipt</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>SubscriptionReceipt</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
-        <apexPage>Unauthorized</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>Unauthorized</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
-        <apexPage>UnderConstruction</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>UnderConstruction</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <applicationVisibilities>
         <application>C1ASSteamBroker</application>
         <default>false</default>
@@ -958,8 +950,8 @@
     </applicationVisibilities>
     <applicationVisibilities>
         <application>standard__Sales</application>
-        <default>true</default>
-        <visible>true</visible>
+        <default>false</default>
+        <visible>false</visible>
     </applicationVisibilities>
     <applicationVisibilities>
         <application>standard__SalesforceCMS</application>
@@ -1377,30 +1369,30 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>Contact.DSI_Person_Id__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
+    <editable>false</editable>
+    <readable>false</readable>
+    <field>Contact.DSI_Person_Id__c</field>
+</fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>Contact.Date_Bill_Sent__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
+    <editable>false</editable>
+    <readable>false</readable>
+    <field>Contact.Date_Bill_Sent__c</field>
+</fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>Contact.Deceased__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
+    <editable>false</editable>
+    <readable>false</readable>
+    <field>Contact.Deceased__c</field>
+</fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>Contact.Department</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>Contact.Drivers_License_Number__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
+    <editable>false</editable>
+    <readable>false</readable>
+    <field>Contact.Drivers_License_Number__c</field>
+</fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>Contact.Email</field>
@@ -1427,10 +1419,10 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>Contact.Original_Start_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
+    <editable>false</editable>
+    <readable>false</readable>
+    <field>Contact.Original_Start_Date__c</field>
+</fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>Contact.Phone</field>
@@ -1442,10 +1434,10 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>Contact.Secondary_Email__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
+    <editable>false</editable>
+    <readable>false</readable>
+    <field>Contact.Secondary_Email__c</field>
+</fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>Contact.Title</field>
@@ -1972,15 +1964,15 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>Product2.Code__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
+    <editable>false</editable>
+    <readable>false</readable>
+    <field>Product2.Code__c</field>
+</fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>Product2.DSI_Id__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
+    <editable>false</editable>
+    <readable>false</readable>
+    <field>Product2.DSI_Id__c</field>
+</fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>Product2.Description</field>
@@ -2557,10 +2549,10 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>Transaction_Type__c.ADJ_CVT_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
+    <editable>false</editable>
+    <readable>false</readable>
+    <field>Transaction_Type__c.ADJ_CVT_Date__c</field>
+</fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>WorkOrder.AccountId</field>
@@ -2881,6 +2873,12 @@
         <recordType>Contact.Subscriber_Contact</recordType>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>ContactPointEmail-Contact Point Email Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>ContactPointPhone-Contact Point Phone Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>ContentVersion-Content Version</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -2991,7 +2989,7 @@
         <layout>Organization_Settings__mdt-Organization Setting Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Piano_Api_Setting__mdt-Piano Setting Layout</layout>
+        <layout>Piano_Api_Setting__mdt-Piano Api Setting Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Premium_Day__mdt-Premium Day Layout</layout>
@@ -3181,23 +3179,23 @@
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
-        <allowCreate>true</allowCreate>
-        <allowDelete>false</allowDelete>
-        <allowEdit>true</allowEdit>
-        <allowRead>true</allowRead>
-        <modifyAllRecords>false</modifyAllRecords>
-        <object>Delivery_Address__c</object>
-        <viewAllRecords>false</viewAllRecords>
-    </objectPermissions>
+    <object>Delivery_Address__c</object>
+    <allowCreate>false</allowCreate>
+    <allowDelete>false</allowDelete>
+    <allowEdit>false</allowEdit>
+    <allowRead>false</allowRead>
+    <modifyAllRecords>false</modifyAllRecords>
+    <viewAllRecords>false</viewAllRecords>
+</objectPermissions>
     <objectPermissions>
-        <allowCreate>true</allowCreate>
-        <allowDelete>false</allowDelete>
-        <allowEdit>true</allowEdit>
-        <allowRead>true</allowRead>
-        <modifyAllRecords>false</modifyAllRecords>
-        <object>Delivery_Schedule__c</object>
-        <viewAllRecords>false</viewAllRecords>
-    </objectPermissions>
+    <object>Delivery_Schedule__c</object>
+    <allowCreate>false</allowCreate>
+    <allowDelete>false</allowDelete>
+    <allowEdit>false</allowEdit>
+    <allowRead>false</allowRead>
+    <modifyAllRecords>false</modifyAllRecords>
+    <viewAllRecords>false</viewAllRecords>
+</objectPermissions>
     <objectPermissions>
         <allowCreate>false</allowCreate>
         <allowDelete>false</allowDelete>
@@ -3208,23 +3206,23 @@
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
-        <allowCreate>true</allowCreate>
-        <allowDelete>false</allowDelete>
-        <allowEdit>true</allowEdit>
-        <allowRead>true</allowRead>
-        <modifyAllRecords>false</modifyAllRecords>
-        <object>Email_Subscriber__c</object>
-        <viewAllRecords>false</viewAllRecords>
-    </objectPermissions>
+    <object>Email_Subscriber__c</object>
+    <allowCreate>false</allowCreate>
+    <allowDelete>false</allowDelete>
+    <allowEdit>false</allowEdit>
+    <allowRead>false</allowRead>
+    <modifyAllRecords>false</modifyAllRecords>
+    <viewAllRecords>false</viewAllRecords>
+</objectPermissions>
     <objectPermissions>
-        <allowCreate>true</allowCreate>
-        <allowDelete>false</allowDelete>
-        <allowEdit>true</allowEdit>
-        <allowRead>true</allowRead>
-        <modifyAllRecords>false</modifyAllRecords>
-        <object>Email_Subscription__c</object>
-        <viewAllRecords>false</viewAllRecords>
-    </objectPermissions>
+    <object>Email_Subscription__c</object>
+    <allowCreate>false</allowCreate>
+    <allowDelete>false</allowDelete>
+    <allowEdit>false</allowEdit>
+    <allowRead>false</allowRead>
+    <modifyAllRecords>false</modifyAllRecords>
+    <viewAllRecords>false</viewAllRecords>
+</objectPermissions>
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>false</allowDelete>
@@ -3244,23 +3242,23 @@
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
-        <allowCreate>true</allowCreate>
-        <allowDelete>false</allowDelete>
-        <allowEdit>true</allowEdit>
-        <allowRead>true</allowRead>
-        <modifyAllRecords>false</modifyAllRecords>
-        <object>Offer_Product__c</object>
-        <viewAllRecords>false</viewAllRecords>
-    </objectPermissions>
+    <object>Offer_Product__c</object>
+    <allowCreate>false</allowCreate>
+    <allowDelete>false</allowDelete>
+    <allowEdit>false</allowEdit>
+    <allowRead>false</allowRead>
+    <modifyAllRecords>false</modifyAllRecords>
+    <viewAllRecords>false</viewAllRecords>
+</objectPermissions>
     <objectPermissions>
-        <allowCreate>true</allowCreate>
-        <allowDelete>false</allowDelete>
-        <allowEdit>true</allowEdit>
-        <allowRead>true</allowRead>
-        <modifyAllRecords>false</modifyAllRecords>
-        <object>Offer__c</object>
-        <viewAllRecords>false</viewAllRecords>
-    </objectPermissions>
+    <object>Offer__c</object>
+    <allowCreate>false</allowCreate>
+    <allowDelete>false</allowDelete>
+    <allowEdit>false</allowEdit>
+    <allowRead>false</allowRead>
+    <modifyAllRecords>false</modifyAllRecords>
+    <viewAllRecords>false</viewAllRecords>
+</objectPermissions>
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
@@ -3289,14 +3287,14 @@
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
-        <allowCreate>true</allowCreate>
-        <allowDelete>false</allowDelete>
-        <allowEdit>true</allowEdit>
-        <allowRead>true</allowRead>
-        <modifyAllRecords>false</modifyAllRecords>
-        <object>Route__c</object>
-        <viewAllRecords>false</viewAllRecords>
-    </objectPermissions>
+    <object>Route__c</object>
+    <allowCreate>false</allowCreate>
+    <allowDelete>false</allowDelete>
+    <allowEdit>false</allowEdit>
+    <allowRead>false</allowRead>
+    <modifyAllRecords>false</modifyAllRecords>
+    <viewAllRecords>false</viewAllRecords>
+</objectPermissions>
     <objectPermissions>
         <allowCreate>false</allowCreate>
         <allowDelete>false</allowDelete>
@@ -3307,32 +3305,32 @@
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
-        <allowCreate>true</allowCreate>
-        <allowDelete>false</allowDelete>
-        <allowEdit>true</allowEdit>
-        <allowRead>true</allowRead>
-        <modifyAllRecords>false</modifyAllRecords>
-        <object>Subscription__c</object>
-        <viewAllRecords>false</viewAllRecords>
-    </objectPermissions>
+    <object>Subscription__c</object>
+    <allowCreate>false</allowCreate>
+    <allowDelete>false</allowDelete>
+    <allowEdit>false</allowEdit>
+    <allowRead>false</allowRead>
+    <modifyAllRecords>false</modifyAllRecords>
+    <viewAllRecords>false</viewAllRecords>
+</objectPermissions>
     <objectPermissions>
-        <allowCreate>true</allowCreate>
-        <allowDelete>false</allowDelete>
-        <allowEdit>true</allowEdit>
-        <allowRead>true</allowRead>
-        <modifyAllRecords>false</modifyAllRecords>
-        <object>Transaction_Log__c</object>
-        <viewAllRecords>false</viewAllRecords>
-    </objectPermissions>
+    <object>Transaction_Log__c</object>
+    <allowCreate>false</allowCreate>
+    <allowDelete>false</allowDelete>
+    <allowEdit>false</allowEdit>
+    <allowRead>false</allowRead>
+    <modifyAllRecords>false</modifyAllRecords>
+    <viewAllRecords>false</viewAllRecords>
+</objectPermissions>
     <objectPermissions>
-        <allowCreate>true</allowCreate>
-        <allowDelete>false</allowDelete>
-        <allowEdit>false</allowEdit>
-        <allowRead>true</allowRead>
-        <modifyAllRecords>false</modifyAllRecords>
-        <object>Transaction_Type__c</object>
-        <viewAllRecords>false</viewAllRecords>
-    </objectPermissions>
+    <object>Transaction_Type__c</object>
+    <allowCreate>false</allowCreate>
+    <allowDelete>false</allowDelete>
+    <allowEdit>false</allowEdit>
+    <allowRead>false</allowRead>
+    <modifyAllRecords>false</modifyAllRecords>
+    <viewAllRecords>false</viewAllRecords>
+</objectPermissions>
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>false</allowDelete>
@@ -3550,6 +3548,10 @@
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
+        <tab>standard-ContentNote</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>standard-Contract</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
@@ -3567,11 +3569,19 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-Document</tab>
-        <visibility>DefaultOn</visibility>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-DuplicateRecordSet</tab>
         <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-EmailTemplate</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-Event</tab>
+        <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-Idea</tab>
@@ -3587,7 +3597,7 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-Lead</tab>
-        <visibility>DefaultOn</visibility>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-Macro</tab>
@@ -3595,7 +3605,7 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-Opportunity</tab>
-        <visibility>DefaultOn</visibility>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-Order</tab>
@@ -3606,12 +3616,16 @@
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
+        <tab>standard-ProcessInstanceWorkitem</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>standard-Product2</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-ProfileSkill</tab>
-        <visibility>Hidden</visibility>
+        <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-Quote</tab>
@@ -3640,6 +3654,10 @@
     <tabVisibilities>
         <tab>standard-StreamingChannel</tab>
         <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-Task</tab>
+        <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-UserProfile</tab>
@@ -3682,17 +3700,17 @@
         <name>CreateTopics</name>
     </userPermissions>
     <userPermissions>
-        <enabled>true</enabled>
-        <name>EditOppLineItemUnitPrice</name>
-    </userPermissions>
+    <enabled>false</enabled>
+    <name>EditOppLineItemUnitPrice</name>
+</userPermissions>
     <userPermissions>
-        <enabled>true</enabled>
-        <name>EditTask</name>
-    </userPermissions>
+    <enabled>false</enabled>
+    <name>EditTask</name>
+</userPermissions>
     <userPermissions>
-        <enabled>true</enabled>
-        <name>EditTopics</name>
-    </userPermissions>
+    <enabled>false</enabled>
+    <name>EditTopics</name>
+</userPermissions>
     <userPermissions>
         <enabled>true</enabled>
         <name>EnableNotifications</name>
@@ -3706,9 +3724,9 @@
         <name>RunFlow</name>
     </userPermissions>
     <userPermissions>
-        <enabled>true</enabled>
-        <name>RunReports</name>
-    </userPermissions>
+    <enabled>false</enabled>
+    <name>RunReports</name>
+</userPermissions>
     <userPermissions>
         <enabled>true</enabled>
         <name>SelectFilesFromSalesforce</name>

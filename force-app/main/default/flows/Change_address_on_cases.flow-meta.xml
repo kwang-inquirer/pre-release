@@ -1272,7 +1272,7 @@
         <showHeader>false</showHeader>
     </screens>
     <startElementReference>GetCases</startElementReference>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>ContactEmail</name>
         <dataType>String</dataType>
