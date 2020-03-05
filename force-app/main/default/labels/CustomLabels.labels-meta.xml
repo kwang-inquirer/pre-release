@@ -25,7 +25,7 @@
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>RecurlyJs VFP Url</shortDescription>
-        <value>https://inquirer--uat--c.visualforce.com/apex/recurlyjs</value>
+        <value>https://pmn--redev--c.visualforce.com/apex/RecurlyJs</value>
     </labels>
     <labels>
         <fullName>Recurly_Public_Key</fullName>

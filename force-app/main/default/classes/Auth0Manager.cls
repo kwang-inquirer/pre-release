@@ -87,6 +87,7 @@ public with sharing class Auth0Manager {
         return new List<AuthUser>();
     }
 
+    /*
     public AuthUser updateUser(String userId, Map<String, Object> user) {
         Http http = new Http();
         HttpRequest request = new HttpRequest();
@@ -114,6 +115,7 @@ public with sharing class Auth0Manager {
 
         return (AuthUser)JSON.deserialize(response.getBody(), AuthUser.class);
     }
+    */
 
     private String getAccessToken(){
         AccessTokenRequest accessTokenReq = new AccessTokenRequest(settings);

@@ -256,7 +256,7 @@
     <label>JBSystemFlow_CampaignMember</label>
     <processType>AutoLaunchedFlow</processType>
     <startElementReference>JB_Decision_Null_Check_SalesforceObjcce9343a62519e623fd80320f1ae3809</startElementReference>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>new_object</name>
         <dataType>SObject</dataType>

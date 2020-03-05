@@ -8,6 +8,6 @@
     </values>
     <values>
         <field>Validate_DSI_ID_on_New_Delivery_Address__c</field>
-        <value xsi:type="xsd:boolean">true</value>
+        <value xsi:type="xsd:boolean">false</value>
     </values>
 </CustomMetadata>

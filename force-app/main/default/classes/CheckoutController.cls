@@ -1,16 +1,4 @@
-public with sharing class CheckoutController {   
-    @AuraEnabled
-    public static string getRecurlyJsUrl() {
-        User usr = getUserInfo();
-        if (usr.Profile.Name.contains('Community')) {
-            String ntwrkId = Network.getNetworkId();
-            System.debug('Network Id: ' + ntwrkId);
-            ConnectApi.Community comm = ConnectApi.Communities.getCommunity(ntwrkId);
-            return comm.siteUrl + '/apex/recurlyjs';
-        }
-        return Label.RECURLYJS_VFP_URL;
-    }
-    
+public with sharing class CheckoutController {    
     @AuraEnabled
     public static User getUserInfo() {
        return [SELECT Id, Name, Profile.Name, Profile.UserLicense.Name FROM User WHERE Id = :UserInfo.getUserId()];

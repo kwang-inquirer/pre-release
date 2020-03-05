@@ -174,14 +174,6 @@
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
-        <flow>Vacation_Request_on_Account</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>Vacation_Request_on_Cases</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
         <flow>Vacation_Request_on_Subscription</flow>
     </flowAccesses>
     <flowAccesses>
@@ -2200,6 +2192,12 @@
         <recordType>Contact.Subscriber_Contact</recordType>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>ContactPointEmail-Contact Point Email Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>ContactPointPhone-Contact Point Phone Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>ContentVersion-Content Version</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -2310,7 +2308,7 @@
         <layout>Organization_Settings__mdt-Organization Setting Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Piano_Api_Setting__mdt-Piano Setting Layout</layout>
+        <layout>Piano_Api_Setting__mdt-Piano Api Setting Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Premium_Day__mdt-Premium Day Layout</layout>

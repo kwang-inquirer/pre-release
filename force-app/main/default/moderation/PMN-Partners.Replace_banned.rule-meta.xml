@@ -10,6 +10,11 @@
     </entitiesAndFields>
     <entitiesAndFields>
         <entityName>FeedItem</entityName>
+        <fieldName>LinkUrl</fieldName>
+        <keywordList>PMN-Partners.Banned</keywordList>
+    </entitiesAndFields>
+    <entitiesAndFields>
+        <entityName>FeedItem</entityName>
         <fieldName>RawBody</fieldName>
         <keywordList>PMN-Partners.Banned</keywordList>
     </entitiesAndFields>
@@ -21,11 +26,6 @@
     <entitiesAndFields>
         <entityName>FeedPollChoice</entityName>
         <fieldName>ChoiceBody</fieldName>
-        <keywordList>PMN-Partners.Banned</keywordList>
-    </entitiesAndFields>
-    <entitiesAndFields>
-        <entityName>FeedItem</entityName>
-        <fieldName>LinkUrl</fieldName>
         <keywordList>PMN-Partners.Banned</keywordList>
     </entitiesAndFields>
     <masterLabel>Replace banned keywords with asterisks</masterLabel>

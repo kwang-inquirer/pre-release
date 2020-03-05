@@ -296,7 +296,7 @@
             <targetReference>GetSubscription</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>DefaultDate</name>
         <dataType>Date</dataType>

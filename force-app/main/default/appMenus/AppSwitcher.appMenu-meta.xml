@@ -109,15 +109,15 @@
         <type>ConnectedApp</type>
     </appMenuItems>
     <appMenuItems>
-        <name>VoicePort_API</name>
-        <type>ConnectedApp</type>
-    </appMenuItems>
-    <appMenuItems>
         <name>cwbtool__CWB_Tool</name>
         <type>CustomApplication</type>
     </appMenuItems>
     <appMenuItems>
-        <name>Connected_App_for_JWT_Grant</name>
+        <name>VoicePort_API</name>
+        <type>ConnectedApp</type>
+    </appMenuItems>
+    <appMenuItems>
+        <name>Salesforce1_for_Windows</name>
         <type>ConnectedApp</type>
     </appMenuItems>
 </AppMenu>

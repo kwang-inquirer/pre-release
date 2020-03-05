@@ -61,6 +61,6 @@
     <singleSignOnSettings>
         <enableMultipleSamlConfigs>true</enableMultipleSamlConfigs>
         <enableSamlJitProvisioning>false</enableSamlJitProvisioning>
-        <enableSamlLogin>true</enableSamlLogin>
+        <enableSamlLogin>false</enableSamlLogin>
     </singleSignOnSettings>
 </SecuritySettings>

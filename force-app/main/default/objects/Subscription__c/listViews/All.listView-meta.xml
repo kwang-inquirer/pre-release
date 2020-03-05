@@ -10,7 +10,7 @@
         <filters>
             <field>subscription_Status__c</field>
             <operation>equals</operation>
-            <value>Active</value>
+            <value>TERMINATED</value>
         </filters>
         <label>All</label>
     </ListView>
