@@ -2388,9 +2388,6 @@
         <layout>QuoteLineItem-Quote Line Item Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Rate__c-Rate Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>Recurly_API_Key__mdt-Recurly API Key Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
