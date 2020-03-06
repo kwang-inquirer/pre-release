@@ -90,6 +90,13 @@ public class TestDataFactory {
                     op.Offer__c = off.Id;
                     op.Is_Activation_Fee__c = true; 
                     op.Activation_Fee__c = 0.0;
+					op.Sunday__c = true;
+					op.Monday__c = true;
+					op.Tuesday__c = true;
+					op.Wednesday__c = true;
+					op.Thursday__c = true;
+					op.Friday__c = true;
+					op.Saturday__c = true;
                 }
                 if(k == 1){
                     op.Product__c = lstProduct[productIndex].Id;
@@ -98,6 +105,13 @@ public class TestDataFactory {
                     op.Offer__c = off.Id;
                     op.Is_Activation_Fee__c = true; 
                     op.Activation_Fee__c = 0.0;
+					op.Sunday__c = true;
+					op.Monday__c = true;
+					op.Tuesday__c = true;
+					op.Wednesday__c = true;
+					op.Thursday__c = true;
+					op.Friday__c = true;
+					op.Saturday__c = true;
                 }
                 lstOffProd.add(op);
             }
@@ -163,8 +177,8 @@ public class TestDataFactory {
             schedule.Day_Friday__c = evenIndex;
             schedule.Day_Saturday__c = !evenIndex;
             schedule.Day_Sunday__c = !evenIndex;
-            schedule.Start_Date__c = Date.today().addDays(Math.Round(-i/2));
-            schedule.End_Date__c = Date.today().addDays(Math.Round(i/2));
+            schedule.Start_Date__c = Date.today().addDays(-10);
+            schedule.End_Date__c = Date.today().addDays(100);
             schedule.Offer_Product__c = offerProducts[i].Id;
             schedule.Status__c = 'Active';
             scheduleList.add(schedule);

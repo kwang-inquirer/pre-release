@@ -11,6 +11,6 @@ global class SubscriptionReceiptControllerTest {
         Test.stopTest();
 
         System.assertEquals(sub.Id, ctrl.sub.Id);
-        System.assertEquals(0.00, ctrl.totalFee);
+        System.assertEquals(null, ctrl.totalFee);
     }
 }

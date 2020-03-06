@@ -1,5 +1,14 @@
 @isTest
 global class CheckoutControllerTest {
+    @isTest(SeeAllData=true)
+    private static void test_getRecurlyJsUrl() {
+        Test.startTest();
+        String recurlyUrl = CheckoutController.getRecurlyJsUrl();
+        Test.stopTest();
+
+        System.assertEquals(Label.RECURLYJS_VFP_URL, recurlyUrl);
+    }
+
     @isTest
     private static void test_getUserInfo() {
         Test.startTest();
@@ -82,6 +91,7 @@ global class CheckoutControllerTest {
         System.assertEquals(error, true, 'There should be an exception thrown');
     }
 
+    
     @isTest
     private static void test_getNewSubscription() {
         Test.setMock(HttpCalloutMock.class, new Auth0Mock());
@@ -91,14 +101,21 @@ global class CheckoutControllerTest {
 
         TestDataFactory.createTestRecords(1);
         Offer__c existingOffer = [SELECT Id FROM Offer__c LIMIT 1];
+		Campaign linkedCampaign =  [SELECT Id FROM Campaign 
+					WHERE Id in (
+								SELECT Campaign__c 
+								FROM Campaign_Offer__c 
+								WHERE Offer__c =:existingOffer.Id)];
 
         Test.startTest();
-            Subscription__c newSub = CheckoutController.getNewSubscription(existingOffer.Id, 'test@test.com', 'web', 'test123', false);
+            Subscription__c newSub = CheckoutController.getNewSubscription(existingOffer.Id, 'test@test.com', 'web', 'test123', false, linkedCampaign.Id);
+			newSub = [SElECT id, Source_Campaign__c FROM Subscription__c WHERE Id=: newSub.id LIMIT 1];
+			System.assert(newSub.Source_Campaign__c == linkedCampaign.Id,'Source Campaign not set');
             for (Subscription__c sub : [SELECT Id FROM Subscription__c]) {
-                sub.subscription_Status__c = 'INACTIVE';
+                sub.subscription_Status__c = 'INACTIVE'; 
                 update sub;
             }
-            Subscription__c updatedSub = CheckoutController.getNewSubscription(existingOffer.Id, 'test@test.com', 'web', 'test123', false);
+            Subscription__c updatedSub = CheckoutController.getNewSubscription(existingOffer.Id, 'test@test.com', 'web', 'test123', false, linkedCampaign.Id);
         Test.stopTest();
 
         System.assertEquals(true, true, '');
@@ -115,7 +132,7 @@ global class CheckoutControllerTest {
         Boolean submitPayment = false;
 
         Test.startTest();
-            try { CheckoutController.getNewSubscription(null, null, null, null, null); } catch (Exception e) { getNewSubscription = true; }
+            try { CheckoutController.getNewSubscription(null, null, null, null, null, null); } catch (Exception e) { getNewSubscription = true; }
             try { CheckoutController.saveDeliveryAddress(null, null); } catch (Exception e) { saveDeliveryAddress = true; }
             try { CheckoutController.saveBillingAddress(null, null); } catch (Exception e) { saveBillingAddress = true; }
             try { CheckoutController.hasValidDeliveryAddress(null); } catch (Exception e) { hasValidDeliveryAddress = true; }

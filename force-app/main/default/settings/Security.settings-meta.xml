@@ -6,7 +6,33 @@
     <enableRequireHttpsConnection>true</enableRequireHttpsConnection>
     <isTLSv12Required>false</isTLSv12Required>
     <isTLSv12RequiredCommunities>false</isTLSv12RequiredCommunities>
-    <networkAccess/>
+    <networkAccess>
+        <ipRanges>
+            <description>RE - willie spg lib</description>
+            <end>208.186.119.162</end>
+            <start>208.186.119.162</start>
+        </ipRanges>
+        <ipRanges>
+            <description>RE - willie sb</description>
+            <end>172.58.62.139</end>
+            <start>172.58.62.139</start>
+        </ipRanges>
+        <ipRanges>
+            <description>Jeremy</description>
+            <end>100.11.13.171</end>
+            <start>100.11.13.171</start>
+        </ipRanges>
+        <ipRanges>
+            <description>RE - willie</description>
+            <end>67.190.65.192</end>
+            <start>67.190.65.192</start>
+        </ipRanges>
+        <ipRanges>
+            <description>RE - willie spg sb</description>
+            <end>50.208.8.11</end>
+            <start>50.208.8.11</start>
+        </ipRanges>
+    </networkAccess>
     <passwordPolicies>
         <complexity>AlphaNumeric</complexity>
         <enableSetPasswordInApi>true</enableSetPasswordInApi>
@@ -41,7 +67,7 @@
         <enableXssProtection>true</enableXssProtection>
         <enforceIpRangesEveryRequest>false</enforceIpRangesEveryRequest>
         <forceLogoutOnSessionTimeout>true</forceLogoutOnSessionTimeout>
-        <forceRelogin>true</forceRelogin>
+        <forceRelogin>false</forceRelogin>
         <hasRetainedLoginHints>false</hasRetainedLoginHints>
         <hasUserSwitching>true</hasUserSwitching>
         <hstsOnForcecomSites>false</hstsOnForcecomSites>
@@ -61,6 +87,6 @@
     <singleSignOnSettings>
         <enableMultipleSamlConfigs>true</enableMultipleSamlConfigs>
         <enableSamlJitProvisioning>false</enableSamlJitProvisioning>
-        <enableSamlLogin>false</enableSamlLogin>
+        <enableSamlLogin>true</enableSamlLogin>
     </singleSignOnSettings>
 </SecuritySettings>

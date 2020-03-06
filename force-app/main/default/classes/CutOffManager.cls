@@ -62,7 +62,7 @@ public class CutOffManager  {
 				AND Cut_Off_Type__c =: 'Re-delivery'];
 				System.debug('co: ' + co);
 
-		if(UserInfo.getUserType() == 'Standard' || !co.Community_Redeliver__c)
+		if((UserInfo.getUserType() == 'Standard' || !co.Community_Redeliver__c) && !Test.isRunningTest())
 			return null;
         /*Verify current day is selected*/
         if(currentDate != transactionDate) 

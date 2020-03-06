@@ -6,6 +6,7 @@
         <columns>Message__c</columns>
         <columns>Type_Name__c</columns>
         <columns>Type_Complaint__c</columns>
+        <columns>LAST_UPDATE</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </ListView>

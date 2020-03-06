@@ -2,6 +2,8 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     
     
+    
+    
     <caseValues>
         <plural>false</plural>
         <value>Recurly API Key</value>
@@ -11,4 +13,11 @@
         <value>Recurly API Keys</value>
     </caseValues>
     <startsWith>Consonant</startsWith>
+    <layouts>
+        <layout>Recurly API Key Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
 </CustomObjectTranslation>

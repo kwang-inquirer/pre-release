@@ -34,6 +34,44 @@
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <caseValues>
         <plural>false</plural>
         <value>Delivery Schedule</value>
@@ -45,10 +83,6 @@
     <startsWith>Consonant</startsWith>
     <layouts>
         <layout>Delivery Schedule Layout</layout>
-        <sections>
-            <label><!-- Aduit --></label>
-            <section>Aduit</section>
-        </sections>
         <sections>
             <label><!-- Custom Links --></label>
             <section>Custom Links</section>

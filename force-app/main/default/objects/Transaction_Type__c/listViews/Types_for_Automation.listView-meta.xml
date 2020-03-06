@@ -2,13 +2,12 @@
 <ListView xmlns="http://soap.sforce.com/2006/04/metadata">
         <fullName>Types_for_Automation</fullName>
         <columns>NAME</columns>
-        <columns>Code__c</columns>
+        <columns>Delivery_Day_Type__c</columns>
         <columns>When_to_Display__c</columns>
-        <columns>Use_in_Flows__c</columns>
+        <columns>Use_in_Self_Serve_Portal__c</columns>
         <columns>Apply_Credit_to_Subscription__c</columns>
         <columns>Redeliver__c</columns>
-        <columns>Delivery_Day_Type__c</columns>
-        <columns>Use_in_Self_Serve_Portal__c</columns>
+        <columns>Code__c</columns>
         <columns>Message__c</columns>
         <filterScope>Everything</filterScope>
         <filters>

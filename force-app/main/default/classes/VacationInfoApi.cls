@@ -41,9 +41,17 @@ global with sharing class VacationInfoApi {
 
         public VacationInfo(Id subscriptionId) {
             Id transactionVacationHoldRecordTypeId = Schema.SObjectType.Transaction_Log__c.getRecordTypeInfosByDeveloperName().get('Vacation').getRecordTypeId();
-            List<Subscription__c> subscription = [SELECT Id, subscription_Offer__c FROM Subscription__c WHERE Id = :subscriptionId];
+            List<Subscription__c> subscription = [SELECT Id, subscription_Offer__c, subscription_Status__c FROM Subscription__c WHERE Id = :subscriptionId];
             if (subscription.isEmpty()) {
                 throw new GenericException('No subscription found');
+            }
+
+            // throw exceptions for inactive subscription
+            String subStatus = subscription[0].subscription_Status__c;
+            if (subStatus == 'INACTIVE'){
+                throw new GenericException('Subscription Inactive');
+            } else if (subStatus == 'TERMINATED'){
+                throw new GenericException('Subscription Terminated');
             }
             
             // any current or future vacations

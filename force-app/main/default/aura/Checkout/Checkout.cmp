@@ -14,9 +14,11 @@
     <aura:attribute name="editPayment" type="Boolean" default="false" />
     <aura:attribute name="oneTimeTip" type="Boolean" default="false" />
     <aura:attribute name="isFlow" type="Boolean" default="false" />
+    <aura:attribute name="SourceCampaign" type="String" />
 
     <aura:attribute name="subscription" type="Subscription__c" default="{}" />
     <c:checkoutProcess offerId="{!v.offerId}" email="{!v.email}" sessionId="{!v.sessionId}" pianoId="{!v.pianoId}" 
         subscriptionId="{!v.subscriptionId}" showAgreementBeforeSubmit="{!v.showAgreement}" editPayment="{!v.editPayment}"
-        processPayment="{!v.processPayment}" waiveActivationFee="{!v.waiveActivationFee}" isFlow="{!v.isFlow}" enableAutoPay="{!v.enableAutoPay}" />
+        processPayment="{!v.processPayment}" waiveActivationFee="{!v.waiveActivationFee}" isFlow="{!v.isFlow}" 
+		enableAutoPay="{!v.enableAutoPay}" sourceCampaign="{!v.SourceCampaign}" />
 </aura:component>

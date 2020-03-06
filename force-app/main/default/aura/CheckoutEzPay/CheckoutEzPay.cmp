@@ -1,8 +1,0 @@
-<aura:component implements="flexipage:availableForAllPageTypes,lightning:availableForFlowScreens" access="global" controller="SubscriptionController">
-    <aura:attribute name="subscriptionId" type="String"/>
-    <aura:attribute name="tipAmount" type="String"/>
-    <aura:attribute name="source" type="String"/>
-    <aura:attribute name="subscription" type="Subscription__c" default="{}" />
-
-    <c:checkoutEzPayProcess subscriptionId="{!v.subscriptionId}" onsuccess="{!c.handleSuccess}" />
-</aura:component>
