@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fieldOverrides>
-        <field>Subject</field>
-        <formula>&quot;Thank you for your inquiry &quot;+Case.Contact.FirstName</formula>
-    </fieldOverrides>
-    <fieldOverrides>
-        <field>ToAddress</field>
-        <formula>Case.ContactEmail</formula>
-    </fieldOverrides>
+    <label>Email</label>
     <optionsCreateFeedItem>true</optionsCreateFeedItem>
     <quickActionLayout>
         <layoutSectionStyle>TwoColumnsLeftToRight</layoutSectionStyle>
@@ -36,10 +29,8 @@
         <quickActionLayoutColumns/>
     </quickActionLayout>
     <quickActionSendEmailOptions>
-        <defaultEmailTemplateName>unfiled$public/Email_First_Response</defaultEmailTemplateName>
-        <ignoreDefaultEmailTemplateSubject>true</ignoreDefaultEmailTemplateSubject>
+        <ignoreDefaultEmailTemplateSubject>false</ignoreDefaultEmailTemplateSubject>
     </quickActionSendEmailOptions>
-    <standardLabel>SendEmail</standardLabel>
     <targetObject>EmailMessage</targetObject>
     <targetParentField>Parent</targetParentField>
     <type>SendEmail</type>

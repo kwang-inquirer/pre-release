@@ -175,7 +175,7 @@
             <targetReference>GetUser</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>Count</name>
         <dataType>Number</dataType>

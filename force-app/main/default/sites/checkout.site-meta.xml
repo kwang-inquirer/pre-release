@@ -26,6 +26,6 @@
     
     <siteTemplate>SiteTemplate</siteTemplate>
     <siteType>Visualforce</siteType>
-    <subdomain>inquirer-qa</subdomain>
+    <subdomain>inq</subdomain>
     <urlPathPrefix>checkout</urlPathPrefix>
 </CustomSite>

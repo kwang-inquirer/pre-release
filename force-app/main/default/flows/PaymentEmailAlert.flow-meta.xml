@@ -81,7 +81,7 @@
             <targetReference>GetRecurlyTransaction</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>varRecurlyTransaction</name>
         <dataType>String</dataType>

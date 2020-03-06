@@ -1,27 +1,27 @@
 public with sharing class CheckoutSubscriptionCreator {
-    public static Subscription__c getNewSubscription(String offerId, String email, String source, String password, Boolean waiveActivationFee) {
+    public static Subscription__c getNewSubscription(String offerId, String email, String source, String password, Boolean waiveActivationFee, String SourceCampaign) {
         Offer__c offer = OfferDataAccessor.getOfferById(offerId);
-        Subscription__c subscription = getSubscription(offer, email, source, password, waiveActivationFee);
+        Subscription__c subscription = getSubscription(offer, email, source, password, waiveActivationFee, SourceCampaign);
         new SubscriptionCampaign(subscription).setNewSubscriptionCampaign();
         return subscription;
     }
 
-    private static Subscription__c getSubscription(Offer__c offer, String email, String source, String password, Boolean waiveActivationFee) {
+    private static Subscription__c getSubscription(Offer__c offer, String email, String source, String password, Boolean waiveActivationFee, String SourceCampaign) {
         List<Subscription__c> existingSubscriptions = SubscriptionDataAccessor.getSubscriptionsByEmail(email);
         if (!existingSubscriptions.isEmpty()) {
-            return getExistingSubscription(existingSubscriptions, offer, waiveActivationFee);
+            return getExistingSubscription(existingSubscriptions, offer, waiveActivationFee, SourceCampaign);
         }
-        return createDefaultSubscription(offer, email, source, password, waiveActivationFee);
+        return createDefaultSubscription(offer, email, source, password, waiveActivationFee, SourceCampaign);
     }
 
-    private static Subscription__c getExistingSubscription(List<Subscription__c> existingSubscriptions, Offer__c offer, Boolean waiveActivationFee) {
+    private static Subscription__c getExistingSubscription(List<Subscription__c> existingSubscriptions, Offer__c offer, Boolean waiveActivationFee, String SourceCampaign) {
         for (Subscription__c subscription : existingSubscriptions) {
             if (subscription.subscription_Status__c == 'Active') {
                 throw new GenericException('This email already has an active subscription');
             } 
         }
         Subscription__c subscription = existingSubscriptions[0];
-        setSubscription(subscription, offer, null, waiveActivationFee, subscription.subscription_Status__c);
+        setSubscription(subscription, offer, null, waiveActivationFee, subscription.subscription_Status__c, SourceCampaign);
         update subscription;
         System.debug('here');
         if (subscription.subscription_Status__c != 'New' && isDigitalOnly(offer)) {
@@ -45,7 +45,8 @@ public with sharing class CheckoutSubscriptionCreator {
         return authAccounts[0];
     }
 
-    private static Subscription__c createDefaultSubscription(Offer__c offer, String email, String source, String password, Boolean waiveActivationFee) {
+    private static Subscription__c createDefaultSubscription(Offer__c offer, String email, String source, 
+				String password, Boolean waiveActivationFee, String SourceCampaign) {
         // If existing contact exists then use that otherwise create a new default contact/account
         List<Contact> existingContacts = ContactDataAccessor.getContactsByEmail(email);
         if (existingContacts.isEmpty()) {
@@ -67,7 +68,7 @@ public with sharing class CheckoutSubscriptionCreator {
         
         // Create new default subscription
         Subscription__c subscription = new Subscription__c();
-        setSubscription(subscription, offer, subscriberContact, waiveActivationFee, 'New');
+        setSubscription(subscription, offer, subscriberContact, waiveActivationFee, 'New', SourceCampaign);
         insert subscription;
 
         if (isDigitalOnly(offer)) {
@@ -86,10 +87,11 @@ public with sharing class CheckoutSubscriptionCreator {
         }
     }
 
-    private static void setSubscription(Subscription__c subscription, Offer__c offer, Contact subscriberContact, Boolean waiveActivationFee, String status) {
+    private static void setSubscription(Subscription__c subscription, Offer__c offer, Contact subscriberContact, Boolean waiveActivationFee, String status, String SourceCampaign) {
         subscription.subscription_Status__c = status;
         subscription.subscription_Offer__c = offer.Id;
         subscription.Waive_Activation_Fee__c = waiveActivationFee;
+		subscription.Source_Campaign__c = SourceCampaign;
         if (subscriberContact != null) {
             subscription.Contact__c = (subscriberContact != null) ? subscriberContact.Id : null;
             subscription.subscription_Account__c = (subscriberContact != null) ? subscriberContact.AccountId : null;

@@ -3,11 +3,9 @@
         <fullName>AllProducts</fullName>
         <columns>PRODUCT2.NAME</columns>
         <columns>PRODUCT2.CUSTOMER_PRODUCT_ID</columns>
-        <columns>IsDigital__c</columns>
-        <columns>PRODUCT2.ACTIVE</columns>
         <columns>PRODUCT2.DESCRIPTION</columns>
         <columns>PRODUCT2.FAMILY</columns>
-        <columns>PRODUCT2.CREATED_DATE</columns>
+        <columns>PRODUCT2.LAST_UPDATE</columns>
         <filterScope>Everything</filterScope>
         <label>All Products</label>
     </ListView>

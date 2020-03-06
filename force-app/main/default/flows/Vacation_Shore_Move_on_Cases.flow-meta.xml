@@ -267,22 +267,16 @@
     <recordCreates>
         <name>CreateDeliveryAddress</name>
         <label>CreateDeliveryAddress</label>
-        <locationX>1374</locationX>
-        <locationY>666</locationY>
+        <locationX>1393</locationX>
+        <locationY>639</locationY>
         <assignRecordIdToReference>NewDeliveryAddress</assignRecordIdToReference>
         <connector>
-            <targetReference>GetDeliveryAddressforRoute</targetReference>
+            <targetReference>ConfirmDelAddressScreen</targetReference>
         </connector>
         <inputAssignments>
             <field>Address_City__c</field>
             <value>
                 <elementReference>City1</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Address_House__c</field>
-            <value>
-                <elementReference>House_Number1</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -751,6 +745,25 @@
         <showHeader>false</showHeader>
     </screens>
     <screens>
+        <name>ConfirmDelAddressScreen</name>
+        <label>ConfirmDelAddressScreen</label>
+        <locationX>1297</locationX>
+        <locationY>782</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>GetDeliveryAddressforRoute</targetReference>
+        </connector>
+        <fields>
+            <name>Confirm</name>
+            <fieldText>&lt;p&gt;Please Confirm Address.  If not correct click previous.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;{!Street}&lt;/p&gt;&lt;p&gt;{!City}, {!State} {!Postal_Code}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
         <name>FaultMessage1</name>
         <label>FaultMessage</label>
         <locationX>1369</locationX>
@@ -792,7 +805,7 @@
         <allowPause>false</allowPause>
         <fields>
             <name>Success</name>
-            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Successful Transfer&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Dates: {!Begin_Date} - {!End_Date}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Vacation Address:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;{!HouseNumberandStreet}&lt;/p&gt;&lt;p&gt;{!City1}, {!StatePicklist} {!Postal_Code}&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Successful Transfer&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Dates: {!Begin_Date} - {!End_Date}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Vacation Address:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;{!Street}&lt;/p&gt;&lt;p&gt;{!City1}, {!StatePicklist} {!Postal_Code}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -832,13 +845,6 @@
             <name>VacationAddress</name>
             <fieldText>&lt;p&gt;Please provide your vacation address:&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
-        </fields>
-        <fields>
-            <name>House_Number1</name>
-            <dataType>String</dataType>
-            <fieldText>House Number</fieldText>
-            <fieldType>InputField</fieldType>
-            <isRequired>false</isRequired>
         </fields>
         <fields>
             <name>Street</name>
@@ -883,7 +889,7 @@
         <showHeader>false</showHeader>
     </screens>
     <startElementReference>GetCase</startElementReference>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>caserecordId</name>
         <dataType>SObject</dataType>

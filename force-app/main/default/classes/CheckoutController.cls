@@ -1,4 +1,16 @@
-public with sharing class CheckoutController {    
+public with sharing class CheckoutController {   
+    @AuraEnabled
+    public static string getRecurlyJsUrl() {
+        User usr = getUserInfo();
+        if (usr.Profile.Name.contains('Community')) {
+            String ntwrkId = Network.getNetworkId();
+            System.debug('Network Id: ' + ntwrkId);
+            ConnectApi.Community comm = ConnectApi.Communities.getCommunity(ntwrkId);
+            return comm.siteUrl + '/apex/recurlyjs';
+        }
+        return Label.RECURLYJS_VFP_URL;
+    }
+    
     @AuraEnabled
     public static User getUserInfo() {
        return [SELECT Id, Name, Profile.Name, Profile.UserLicense.Name FROM User WHERE Id = :UserInfo.getUserId()];
@@ -32,9 +44,9 @@ public with sharing class CheckoutController {
     }
 
     @AuraEnabled
-    public static Subscription__c getNewSubscription(String offerId, String email, String source, String password, Boolean waiveActivationFee) {
+    public static Subscription__c getNewSubscription(String offerId, String email, String source, String password, Boolean waiveActivationFee, String sourceCampaign) {
         try {
-            return CheckoutSubscriptionCreator.getNewSubscription(offerId, email, source, password, waiveActivationFee);
+            return CheckoutSubscriptionCreator.getNewSubscription(offerId, email, source, password, waiveActivationFee, sourceCampaign);
         } catch (GenericException e) {
             System.debug(e.getMessage() + ' ' + e.getStackTraceString());
             throw new AuraHandledException(e.getMessage());

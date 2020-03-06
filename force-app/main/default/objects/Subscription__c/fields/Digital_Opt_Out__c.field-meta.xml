@@ -4,6 +4,7 @@
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
         <label>Digital Opt Out</label>
+        <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
