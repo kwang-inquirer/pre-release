@@ -3,7 +3,7 @@
 		var useCSS = '';
 		var thisTL = component.get('v.transactionLogToUse');
 		var settings = component.get('v.TypeSettings');
-        
+		console.log('Loading Product Change: ' + this);
 
 		var i;
 		for (i = 0; i < settings.length; i++) {

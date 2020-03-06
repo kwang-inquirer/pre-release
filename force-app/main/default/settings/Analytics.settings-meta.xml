@@ -19,7 +19,7 @@
     <enableLotusNotesImages>false</enableLotusNotesImages>
     <enableMassEnableReportBuilder>true</enableMassEnableReportBuilder>
     <enableNewChartsEngine>true</enableNewChartsEngine>
-    <enablePowerInsights>false</enablePowerInsights>
+    <enablePowerInsights>true</enablePowerInsights>
     <enableRemoveFooterForRepDisplay>false</enableRemoveFooterForRepDisplay>
     <enableRemoveFooterFromRepExp>true</enableRemoveFooterFromRepExp>
     <enableReportFieldToFieldPref xsi:nil="true"/>
