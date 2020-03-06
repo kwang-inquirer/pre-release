@@ -117,6 +117,12 @@
                     <booleanValue>true</booleanValue>
                 </value>
             </inputParameters>
+            <inputParameters>
+                <name>SourceCampaign</name>
+                <value>
+                    <elementReference>varCampaignID</elementReference>
+                </value>
+            </inputParameters>
             <isRequired>true</isRequired>
         </fields>
         <showFooter>false</showFooter>

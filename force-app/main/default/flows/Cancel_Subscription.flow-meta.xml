@@ -1,5 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Get_Before_After_Cut_off</name>
+        <label>Get Before/After Cut-off</label>
+        <locationX>121</locationX>
+        <locationY>229</locationY>
+        <actionName>CutOffManager</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Is_Before</targetReference>
+        </connector>
+        <inputParameters>
+            <name>CutOffType</name>
+            <value>
+                <stringValue>Carrier Memo</stringValue>
+            </value>
+        </inputParameters>
+        <outputParameters>
+            <assignToReference>isBeforeCutOff</assignToReference>
+            <name>output</name>
+        </outputParameters>
+    </actionCalls>
+    <assignments>
+        <name>Default_Today</name>
+        <label>Default Today</label>
+        <locationX>495</locationX>
+        <locationY>159</locationY>
+        <assignmentItems>
+            <assignToReference>DefaultDate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Tomorrow</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Cancel_Subscription</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Is_After</name>
+        <label>Is After</label>
+        <locationX>497</locationX>
+        <locationY>283</locationY>
+        <assignmentItems>
+            <assignToReference>DefaultDate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>DayAfterTomorrow</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Cancel_Subscription</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Is_Before</name>
+        <label>Is Before?</label>
+        <locationX>302</locationX>
+        <locationY>233</locationY>
+        <defaultConnector>
+            <targetReference>Is_After</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Is Not</defaultConnectorLabel>
+        <rules>
+            <name>Is</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>isBeforeCutOff</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Default_Today</targetReference>
+            </connector>
+            <label>Is</label>
+        </rules>
+    </decisions>
     <dynamicChoiceSets>
         <name>getStopSourceSet</name>
         <dataType>String</dataType>
@@ -46,9 +124,19 @@
         <valueField>Name</valueField>
     </dynamicChoiceSets>
     <formulas>
+        <name>DayAfterTomorrow</name>
+        <dataType>Date</dataType>
+        <expression>{!$Flow.CurrentDate} +2</expression>
+    </formulas>
+    <formulas>
         <name>TodayDate</name>
         <dataType>Date</dataType>
         <expression>Today()</expression>
+    </formulas>
+    <formulas>
+        <name>Tomorrow</name>
+        <dataType>Date</dataType>
+        <expression>{!$Flow.CurrentDate} +1</expression>
     </formulas>
     <interviewLabel>Cancel Subscription {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Cancel Subscription</label>
@@ -68,8 +156,8 @@
     <recordCreates>
         <name>CreateTransactionLog</name>
         <label>CreateTransactionLog</label>
-        <locationX>467</locationX>
-        <locationY>211</locationY>
+        <locationX>836</locationX>
+        <locationY>233</locationY>
         <inputAssignments>
             <field>Category__c</field>
             <value>
@@ -117,8 +205,8 @@
     <screens>
         <name>Cancel_Subscription</name>
         <label>Cancel Subscription</label>
-        <locationX>303</locationX>
-        <locationY>211</locationY>
+        <locationX>655</locationX>
+        <locationY>233</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -128,10 +216,17 @@
         <fields>
             <name>Effective_Date</name>
             <dataType>Date</dataType>
+            <defaultValue>
+                <elementReference>DefaultDate</elementReference>
+            </defaultValue>
             <fieldText>Effective Date</fieldText>
             <fieldType>InputField</fieldType>
             <helpText>&lt;p&gt;Enter Date that the Stop should start.&lt;/p&gt;</helpText>
             <isRequired>false</isRequired>
+            <validationRule>
+                <errorMessage>&lt;p&gt;Chosen date cannot be before {!DefaultDate}&lt;/p&gt;</errorMessage>
+                <formulaExpression>{!Effective_Date}&gt;={!DefaultDate}</formulaExpression>
+            </validationRule>
         </fields>
         <fields>
             <name>Expiration_Reason</name>
@@ -153,13 +248,30 @@
         <showHeader>false</showHeader>
     </screens>
     <start>
-        <locationX>135</locationX>
-        <locationY>55</locationY>
+        <locationX>42</locationX>
+        <locationY>30</locationY>
         <connector>
-            <targetReference>Cancel_Subscription</targetReference>
+            <targetReference>Get_Before_After_Cut_off</targetReference>
         </connector>
     </start>
     <status>Draft</status>
+    <variables>
+        <name>DefaultDate</name>
+        <dataType>Date</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>isBeforeCutOff</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
     <variables>
         <name>varSubscription</name>
         <dataType>String</dataType>

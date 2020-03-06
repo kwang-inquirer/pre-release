@@ -9,7 +9,7 @@
     <enableFlowPauseEnabled>false</enableFlowPauseEnabled>
     <enableFlowUseApexExceptionEmail>false</enableFlowUseApexExceptionEmail>
     <enableInvocableFlowFixEnabled>true</enableInvocableFlowFixEnabled>
-    <enableLightningRuntimeEnabled>false</enableLightningRuntimeEnabled>
+    <enableLightningRuntimeEnabled>true</enableLightningRuntimeEnabled>
     <isAccessToInvokedApexRequired>false</isAccessToInvokedApexRequired>
     <isEnhancedFlowListViewVisible>true</isEnhancedFlowListViewVisible>
     <isManageFlowRequiredForAutomationCharts>false</isManageFlowRequiredForAutomationCharts>

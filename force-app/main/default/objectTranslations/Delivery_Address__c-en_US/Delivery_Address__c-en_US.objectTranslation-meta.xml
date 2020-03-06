@@ -47,6 +47,55 @@
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <caseValues>
         <plural>false</plural>
         <value>Delivery Address</value>
@@ -77,6 +126,17 @@
         <sections>
             <label><!-- Route Info --></label>
             <section>Route Info</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Shipping Address Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Other Info --></label>
+            <section>Other Info</section>
         </sections>
     </layouts>
 </CustomObjectTranslation>

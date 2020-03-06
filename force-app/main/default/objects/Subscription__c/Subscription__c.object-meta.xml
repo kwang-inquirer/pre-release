@@ -128,11 +128,14 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
-        <type>Default</type>
+        <comment>Action override updated by Lightning App Builder during activation.</comment>
+        <content>Subscription_3_Column</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
-        <formFactor>Large</formFactor>
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
@@ -141,11 +144,12 @@
         <type>Default</type>
     </actionOverrides>
     <allowInChatterGroups>false</allowInChatterGroups>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayoutAssignment>CompactLayout</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object stores the actual subscription details, including selected Offer, Premiums. Delivery Schedules, frequency and term.</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
-    <enableFeeds>false</enableFeeds>
+    <enableFeeds>true</enableFeeds>
     <enableHistory>true</enableHistory>
     <enableLicensing>false</enableLicensing>
     <enableReports>true</enableReports>
@@ -157,11 +161,39 @@
     <nameField>
         <displayFormat>Sub-{0000}</displayFormat>
         <label>Subscription Name</label>
+        <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Subscriptions</pluralLabel>
-    <searchLayouts />
+    <searchLayouts>
+        <customTabListAdditionalFields>Contact__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>subscription_Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>subscription_Offer__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>subscription_Current_Period_Ends_At__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Expires_On__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>subscription_Auto_Renew__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Contact__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>subscription_Status__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>subscription_Offer__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Expires_On__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>subscription_Current_Period_Ends_At__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>subscription_Auto_Renew__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>Contact__c</searchFilterFields>
+        <searchFilterFields>subscription_Current_Period_Ends_At__c</searchFilterFields>
+        <searchFilterFields>Expires_On__c</searchFilterFields>
+        <searchFilterFields>subscription_Auto_Renew__c</searchFilterFields>
+        <searchFilterFields>subscription_Account__c</searchFilterFields>
+        <searchFilterFields>Publication_Name__c</searchFilterFields>
+        <searchResultsAdditionalFields>subscription_Account__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Contact__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Billing_Address__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Email__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Phone__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>subscription_Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>subscription_Current_Period_Started_At__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>subscription_Current_Period_Ends_At__c</searchResultsAdditionalFields>
+    </searchLayouts>
     <sharingModel>ControlledByParent</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>
