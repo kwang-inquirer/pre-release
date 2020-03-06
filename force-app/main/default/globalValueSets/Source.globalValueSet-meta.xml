@@ -418,11 +418,13 @@
     <customValue>
         <fullName>DF</fullName>
         <default>false</default>
+        <isActive>false</isActive>
         <label>DF</label>
     </customValue>
     <customValue>
         <fullName>CS</fullName>
         <default>false</default>
+        <isActive>false</isActive>
         <label>CS</label>
     </customValue>
     <description>Subscription Source</description>

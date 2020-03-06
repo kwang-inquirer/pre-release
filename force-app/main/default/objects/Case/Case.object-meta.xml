@@ -210,6 +210,10 @@
             <fullName>New</fullName>
             <default>true</default>
         </values>
+        <values>
+            <fullName>Pending</fullName>
+            <default>false</default>
+        </values>
     </businessProcesses>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <enableFeeds>true</enableFeeds>

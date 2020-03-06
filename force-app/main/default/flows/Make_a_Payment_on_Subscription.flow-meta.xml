@@ -160,7 +160,7 @@
             <targetReference>Make_a_Payment</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>caserecordId</name>
         <dataType>SObject</dataType>

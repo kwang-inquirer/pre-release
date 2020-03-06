@@ -21,6 +21,63 @@
             <name>output</name>
         </outputParameters>
     </actionCalls>
+    <actionCalls>
+        <name>VacationEmailAlert</name>
+        <label>VacationEmailAlert</label>
+        <locationX>1673</locationX>
+        <locationY>324</locationY>
+        <actionName>Transaction_Log__c.Vacation_Email_Alert</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>ConfirmationScreenVacPac_0</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>getCleanFlowErrorMessage</targetReference>
+        </faultConnector>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>TransactionLogID.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>VacationEmailAlert_0</name>
+        <label>VacationEmailAlert</label>
+        <locationX>2496</locationX>
+        <locationY>590</locationY>
+        <actionName>Transaction_Log__c.Vacation_Email_Alert</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>ConfirmationScreenVacPac_0_0</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>getCleanFlowErrorMessage</targetReference>
+        </faultConnector>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>TransactionLogID.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>VacationEmailAlert_0_0</name>
+        <label>VacationEmailAlert</label>
+        <locationX>191</locationX>
+        <locationY>1034</locationY>
+        <actionName>Transaction_Log__c.Vacation_Email_Alert</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>ConfirmationScreenVacPac</targetReference>
+        </connector>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>TransactionLogID.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
     <choices>
         <name>ChoiceAltPubNeedMoreInfo</name>
         <choiceText>Alt Pub Need More Info</choiceText>
@@ -150,8 +207,8 @@
     <decisions>
         <name>HoldorPac</name>
         <label>HoldorPac</label>
-        <locationX>1775</locationX>
-        <locationY>1037</locationY>
+        <locationX>1675</locationX>
+        <locationY>1053</locationY>
         <defaultConnector>
             <targetReference>GetTransactionTypes</targetReference>
         </defaultConnector>
@@ -366,7 +423,7 @@
         <locationY>494</locationY>
         <assignRecordIdToReference>TransactionLogID.Id</assignRecordIdToReference>
         <connector>
-            <targetReference>ConfirmationScreenVacPac_0</targetReference>
+            <targetReference>New_Transaction</targetReference>
         </connector>
         <faultConnector>
             <targetReference>getCleanFlowErrorMessage</targetReference>
@@ -430,11 +487,11 @@
     <recordCreates>
         <name>CreateTransactionLog_0</name>
         <label>CreateTransactionLog</label>
-        <locationX>312</locationX>
-        <locationY>1055</locationY>
+        <locationX>864</locationX>
+        <locationY>1056</locationY>
         <assignRecordIdToReference>TransactionLogID.Id</assignRecordIdToReference>
         <connector>
-            <targetReference>ConfirmationScreenVacPac</targetReference>
+            <targetReference>New2_Transaction</targetReference>
         </connector>
         <faultConnector>
             <targetReference>getCleanFlowErrorMessage</targetReference>
@@ -502,7 +559,7 @@
         <locationY>521</locationY>
         <assignRecordIdToReference>TransactionLogID.Id</assignRecordIdToReference>
         <connector>
-            <targetReference>ConfirmationScreenVacPac_0_0</targetReference>
+            <targetReference>VacationEmailAlert_0</targetReference>
         </connector>
         <faultConnector>
             <targetReference>getCleanFlowErrorMessage</targetReference>
@@ -694,8 +751,8 @@
     <recordLookups>
         <name>GetOfferProduct_0_0</name>
         <label>GetOfferProduct</label>
-        <locationX>300</locationX>
-        <locationY>1306</locationY>
+        <locationX>554</locationX>
+        <locationY>1220</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>CreateTransactionLog_0</targetReference>
@@ -836,6 +893,54 @@
         <queriedFields>Id</queriedFields>
     </recordLookups>
     <recordLookups>
+        <name>New2_Transaction</name>
+        <label>New2 Transaction</label>
+        <locationX>495</locationX>
+        <locationY>1088</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>VacationEmailAlert_0_0</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>TransactionLogID.Id</elementReference>
+            </value>
+        </filters>
+        <object>Transaction_Log__c</object>
+        <outputReference>Var2_Transaction_Log</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>First_Date__c</queriedFields>
+        <queriedFields>Last_Date__c</queriedFields>
+        <sortField>Id</sortField>
+        <sortOrder>Asc</sortOrder>
+    </recordLookups>
+    <recordLookups>
+        <name>New_Transaction</name>
+        <label>New Transaction</label>
+        <locationX>1534</locationX>
+        <locationY>408</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>VacationEmailAlert</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>TransactionLogID.Id</elementReference>
+            </value>
+        </filters>
+        <object>Transaction_Log__c</object>
+        <outputReference>Var_Transaction_Log</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>First_Date__c</queriedFields>
+        <queriedFields>Last_Date__c</queriedFields>
+        <sortField>Id</sortField>
+        <sortOrder>Asc</sortOrder>
+    </recordLookups>
+    <recordLookups>
         <name>TransactionRecordType</name>
         <label>TransactionRecordType</label>
         <locationX>278</locationX>
@@ -881,7 +986,7 @@
         <allowPause>false</allowPause>
         <fields>
             <name>Confirmation</name>
-            <fieldText>&lt;p&gt;A Vacation Package Transaction has been created for this Subscription&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Start Date: {!Begin_Date}&lt;/p&gt;&lt;p&gt;End Date: {!End_Date}&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;A Vacation Package Transaction has been created for this Subscription&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Start Date: {!Var2_Transaction_Log.First_Date__c}&lt;/p&gt;&lt;p&gt;End Date: {!Var2_Transaction_Log.Last_Date__c}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -897,7 +1002,7 @@
         <allowPause>false</allowPause>
         <fields>
             <name>Confirmation_0</name>
-            <fieldText>&lt;p&gt;A Vacation Hold has been created for this Subscription&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Start Date: {!Begin_Date}&lt;/p&gt;&lt;p&gt;End Date: {!End_Date}&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;A Vacation Hold has been created for this Subscription&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Start Date: {!Var_Transaction_Log.First_Date__c}&lt;/p&gt;&lt;p&gt;End Date: {!Var_Transaction_Log.Last_Date__c}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -1028,7 +1133,7 @@
             <targetReference>GetActiveSubscription</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>caserecordId</name>
         <dataType>SObject</dataType>
@@ -1076,6 +1181,22 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var2_Transaction_Log</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Transaction_Log__c</objectType>
+    </variables>
+    <variables>
+        <name>Var_Transaction_Log</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Transaction_Log__c</objectType>
     </variables>
     <variables>
         <name>varAccount</name>

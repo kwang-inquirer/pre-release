@@ -17,15 +17,6 @@
     
     
     
-    <caseValues>
-        <plural>false</plural>
-        <value>Rate</value>
-    </caseValues>
-    <caseValues>
-        <plural>true</plural>
-        <value>Rates</value>
-    </caseValues>
-    <startsWith>Consonant</startsWith>
     <layouts>
         <layout>Rate Layout</layout>
         <sections>

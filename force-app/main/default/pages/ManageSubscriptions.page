@@ -1,0 +1,114 @@
+<apex:page id="ManageSubscriptions" title="Manage Subscriptions" controller="ManageSubscriptionsController" standardStylesheets="false" action="{!unsubscribe}" showHeader="false">
+    <apex:slds />
+    <style>
+        #confirmation{
+            font-size: 12pt;
+            font-weight: bold;
+        }
+    </style>
+
+    <div class="header slds-p-around_medium">
+       <img src="{!$Resource.pmnLogo}" width="25%"/>
+    </div>
+
+    <div class="slds-scope" style="margin:5px;">
+        <div id="unsubscribe" class="slds-text-align_center slds-p-around_medium" >
+            You have been unsubscribed from the following communications:<br/>
+            <apex:repeat value="{!emailSubscribersToUpdate}" var="ES">
+                {!ES.Email_Subscription__r.Name}<br/>
+            </apex:repeat>
+
+        </div>
+
+        <button id="toggleManage" class="slds-button slds-button_neutral" style="margin-bottom:15px;" >Manage Email Subscriptions</button>
+        <apex:form id="manageForm">
+        <div id="manage" >
+            <apex:repeat value="{!emailSubscriptions}" var="ces">
+                <article class="slds-card">
+                    <div class="slds-card__header">
+                        <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                            <div class="slds-media__figure">
+                                <span class="slds-icon_container slds-icon-standard-account" title="account">
+                                <span class="slds-assistive-text">account</span>
+                                </span>
+                            </div>
+                            <div class="slds-media__body">
+                                <h2 class="slds-card__header-title">
+                                    <a href="javascript:void(0);" class="slds-card__header-link slds-truncate" title="{!ces.subscriptionName}">
+                                        <span>{!ces.subscriptionName}</span>
+                                    </a>
+                                </h2>
+                            </div>
+                            <div class="slds-no-flex">
+
+                                <apex:selectradio styleclass="radiobutton" value="{!ces.subscriptionStatus}" onchange="updateStatusJS('{!ces.subscriberID}',this.value);">
+                                    <apex:selectOption html-customClass="SubscribedOption" itemValue="Subscribed" itemLabel="Subscribed"/>
+                                    <apex:selectOption html-customClass="UnsubscribedOption" itemValue="Unsubscribed" itemLabel="Unsubscribed"/>
+                                    <apex:selectOption html-customClass="NoPrefOption" itemValue="No Preference" itemLabel="No Preference"/>
+                                </apex:selectradio>
+                            </div>
+                        </header>
+                    </div>
+                    <!--<div class="slds-card__body slds-card__body_inner">Card Body</div>-->
+                    <footer class="slds-card__footer"></footer>
+                </article>
+            </apex:repeat>
+            <div class = "slds-p-top_medium slds-p-bottom_medium slds-float--right" >
+            <apex:commandbutton id="submitButton" styleclass="slds-button slds-button_neutral" action="{!Submit}" value="Submit" rerender="messagePanel" oncomplete="showSuccess();"/>
+            </div>
+        </div>
+        <div id="unsubLinkDiv" class="slds-align_absolute-center">
+            <apex:commandLink id="unsubLink" rerender="messagePanel" action="{!unsubscribeToAll}" oncomplete="showSuccess(); return false;">Unsubscribe from all of The Philadelphia Media Inquirer email communications</apex:commandLink>
+            <br/>
+            <apex:actionFunction action="{!UpdateStatus}" name="updateStatusJS" rerender="unsubLink">
+                <apex:param name="subid" assignTo="{!subscriberid}" value="" />
+                <apex:param name="status" assignTo="{!status}" value="" />
+            </apex:actionFunction>
+        </div>
+        <apex:outputpanel id="messagePanel">
+            <div id="confirmation" class="slds-text-align_center">{!message}</div>
+        </apex:outputpanel>
+        </apex:form>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(
+
+
+            function(){
+                $("#unsubscribe").show();
+                $("#manage").hide();
+                $("#confirmation").hide();
+
+                $("#toggleManage").click(function () {
+                    $("#unsubscribe").hide("slow");
+                    $("#manage").show("slow");
+                    $("#confirmation").hide();
+                    $("#unsubLinkDiv").show("slow");
+                });
+
+                $("[customClass='SubscribedOption']").closest('td').css({"padding-right":"4px"});
+                $("[customClass='UnsubscribedOption']").closest('td').css({"padding-right":"4px"});
+
+        });
+
+        function toggleSubscribe(subid){
+            console.log('TOGGLING! ' + subid);
+        }
+
+        function showSuccess(){
+
+            $("#unsubLinkDiv").hide("slow");
+            $("#manage").hide("slow");
+            $("#confirmation").show("slow");
+        }
+
+        function unsubscribeAllConfirmation(){
+            $("#unsubscribe").text('You have been unsubscribed from all communications.');
+            $("#unsubscribe").show("slow");
+            $("#manage").hide("slow");
+            $("#confirmation").hide("slow");
+        }
+    </script>
+</apex:page>

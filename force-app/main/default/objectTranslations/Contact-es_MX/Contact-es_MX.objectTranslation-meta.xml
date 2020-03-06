@@ -54,8 +54,23 @@
     
     
     
+    
+    
+    
+    
     <layouts>
         <layout>Business Contact</layout>
+        <sections>
+            <label><!-- Email --></label>
+            <section>Email</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Contact Layout</layout>
+        <sections>
+            <label><!-- DSI --></label>
+            <section>DSI</section>
+        </sections>
         <sections>
             <label><!-- Email --></label>
             <section>Email</section>
@@ -75,6 +90,10 @@
     <quickActions>
         <label><!-- Address Verification --></label>
         <name>Address_Verification</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Email --></label>
+        <name>Email</name>
     </quickActions>
     <recordTypes>
         <description><!-- This record type is used to display information about a subscriber contact --></description>

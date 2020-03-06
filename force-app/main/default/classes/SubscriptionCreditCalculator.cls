@@ -37,6 +37,8 @@ public with sharing class SubscriptionCreditCalculator {
             return;
         }
         for (Delivery_Schedule__c schedule : subscription.Delivery_Schedules__r) {
+            System.debug('offerProductIds: ' + offerProductIds);
+            System.debug('schedule.Offer_Product__: ' + schedule.Offer_Product__c);
             if (schedule.Start_Date__c <= startDate && schedule.End_Date__c >= endDate && offerProductIds.contains(schedule.Offer_Product__c)) {
                 Integer regularDays = 0;
                 Integer sundayDays = 0;

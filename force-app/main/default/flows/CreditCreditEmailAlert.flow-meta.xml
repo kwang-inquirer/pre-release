@@ -83,7 +83,7 @@
             <targetReference>GetJournalRecords</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>JournalRecord</name>
         <dataType>String</dataType>

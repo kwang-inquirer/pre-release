@@ -5,6 +5,7 @@ import submitPayment from '@salesforce/apex/CheckoutController.submitPayment';
 import getUserInfo from '@salesforce/apex/CheckoutController.getUserInfo';
 import createRecurlyAccount from '@salesforce/apex/CheckoutController.createRecurlyAccount';
 import saveBillingAddress from '@salesforce/apex/CheckoutController.saveBillingAddress';
+import getRecurlyJsUrl from '@salesforce/apex/CheckoutController.getRecurlyJsUrl';
 
 import RECURLYJS_VFP_URL from '@salesforce/label/c.RECURLYJS_VFP_URL';
 import POSTMATE from '@salesforce/resourceUrl/Postmate';
@@ -15,6 +16,7 @@ export default class CheckoutBilling extends LightningElement {
     @track token;
     @track userInfo;
     @track tipAmount;
+    @track recurlyUrl;
     @track errorMessage;
     @track newAccountId;
     @track bankInformation;
@@ -83,16 +85,18 @@ export default class CheckoutBilling extends LightningElement {
         });
 
         if (!this.postmateInitialized) {
-            loadScript(this, POSTMATE + '/postmate/postmate.min.js').then(() => {
-                this.postmateInitialized = true;
+            getRecurlyJsUrl().then(recurlyUrl => {
+                this.recurlyUrl = recurlyUrl;
+                loadScript(this, POSTMATE + '/postmate/postmate.min.js').then(() => {
+                    this.postmateInitialized = true;
+                    this.loadNewPaymentFrame();
+                })
             })
         }
     }
 
     renderedCallback() {
-        if (!this.recurlyJsInit && this.postmateInitialized && this.paymentMethod === 'new') {
-            this.loadNewPaymentFrame();
-        }
+        this.loadNewPaymentFrame();
     }
 
     paymentTypeChange(event) {
@@ -127,14 +131,14 @@ export default class CheckoutBilling extends LightningElement {
 
 
     loadNewPaymentFrame() {
-        if (this.postmateInitialized) {
+        if (!this.recurlyJsInit && this.postmateInitialized && this.paymentMethod === 'new') {
             this.recurlyJsInit = true;
             this.newPaymentShowStyle = 'slds-hide';
 
             // Create recurlyjs iframe
             this.handshake = new Postmate({
                 container: this.template.querySelector(':scope .vfFrame'), 
-                url: RECURLYJS_VFP_URL, 
+                url: this.recurlyUrl, 
                 classListArray: ["recurly"] 
             }).then(child => {
                 this.child = child;
@@ -270,7 +274,7 @@ export default class CheckoutBilling extends LightningElement {
 
     processSubscription() {
         if (this.subscription && this.subscription.Recurly_Accounts__r) {
-            let options = [{ label: 'New Payment Method', value: null }];
+            let options = [];
             for (let i = 0; i < this.subscription.Recurly_Accounts__r.length; i++) {
                 const acct = this.subscription.Recurly_Accounts__r[i];
                 if (acct && acct.recurly_v2__Card_Type__c && acct.recurly_v2__Last_Four__c) {
@@ -280,7 +284,7 @@ export default class CheckoutBilling extends LightningElement {
                     this.newAccountId = acct.Id;
                 }
             }
-            if (options.length > 1) {
+            if (options.length > 0) {
                 this.existingPaymentMethodOptions = options;
                 this.paymentMethod = 'existing';
             }

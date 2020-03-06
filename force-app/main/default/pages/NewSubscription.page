@@ -1,0 +1,1014 @@
+<apex:page id="NewSubscription" controller="NewSubscriptionController" lightningStylesheets="true" standardStylesheets="false" showHeader="false" sidebar="false">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <apex:includeScript value="{!$Resource.signaturePad}"/>
+    <!--<script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>-->
+
+    <apex:slds />
+    <style>
+        canvas{
+            border: 1px;
+            border-color: black;
+            border-style: solid;
+            //width:452px;
+        }
+    </style>
+    <apex:form >
+        <div class="slds-scope slds-grid slds-grid_align-center">
+            <!-- START Initial Selections -->
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col">
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label" for="newsSelect">Newspaper</label>
+                        <div class="slds-form-element__control">
+                            <div class="slds-select_container" >
+                                <select class="slds-select" id="newsSelect">
+                                    <option value="">Please select</option>
+                                    <apex:repeat value="{!newspaperList}" var="n">
+                                        <option value="{!n}">{!n}</option>
+                                    </apex:repeat>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-col">
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label" for="locSelect">Location</label>
+                        <div class="slds-form-element__control">
+                            <div class="slds-select_container">
+                                <select class="slds-select" id="locSelect">
+                                    <option value="">Please select</option>
+                                    <apex:repeat value="{!locationList}" var="loc">
+                                        <option value="{!loc}">{!loc}</option>
+                                    </apex:repeat>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                </div>
+                <button class="slds-button slds-button_brand" id="updateSelected" type="button" style="height:37px;margin-top:21px;" onclick="updateUser(); return false;">Save</button>
+            </div>
+        </div>
+        <!-- END Initial Selections -->
+
+        <!-- START Delivery Info -->
+
+        <div class="slds-scope slds-grid slds-grid_align-center">
+
+            <div id="deliveryInfo">
+                <h1 class="slds-section__title">Delivery Info</h1>
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col">
+                    <div class="slds-form slds-form_stacked">
+                        <div class="slds-form-element">
+                            <label class="slds-form-element__label" for="deliveryPhone">Phone:</label>
+                            <div class="slds-form-element__control">
+                                <input type="text" id="deliveryPhone" placeholder="" class="slds-input" />
+                            </div>
+                            <label class="slds-form-element__label" for="deliveryFirstName">First Name:</label>
+                            <div class="slds-form-element__control">
+                                <input type="text" id="deliveryFirstName" placeholder="" class="slds-input" />
+                            </div>
+                            <label class="slds-form-element__label" for="deliveryLastName">Last Name:</label>
+                            <div class="slds-form-element__control">
+                                <input type="text" id="deliveryLastName" placeholder="" class="slds-input" />
+                            </div>
+                            <label class="slds-form-element__label" for="deliveryEmail">Email:</label>
+                            <div class="slds-form-element__control">
+                                <input type="text" id="deliveryEmail" placeholder="" class="slds-input" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- row 2 input fields-->
+                <div class="slds-col">
+                    <div class="slds-form slds-form_stacked">
+                        <div class="slds-form-element">
+                            <label class="slds-form-element__label" for="deliveryAddress1">Address Line 1:</label>
+                            <div class="slds-form-element__control">
+                                <input type="text" id="deliveryAddress1" placeholder="" class="slds-input" />
+                            </div>
+                            <label class="slds-form-element__label" for="deliveryAddress2">Address Line 2:</label>
+                            <div class="slds-form-element__control">
+                                <input type="text" id="deliveryAddress2" placeholder="" class="slds-input" />
+                            </div>
+                            <label class="slds-form-element__label" for="deliveryZipCode">Zip Code:</label>
+                            <div class="slds-form-element__control">
+                                <input type="text" id="deliveryZipCode" placeholder="" class="slds-input" />
+                            </div>
+                            <label class="slds-form-element__label" for="deliveryCity">City:</label>
+                            <div class="slds-form-element__control">
+                                <input type="text" id="deliveryCity" placeholder="" class="slds-input" />
+                            </div>
+                            <label class="slds-form-element__label" for="deliveryState">State:</label>
+                            <div class="slds-form-element__control">
+                                <div class="slds-select_container">
+                                    <select class="slds-select" id="deliveryState">
+                                        <option value="">Please select</option>
+
+                                            <option value="AL">Alabama</option>
+                                            <option value="AK">Alaska</option>
+                                            <option value="AZ">Arizona</option>
+                                            <option value="AR">Arkansas</option>
+                                            <option value="CA">California</option>
+                                            <option value="CO">Colorado</option>
+                                            <option value="CT">Connecticut</option>
+                                            <option value="DE">Delaware</option>
+                                            <option value="DC">District Of Columbia</option>
+                                            <option value="FL">Florida</option>
+                                            <option value="GA">Georgia</option>
+                                            <option value="HI">Hawaii</option>
+                                            <option value="ID">Idaho</option>
+                                            <option value="IL">Illinois</option>
+                                            <option value="IN">Indiana</option>
+                                            <option value="IA">Iowa</option>
+                                            <option value="KS">Kansas</option>
+                                            <option value="KY">Kentucky</option>
+                                            <option value="LA">Louisiana</option>
+                                            <option value="ME">Maine</option>
+                                            <option value="MD">Maryland</option>
+                                            <option value="MA">Massachusetts</option>
+                                            <option value="MI">Michigan</option>
+                                            <option value="MN">Minnesota</option>
+                                            <option value="MS">Mississippi</option>
+                                            <option value="MO">Missouri</option>
+                                            <option value="MT">Montana</option>
+                                            <option value="NE">Nebraska</option>
+                                            <option value="NV">Nevada</option>
+                                            <option value="NH">New Hampshire</option>
+                                            <option value="NJ">New Jersey</option>
+                                            <option value="NM">New Mexico</option>
+                                            <option value="NY">New York</option>
+                                            <option value="NC">North Carolina</option>
+                                            <option value="ND">North Dakota</option>
+                                            <option value="OH">Ohio</option>
+                                            <option value="OK">Oklahoma</option>
+                                            <option value="OR">Oregon</option>
+                                            <option value="PA">Pennsylvania</option>
+                                            <option value="RI">Rhode Island</option>
+                                            <option value="SC">South Carolina</option>
+                                            <option value="SD">South Dakota</option>
+                                            <option value="TN">Tennessee</option>
+                                            <option value="TX">Texas</option>
+                                            <option value="UT">Utah</option>
+                                            <option value="VT">Vermont</option>
+                                            <option value="VA">Virginia</option>
+                                            <option value="WA">Washington</option>
+                                            <option value="WV">West Virginia</option>
+                                            <option value="WI">Wisconsin</option>
+                                            <option value="WY">Wyoming</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <h1 class="slds-section__title">Billing Info</h1>
+                <div id="billingAddress" class="slds-grid slds-gutters">
+
+                    <div class="slds-col">
+                        <div class="slds-form slds-form_stacked">
+                            <div class="slds-form-element">
+                                <label class="slds-form-element__label" for="billingPhone">Phone:</label>
+                                <div class="slds-form-element__control">
+                                    <input type="text" id="billingPhone" placeholder="" class="slds-input" />
+                                </div>
+                                <label class="slds-form-element__label" for="billingFirstName">First Name:</label>
+                                <div class="slds-form-element__control">
+                                    <input type="text" id="billingFirstName" placeholder="" class="slds-input" />
+                                </div>
+                                <label class="slds-form-element__label" for="billingLastName">Last Name:</label>
+                                <div class="slds-form-element__control">
+                                    <input type="text" id="billingLastName" placeholder="" class="slds-input" />
+                                </div>
+                                <label class="slds-form-element__label" for="billingEmail">Email:</label>
+                                <div class="slds-form-element__control">
+                                    <input type="text" id="billingEmail" placeholder="" class="slds-input" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- row 2 input fields-->
+                    <div class="slds-col">
+                        <div class="slds-form slds-form_stacked">
+                            <div class="slds-form-element">
+                                <label class="slds-form-element__label" for="billingAddress1">Address Line 1:</label>
+                                <div class="slds-form-element__control">
+                                    <input type="text" id="billingAddress1" placeholder="" class="slds-input" />
+                                </div>
+                                <label class="slds-form-element__label" for="billingAddress2">Address Line 2:</label>
+                                <div class="slds-form-element__control">
+                                    <input type="text" id="billingAddress2" placeholder="" class="slds-input" />
+                                </div>
+                                <label class="slds-form-element__label" for="billingZipCode">Zip Code:</label>
+                                <div class="slds-form-element__control">
+                                    <input type="text" id="billingZipCode" placeholder="" class="slds-input" />
+                                </div>
+                                <label class="slds-form-element__label" for="billingCity">City:</label>
+                                <div class="slds-form-element__control">
+                                    <input type="text" id="billingCity" placeholder="" class="slds-input" />
+                                </div>
+                                <label class="slds-form-element__label" for="billingState">State:</label>
+                                <div class="slds-form-element__control">
+                                    <div class="slds-select_container">
+                                        <select class="slds-select" id="billingState">
+                                            <option value="">Please select</option>
+                                            <option value="AL">Alabama</option>
+                                            <option value="AK">Alaska</option>
+                                            <option value="AZ">Arizona</option>
+                                            <option value="AR">Arkansas</option>
+                                            <option value="CA">California</option>
+                                            <option value="CO">Colorado</option>
+                                            <option value="CT">Connecticut</option>
+                                            <option value="DE">Delaware</option>
+                                            <option value="DC">District Of Columbia</option>
+                                            <option value="FL">Florida</option>
+                                            <option value="GA">Georgia</option>
+                                            <option value="HI">Hawaii</option>
+                                            <option value="ID">Idaho</option>
+                                            <option value="IL">Illinois</option>
+                                            <option value="IN">Indiana</option>
+                                            <option value="IA">Iowa</option>
+                                            <option value="KS">Kansas</option>
+                                            <option value="KY">Kentucky</option>
+                                            <option value="LA">Louisiana</option>
+                                            <option value="ME">Maine</option>
+                                            <option value="MD">Maryland</option>
+                                            <option value="MA">Massachusetts</option>
+                                            <option value="MI">Michigan</option>
+                                            <option value="MN">Minnesota</option>
+                                            <option value="MS">Mississippi</option>
+                                            <option value="MO">Missouri</option>
+                                            <option value="MT">Montana</option>
+                                            <option value="NE">Nebraska</option>
+                                            <option value="NV">Nevada</option>
+                                            <option value="NH">New Hampshire</option>
+                                            <option value="NJ">New Jersey</option>
+                                            <option value="NM">New Mexico</option>
+                                            <option value="NY">New York</option>
+                                            <option value="NC">North Carolina</option>
+                                            <option value="ND">North Dakota</option>
+                                            <option value="OH">Ohio</option>
+                                            <option value="OK">Oklahoma</option>
+                                            <option value="OR">Oregon</option>
+                                            <option value="PA">Pennsylvania</option>
+                                            <option value="RI">Rhode Island</option>
+                                            <option value="SC">South Carolina</option>
+                                            <option value="SD">South Dakota</option>
+                                            <option value="TN">Tennessee</option>
+                                            <option value="TX">Texas</option>
+                                            <option value="UT">Utah</option>
+                                            <option value="VT">Vermont</option>
+                                            <option value="VA">Virginia</option>
+                                            <option value="WA">Washington</option>
+                                            <option value="WV">West Virginia</option>
+                                            <option value="WI">Wisconsin</option>
+                                            <option value="WY">Wyoming</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-form-element">
+                    <div class="slds-form-element__control">
+                        <div class="slds-checkbox">
+                            <input id="sameAddress" type="checkbox" name="options" value="checkbox-2" onchange="updateAddress();"/>
+                            <label class="slds-checkbox__label" for="sameAddress">
+                                <span class="slds-checkbox_faux"></span>
+                                <span class="slds-form-element__label">Billing is my Delivery Address</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <br/>
+                <button class="slds-button slds-button_brand cancelButton" onclick="return false;">Cancel</button>
+                <button class="slds-button slds-button_brand" id="nextDeliveryInfo" onclick="return false;">Next</button>
+            </div>
+            <div>
+            <!-- END Delivery Info -->
+
+            </div>
+
+
+
+            <!-- START Offer Details -->
+            <div id="offerDetails">
+                <h1 class="slds-section__title">Offer Details</h1>
+
+
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_3-of-3">
+                            <div class="slds-form-element">
+                                <label class="slds-form-element__label" for="promotionSelect">Promotion</label>
+                                <div class="slds-form-element__control">
+                                    <div class="slds-select_container">
+                                        <select class="slds-select" id="promotionSelect">
+                                            <option value="">Please select</option>
+                                            <apex:repeat value="{!promotionList}" var="vp">
+                                                <option value="{!vp.Id}">{!vp.Name}</option>
+                                            </apex:repeat>
+                                        </select>
+                                    </div>
+                                </div>
+                                <label class="slds-form-element__label" for="offerSelect">Offer</label>
+                                <div class="slds-form-element__control">
+                                    <div class="slds-select_container">
+                                        <select class="slds-select" id="offerSelect">
+                                            <option value="">Please select</option>
+                                            <!--<apex:repeat value="{!offerList}" var="o">-->
+                                                <!--<option value="{!o.Id}">{!o.Offer__r.Name}</option>-->
+                                            <!--</apex:repeat>-->
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="slds-form-element__control">
+                                    <label class="slds-form-element__label" for="subscriptionPrice">Subscription Price</label>
+                                    <div class="slds-form-element__control">
+                                        <p id="subscriptionPrice"></p>
+                                    </div>
+                                </div>
+                                <div class="slds-form-element__control">
+                                    <label class="slds-form-element__label" for="activationFee">Activation Fee</label>
+                                    <div class="slds-form-element__control">
+                                        <p id="activationFee"></p>
+                                    </div>
+                                </div>
+                                <div class="slds-form-element__control">
+                                    <label class="slds-form-element__label" for="totalPrice">Total Price</label>
+                                    <div class="slds-form-element__control">
+                                        <p id="totalPrice"></p>
+                                    </div>
+                                </div>
+                                <label class="slds-form-element__label" for="premiumSelect">Premium</label>
+                                <div class="slds-form-element__control">
+                                    <div class="slds-select_container">
+                                        <select class="slds-select" id="premiumSelect">
+                                            <option value="">Please select</option>
+                                            <!--<apex:repeat value="{!premiumList}" var="p">
+                                                <option value="{!p}">{!p}</option>
+                                            </apex:repeat>-->
+                                        </select>
+                                    </div>
+                                </div>
+                                <label class="slds-form-element__label" for="submitDate">Submitted For Delivery By</label>
+                                <div class="slds-form-element__control">
+
+                                        <input id="submitDate" type="date"/>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                <br/>
+                <br/>
+                <button class="slds-button slds-button_brand cancelButton" onclick="return false;">Cancel</button>
+                <button class="slds-button slds-button_brand" id="backToDeliveryInfo" onclick="return false;">Back</button>
+                <button class="slds-button slds-button_brand" id="nextPaymentInfo" onclick="return false;">Next</button>
+                </div>
+            </div>
+            <!-- END Offer Details -->
+
+        <!-- START Payment Details -->
+            <div class="slds-scope slds-grid slds-grid_align-center">
+                <div id="paymentDetails">
+                    <h1 class="slds-section__title">Payment</h1>
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col">
+                            <div class="slds-form slds-form_stacked">
+                                <div class="slds-form-element">
+                                    <label class="slds-form-element__label" for="paymentType">Payment Type:</label>
+                                    <div class="slds-form-element__control">
+                                        <div class="slds-select_container">
+                                            <select class="slds-select" id="paymentTypeSelect">
+                                                <option value="">Please select</option>
+                                                <apex:repeat value="{!paymentType}" var="pt">
+                                                    <option value="{!pt}">{!pt}</option>
+                                                </apex:repeat>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <label class="slds-form-element__label" for="cardType">Card Type:</label>
+                                    <div class="slds-form-element__control">
+                                        <div class="slds-select_container">
+                                            <select class="slds-select" id="cardTypeSelect">
+                                                <option value="">Please select</option>
+                                                <apex:repeat value="{!cardType}" var="ct">
+                                                    <option value="{!ct}">{!ct}</option>
+                                                </apex:repeat>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <label class="slds-form-element__label" for="nameOnCard">Name On Card:</label>
+                                    <div class="slds-form-element__control">
+                                        <input type="text" id="nameOnCard" placeholder="" class="slds-input" />
+                                    </div>
+                                    <label class="slds-form-element__label" for="cardNumber">Card Number:</label>
+                                    <div class="slds-form-element__control">
+                                        <input type="text" id="cardNumber" placeholder="" class="slds-input" />
+                                    </div>
+                                    <label class="slds-form-element__label" for="cvv">CVV:</label>
+                                    <div class="slds-form-element__control">
+                                        <input type="text" id="cvv" placeholder="" class="slds-input" />
+                                    </div>
+                                    <label class="slds-form-element__label" for="expDate">ExpirationDate:</label>
+                                    <div class="slds-form-element__control">
+                                        <div class="slds-select_container slds-grid">
+                                            <select class="slds-select slds-col slds-size_1-of-2" id="expDateMonth">
+                                                <option value="">Month</option>
+                                                <option value="01">01</option>
+                                                <option value="02">02</option>
+                                                <option value="03">03</option>
+                                                <option value="04">04</option>
+                                                <option value="05">05</option>
+                                                <option value="06">06</option>
+                                                <option value="07">07</option>
+                                                <option value="08">08</option>
+                                                <option value="09">09</option>
+                                                <option value="10">10</option>
+                                                <option value="11">11</option>
+                                                <option value="12">12</option>
+                                            </select>
+                                            <select class="slds-select slds-col slds-size_1-of-2" id="expDateYear">
+                                                <option value="">Year</option>
+                                                <option value="2019">2019</option>
+                                                <option value="2020">2020</option>
+                                                <option value="2021">2021</option>
+                                                <option value="2022">2022</option>
+                                                <option value="2023">2023</option>
+                                                <option value="2024">2024</option>
+                                                <option value="2025">2025</option>
+                                                <option value="2026">2026</option>
+                                                <option value="2027">2027</option>
+                                                <option value="2028">2028</option>
+                                                <option value="2029">2029</option>
+                                                <option value="2030">2030</option>
+                                                <option value="2031">2030</option>
+                                                <option value="2032">2030</option>
+                                                <option value="2033">2030</option>
+                                                <option value="2034">2030</option>
+                                                <option value="2035">2030</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="slds-button slds-button_brand cancelButton" onclick="return false;">Cancel</button>
+                    <button class="slds-button slds-button_brand" id="backToOfferDetails" onclick="return false;">Back</button>
+                    <button class="slds-button slds-button_brand" id="nextDisclaimer" onclick="return false;">Next</button>
+                </div>
+            </div>
+       <!-- END Payment Details -->
+
+        <!-- START Disclaimer -->
+        <div class="slds-scope slds-grid slds-grid_align-center">
+            <div id="disclaimer">
+                <h1 class="slds-section__title">Disclaimer</h1>
+                <p>
+                    By signing I authorize Philadelphia Media Network to charge my <br/>
+                    credit/debit card or bank draft in the amount noted above. At the end <br/>
+                    of the introductory period, the subscription will renew and my credit or <br/>
+                    debit card, or bank account will be charged automatically at the <br/>
+                    prevailing home delivery rate unless I cancel by calling 215-222-2765. <br/>
+                    Subscriptions are billed in advance. I also understand that I must <br/>
+                    subscribe for a minimum of 2 terms to qualify for the Gift Premium as <br/>
+                    noted above. If my payment declines or if my subscription is cancelled <br/>
+                    prior to the completion of the agreed upon 2 term minimum, I am <br/>
+                    responsible to reimburse PMN for the cost of the Gift Premium <br/>
+                    provided at the time of purchase.
+                </p>
+                <br/>
+                <button class="slds-button slds-button_brand cancelButton" onclick="return false;">Cancel</button>
+                <button class="slds-button slds-button_brand" id="backToPaymentInfo" onclick="return false;">Back</button>
+                <button class ="slds-button slds-button--brand" id ="nextSignature" onclick="return false;">Next</button>
+            </div>
+        </div>
+        <!-- End Disclaimer -->
+
+        <!-- START Signature -->
+        <div class="slds-scope slds-grid slds-grid_align-center">
+            <div id="signature">
+                <h1 class="slds-section__title">Signature</h1>
+                <div id="signature-pad" class="signature-pad">
+                    <div class="signature-pad--body">
+                        <canvas></canvas>
+                    </div>
+                    <div class="signature-pad--footer">
+                        <!--<div class="description">Sign above</div><-->
+
+                        <div class="signature-pad--actions slds-p-bottom_small">
+                            <div>
+                                <button type="button" class="button clear" id="clear" style="float: right" onclick="ClearSignature();">Clear</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br/>
+                <div class="slds-form-element">
+                    <div class="slds-form-element__control">
+                        <div class="slds-checkbox">
+                            <input id="signatureCheckbox" type="checkbox" name="options" value="checkbox-2"/>
+                            <label class="slds-checkbox__label" for="signatureCheckbox">
+                                <span class="slds-checkbox_faux"></span>
+                                <span class="slds-form-element__label">By signing I authorize Philadelphia Media Network to charge my <br/>
+                    credit/debit card or bank draft in the amount noted above. At the end <br/>
+                    of the introductory period, the subscription will renew and my credit or <br/>
+                    debit card, or bank account will be charged automatically at the <br/>
+                    prevailing home delivery rate unless I cancel by calling 215-222-2765. <br/>
+                    Subscriptions are billed in advance. I also understand that I must <br/>
+                    subscribe for a minimum of 2 terms to qualify for the Gift Premium as <br/>
+                    noted above. If my payment declines or if my subscription is cancelled <br/>
+                    prior to the completion of the agreed upon 2 term minimum, I am <br/>
+                    responsible to reimburse PMN for the cost of the Gift Premium <br/>
+                    provided at the time of purchase.</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <br/>
+                <button class="slds-button slds-button_brand cancelButton" onclick="return false;">Cancel</button>
+                <button class="slds-button slds-button_brand" id="backToDisclaimer" onclick="return false;">Back</button>
+                <button class="slds-button slds-button_brand" id="nextSummary" onclick="return false;">Next</button>
+            </div>
+        </div>
+
+        <!-- START Summary -->
+        <div class="slds-scope slds-grid slds-grid_align-center">
+            <div id="summary">
+                <h1 class="slds-section__title">Summary</h1>
+                <h3 class="slds-section__title" style="font-weight:bold;">Delivery Information:</h3>
+                <button class="slds-button" id="editDeliveryInfo" onclick="return false;">Edit</button>
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_12-of-12">
+                        <div id="summary-deliveryName">xPlaceholder Text</div>
+                        <div id="summary-deliveryPhone">xPlaceholder Phone</div>
+                        <div id="summary-deliveryAddress1">xPlaceholder Address1</div>
+                        <div id="summary-deliveryAddress2">xPlaceholder Address2</div>
+                        <div id="summary-deliveryCityStateZip">xPlaceholder City,State,Zip</div>
+                        <div id="summary-deliveryEmail">xPlaceholder Email</div>
+                    </div>
+                </div><br/>
+                <h3 class="slds-section__title" style="font-weight:bold;">Billing Information:</h3>
+                <button class="slds-button" id="editBillingInfo" onclick="return false;">Edit</button>
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_3-of-3">
+                        <div id="summary-billingName">xPlaceholder Text</div>
+                        <div id="summary-billingAddress1">xPlaceholder Address1</div>
+                        <div id="summary-billingAddress2">xPlaceholder Address2</div>
+                        <div id="summary-billingCityStateZip">xPlaceholder City,State,Zip</div>
+                    </div><br/>
+                </div>
+                <h3 class="slds-section__title" style="font-weight:bold;">Rate Plan:</h3>
+                <button class="slds-button" id="editRatePlan" onclick="return false;">Edit</button>
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_3-of-3">
+                        <div id="summary-promotionSelect">xPlaceholder promotion</div>
+                        <div id="summary-offerSelect">xPlaceholder offer</div>
+                        <div id="summary-premiumSelect">xPlaceholder premium</div>
+                        <div id="summary-submitDate">xPlaceholder submit for delivery by date</div>
+                        <div id="summary-totalPrice">xPlaceholder total price</div>
+                    </div>
+                </div>
+                <br/>
+                <h3 class="slds-section__title" style="font-weight:bold;">Payment Information:</h3>
+                <button class="slds-button" id="editPaymentInfo" onclick="return false;">Edit</button>
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_3-of-3">
+                        <div id="summary-paymentInfo">xPlaceholder promotion</div>
+                    </div>
+                </div>
+                <br/>
+                <button class="slds-button slds-button_brand cancelButton" onclick="return false;">Cancel</button>
+                <button class="slds-button slds-button_brand" id="backToSignature" onclick="return false;">Back</button>
+                <button class="slds-button slds-button_brand" id="nextConfirmation" onclick="inputVals(); return false;">Next</button>
+            </div>
+        </div>
+        <!-- END Summary -->
+
+        <!-- START Confirmation -->
+        <div class="slds-scope slds-grid slds-grid_align-center">
+            <div id="confirmation">
+                <h1 class="slds-section__title">Confirmation</h1>
+                <p>The order has been placed successfully. The confirmation code for this transaction is: <div id="conNum"></div></p><br/>
+                <button class="slds-button slds-button_brand slds-p-bottom_x-small" id="viewReceipt" onclick="showReceipt();return false;">View Receipt</button>
+                <button class="slds-button slds-button_brand slds-p-bottom_x-small" id="finishAndRegister" onclick="sendEmail();return false;">Finish and Register</button>
+                <p id="emailConfirmation"> </p>
+                <button class="slds-button slds-button_brand slds-p-top_x-small" id="finishWithoutRegister" onclick="sendEmail();return false;">Finish Without Registering</button>
+            </div>
+        </div>
+        <!-- END Confirmation -->
+
+    </apex:form>
+    <script>
+
+        var selectedNewspaper;
+        var selectedLocation;
+        var signaturePad;
+        var recId;
+
+        $( document ).ready(function() {
+            //Set default values on page load
+            $('#offerDetails').hide();
+            $('#billingAddress').hide();
+            $('#deliveryInfo' ).hide();
+            $('#sameAddress').prop('checked', true);
+            $('#paymentDetails').hide();
+            $('#disclaimer').hide();
+            $('#signature').hide();
+            $('#signatureCheckbox').prop('checked', false);
+            $('#summary').hide();
+            $('#confirmation').hide();
+
+            //Check if Newspaper and Location already selected
+            if({!alreadySelected})
+            {
+                $('#newsSelect').val('{!selectedNewspaper}');
+                $('#locSelect').val('{!selectedLocation}');
+                $('#newsSelect').prop('disabled', 'disabled');
+                $('#locSelect').prop('disabled', 'disabled');
+                $('#deliveryInfo' ).show();
+                $("#updateSelected").hide();
+            }
+            //
+
+            //Listeners
+            $('#newsSelect').on('change', function() {
+                selectedNewspaper = this.value;
+                console.log( selectedNewspaper);
+
+            });
+            $('#locSelect').on('change', function() {
+                selectedLocation = this.value;
+                console.log( selectedLocation);
+            });
+            $('#nextDeliveryInfo').on('click', function() {
+                $( "#deliveryInfo" ).hide();
+                $( "#offerDetails" ).show();
+            });
+            $('#cancel').on('click', function() {
+
+            });
+            $('#backToDeliveryInfo').on('click', function() {
+                $( "#deliveryInfo" ).show();
+                $( "#offerDetails" ).hide();
+            });
+            $('#nextPaymentInfo').on('click', function() {
+                $( "#offerDetails" ).hide();
+                $( "#paymentDetails" ).show();
+            });
+            $('#backToOfferDetails').on('click', function() {
+                $( "#offerDetails" ).show();
+                $( "#paymentDetails" ).hide();
+            });
+
+            $('#nextDisclaimer').on('click', function() {
+                $( "#paymentDetails" ).hide();
+                $( "#disclaimer" ).show();
+            });
+            $('#backToPaymentInfo').on('click', function() {
+                $( "#paymentDetails" ).show();
+                $( "#disclaimer" ).hide();
+            });
+            $('#nextSignature').on('click', function() {
+                $( "#disclaimer" ).hide();
+                $( "#signature" ).show();
+            });
+            $('#backToDisclaimer').on('click', function() {
+                $( "#disclaimer" ).show();
+                $( "#signature" ).hide();
+            });
+
+            $('#nextSummary').on('click', function() {
+                $( "#signature" ).hide();
+                $( "#summary" ).show();
+            });
+            $('#editDeliveryInfo').on('click', function() {
+                $( "#deliveryInfo" ).show();
+                $( "#summary" ).hide();
+            });
+            $('#editBillingInfo').on('click', function() {
+                $( "#deliveryInfo" ).show();
+                $( "#summary" ).hide();
+            });
+            $('#editRatePlan').on('click', function() {
+                $( "#offerDetails" ).show();
+                $( "#summary" ).hide();
+            });
+            $('#editPaymentInfo').on('click', function() {
+                $( "#paymentDetails" ).show();
+                $( "#summary" ).hide();
+            });
+            $('#backToSignature').on('click', function() {
+                $( "#signature" ).show();
+                $( "#summary" ).hide();
+            });
+            $('#nextConfirmation').on('click', function() {
+                // $( "#summary").hide();
+                // $( "#confirmation" ).show();
+            });
+            $('#finishWithoutRegister').on('click', function() {
+                window.top.location = "/Partners";
+            });
+            $('.cancelButton').on('click', function() {
+                window.top.location = "/Partners";
+            });
+            $('button').on('click', function() {
+                UpdateSummaryValues();
+            });
+
+            //Getting Offer options from Selected Promotion (campaign)
+            $('#promotionSelect').on('change', function() {
+                console.log( $('#promotionSelect').val());
+                var selPromotion =  $('#promotionSelect').val();
+                Visualforce.remoting.Manager.invokeAction(
+                    '{!$RemoteAction.NewSubscriptionController.queryOffers}',
+                    selPromotion,
+                    function (result, event) {
+                        if (event.status) {
+                            console.log(result);
+                            $('#offerSelect').find('option').not(':first').remove();
+                            for(var i = 0;i<result.length;i++) {
+
+                                var campaignOffer = result[i];
+
+                                $('#offerSelect').append($('<option>', {
+                                    value: campaignOffer.Offer__c,
+                                    text: campaignOffer.Offer__r.Offer_Name__c
+                                }));
+                            }
+
+                            return false;
+                        } else if (event.type === 'exception') {
+                            alert('Error saving selection.');
+                        } else {
+
+                        }
+                    },
+                    {escape: true}
+                );
+
+            });
+
+            //Getting Premium from selected offer
+            $('#offerSelect').on('change', function() {
+                console.log( $('#offerSelect').val());
+                var selOffer =  $('#offerSelect').val();
+                Visualforce.remoting.Manager.invokeAction(
+                    '{!$RemoteAction.NewSubscriptionController.queryPremiums}',
+                    selOffer,
+                    function (result, event) {
+                        if (event.status) {
+                            console.log(result);
+                            $('#premiumSelect').find('option').not(':first').remove();
+                            $('#subscriptionPrice').text('$0.00');
+                            $('#activationFee').text('$0.00');
+                            $('#totalPrice').text('$0.00');
+                            for(var i = 0;i<result.length;i++) {
+
+                                var premium = result[i];
+
+                                $('#premiumSelect').append($('<option>', {
+                                    value: premium.Premium_Products__c
+                                    text: premium.Premium_Products__r.Name
+                                }));
+
+                                $('#subscriptionPrice').text('$'+premium.Total_Amount__c);
+                                $('#activationFee').text('$0.00');
+                                $('#totalPrice').text('$'+premium.Total_Amount__c);
+                            }
+
+                            return false;
+                        } else if (event.type === 'exception') {
+                            alert('Error saving selection.');
+                        } else {
+
+                        }
+                    },
+                    {escape: true}
+                );
+
+            });
+            //
+
+            var canvas = document.querySelector("canvas");
+            canvas.width = 452;
+            //canvas.height = canvas.offsetHeight * ratio;
+
+            signaturePad = new SignaturePad(canvas);
+        });
+
+        function ClearSignature(){
+            signaturePad.clear();
+        }
+
+        function updateUser() {
+            if (selectedNewspaper =='Please Select' || selectedNewspaper ==null ||selectedLocation == 'Please Select' ||selectedLocation == null){
+                alert("A Newspaper and Location must be selected");
+            }
+            else {
+                console.log('selectedNewspaper = ' + selectedNewspaper);
+                console.log('selectedLocation = ' + selectedLocation);
+                Visualforce.remoting.Manager.invokeAction(
+                    '{!$RemoteAction.NewSubscriptionController.updateSelectedPaperAndLocation}',
+                    selectedNewspaper, selectedLocation,
+                    function (result, event) {
+                        if (event.status) {
+                            //Disable Newspaper and Location picklists - newsSelect and locSelect
+                            $('#newsSelect').prop('disabled', 'disabled');
+                            $('#locSelect').prop('disabled', 'disabled');
+                            $("#deliveryInfo").show();
+                            $("#updateSelected").hide();
+                            return false;
+                        } else if (event.type === 'exception') {
+                            alert('Error saving selection.');
+                        } else {
+
+                        }
+                    },
+                    {escape: true}
+                );
+
+                return false;
+            }
+        }
+
+        function updateAddress(){
+            if ($('#sameAddress').is(":checked"))
+            {
+                console.log('Box is Checked!');
+                $('#billingAddress').hide();
+            }
+            else{
+                console.log('Box is Unchecked!');
+                $('#billingAddress').show();
+            }
+        }
+
+        function UpdateSummaryValues(){
+            console.log('$(\'#deliveryState\').val() ' + $('#deliveryState').val());
+            $('#summary-deliveryName').text($('#deliveryFirstName').val() + ' ' + $('#deliveryLastName').val());
+            $('#summary-deliveryPhone').text($('#deliveryPhone').val());
+            $('#summary-deliveryAddress1').text($('#deliveryAddress1').val());
+            $('#summary-deliveryAddress2').text($('#deliveryAddress2').val());
+            $('#summary-deliveryCityStateZip').text($('#deliveryCity').val() + ', ' + $('#deliveryState').val() + ' ' + $('#deliveryZipCode').val());
+            $('#summary-deliveryEmail').text($('#deliveryEmail').val());
+            if ($('#sameAddress').is(":checked")) {
+                $('#summary-billingName').text($('#deliveryFirstName').val() + ' ' + $('#deliveryLastName').val());
+                $('#summary-billingAddress1').text($('#deliveryAddress1').val());
+                $('#summary-billingAddress2').text($('#deliveryAddress2').val());
+                $('#summary-billingCityStateZip').text($('#deliveryCity').val() + ', ' + $('#deliveryState').val() + ' ' + $('#deliveryZipCode').val());
+            }
+            else{
+                $('#summary-billingName').text($('#billingFirstName').val() + ' ' + $('#billingLastName').val());
+                $('#summary-billingAddress1').text($('#billingAddress1').val());
+                $('#summary-billingAddress2').text($('#billingAddress2').val());
+                $('#summary-billingCityStateZip').text($('#billingCity').val() + ', ' + $('#billingState').val() + ' ' + $('#billingZipCode').val());
+            }
+            $('#emailConfirmation').text('When you click finish a copy of the receipt will be sent to: '  + $('#deliveryEmail').val());
+            $('#summary-promotionSelect').text($('#promotionSelect option:selected').text());
+            $('#summary-offerSelect').text($('#offerSelect option:selected').text());
+            $('#summary-premiumSelect').text($('#premiumSelect option:selected').text());
+            $('#summary-submitDate').text('Submitted for Delivery By: ' + $('#submitDate').val());
+            $('#summary-totalPrice').text('Total Price: ' + $('#totalPrice').text());
+            $('#summary-paymentInfo').text('Credit Card:' + $('#cardTypeSelect').val() + ', ...' + $('#cardNumber').val() + ', ' + $('#nameOnCard').val());
+
+        }
+
+        function inputVals() {
+            var subscriptionData = {};
+
+            subscriptionData.deliveryPhone = $('#deliveryPhone').val();
+            subscriptionData.deliveryFirstName = $('#deliveryFirstName').val();
+            subscriptionData.deliveryLastName = $('#deliveryLastName').val();
+            subscriptionData.deliveryEmail = $('#deliveryEmail').val();
+            subscriptionData.deliveryAddress1 = $('#deliveryAddress1').val();
+            subscriptionData.deliveryAddress2 = $('#deliveryAddress2').val();
+            subscriptionData.deliveryZipCode = $('#deliveryZipCode').val();
+            subscriptionData.deliveryCity = $('#deliveryCity').val();
+            subscriptionData.deliveryState = $('#deliveryState').val();
+            if ($('#sameAddress').is(":checked")) {
+                subscriptionData.billingFirstName = $('#deliveryFirstName').val();
+                subscriptionData.billingLastName = $('#deliveryLastName').val();
+                subscriptionData.billingEmail = $('#deliveryEmail').val();
+                subscriptionData.billingAddress1 = $('#deliveryAddress1').val();
+                subscriptionData.billingAddress2 = $('#deliveryAddress2').val();
+                subscriptionData.billingZipCode = $('#deliveryZipCode').val();
+                subscriptionData.billingCity = $('#deliveryCity').val();
+                subscriptionData.billingState = $('#deliveryState').val();
+            }
+            else{
+                subscriptionData.billingPhone = $('#billingPhone').val();
+                subscriptionData.billingFirstName = $('#billingFirstName').val();
+                subscriptionData.billingLastName = $('#billingLastName').val();
+                subscriptionData.billingEmail = $('#billingEmail').val();
+                subscriptionData.billingAddress1 = $('#billingAddress1').val();
+                subscriptionData.billingAddress2 = $('#billingAddress2').val();
+                subscriptionData.billingZipCode = $('#billingZipCode').val();
+                subscriptionData.billingCity = $('#billingCity').val();
+                subscriptionData.billingState = $('#billingState').val();
+            }
+            subscriptionData.promotionSelect = $('#promotionSelect').val();
+            subscriptionData.offerSelect = $('#offerSelect').val();
+            subscriptionData.subscriptionPrice = $('#subscriptionPrice').val();
+            subscriptionData.activationFee = $('#activationFee').val();
+            subscriptionData.totalPrice = $('#totalPrice').val();
+            subscriptionData.premiumSelect = $('#premiumSelect').val();
+            subscriptionData.submitDate = $('#submitDate').val();
+            subscriptionData.creditCardNumber = $('#cardNumber').val();
+            subscriptionData.CVV = $('#cvv').val();
+            subscriptionData.expMonth = $('#expDateMonth').val();
+            subscriptionData.expYear = $('#expDateYear').val();
+
+            var subscriptionDataJSON = JSON.stringify(subscriptionData);
+
+            //BEGIN CREATE SUBSCRIPTION RECORD
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.NewSubscriptionController.createRecords}',
+                subscriptionDataJSON, signaturePad.toDataURL(),signaturePad.isEmpty(),
+                function (result1, event) {
+                    if (event.status) {
+                        console.log('successfully created records! ');
+                        console.log(result1);
+
+                        Visualforce.remoting.Manager.invokeAction(
+                            '{!$RemoteAction.NewSubscriptionController.processCreditCard}',
+                            result1.subscription_Account__c, subscriptionDataJSON,
+                            function (result2, event) {
+                                if (event.status) {
+                                    if(result2 && result2.startsWith('Error:'))
+                                    {
+                                        alert('Error Processing Credit Card: ' + result2);
+                                    }
+                                    else {
+                                        //hide summary page and show confirmation page
+                                        console.log('Success! - ' + result2);
+                                        $("#summary").hide();
+                                        $("#confirmation").show();
+                                        $("#conNum").text(result1.Name);
+                                        recId = result1.Id;
+                                    }
+                                    return false;
+                                } else if (event.type === 'exception') {
+                                    alert('Error Processing Credit Card: ' + result2);
+                                } else {
+
+                                }
+                            },
+                            {escape: true}
+                        );
+
+                        return false;
+                    } else if (event.type === 'exception') {
+                        alert('Error saving: ' + result1);
+                    } else {
+
+                    }
+                },
+                {escape: true}
+            );
+            //END CREATE SUBSCRIPTION METHOD
+
+
+        }
+
+        function sendEmail() {
+            var emailAddress = $('#deliveryEmail').val();
+
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.NewSubscriptionController.sendEmail}',
+                recId, emailAddress,
+                function (result, event) {
+                    if (event.status) {
+                        console.log('Email Sent!');
+                        return false;
+                    } else if (event.type === 'exception') {
+                        alert('Error Sending Email Receipt: ' + result);
+                    } else {
+
+                    }
+                },
+                {escape: true}
+            );
+
+        }
+
+        function showReceipt()
+        {
+            window.open('/Partners/SubscriptionReceipt?id=' + recId, '_blank');
+        }
+
+
+
+
+
+
+    </script>
+</apex:page>

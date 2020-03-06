@@ -8,6 +8,10 @@
             <translation><!-- All --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>Not Sunday</masterLabel>
+            <translation><!-- Not Sunday --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>Saturday</masterLabel>
             <translation><!-- Saturday --></translation>
         </picklistValues>

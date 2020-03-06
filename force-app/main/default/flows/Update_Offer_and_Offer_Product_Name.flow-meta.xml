@@ -1,10 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <assignments>
+        <name>Assign_Trimmed_Marketing_Product_List_Value</name>
+        <label>Assign Trimmed Marketing Product List Value</label>
+        <locationX>991</locationX>
+        <locationY>59</locationY>
+        <assignmentItems>
+            <assignToReference>ProductList</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TrimmedMarketingProdList</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_Appropriate_Metadata_List</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>AssignOfferProductName</name>
         <label>AssignOfferProductName</label>
-        <locationX>764</locationX>
-        <locationY>286</locationY>
+        <locationX>762</locationX>
+        <locationY>334</locationY>
         <assignmentItems>
             <assignToReference>varOfferProductName</assignToReference>
             <operator>Add</operator>
@@ -26,6 +42,20 @@
                 <elementReference>varLoopOfferProduct.Per_Week__c</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>ProductList</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>varLoopOfferProduct.Code__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>ProductList</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>,</stringValue>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>LoopOfferProduct</targetReference>
         </connector>
@@ -39,12 +69,25 @@
 (TEXT({!GetOffer.Number_of_Weeks__c})&amp;&quot; &quot;&amp;(SUBSTITUTE({!varOfferProductName}, &quot;|&quot;, &quot; &quot;)&amp;&quot;=&quot;&amp;TEXT({!varPerWeek})))
 )</expression>
     </formulas>
+    <formulas>
+        <name>ProductListName</name>
+        <dataType>String</dataType>
+        <expression>IF(
+(RIGHT(SUBSTITUTE({!ProductList},&quot;|&quot;, &quot;,&quot;),1) = &quot;,&quot;), 
+TRIM(RIGHT(SUBSTITUTE({!ProductList},&quot;|&quot;, &quot;,&quot;),1)), 
+SUBSTITUTE({!ProductList},&quot;|&quot;, &quot;,&quot;))</expression>
+    </formulas>
+    <formulas>
+        <name>TrimmedMarketingProdList</name>
+        <dataType>String</dataType>
+        <expression>TRIM(LEFT( {!ProductList} , LEN({!ProductList})- 1))</expression>
+    </formulas>
     <interviewLabel>Update Offer and Offer Product Name {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Update Offer and Offer Product Name</label>
     <loops>
         <name>LoopOfferProduct</name>
         <label>LoopOfferProduct</label>
-        <locationX>763</locationX>
+        <locationX>765</locationX>
         <locationY>55</locationY>
         <assignNextValueToReference>varLoopOfferProduct</assignNextValueToReference>
         <collectionReference>GetAllOfferProducts</collectionReference>
@@ -53,7 +96,7 @@
             <targetReference>AssignOfferProductName</targetReference>
         </nextValueConnector>
         <noMoreValuesConnector>
-            <targetReference>UpdateOfferName</targetReference>
+            <targetReference>Assign_Trimmed_Marketing_Product_List_Value</targetReference>
         </noMoreValuesConnector>
     </loops>
     <processMetadataValues>
@@ -69,6 +112,26 @@
         </value>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Appropriate_Metadata_List</name>
+        <label>Get Appropriate Metadata List</label>
+        <locationX>1166</locationX>
+        <locationY>58</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>UpdateOfferName</targetReference>
+        </connector>
+        <filters>
+            <field>Label</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>ProductListName</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Product_Code__mdt</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <recordLookups>
         <name>GetActivationFee</name>
         <label>GetActivationFee</label>
@@ -128,6 +191,7 @@
         <queriedFields>Name</queriedFields>
         <queriedFields>Product_Abbreviation__c</queriedFields>
         <queriedFields>Per_Week__c</queriedFields>
+        <queriedFields>Code__c</queriedFields>
         <sortField>Sort_Order__c</sortField>
         <sortOrder>Asc</sortOrder>
         <storeOutputAutomatically>true</storeOutputAutomatically>
@@ -154,6 +218,7 @@
         <queriedFields>Number_of_Weeks__c</queriedFields>
         <queriedFields>Per_Week__c</queriedFields>
         <queriedFields>Activation_Fee__c</queriedFields>
+        <queriedFields>Marketing_Product_List__c</queriedFields>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
@@ -184,8 +249,8 @@
         <description>This will update the offer name</description>
         <name>UpdateOfferName</name>
         <label>UpdateOfferName</label>
-        <locationX>1041</locationX>
-        <locationY>63</locationY>
+        <locationX>1330</locationX>
+        <locationY>55</locationY>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
@@ -193,6 +258,12 @@
                 <elementReference>GetOffer.Id</elementReference>
             </value>
         </filters>
+        <inputAssignments>
+            <field>Marketing_Product_List__c</field>
+            <value>
+                <elementReference>Get_Appropriate_Metadata_List.Code__c</elementReference>
+            </value>
+        </inputAssignments>
         <inputAssignments>
             <field>Name</field>
             <value>
@@ -208,13 +279,20 @@
             <targetReference>GetOfferProduct</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>OfferProductId</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>ProductList</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
     </variables>
     <variables>
         <name>varIsActivation</name>

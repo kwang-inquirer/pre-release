@@ -20,11 +20,11 @@
     </values>
     <values>
         <field>Delivery_Type__c</field>
-        <value xsi:type="xsd:string">Weekday</value>
+        <value xsi:type="xsd:string">Sunday</value>
     </values>
     <values>
         <field>Hour__c</field>
-        <value xsi:type="xsd:double">8.0</value>
+        <value xsi:type="xsd:double">11.0</value>
     </values>
     <values>
         <field>Minute__c</field>

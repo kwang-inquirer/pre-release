@@ -89,7 +89,7 @@ export default class ShoreMove extends LightningElement
                                     this.isLoading = false;
                                
                             } else { 
-                                createDeliverySchedule({oldAddressId: this.value, newAddressId: result, subId : this.subscriptionId, startDate: this.startDate, endDate: this.returnDate})
+                                createDeliverySchedule({oldAddressId: this.value, newAddressId: valid, subId : this.subscriptionId, startDate: this.startDate, endDate: this.returnDate})
                                 .then(dsResult => {
                                     this.isLoading = false;
                                     this.confirmationPage = true;

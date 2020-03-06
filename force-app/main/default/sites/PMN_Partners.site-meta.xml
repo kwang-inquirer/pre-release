@@ -26,5 +26,5 @@
     
     <siteType>ChatterNetwork</siteType>
     <subdomain>inquirer</subdomain>
-    <urlPathPrefix>partners</urlPathPrefix>
+    <urlPathPrefix>Partners</urlPathPrefix>
 </CustomSite>
