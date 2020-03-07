@@ -175,8 +175,8 @@ public class TestDataFactory {
             schedule.Day_Wednesday__c = evenIndex;
             schedule.Day_Thursday__c = evenIndex;
             schedule.Day_Friday__c = evenIndex;
-            schedule.Day_Saturday__c = !evenIndex;
-            schedule.Day_Sunday__c = !evenIndex;
+            schedule.Day_Saturday__c = evenIndex;
+            schedule.Day_Sunday__c = evenIndex;
             schedule.Start_Date__c = Date.today().addDays(-10);
             schedule.End_Date__c = Date.today().addDays(100);
             schedule.Offer_Product__c = offerProducts[i].Id;
