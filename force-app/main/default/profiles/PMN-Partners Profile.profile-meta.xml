@@ -204,7 +204,6 @@
         <enabled>false</enabled>
         <flow>Vacation_with_Restart_Status_to_Inactive</flow>
     </flowAccesses>
-    <userLicense>Guest User License</userLicense>
     <pageAccesses>
         <apexPage>BandwidthExceeded</apexPage>
         <enabled>true</enabled>
@@ -2786,6 +2785,7 @@
         <tab>standard-WorkOrder</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
+    <userLicense>Guest User License</userLicense>
     <userPermissions>
         <enabled>true</enabled>
         <name>EnableNotifications</name>
