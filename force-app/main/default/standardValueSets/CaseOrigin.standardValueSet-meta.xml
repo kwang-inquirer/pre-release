@@ -8,7 +8,7 @@
     </standardValue>
     <standardValue>
         <fullName>Phone</fullName>
-        <default>false</default>
+        <default>true</default>
         <label>Phone</label>
     </standardValue>
     <standardValue>
@@ -17,13 +17,8 @@
         <label>Web</label>
     </standardValue>
     <standardValue>
-        <fullName>Facebook</fullName>
+        <fullName>Chat</fullName>
         <default>false</default>
-        <label>Facebook</label>
-    </standardValue>
-    <standardValue>
-        <fullName>Twitter</fullName>
-        <default>false</default>
-        <label>Twitter</label>
+        <label>Chat</label>
     </standardValue>
 </StandardValueSet>

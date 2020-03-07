@@ -42,7 +42,7 @@
     </businessHours>
     <holidays>
         <businessHours>Default Business Hours</businessHours>
-        <description>Christmas Day Holiday</description>
+        <description>This is the Christmas Day Holiday</description>
         <isRecurring>true</isRecurring>
         <name>Christmas Day</name>
         <recurrenceDayOfMonth>25</recurrenceDayOfMonth>
@@ -97,10 +97,10 @@
         <description>Thanksgiving Holiday</description>
         <isRecurring>true</isRecurring>
         <name>Thanksgiving</name>
-        <recurrenceDayOfWeek>Tuesday</recurrenceDayOfWeek>
-        <recurrenceInstance>First</recurrenceInstance>
+        <recurrenceDayOfWeek>Thursday</recurrenceDayOfWeek>
+        <recurrenceInstance>Fourth</recurrenceInstance>
         <recurrenceMonthOfYear>November</recurrenceMonthOfYear>
-        <recurrenceStartDate>2020-11-03</recurrenceStartDate>
+        <recurrenceStartDate>2019-11-28</recurrenceStartDate>
         <recurrenceType>RecursYearlyNth</recurrenceType>
     </holidays>
 </BusinessHoursSettings>

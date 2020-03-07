@@ -4,6 +4,16 @@
     <active>false</active>
     <description>Posts or comments with banned words aren&apos;t saved to the community feed</description>
     <entitiesAndFields>
+        <entityName>FeedComment</entityName>
+        <fieldName>RawCommentBody</fieldName>
+        <keywordList>PMN-Partners.Banned</keywordList>
+    </entitiesAndFields>
+    <entitiesAndFields>
+        <entityName>FeedItem</entityName>
+        <fieldName>LinkUrl</fieldName>
+        <keywordList>PMN-Partners.Banned</keywordList>
+    </entitiesAndFields>
+    <entitiesAndFields>
         <entityName>FeedItem</entityName>
         <fieldName>RawBody</fieldName>
         <keywordList>PMN-Partners.Banned</keywordList>
@@ -16,16 +26,6 @@
     <entitiesAndFields>
         <entityName>FeedPollChoice</entityName>
         <fieldName>ChoiceBody</fieldName>
-        <keywordList>PMN-Partners.Banned</keywordList>
-    </entitiesAndFields>
-    <entitiesAndFields>
-        <entityName>FeedComment</entityName>
-        <fieldName>RawCommentBody</fieldName>
-        <keywordList>PMN-Partners.Banned</keywordList>
-    </entitiesAndFields>
-    <entitiesAndFields>
-        <entityName>FeedItem</entityName>
-        <fieldName>LinkUrl</fieldName>
         <keywordList>PMN-Partners.Banned</keywordList>
     </entitiesAndFields>
     <masterLabel>Block posts or comments containing banned keywords</masterLabel>
