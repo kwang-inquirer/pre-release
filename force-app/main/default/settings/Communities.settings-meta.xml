@@ -9,7 +9,7 @@
     <enableInviteChatterGuestEnabled>true</enableInviteChatterGuestEnabled>
     <enableNetPortalUserReportOpts>false</enableNetPortalUserReportOpts>
     <enableNetworksEnabled>true</enableNetworksEnabled>
-    <enableOotbProfExtUserOpsEnable>false</enableOotbProfExtUserOpsEnable>
+    <enableOotbProfExtUserOpsEnable>true</enableOotbProfExtUserOpsEnable>
     <enablePRMAccRelPref>false</enablePRMAccRelPref>
     <enablePowerCustomerCaseStatus>false</enablePowerCustomerCaseStatus>
     <enableRelaxPartnerAccountFieldPref>false</enableRelaxPartnerAccountFieldPref>
