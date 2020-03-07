@@ -1,4 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?><Profile xmlns="http://soap.sforce.com/2006/04/metadata">
+    <classAccesses>
+        <apexClass>Apex_C1ASExtendedConfig</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Apex_UserInfo</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>C1ASExtendedConfigTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>C1ASScrpopRuleManagerLex</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>C1ASScrpopRuleManagerLexTester</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>NotificationController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>SSO_Tester</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>c1asStreamBrokerController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>deleteCustomerSP</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>notificationTester</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
     <custom>true</custom>
     <flowAccesses>
         <enabled>false</enabled>
@@ -208,53 +248,138 @@
         <enabled>false</enabled>
         <flow>Vacation_with_Restart_Status_to_Inactive</flow>
     </flowAccesses>
-    <userLicense>Customer Community Login</userLicense>
-    <classAccesses>
-        <apexClass>Apex_C1ASExtendedConfig</apexClass>
+    <pageAccesses>
+        <apexPage>AnswersHome</apexPage>
         <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>Apex_UserInfo</apexClass>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>BandwidthExceeded</apexPage>
         <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>C1ASExtendedConfigTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>C1ASScrpopRuleManagerLex</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>C1ASScrpopRuleManagerLexTester</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>NotificationController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>SSO_Tester</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>c1asStreamBrokerController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>deleteCustomerSP</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>notificationTester</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    </pageAccesses>
     <pageAccesses>
         <apexPage>C1ASAdvScrPopClientLex</apexPage>
         <enabled>true</enabled>
     </pageAccesses>
+    <pageAccesses>
+        <apexPage>ChangePassword</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>CommunitiesLanding</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>CommunitiesLogin</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>CommunitiesSelfReg</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>CommunitiesSelfRegConfirm</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>CommunitiesTemplate</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>Exception</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>FileNotFound</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>ForgotPassword</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>ForgotPasswordConfirm</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>IdeasHome</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>InMaintenance</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>ManageSubscriptions</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>MyProfilePage</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>NewSubscription</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>OrderCheckout</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>RecentSales</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>RecurlyJs</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>SiteLogin</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>SiteRegister</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>SiteRegisterConfirm</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>SiteTemplate</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>StdExceptionTemplate</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>SubscriptionReceipt</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>Unauthorized</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>UnderConstruction</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>demoAdapterPage</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
     <applicationVisibilities>
         <application>C1ASSteamBroker</application>
+        <default>false</default>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
+        <application>C1AStest</application>
+        <default>false</default>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
+        <application>Partner</application>
         <default>false</default>
         <visible>true</visible>
     </applicationVisibilities>
@@ -3928,18 +4053,18 @@
         <layout>Campaign_Settings__mdt-Campaign Settings Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Case-Custom Case Layout</layout>
+        <layout>Case-Digital Case</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Case-Custom Case Layout</layout>
+        <layout>Case-Digital Case</layout>
         <recordType>Case.Digital_Case</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Case-Custom Case Layout</layout>
+        <layout>Case-Non-digital Case</layout>
         <recordType>Case.New_Subscription</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Case-Custom Case Layout</layout>
+        <layout>Case-Non-digital Case</layout>
         <recordType>Case.Non_digital_Case</recordType>
     </layoutAssignments>
     <layoutAssignments>
@@ -3952,14 +4077,14 @@
         <layout>CollaborationGroup-Group Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Contact-Contact Layout</layout>
+        <layout>Contact-Subscriber Contact Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Contact-Contact Layout</layout>
+        <layout>Contact-Business Contact</layout>
         <recordType>Contact.Business_Contact</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Contact-Contact Layout</layout>
+        <layout>Contact-Subscriber Contact Layout</layout>
         <recordType>Contact.Subscriber_Contact</recordType>
     </layoutAssignments>
     <layoutAssignments>
@@ -4175,7 +4300,7 @@
         <layout>Transaction_Log__c-Transaction Log Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Transaction_Log__c-Transaction Log Layout</layout>
+        <layout>Transaction_Log__c-Complaint Layout</layout>
         <recordType>Transaction_Log__c.Complaint</recordType>
     </layoutAssignments>
     <layoutAssignments>
@@ -4187,11 +4312,11 @@
         <recordType>Transaction_Log__c.Termination</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Transaction_Log__c-Transaction Log Layout</layout>
+        <layout>Transaction_Log__c-Vacation Hold Transaction</layout>
         <recordType>Transaction_Log__c.Vacation</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Transaction_Log__c-Transaction Log Layout</layout>
+        <layout>Transaction_Log__c-Vacation Hold Transaction</layout>
         <recordType>Transaction_Log__c.Vacation_Hold</recordType>
     </layoutAssignments>
     <layoutAssignments>
@@ -4534,15 +4659,15 @@
     </recordTypeVisibilities>
     <tabVisibilities>
         <tab>Checkout</tab>
-        <visibility>Hidden</visibility>
+        <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>Delivery_Address__c</tab>
-        <visibility>Hidden</visibility>
+        <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>Delivery_Schedule__c</tab>
-        <visibility>Hidden</visibility>
+        <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>Email_Subscriber__c</tab>
@@ -4558,26 +4683,34 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>Location__c</tab>
-        <visibility>Hidden</visibility>
+        <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>Newspaper__c</tab>
-        <visibility>Hidden</visibility>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>Offer_Product__c</tab>
+        <visibility>DefaultOff</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>Offer__c</tab>
-        <visibility>Hidden</visibility>
+        <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>Premium__c</tab>
-        <visibility>Hidden</visibility>
+        <visibility>DefaultOff</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>Promotion__c</tab>
-        <visibility>Hidden</visibility>
+        <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>Route__c</tab>
+        <visibility>DefaultOff</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>Shipping_Address__c</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
@@ -4594,7 +4727,7 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>Vendor_Promotions__c</tab>
-        <visibility>Hidden</visibility>
+        <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>et4ae5__Configuration__c</tab>
@@ -4642,11 +4775,11 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-ChannelProgram</tab>
-        <visibility>DefaultOff</visibility>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-ChannelProgramLevel</tab>
-        <visibility>DefaultOff</visibility>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-CollaborationGroup</tab>
@@ -4800,6 +4933,7 @@
         <tab>standard-WorkOrder</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
+    <userLicense>Customer Community Login</userLicense>
     <userPermissions>
         <enabled>true</enabled>
         <name>ActivitiesAccess</name>

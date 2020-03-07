@@ -18,7 +18,7 @@
             <name>Send_Delivery_Instructions</name>
             <type>OutboundMessage</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <formula>AND(ISCHANGED(Delivery_Instructions__c), LastModifiedBy.Username != 'infrmtc_intgrtn-acct@inquirer.com')</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>

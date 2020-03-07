@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+        <fullName>Active</fullName>
+        <columns>NAME</columns>
+        <columns>subscription_Account__c</columns>
+        <columns>Contact__c</columns>
+        <columns>subscription_Offer__c</columns>
+        <columns>subscription_Expiration_Reason__c</columns>
+        <columns>Expiration_Reason_UserFriendlyName__c</columns>
+        <columns>Expire_Balance__c</columns>
+        <columns>subscription_Current_Period_Ends_At__c</columns>
+        <columns>subscription_Expired_At__c</columns>
+        <columns>Expires_On__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>subscription_Status__c</field>
+            <operation>equals</operation>
+            <value>Active,New</value>
+        </filters>
+        <label>Active</label>
+    </ListView>

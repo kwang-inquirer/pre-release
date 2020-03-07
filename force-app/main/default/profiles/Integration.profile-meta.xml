@@ -3,216 +3,6 @@
         <dataCategoryGroup>test</dataCategoryGroup>
         <visibility>ALL</visibility>
     </categoryGroupVisibilities>
-    <custom>true</custom>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>Bounce_Emails</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>Cancel_Subscription</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>Carrier_Memo</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>ChangeCCEmailAlert</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>Change_My_Address</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>Change_address_on_cases</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>Change_address_on_subscriptions</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>Contact_Updates</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>CreateChangeEZPayCC</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>CreateCreditEmailAlert</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>CreatePaymentEmailAlert</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>Create_Redelivery_Email_Alert</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>CreditCreditEmailAlert</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>Credit_Memo</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>Delivery_Issue</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>Delivery_Issue_on_Cases</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>Digital_Case_Subject_Line_update_for_CSR</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>EZ_Pay</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>Ez_Pay_for_Communities</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>Ez_Pay_on_Subscriptions</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>Feedback_Form</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>FlowTest</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>JBSystemFlow_CampaignMember</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>JBSystem_CampaignMember_Process</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>Make_a_Payment</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>Make_a_Payment_on_Subscription</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>Marketing_Product_List_Name_Update</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>Missed_Paper_on_Subscription</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>New_Subscription_Partner_Community</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>New_Subscription_on_Case_CSR</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>Payment</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>PaymentEmailAlert</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>Product_Change</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>RedeliveryEmailAlert</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>Reset_Customer_Community_Password</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>Set_Recurly_Account_Link</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>Split_Delivery_on_Subscriptions</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>Subscription_Restart</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>Transaction_Wizard</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>UpdateExpirationReason</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>Update_Offer_Product_and_Offer</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>Update_Offer_and_Offer_Product_Name</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>Update_Payment_Profile</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>Vacation_Request</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>Vacation_Request_on_Account</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>Vacation_Request_on_Cases</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>Vacation_Request_on_Subscription</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>Vacation_Shore_Move</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>Vacation_Shore_Move_on_Cases</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>Vacation_Shore_Move_on_Subscription</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>Vacation_with_Restart_Status_to_Active</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>Vacation_with_Restart_Status_to_Inactive</flow>
-    </flowAccesses>
-    <userLicense>Salesforce</userLicense>
     <classAccesses>
         <apexClass>AccountDataAccessor</apexClass>
         <enabled>true</enabled>
@@ -841,106 +631,325 @@
         <apexClass>notificationTester</apexClass>
         <enabled>true</enabled>
     </classAccesses>
+    <custom>true</custom>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Bounce_Emails</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Cancel_Subscription</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Carrier_Memo</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>ChangeCCEmailAlert</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Change_My_Address</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Change_address_on_cases</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Change_address_on_subscriptions</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Contact_Updates</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>CreateChangeEZPayCC</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>CreateCreditEmailAlert</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>CreatePaymentEmailAlert</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Create_Redelivery_Email_Alert</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>CreditCreditEmailAlert</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Credit_Memo</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Delivery_Issue</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Delivery_Issue_on_Cases</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Digital_Case_Subject_Line_update_for_CSR</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>EZ_Pay</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Ez_Pay_for_Communities</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Ez_Pay_on_Subscriptions</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Feedback_Form</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>FlowTest</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>JBSystemFlow_CampaignMember</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>JBSystem_CampaignMember_Process</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Make_a_Payment</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Make_a_Payment_on_Subscription</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Marketing_Product_List_Name_Update</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Missed_Paper_on_Subscription</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>New_Subscription_Partner_Community</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>New_Subscription_on_Case_CSR</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Payment</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>PaymentEmailAlert</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Product_Change</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>RedeliveryEmailAlert</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Reset_Customer_Community_Password</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Set_Recurly_Account_Link</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Split_Delivery_on_Subscriptions</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Subscription_Restart</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Transaction_Wizard</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>UpdateExpirationReason</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Update_Offer_Product_and_Offer</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Update_Offer_and_Offer_Product_Name</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Update_Payment_Profile</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Vacation_Request</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Vacation_Request_on_Account</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Vacation_Request_on_Cases</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Vacation_Request_on_Subscription</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Vacation_Shore_Move</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Vacation_Shore_Move_on_Cases</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Vacation_Shore_Move_on_Subscription</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Vacation_with_Restart_Status_to_Active</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Vacation_with_Restart_Status_to_Inactive</flow>
+    </flowAccesses>
     <pageAccesses>
-        <apexPage>AnswersHome</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>AnswersHome</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
-        <apexPage>BandwidthExceeded</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>BandwidthExceeded</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
         <apexPage>C1ASAdvScrPopClientLex</apexPage>
         <enabled>true</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>ChangePassword</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>ChangePassword</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
-        <apexPage>CommunitiesLanding</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>CommunitiesLanding</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
-        <apexPage>CommunitiesLogin</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>CommunitiesLogin</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
-        <apexPage>CommunitiesSelfReg</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>CommunitiesSelfReg</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
-        <apexPage>CommunitiesSelfRegConfirm</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>CommunitiesSelfRegConfirm</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
-        <apexPage>CommunitiesTemplate</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>CommunitiesTemplate</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
-        <apexPage>Exception</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>Exception</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
-        <apexPage>FileNotFound</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>FileNotFound</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
-        <apexPage>ForgotPassword</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>ForgotPassword</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
-        <apexPage>ForgotPasswordConfirm</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>ForgotPasswordConfirm</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
-        <apexPage>IdeasHome</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>IdeasHome</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
-        <apexPage>InMaintenance</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>InMaintenance</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
-        <apexPage>MyProfilePage</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>MyProfilePage</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
-        <apexPage>SiteLogin</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>SiteLogin</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
-        <apexPage>SiteRegister</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>SiteRegister</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
-        <apexPage>SiteRegisterConfirm</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>SiteRegisterConfirm</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
-        <apexPage>SiteTemplate</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>SiteTemplate</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
-        <apexPage>StdExceptionTemplate</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>StdExceptionTemplate</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
-        <apexPage>SubscriptionReceipt</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>SubscriptionReceipt</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
-        <apexPage>Unauthorized</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>Unauthorized</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
-        <apexPage>UnderConstruction</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>UnderConstruction</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <applicationVisibilities>
         <application>C1ASSteamBroker</application>
         <default>false</default>
         <visible>true</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
+        <application>C1AStest</application>
+        <default>false</default>
+        <visible>false</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
+        <application>Partner</application>
+        <default>false</default>
+        <visible>false</visible>
     </applicationVisibilities>
     <applicationVisibilities>
         <application>Sales</application>
@@ -989,7 +998,7 @@
     </applicationVisibilities>
     <applicationVisibilities>
         <application>standard__LightningService</application>
-        <default>true</default>
+        <default>false</default>
         <visible>true</visible>
     </applicationVisibilities>
     <applicationVisibilities>
@@ -1004,7 +1013,7 @@
     </applicationVisibilities>
     <applicationVisibilities>
         <application>standard__Sales</application>
-        <default>false</default>
+        <default>true</default>
         <visible>true</visible>
     </applicationVisibilities>
     <applicationVisibilities>
@@ -7033,7 +7042,7 @@
         <layout>DayOfWeek_Setting__mdt-DayOfWeek Setting Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Delivery_Address__c-Delivery Address Layout</layout>
+        <layout>Delivery_Address__c-Shipping Address Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Delivery_Schedule__c-Delivery Schedule Layout</layout>
@@ -7075,11 +7084,11 @@
         <layout>Knowledge__kav-FAQ - Author</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Knowledge__kav-FAQ - Author</layout>
+        <layout>Knowledge__kav-FAQ - Reader</layout>
         <recordType>Knowledge__kav.FAQ</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Knowledge__kav-Procedure - Author</layout>
+        <layout>Knowledge__kav-Procedure - Reader</layout>
         <recordType>Knowledge__kav.Procedure</recordType>
     </layoutAssignments>
     <layoutAssignments>
@@ -7212,7 +7221,7 @@
         <layout>Stop_Source__mdt-Stop Source Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Subscription_Settings__mdt-Subscription Settings Layout</layout>
+        <layout>Subscription_Settings__mdt-Subscription Setting Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Subscription__c-Subscription Layout</layout>
@@ -7781,14 +7790,14 @@
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
-        <allowCreate>true</allowCreate>
-        <allowDelete>true</allowDelete>
-        <allowEdit>true</allowEdit>
-        <allowRead>true</allowRead>
-        <modifyAllRecords>true</modifyAllRecords>
-        <object>Rate__c</object>
-        <viewAllRecords>true</viewAllRecords>
-    </objectPermissions>
+    <object>Rate__c</object>
+    <allowCreate>false</allowCreate>
+    <allowDelete>false</allowDelete>
+    <allowEdit>false</allowEdit>
+    <allowRead>false</allowRead>
+    <modifyAllRecords>false</modifyAllRecords>
+    <viewAllRecords>false</viewAllRecords>
+</objectPermissions>
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
@@ -8127,6 +8136,10 @@
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
+        <tab>Offer_Product__c</tab>
+        <visibility>DefaultOff</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>Offer__c</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
@@ -8140,6 +8153,10 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>Route__c</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>Shipping_Address__c</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
@@ -8366,6 +8383,7 @@
         <tab>standard-WorkOrder</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
+    <userLicense>Salesforce</userLicense>
     <userPermissions>
         <enabled>true</enabled>
         <name>ActivateContract</name>
@@ -8543,9 +8561,9 @@
         <name>EditActivatedOrders</name>
     </userPermissions>
     <userPermissions>
-        <enabled>true</enabled>
-        <name>EditBillingInfo</name>
-    </userPermissions>
+    <enabled>false</enabled>
+    <name>EditBillingInfo</name>
+</userPermissions>
     <userPermissions>
         <enabled>true</enabled>
         <name>EditBrandTemplates</name>
@@ -8739,9 +8757,9 @@
         <name>ManageHealthCheck</name>
     </userPermissions>
     <userPermissions>
-        <enabled>true</enabled>
-        <name>ManageHubConnections</name>
-    </userPermissions>
+    <enabled>false</enabled>
+    <name>ManageHubConnections</name>
+</userPermissions>
     <userPermissions>
         <enabled>true</enabled>
         <name>ManageInteraction</name>
@@ -8823,9 +8841,9 @@
         <name>ManageRoles</name>
     </userPermissions>
     <userPermissions>
-        <enabled>true</enabled>
-        <name>ManageSandboxes</name>
-    </userPermissions>
+    <enabled>false</enabled>
+    <name>ManageSandboxes</name>
+</userPermissions>
     <userPermissions>
         <enabled>true</enabled>
         <name>ManageSearchPromotionRules</name>
@@ -8895,9 +8913,9 @@
         <name>Packaging2</name>
     </userPermissions>
     <userPermissions>
-        <enabled>true</enabled>
-        <name>Packaging2PromoteVersion</name>
-    </userPermissions>
+    <enabled>false</enabled>
+    <name>Packaging2PromoteVersion</name>
+</userPermissions>
     <userPermissions>
         <enabled>true</enabled>
         <name>PrivacyDataAccess</name>
@@ -8995,9 +9013,9 @@
         <name>SubscribeToLightningReports</name>
     </userPermissions>
     <userPermissions>
-        <enabled>true</enabled>
-        <name>TraceXdsQueries</name>
-    </userPermissions>
+    <enabled>false</enabled>
+    <name>TraceXdsQueries</name>
+</userPermissions>
     <userPermissions>
         <enabled>true</enabled>
         <name>TransactionalEmailSend</name>
@@ -9087,7 +9105,7 @@
         <name>ViewSetup</name>
     </userPermissions>
     <userPermissions>
-        <enabled>true</enabled>
-        <name>ViewUserPII</name>
-    </userPermissions>
+    <enabled>false</enabled>
+    <name>ViewUserPII</name>
+</userPermissions>
 </Profile>

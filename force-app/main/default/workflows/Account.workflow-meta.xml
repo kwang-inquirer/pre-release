@@ -43,14 +43,4 @@
         </criteriaItems>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
     </rules>
-    <rules>
-        <fullName>Send Household</fullName>
-        <actions>
-            <name>Send_Household</name>
-            <type>OutboundMessage</type>
-        </actions>
-        <active>false</active>
-        <formula>CreatedBy.Username != 'infrmtc_intgrtn-acct@inquirer.com'</formula>
-        <triggerType>onCreateOnly</triggerType>
-    </rules>
 </Workflow>
