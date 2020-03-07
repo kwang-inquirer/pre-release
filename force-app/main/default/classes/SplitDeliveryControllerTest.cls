@@ -44,7 +44,7 @@ private class SplitDeliveryControllerTest {
         insert ds;
         
         List<Delivery_Schedule__c> dsList = SplitDeliveryController.getDeliverySchedules(subscription.Id);
-        Boolean result = DeliveryAddressDataAccessor.hasValidDeliveryAddress(addressId);
+        Id resultAddress = DeliveryAddressDataAccessor.hasValidDeliveryAddress(addressId);
         SplitDeliveryController.rebuildDeliverySchedules(subscription.Id, Date.today().addDays(10), Date.today().addDays(25), addressId, addressId);
     }
 
