@@ -81,10 +81,17 @@ public with sharing class DeliveryAddressDataAccessor {
             }
             else{
                 Organization org = [SELECT Id FROM Organization LIMIT 1];
-                Organization_Settings__mdt orgSetting = [
+                Organization_Settings__mdt orgSetting = null;
+                Organization_Settings__mdt[] orgSettings = [
                     SELECT Validate_DSI_ID_on_New_Delivery_Address__c 
                     FROM Organization_Settings__mdt 
-                    WHERE Organization_Id__c = :org.Id LIMIT 1];
+                    WHERE Organization_Id__c = :org.Id LIMIT 1]; 
+                if (orgSettings.size() > 0) {
+                    orgSetting = orgSettings[0];
+                }
+                else {
+                    throw new GenericException('No Organization Setting for ' + org.Id + ' is defined, please add proper custom metadata');
+                }
                 
                 if(orgSetting.Validate_DSI_ID_on_New_Delivery_Address__c && 
                     deliveryAddress.DSI_Id__c == null) throw new GenericException('No DSI Id found for this address');
