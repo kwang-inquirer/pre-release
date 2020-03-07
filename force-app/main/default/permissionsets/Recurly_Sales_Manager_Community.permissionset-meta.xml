@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?><PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <description>This permission set should be assigned to Recurly users who are managers and don't need the ability to modify records. For community users.</description>
-    <hasActivationRequired>false</hasActivationRequired>
-    <label>Recurly Sales Manager Community</label>
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.AccountNumber</field>
@@ -6587,4 +6585,6 @@
         <field>ctiMsg__c.user__c</field>
         <readable>false</readable>
     </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Recurly Sales Manager Community</label>
 </PermissionSet>
