@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?><PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <description>This perm set give the ability to create and edit offers and offer products</description>
-    <hasActivationRequired>false</hasActivationRequired>
-    <label>Create/Edit Offer</label>
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.AccountNumber</field>
@@ -6587,6 +6585,8 @@
         <field>ctiMsg__c.user__c</field>
         <readable>false</readable>
     </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Create/Edit Offer</label>
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
