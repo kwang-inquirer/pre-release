@@ -212,7 +212,7 @@
             <targetReference>Get_Running_User</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>varAccountID</name>
         <dataType>String</dataType>

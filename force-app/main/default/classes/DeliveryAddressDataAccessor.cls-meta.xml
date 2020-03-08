@@ -3,7 +3,7 @@
     <apiVersion>46.0</apiVersion>
     <packageVersions>
         <majorNumber>2</majorNumber>
-        <minorNumber>85</minorNumber>
+        <minorNumber>82</minorNumber>
         <namespace>MDPERSONATOR</namespace>
     </packageVersions>
     <status>Active</status>

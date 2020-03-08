@@ -343,7 +343,7 @@
             <targetReference>GetSubscription</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>SubscriptionEndDate</name>
         <dataType>Date</dataType>

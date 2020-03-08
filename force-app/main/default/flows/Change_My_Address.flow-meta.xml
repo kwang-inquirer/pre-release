@@ -160,7 +160,7 @@
             <targetReference>GetRunningUser</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>ContactEmail</name>
         <dataType>String</dataType>

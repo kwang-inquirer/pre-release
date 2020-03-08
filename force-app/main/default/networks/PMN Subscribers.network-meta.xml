@@ -32,12 +32,12 @@
     <gatherCustomerSentimentData>false</gatherCustomerSentimentData>
     <networkMemberGroups>
         <profile>Admin</profile>
-        <profile>Customer Community Login User</profile>
-        <profile>Digital CSR</profile>
         <profile>Customer Service Management</profile>
         <profile>Customer Service Supervisor</profile>
         <profile>Subscriber Community</profile>
+        <profile>Customer Community Login User</profile>
         <profile>CSR</profile>
+        <profile>Digital CSR</profile>
     </networkMemberGroups>
     <networkPageOverrides>
         <changePasswordPageOverrideSetting>Standard</changePasswordPageOverrideSetting>

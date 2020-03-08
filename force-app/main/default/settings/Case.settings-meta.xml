@@ -31,7 +31,7 @@
             <casePriority>Medium</casePriority>
             <createTask>false</createTask>
             <emailAddress>customerservice@philly.com</emailAddress>
-            <emailServicesAddress>customerservice@p-1nbwh22sgy4gy2ysae9v892s0vpb43cl1v8u44j2wb1hc998fu.4d-x9quaq.cs71.case.sandbox.salesforce.com</emailServicesAddress>
+            <emailServicesAddress>customerservice@c-1n6kagqbil0nhhc004qa6c3msfx9epm9z3dzfwl0nb2r902n2x.1u-xvlmuaa.na85.case.salesforce.com</emailServicesAddress>
             <isVerified>false</isVerified>
             <routingName>Customer Service</routingName>
             <saveEmailHeaders>false</saveEmailHeaders>
@@ -44,7 +44,7 @@
             <casePriority>Medium</casePriority>
             <createTask>false</createTask>
             <emailAddress>digitalsupport@philly.com</emailAddress>
-            <emailServicesAddress>digitalsupport@2zob7x8kycu4fhsfyf16wp18y4ey4h6oct7pf6oreabsa7d5zv.4d-x9quaq.cs71.case.sandbox.salesforce.com</emailServicesAddress>
+            <emailServicesAddress>digitalsupport@35tvpp1kqatajld1agp0l2il08nbyzezfbenls7ros3oz4cl1e.1u-xvlmuaa.na85.case.salesforce.com</emailServicesAddress>
             <isVerified>false</isVerified>
             <routingName>Digital Customer Service</routingName>
             <saveEmailHeaders>false</saveEmailHeaders>
@@ -57,7 +57,7 @@
             <casePriority>High</casePriority>
             <createTask>false</createTask>
             <emailAddress>executivecomplaints@philly.com</emailAddress>
-            <emailServicesAddress>executivecomplaints@18nriwno0x8l6yjffdhr8krsqjpxuo68e247eg0i6dsiw2u9bl.4d-x9quaq.cs71.case.sandbox.salesforce.com</emailServicesAddress>
+            <emailServicesAddress>executivecomplaints@oxurqf2w7r0ptureyl619kr77ynb5umg3jz6z6oquelptrudk.1u-xvlmuaa.na85.case.salesforce.com</emailServicesAddress>
             <isVerified>false</isVerified>
             <routingName>Executive Complaints</routingName>
             <saveEmailHeaders>false</saveEmailHeaders>

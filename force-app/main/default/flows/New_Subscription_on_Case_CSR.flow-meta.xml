@@ -186,7 +186,7 @@
             <targetReference>Select_Promo_Screen</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>varAccountID</name>
         <dataType>String</dataType>

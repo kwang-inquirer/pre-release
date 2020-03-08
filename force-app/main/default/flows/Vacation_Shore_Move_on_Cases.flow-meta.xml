@@ -889,7 +889,7 @@
         <showHeader>false</showHeader>
     </screens>
     <startElementReference>GetCase</startElementReference>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>caserecordId</name>
         <dataType>SObject</dataType>

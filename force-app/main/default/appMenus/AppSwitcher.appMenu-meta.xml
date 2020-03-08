@@ -73,6 +73,10 @@
         <type>CustomApplication</type>
     </appMenuItems>
     <appMenuItems>
+        <name>standard__LightningInstrumentation</name>
+        <type>CustomApplication</type>
+    </appMenuItems>
+    <appMenuItems>
         <name>standard__AllTabSet</name>
         <type>CustomApplication</type>
     </appMenuItems>
@@ -117,8 +121,8 @@
         <type>ConnectedApp</type>
     </appMenuItems>
     <appMenuItems>
-        <name>C1AStest</name>
-        <type>CustomApplication</type>
+        <name>Salesforce1_for_Windows</name>
+        <type>ConnectedApp</type>
     </appMenuItems>
     <appMenuItems>
         <name>standard__Insights</name>
@@ -158,6 +162,10 @@
     </appMenuItems>
     <appMenuItems>
         <name>Partner</name>
+        <type>CustomApplication</type>
+    </appMenuItems>
+    <appMenuItems>
+        <name>C1AStest</name>
         <type>CustomApplication</type>
     </appMenuItems>
 </AppMenu>
