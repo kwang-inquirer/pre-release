@@ -77,7 +77,7 @@ private class ChangeAddressControllerTest {
         changeAddressController.validateDeliverySchedules(subscription.Id);
         changeAddressController.updateBillingAddress(subscription.Id, address);
         DeliveryAddressDataAccessor.createNewDeliveryAddress(subscription.Id, address);
-        addressId = DeliveryAddressDataAccessor.hasValidDeliveryAddress(addressId);
+        DeliveryAddressDataAccessor.hasValidDeliveryAddress(addressId);
         changeAddressController.updateDeliveryAddress(subscription.Id, addressId, Date.today().addDays(1));
     }
 

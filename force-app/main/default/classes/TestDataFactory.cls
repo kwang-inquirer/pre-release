@@ -90,13 +90,6 @@ public class TestDataFactory {
                     op.Offer__c = off.Id;
                     op.Is_Activation_Fee__c = true; 
                     op.Activation_Fee__c = 0.0;
-					op.Sunday__c = true;
-					op.Monday__c = true;
-					op.Tuesday__c = true;
-					op.Wednesday__c = true;
-					op.Thursday__c = true;
-					op.Friday__c = true;
-					op.Saturday__c = true;
                 }
                 if(k == 1){
                     op.Product__c = lstProduct[productIndex].Id;
@@ -105,13 +98,6 @@ public class TestDataFactory {
                     op.Offer__c = off.Id;
                     op.Is_Activation_Fee__c = true; 
                     op.Activation_Fee__c = 0.0;
-					op.Sunday__c = true;
-					op.Monday__c = true;
-					op.Tuesday__c = true;
-					op.Wednesday__c = true;
-					op.Thursday__c = true;
-					op.Friday__c = true;
-					op.Saturday__c = true;
                 }
                 lstOffProd.add(op);
             }

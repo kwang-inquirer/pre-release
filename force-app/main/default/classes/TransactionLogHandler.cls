@@ -114,7 +114,7 @@ public class TransactionLogHandler {
 
     public static void ApplyCreditSingleDay(List<Journal__c> journals, Set<Id> subscriptionIds){
         Map<Id, Subscription__c> theseSubs = new Map<Id, Subscription__c>([SELECT Id, Outstanding_Credit__c, Number_of_Active_Delivery_Schedules__c, Money_at_Expire__c, subscription_Account__c,Contact__c,
-                               subscription_Current_Period_Ends_At__c, subscription_Status__c, Subscription__c.subscription_Offer__c,
+                               subscription_Current_Period_Ends_At__c, subscription_Status__c,
                                (SELECT id, Offer_Product__r.Per_Copy__c, Offer_Product__r.Per_Copy_Sunday__c, Day_Friday__c, Day_Monday__c, Day_Saturday__c, Day_Sunday__c, Day_Thursday__c, Day_Tuesday__c, Day_Wednesday__c, Status__c 
                                 FROM Delivery_Schedules__r 
                                 WHERE Status__c = 'Active') FROM Subscription__c WHERE Id IN: subscriptionIds]);
@@ -158,7 +158,7 @@ public class TransactionLogHandler {
 					AND First_Date__c != null 
 					AND Last_Date__c != null 
 					AND Cancelled__c = false
-                    AND Category__c LIKE '%Vacation%'];
+					AND Category__c LIKE '%Vacation%'];
 		// assign existing to map by subscription
         Map<Id, List<Transaction_Log__c>> subIdToTrans = new Map<Id, List<Transaction_Log__c>>();
         List<Transaction_Log__c> toUpdate = new List<Transaction_Log__c>();

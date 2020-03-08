@@ -242,7 +242,7 @@
             <targetReference>GetContacts</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <subflows>
         <name>Vacation_Request</name>
         <label>Vacation Request</label>
