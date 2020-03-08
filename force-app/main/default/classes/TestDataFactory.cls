@@ -175,6 +175,7 @@ public class TestDataFactory {
             schedule.Day_Wednesday__c = evenIndex;
             schedule.Day_Thursday__c = evenIndex;
             schedule.Day_Friday__c = evenIndex;
+            // This was causing issues on Saturday so I switched it off for now.
             schedule.Day_Saturday__c = evenIndex;
             schedule.Day_Sunday__c = evenIndex;
             schedule.Start_Date__c = Date.today().addDays(-10);
