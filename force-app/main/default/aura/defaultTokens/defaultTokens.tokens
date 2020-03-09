@@ -1,0 +1,3 @@
+<aura:tokens extends="forceCommunity:base">
+    <aura:token name="logoHeight" value="4em"/>
+</aura:tokens>

@@ -1,0 +1,29 @@
+.THIS .logoContainer {
+    background-image: t('url(' + brandLogoImage  + ')');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 99;
+    cursor: pointer;
+    position: relative;
+    max-width: 100%;
+    height: t(logoHeight);
+}
+
+.THIS .theme-header {
+    background: white;
+}
+
+.THIS .theme-footer {
+    background: black;
+}
+
+.THIS .login .linkLabel {
+	color: t(colorTextDefault) !important;
+}
+
+.THIS .profileName  {
+    text-align: center;
+	color: t(colorTextDefault) !important;
+    font-family: t(fontFamily);
+}

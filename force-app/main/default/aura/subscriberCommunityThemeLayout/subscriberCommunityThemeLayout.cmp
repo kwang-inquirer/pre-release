@@ -1,0 +1,27 @@
+<aura:component implements="forceCommunity:themeLayout" access="global" >
+    
+    <aura:attribute name="search" type="Aura.Component[]" required="false"/>
+    <aura:attribute name="profileMenu" type="Aura.Component[]" required="false"/>
+    <aura:attribute name="navBar" type="Aura.Component[]" required="false"/>
+    <aura:attribute name="newHeader" type="Aura.Component[]" required="false"/>
+    
+    <div class="slds-p-horizontal_small">
+        <div class="logoContainer"></div>
+        <div class="theme-header slds-grid slds-wrap slds-grid_align-center">
+            <div class="slds-col slds-size_12-of-12 slds-p-around_small slds-grid">
+                <div class="navigation slds-col slds-size_10-of-12">
+                    {!v.navBar}
+                </div>
+                <div class="profileMenuRegion slds-col slds-size_2-of-12">
+                    {!v.profileMenu}
+                </div>
+            </div>
+        </div>
+        <div class="theme-content">
+            {!v.body}
+        </div>
+        <footer class="theme-footer slds-grid slds-gutters slds-grid_align-center">
+            <c:subscriberCommunityThemeFooter/>
+        </footer>
+    </div>
+</aura:component>

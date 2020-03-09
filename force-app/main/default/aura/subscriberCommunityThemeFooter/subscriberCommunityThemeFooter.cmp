@@ -1,0 +1,43 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global">
+ <div>
+    <div class="slds-grid slds-wrap slds-gutters slds-grid_align-space">
+        <div class="slds-col">
+            <ul>
+                <li class="footer-bullet-header">Contact Us</li>
+                <li><a href="https://redev-pmnpartners.cs53.force.com/subscribers/s/contactsupport">Inquirer Newroom</a></li>
+                <li><a href="mailto:customerservice@inquirer.COM">Customer Service</a></li>
+                <li><a href="mailto:ABuckman@philly.com">External Relations</a></li>
+                <li><a href="mailto:tcuffie@inquirer.com">Advertising Dept</a></li>
+            </ul>
+        </div>
+        <div class="slds-col">
+            <ul>
+                <li class="footer-bullet-header">Products</li>
+                <li><a href="https://digital.olivesoftware.com/Olive/ODN/PhiladelphiaInquirer/">Inquirer Digital Replica: Pennsylvania</a></li>
+                <li><a href="https://digital.olivesoftware.com/Olive/ODN/PhiladelphiaInquirerNJ/">Inquirer Digital Replica: New Jersey</a></li>
+                <li><a href="https://digital.olivesoftware.com/Olive/ODN/PhiladelphiaDailyNews/">Daily News Digital Replica</a></li>
+                <li><a href="https://www.inquirer.com/">Inquirer.com</a></li>
+            </ul>
+        </div>
+        <div class="slds-col">
+            <ul>
+                <li class="footer-bullet-header">Terms and Conditions</li>
+                <li><a href="https://www.inquirer.com/about/terms_and_conditions/">The Philadelphia Terms of Use and Privacy Policy</a></li>
+                <li><a href="https://digital.olivesoftware.com/Olive/ODN/PhiladelphiaInquirerNJ/">Inquirer Digital Replica: New Jersey</a></li>
+            </ul>
+        </div>
+        <div class="slds-col">
+            <ul>
+                <li class="footer-bullet-header">About Us</li>
+                <li><a href="https://www.inquirer.com/about/newsroom-staff-beats-list.html">The Philadelphia Inquirer</a></li>
+                <li><a href="http://nie.philly.com/index.html">Newspapers in Education</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="slds-clearfix">
+        <div class="slds-float_right">
+            <p class="brand-name">&copy;The Philadelphia Inquirer, LLC</p>
+        </div>
+    </div>
+</div>
+</aura:component>
