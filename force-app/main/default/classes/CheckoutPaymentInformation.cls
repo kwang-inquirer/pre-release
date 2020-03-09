@@ -1,4 +1,4 @@
-public with sharing class CheckoutPaymentInformation {
+global with sharing class CheckoutPaymentInformation {
     public String accountId {get;set;}
     public String paymentType {get;set;}
     public String tipType {get;set;}
