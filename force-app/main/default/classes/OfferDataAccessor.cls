@@ -18,7 +18,7 @@ public with sharing class OfferDataAccessor {
 
     public static List<Offer__c> getSubscriptionDigitalOffers(Set<Id> subscriptionIds) {
         return [
-            SELECT Id, (SELECT Name, Product__c, Per_Copy__c, Per_Copy_Sunday__c, subscription_Offer__c FROM Offer_Products__r WHERE Is_Digital__c = TRUE) 
+            SELECT Id, (SELECT Name, Product__c, Per_Copy__c, Per_Copy_Sunday__c FROM Offer_Products__r WHERE Is_Digital__c = TRUE) 
             FROM Offer__c 
             WHERE Id in (SELECT subscription_Offer__c FROM Subscription__c WHERE Id IN :subscriptionIds)
         ];
