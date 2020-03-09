@@ -1,0 +1,82 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global">
+ <div>
+    <div class="slds-grid slds-wrap slds-gutters slds-grid_align-space">
+        <div class="slds-col">
+            <ul>
+                <li class="footer-bullet-header">Contact Us</li>
+                <li><a href="https://redev-pmnpartners.cs53.force.com/subscribers/s/contactsupport">Inquirer Newroom</a></li>
+                <li><a href="mailto:customerservice@inquirer.COM">Customer Service</a></li>
+                <li><a href="mailto:ABuckman@philly.com">External Relations</a></li>
+                <li><a href="mailto:tcuffie@inquirer.com">Advertising Dept</a></li>
+            </ul>
+        </div>
+        <div class="slds-col">
+            <ul>
+                <li class="footer-bullet-header">Products</li>
+                <li><a href="https://digital.olivesoftware.com/Olive/ODN/PhiladelphiaInquirer/">Inquirer Digital Replica: Pennsylvania</a></li>
+                <li><a href="https://digital.olivesoftware.com/Olive/ODN/PhiladelphiaInquirerNJ/">Inquirer Digital Replica: New Jersey</a></li>
+                <li><a href="https://digital.olivesoftware.com/Olive/ODN/PhiladelphiaDailyNews/">Daily News Digital Replica</a></li>
+                <li><a href="https://www.inquirer.com/">Inquirer.com</a></li>
+            </ul>
+        </div>
+        <div class="slds-col">
+            <ul>
+                <li class="footer-bullet-header">Terms and Conditions</li>
+                <li><a href="https://www.inquirer.com/about/terms_and_conditions/">The Philadelphia Terms of Use and Privacy Policy</a></li>
+                <li><a href="https://digital.olivesoftware.com/Olive/ODN/PhiladelphiaInquirerNJ/">Inquirer Digital Replica: New Jersey</a></li>
+            </ul>
+        </div>
+        <div class="slds-col">
+            <ul>
+                <li class="footer-bullet-header">About Us</li>
+                <li><a href="https://www.inquirer.com/about/newsroom-staff-beats-list.html">The Philadelphia Inquirer</a></li>
+                <li><a href="http://nie.philly.com/index.html">Newspapers in Education</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="slds-clearfix">
+        <div class="slds-float_right">
+            <p class="brand-name">&copy;The Philadelphia Inquirer, LLC</p>
+        </div>
+    </div>
+</div>
+
+<div class="container" style="display: none;">
+    <div class="row" style="
+        width:100%;height:200px;background-color:Black;">
+         <table align="center" style="width:50%;color: white;white-space: nowrap;padding-top:20px;">
+	<tr>
+		<th>Contact Us</th>
+		<th>Products</th>
+        <th>Terms and Conditions</th>
+        <th>About Us</th>
+	</tr>
+	<tr>
+		<td><a href="https://redev-pmnpartners.cs53.force.com/subscribers/s/contactsupport" style="color: white">Inquirer Newroom</a></td>
+		<td><a href="https://digital.olivesoftware.com/Olive/ODN/PhiladelphiaInquirer/" style="color: white">Inquirer Digital Replica: Pennsylvania</a></td>
+        <td><a href="https://www.inquirer.com/about/terms_and_conditions/" style="color: white">The Philadelphia Terms of Use and Privacy Policy</a></td>
+        <td><a href="https://www.inquirer.com/about/newsroom-staff-beats-list.html" style="color: white">The Philadelphia Inquirer</a></td>
+	</tr>
+	<tr>
+		<td><a HREF="mailto:customerservice@inquirer.COM" style="color:white">Customer Service</a></td>
+		<td><a href="https://digital.olivesoftware.com/Olive/ODN/PhiladelphiaInquirerNJ/" style="color: white" >Inquirer Digital Replica: New Jersey</a></td>
+        <td><a href="https://www.inquirer.com/about/terms_and_conditions/" style="color: white">Subscriber Terms</a></td>
+        <td><a href="http://nie.philly.com/index.html" style="color: white">Newspapers in Education</a></td>
+	</tr>
+    <tr>
+		<td><a HREF="mailto:ABuckman@philly.com" style="color:white">External Relations</a></td>
+		<td><a href="https://digital.olivesoftware.com/Olive/ODN/PhiladelphiaDailyNews/" style="color: white">Daily News Digital Replica</a></td>
+        <td></td>
+        <td></td>
+	</tr>
+    <tr>
+		<td><a HREF="mailto:tcuffie@inquirer.com" style="color:white">Advertising Dept</a></td>
+		<td><a href="https://www.inquirer.com/" style="color: white">Inquirer.com</a></td>
+        <td></td>
+       
+        
+	</tr>
+        </table>
+    </div>
+</div>
+</aura:component>
