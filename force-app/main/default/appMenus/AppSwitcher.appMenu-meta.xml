@@ -117,8 +117,8 @@
         <type>ConnectedApp</type>
     </appMenuItems>
     <appMenuItems>
-        <name>Salesforce1_for_Windows</name>
-        <type>ConnectedApp</type>
+        <name>C1AStest</name>
+        <type>CustomApplication</type>
     </appMenuItems>
     <appMenuItems>
         <name>standard__Insights</name>
@@ -155,10 +155,6 @@
     <appMenuItems>
         <name>Workbench</name>
         <type>ConnectedApp</type>
-    </appMenuItems>
-    <appMenuItems>
-        <name>C1AStest</name>
-        <type>CustomApplication</type>
     </appMenuItems>
     <appMenuItems>
         <name>Partner</name>
