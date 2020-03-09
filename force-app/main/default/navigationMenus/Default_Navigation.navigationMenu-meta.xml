@@ -16,17 +16,17 @@
                 <type>InternalLink</type>
             </navigationMenuItem>
             <navigationMenuItem>
-                <label>Change your Address</label>
+                <label>Change My Password</label>
                 <position>1</position>
-                <publiclyAvailable>true</publiclyAvailable>
-                <target>/change-your-address</target>
+                <publiclyAvailable>false</publiclyAvailable>
+                <target>/change-password</target>
                 <type>InternalLink</type>
             </navigationMenuItem>
             <navigationMenuItem>
-                <label>Change Password</label>
+                <label>Change your Address</label>
                 <position>2</position>
                 <publiclyAvailable>true</publiclyAvailable>
-                <target>/changepassword</target>
+                <target>/change-your-address</target>
                 <type>InternalLink</type>
             </navigationMenuItem>
             <navigationMenuItem>

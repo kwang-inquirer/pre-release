@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Network xmlns="http://soap.sforce.com/2006/04/metadata">
     <allowInternalUserLogin>false</allowInternalUserLogin>
     <allowMembersToFlag>false</allowMembersToFlag>
@@ -32,12 +32,12 @@
     <gatherCustomerSentimentData>false</gatherCustomerSentimentData>
     <networkMemberGroups>
         <profile>Admin</profile>
-        <profile>Customer Community Login User</profile>
-        <profile>Digital CSR</profile>
         <profile>Customer Service Management</profile>
         <profile>Customer Service Supervisor</profile>
         <profile>Subscriber Community</profile>
+        <profile>Customer Community Login User</profile>
         <profile>CSR</profile>
+        <profile>Digital CSR</profile>
     </networkMemberGroups>
     <networkPageOverrides>
         <changePasswordPageOverrideSetting>Standard</changePasswordPageOverrideSetting>
@@ -46,7 +46,7 @@
         <loginPageOverrideSetting>Standard</loginPageOverrideSetting>
         <selfRegProfilePageOverrideSetting>Designer</selfRegProfilePageOverrideSetting>
     </networkPageOverrides>
-    <picassoSite>PMN_Subscribers1</picassoSite>
+    <picassoSite>PMN_Subscribers_C</picassoSite>
     <selfRegistration>false</selfRegistration>
     <sendWelcomeEmail>false</sendWelcomeEmail>
     <site>PMN_Subscribers</site>

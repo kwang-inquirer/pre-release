@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?><PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <description>Grants CRUD permission for Knowledge, as well as Knowledge user permissions.</description>
-    <hasActivationRequired>false</hasActivationRequired>
-    <label>Knowledge LSF Permission Set</label>
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.AccountNumber</field>
@@ -660,11 +658,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Case.IsEscalated</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Case.Language</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -6592,6 +6585,8 @@
         <field>ctiMsg__c.user__c</field>
         <readable>false</readable>
     </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Knowledge LSF Permission Set</label>
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>

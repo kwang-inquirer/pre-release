@@ -684,11 +684,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Case.Language</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Case.Origin</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -748,10 +743,30 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+    <editable>false</editable>
+    <readable>false</readable>
+    <field>Contact.DSI_Person_Id__c</field>
+</fieldPermissions>
+    <fieldPermissions>
+    <editable>false</editable>
+    <readable>false</readable>
+    <field>Contact.Date_Bill_Sent__c</field>
+</fieldPermissions>
+    <fieldPermissions>
+    <editable>false</editable>
+    <readable>false</readable>
+    <field>Contact.Deceased__c</field>
+</fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Contact.Department</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
+    <editable>false</editable>
+    <readable>false</readable>
+    <field>Contact.Drivers_License_Number__c</field>
+</fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>Contact.Email</field>
@@ -778,6 +793,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+    <editable>false</editable>
+    <readable>false</readable>
+    <field>Contact.Original_Start_Date__c</field>
+</fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Contact.Phone</field>
         <readable>true</readable>
@@ -787,6 +807,11 @@
         <field>Contact.ReportsToId</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
+    <editable>false</editable>
+    <readable>false</readable>
+    <field>Contact.Secondary_Email__c</field>
+</fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>Contact.Title</field>
@@ -971,11 +996,6 @@
     <editable>false</editable>
     <readable>false</readable>
     <field>Event.ScreenPopResult__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Event.Type</field>
 </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -1452,6 +1472,16 @@
         <field>OrderItem.ServiceDate</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
+    <editable>false</editable>
+    <readable>false</readable>
+    <field>Product2.Code__c</field>
+</fieldPermissions>
+    <fieldPermissions>
+    <editable>false</editable>
+    <readable>false</readable>
+    <field>Product2.DSI_Id__c</field>
+</fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>Product2.Description</field>
@@ -2271,11 +2301,6 @@
     <editable>false</editable>
     <readable>false</readable>
     <field>Task.ScreenPopResult__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Task.Type</field>
 </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -3773,6 +3798,10 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>Promotion__c</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>Rate__c</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
