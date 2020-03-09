@@ -1,0 +1,77 @@
+<template>
+  <lightning-card title="Contact Us">
+    <div class="slds-var-m-around_medium">
+      <lightning-input-name
+        label="Your Contact Infomation"
+        required
+        first-name={userData.firstName}
+        middle-name=""
+        last-name={userData.lastName}
+        informal-name=""
+        suffix=""
+        salutation=""
+        fields-to-display={contactDisplayFields}
+      ></lightning-input-name>
+
+      <lightning-input
+        type="tel"
+        name="phoneNumber"
+        label="Phone Number"
+        value={userData.phone}
+        onchange={handlePhoneNumberChange}
+      ></lightning-input>
+
+      <lightning-input
+        type="email"
+        name="email"
+        label="Email Address"
+        value={userData.email}
+        onchange={handleOnchangeEmailAddress}
+      ></lightning-input>
+
+      <template if:true={publicationPicklistValues.data}>
+        <lightning-combobox
+          name="publication"
+          label="Publication"
+          value={publicationValue}
+          placeholder="Select Publication"
+          options={publicationOptions}
+          onchange={handlePublicationChange}
+        ></lightning-combobox>
+      </template>
+
+      <template if:true={publicationPicklistValues.error}>
+        <p>{publicationPicklistValues.error.body.message}</p>
+      </template>
+
+      <template if:true={categoryPicklistValues.data}>
+        <lightning-combobox
+          name="category"
+          label="Category"
+          value={categoryValue}
+          placeholder="Select Category"
+          options={categoryOptions}
+          onchange={handleCategoryChange}
+        ></lightning-combobox>
+      </template>
+      <template if:true={categoryPicklistValues.error}>
+        <p>{categoryPicklistValues.error.body.message}</p>
+      </template>
+      <lightning-textarea
+        name="description"
+        label="Description"
+        placeholder="Description"
+        maxlength="32000"
+        message-when-too-long="Description is too long"
+        message-when-value-missing="Description would help your case"
+        onchange={handleDescriptionChange}
+      ></lightning-textarea>
+      
+      <lightning-button
+        label="Create Case"
+        variant="brand"
+        onclick={submitForm}
+      ></lightning-button>
+    </div>
+  </lightning-card>
+</template>
