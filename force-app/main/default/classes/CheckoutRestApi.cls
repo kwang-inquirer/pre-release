@@ -1,4 +1,4 @@
-@RestResource(urlMapping='/Checkout/*')
+@RestResource(urlMapping='/checkout/*')
 global with sharing class CheckoutRestApi {
 
   @HttpPost
