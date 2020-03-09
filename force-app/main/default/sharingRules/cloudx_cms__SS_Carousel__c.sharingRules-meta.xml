@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingGuestRules>
+        <fullName>Carousel_Access_Rule_for_Subscribers_Community_Guests</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Carousel Access Rule for Subscribers Community Guests</label>
+        <sharedTo>
+            <guestUser>PMN_Subscribers</guestUser>
+        </sharedTo>
+        <criteriaItems>
+            <field>cloudx_cms__Name__c</field>
+            <operation>startsWith</operation>
+            <value>SubscriberCommunity</value>
+        </criteriaItems>
+    </sharingGuestRules>
+</SharingRules>
