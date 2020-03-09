@@ -1,7 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?><PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
-    <hasActivationRequired>false</hasActivationRequired>
-    <label>Customer Community User</label>
-    <license>Customer Community Login</license>
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.AccountNumber</field>
@@ -660,11 +657,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Case.IsEscalated</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Case.Language</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -6592,4 +6584,7 @@
         <field>ctiMsg__c.user__c</field>
         <readable>false</readable>
     </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Customer Community User</label>
+    <license>Customer Community Login</license>
 </PermissionSet>

@@ -132,6 +132,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+    <enabled>false</enabled>
+    <apexClass>ContactController</apexClass>
+</classAccesses>
+    <classAccesses>
         <apexClass>ContactDataAccessor</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -143,6 +147,10 @@
         <apexClass>CreateAccountApi</apexClass>
         <enabled>true</enabled>
     </classAccesses>
+    <classAccesses>
+    <enabled>false</enabled>
+    <apexClass>CreateSubscriptionApi</apexClass>
+</classAccesses>
     <classAccesses>
         <apexClass>CreditCalculatorController</apexClass>
         <enabled>true</enabled>
@@ -164,9 +172,21 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+    <enabled>false</enabled>
+    <apexClass>DeleteComplaints</apexClass>
+</classAccesses>
+    <classAccesses>
+    <enabled>false</enabled>
+    <apexClass>DeliveryAddressController</apexClass>
+</classAccesses>
+    <classAccesses>
         <apexClass>DeliveryAddressDataAccessor</apexClass>
         <enabled>true</enabled>
     </classAccesses>
+    <classAccesses>
+    <enabled>false</enabled>
+    <apexClass>DeliveryAddressDataAccessorTest</apexClass>
+</classAccesses>
     <classAccesses>
         <apexClass>DeliveryAddressTriggerHandler</apexClass>
         <enabled>true</enabled>
@@ -272,13 +292,33 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+    <enabled>false</enabled>
+    <apexClass>NewSubscriptionInfoApi</apexClass>
+</classAccesses>
+    <classAccesses>
+    <enabled>false</enabled>
+    <apexClass>NightlyPressRun</apexClass>
+</classAccesses>
+    <classAccesses>
         <apexClass>NotificationController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+    <enabled>false</enabled>
+    <apexClass>OfferController</apexClass>
+</classAccesses>
+    <classAccesses>
         <apexClass>OfferDataAccessor</apexClass>
         <enabled>true</enabled>
     </classAccesses>
+    <classAccesses>
+    <enabled>false</enabled>
+    <apexClass>OfferUtil</apexClass>
+</classAccesses>
+    <classAccesses>
+    <enabled>false</enabled>
+    <apexClass>PaymentInfoApi</apexClass>
+</classAccesses>
     <classAccesses>
         <apexClass>PianoCalloutMock</apexClass>
         <enabled>true</enabled>
@@ -287,6 +327,10 @@
         <apexClass>PianoClient</apexClass>
         <enabled>true</enabled>
     </classAccesses>
+    <classAccesses>
+    <enabled>false</enabled>
+    <apexClass>PianoController</apexClass>
+</classAccesses>
     <classAccesses>
         <apexClass>PressRunDigitalProcess</apexClass>
         <enabled>true</enabled>
@@ -308,13 +352,25 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+    <enabled>false</enabled>
+    <apexClass>ProfileUtil</apexClass>
+</classAccesses>
+    <classAccesses>
         <apexClass>RecentSalesController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+    <enabled>false</enabled>
+    <apexClass>RecurlyAccount</apexClass>
+</classAccesses>
+    <classAccesses>
         <apexClass>RecurlyAccountDataAccessor</apexClass>
         <enabled>true</enabled>
     </classAccesses>
+    <classAccesses>
+    <enabled>false</enabled>
+    <apexClass>RecurlyAccountManager</apexClass>
+</classAccesses>
     <classAccesses>
         <apexClass>RecurlyAccountTriggerHandler</apexClass>
         <enabled>true</enabled>
@@ -331,6 +387,14 @@
         <apexClass>RecurlyInvoiceController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
+    <classAccesses>
+    <enabled>false</enabled>
+    <apexClass>RecurlyTransaction</apexClass>
+</classAccesses>
+    <classAccesses>
+    <enabled>false</enabled>
+    <apexClass>RecurlyTransactionManager</apexClass>
+</classAccesses>
     <classAccesses>
         <apexClass>ResponseError</apexClass>
         <enabled>true</enabled>
@@ -432,6 +496,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+    <enabled>false</enabled>
+    <apexClass>SubscriptionController</apexClass>
+</classAccesses>
+    <classAccesses>
         <apexClass>SubscriptionCreditCalculator</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -447,6 +515,18 @@
         <apexClass>SubscriptionReceiptController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
+    <classAccesses>
+    <enabled>false</enabled>
+    <apexClass>SubscriptionTriggerHandler</apexClass>
+</classAccesses>
+    <classAccesses>
+    <enabled>false</enabled>
+    <apexClass>SubscriptionUtil</apexClass>
+</classAccesses>
+    <classAccesses>
+    <enabled>false</enabled>
+    <apexClass>SubscriptionUtilTest</apexClass>
+</classAccesses>
     <classAccesses>
         <apexClass>TestDataFactory</apexClass>
         <enabled>true</enabled>
@@ -1318,11 +1398,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Case.Language</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Case.Origin</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1396,6 +1471,11 @@
         <field>Contact.Comments__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
+    <editable>false</editable>
+    <readable>false</readable>
+    <field>Contact.DSI_Person_Id__c</field>
+</fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>Contact.Date_Bill_Sent__c</field>
@@ -1511,6 +1591,11 @@
         <field>Contact.ReportsToId</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
+    <editable>false</editable>
+    <readable>false</readable>
+    <field>Contact.Secondary_Email__c</field>
+</fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>Contact.Source__c</field>
@@ -2536,6 +2621,11 @@
         <field>Product2.Code__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
+    <editable>false</editable>
+    <readable>false</readable>
+    <field>Product2.DSI_Id__c</field>
+</fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>Product2.Description</field>
@@ -5166,6 +5256,10 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
+        <tab>Rate__c</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>Route__c</tab>
         <visibility>DefaultOff</visibility>
     </tabVisibilities>
@@ -5411,6 +5505,18 @@
         <name>CreateTopics</name>
     </userPermissions>
     <userPermissions>
+    <enabled>false</enabled>
+    <name>EditOppLineItemUnitPrice</name>
+</userPermissions>
+    <userPermissions>
+    <enabled>false</enabled>
+    <name>EditTask</name>
+</userPermissions>
+    <userPermissions>
+    <enabled>false</enabled>
+    <name>EditTopics</name>
+</userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>EnableNotifications</name>
     </userPermissions>
@@ -5422,6 +5528,10 @@
         <enabled>true</enabled>
         <name>RunFlow</name>
     </userPermissions>
+    <userPermissions>
+    <enabled>false</enabled>
+    <name>RunReports</name>
+</userPermissions>
     <userPermissions>
         <enabled>true</enabled>
         <name>SelectFilesFromSalesforce</name>
