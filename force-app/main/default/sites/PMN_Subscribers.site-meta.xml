@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <CustomSite xmlns="http://soap.sforce.com/2006/04/metadata">
     <active>true</active>
     <allowHomePage>false</allowHomePage>
@@ -23,7 +23,7 @@
     <requireHttps>true</requireHttps>
     <requireInsecurePortalAccess>false</requireInsecurePortalAccess>
     <selfRegPage>CommunitiesSelfReg</selfRegPage>
-    
+    <siteAdmin>jbeha@philly.com</siteAdmin>
     <siteType>ChatterNetwork</siteType>
     <subdomain>inquirer</subdomain>
     <urlPathPrefix>subscribers</urlPathPrefix>
