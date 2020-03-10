@@ -11,6 +11,7 @@
         suffix=""
         salutation=""
         fields-to-display={contactDisplayFields}
+        onchange={handleNameInputChange}
       ></lightning-input-name>
 
       <lightning-input
@@ -57,6 +58,7 @@
       <template if:true={categoryPicklistValues.error}>
         <p>{categoryPicklistValues.error.body.message}</p>
       </template>
+
       <lightning-textarea
         name="description"
         label="Description"
@@ -66,7 +68,7 @@
         message-when-value-missing="Description would help your case"
         onchange={handleDescriptionChange}
       ></lightning-textarea>
-      
+
       <lightning-button
         label="Create Case"
         variant="brand"
