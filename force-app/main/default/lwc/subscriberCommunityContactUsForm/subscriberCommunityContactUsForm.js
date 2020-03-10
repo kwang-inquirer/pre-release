@@ -1,11 +1,11 @@
 import { LightningElement, wire, track } from "lwc";
-import { createRecord } from "lightning/uiRecordApi";
+import { createRecord, updateRecord } from "lightning/uiRecordApi";
 import { ShowToastEvent } from "lightning/platformShowToastEvent";
 import { getPicklistValues } from "lightning/uiObjectInfoApi";
-import { getObjectInfo } from "lightning/uiObjectInfoApi";
 import { getRecord } from "lightning/uiRecordApi";
 
 import CONTACT_OBJECT from "@salesforce/schema/Contact";
+import CONTACT_ID_FIELD from "@salesforce/schema/Contact.Id";
 import CONTACT_FIRSTNAME_FIELD from "@salesforce/schema/Contact.FirstName";
 import CONTACT_LASTNAME_FIELD from "@salesforce/schema/Contact.LastName";
 import CONTACT_PHONE_FIELD from "@salesforce/schema/Contact.Phone";
@@ -35,20 +35,30 @@ export default class SubscriberCommunityContactUsForm extends LightningElement {
   caseId;
   userId = USER_ID;
   error;
+  contactData;
+  caseData;
 
-  contactData = {
-    firstName: "",
-    lastName: "",
-    phoneNumber: "",
-    email: ""
-  };
+  FORM_READY = 0;
+  FORM_WORKING = 1;
+  FORM_COMPLETED = 2;
+  @track formStatus = this.FORM_WORKING;
 
-  caseData = {
-    publication: "",
-    category: "",
-    description: "",
-    message: ""
-  };
+  constructor() {
+    super();
+    this.contactData = {
+      firstName: "",
+      lastName: "",
+      phoneNumber: "",
+      email: ""
+    };
+    this.caseData = {
+      publication: "",
+      category: "Feedback",
+      description: ""
+    };
+    this.publicationValue = this.caseData.publication;
+    this.categoryValue = this.caseData.category;
+  }
 
   @track userFirstName;
   @track userLastName;
@@ -79,6 +89,7 @@ export default class SubscriberCommunityContactUsForm extends LightningElement {
       this.contactId = data.fields.ContactId.value;
       this.accountId = data.fields.AccountId.value; //Get user account ID
     }
+    this.formIsReady();
   }
 
   //Get Publication
@@ -91,7 +102,7 @@ export default class SubscriberCommunityContactUsForm extends LightningElement {
   publicationPicklistValues;
 
   //Get Category Picklist
-  @track categoryValue = "Feedback"; //Default to Feedback
+  @track categoryValue; //Default to Feedback
 
   @wire(getPicklistValues, {
     recordTypeId: "012000000000000AAA", //MASTER RECORD ID
@@ -125,6 +136,32 @@ export default class SubscriberCommunityContactUsForm extends LightningElement {
     return this.categoryPicklistValues.data.values;
   }
 
+  /** FORM STATUS HANDLER */
+  get isFormReady() {
+    return this.formStatus === this.FORM_READY;
+  }
+
+  get isFormWorking() {
+    return this.formStatus === this.FORM_WORKING;
+  }
+
+  get isFormCompleted() {
+    return this.formStatus === this.FORM_COMPLETED;
+  }
+
+  formIsReady() {
+    this.formStatus = this.FORM_READY;
+  }
+
+  formIsWorking() {
+    this.formStatus = this.FORM_WORKING;
+  }
+
+  formIsCompleted() {
+    this.formStatus = this.FORM_COMPLETED;
+  }
+
+  /** EVENT HANDLERS */
   handleNameInputChange(event) {
     this.contactData.firstName = event.detail.firstName || ""; //stop empty string being undefined
     this.contactData.lastName = event.detail.lastName || ""; //Stop empty string being undefined
@@ -152,7 +189,28 @@ export default class SubscriberCommunityContactUsForm extends LightningElement {
     this.caseData.description = event.detail.value;
   }
 
+  //** FORM SUBMIT HANDLER */
   submitForm() {
+    this.formIsWorking();
+
+    const allValid = [
+      ...this.template.querySelectorAll("lightning-input")
+    ].reduce((validSoFar, inputFields) => {
+      inputFields.reportValidity();
+      return validSoFar && inputFields.checkValidity();
+    }, true); //This should validate all inputs
+    if (!allValid) {
+      this.dispatchEvent(
+        new ShowToastEvent({
+          title: "Something Wrong",
+          message: "Please check your input then try again",
+          variant: "error"
+        })
+      );
+      this.formIsReady();
+      return;
+    }
+
     this.createAccount()
       .then(() => {
         return this.createContact();
@@ -168,9 +226,11 @@ export default class SubscriberCommunityContactUsForm extends LightningElement {
             variant: "success"
           })
         );
+        this.formIsCompleted();
       })
       .catch(error => {
         this.dispatchEvent(error);
+        this.formIsReady();
       });
   }
 
@@ -201,9 +261,18 @@ export default class SubscriberCommunityContactUsForm extends LightningElement {
 
     const contactInput = {
       apiName: CONTACT_OBJECT.objectApiName,
-      fields: contactFields
+      fields: contactFields,
+      allowSaveOnDuplicate: true //Allow duplicate contact to be created.
     };
-
+    /** Code to update contact instead of making new one. Hide it for now however 
+    if (this.contactId) {
+      //If there's already a contact for the current User, update it
+      contactFields[CONTACT_ID_FIELD.objectApiName] = this.contactId;
+      return updateRecord(contactInput).then(contact => {
+        return Promise.resolve();
+      });
+    } else {
+     */
     return createRecord(contactInput)
       .then(contact => {
         this.contactId = contact.id; //Store the newly created Contact ID
@@ -218,13 +287,14 @@ export default class SubscriberCommunityContactUsForm extends LightningElement {
           })
         );
       });
+    // }
   }
 
   createCase() {
     const caseFields = {};
 
-    caseFields[CASE_DESCRIPTION_FIELD.fieldApiName] = this.caseData.description; //Description
     caseFields[CASE_CONTACTID_FIELD.fieldApiName] = this.contactId; //Assign Contact
+    caseFields[CASE_DESCRIPTION_FIELD.fieldApiName] = this.caseData.description; //Description
     caseFields[CASE_PUBLICATION_FIELD.fieldApiName] = this.caseData.publication; //Publication
     caseFields[CASE_CATEGORY_FIELD.fieldApiName] = this.caseData.category; //Category
 
@@ -253,7 +323,7 @@ export default class SubscriberCommunityContactUsForm extends LightningElement {
       return Promise.resolve(); //Do not attempt to create an account if the current user already have one.
     }
 
-    //Attempt to create a person account inorder to create a Contact.
+    //Attempt to create a account inorder to create a Contact.
     const accountFields = {};
     accountFields[ACCOUNT_NAME_FIELD.fieldApiName] = [
       this.contactData.firstName,

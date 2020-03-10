@@ -1,79 +1,106 @@
 <template>
-  <lightning-card title="Contact Us">
-    <div class="slds-var-m-around_medium">
-      <lightning-input-name
-        label="Your Contact Infomation"
-        required
-        first-name={userFirstNameValue}
-        middle-name=""
-        last-name={userLastNameValue}
-        informal-name=""
-        suffix=""
-        salutation=""
-        fields-to-display={contactDisplayFields}
-        onchange={handleNameInputChange}
-      ></lightning-input-name>
+  <template if:true={isFormCompleted}>
+    <lightning-card title="Your Case Information">
+      <lightning-record-view-form record-id={caseId} object-api-name="Case">
+        <div class="slds-box">
+          <lightning-output-field field-name="CaseNumber">
+          </lightning-output-field>
+          <lightning-output-field field-name="ContactPhone">
+          </lightning-output-field>
+          <lightning-output-field field-name="ContactEmail">
+          </lightning-output-field>
+          <lightning-output-field field-name="Description">
+          </lightning-output-field>
+          <lightning-output-field field-name="Publication__c">
+          </lightning-output-field>
+          <lightning-output-field field-name="Category__c">
+          </lightning-output-field>
+        </div>
+      </lightning-record-view-form>
+    </lightning-card>
+  </template>
+  <template if:false={isFormCompleted}>
+    <lightning-card title="Contact Us">
+      <div class="slds-var-m-around_medium">
+        <template if:true={isFormWorking}>
+          <lightning-spinner
+            alternative-text="Working on it"
+            size="large"
+          ></lightning-spinner>
+        </template>
+        <lightning-input-name
+          label="Your Contact Infomation"
+          required
+          first-name={userFirstNameValue}
+          middle-name=""
+          last-name={userLastNameValue}
+          informal-name=""
+          suffix=""
+          salutation=""
+          fields-to-display={contactDisplayFields}
+          onchange={handleNameInputChange}
+        ></lightning-input-name>
 
-      <lightning-input
-        type="tel"
-        name="phoneNumber"
-        label="Phone Number"
-        value={userPhoneValue}
-        onchange={handlePhoneNumberChange}
-      ></lightning-input>
+        <lightning-input
+          type="tel"
+          name="phoneNumber"
+          label="Phone Number"
+          value={userPhoneValue}
+          onchange={handlePhoneNumberChange}
+        ></lightning-input>
 
-      <lightning-input
-        type="email"
-        name="email"
-        label="Email Address"
-        value={userEmailValue}
-        onchange={handleOnchangeEmailAddress}
-      ></lightning-input>
+        <lightning-input
+          type="email"
+          name="email"
+          label="Email Address"
+          value={userEmailValue}
+          onchange={handleOnchangeEmailAddress}
+        ></lightning-input>
 
-      <template if:true={publicationPicklistValues.data}>
-        <lightning-combobox
-          name="publication"
-          label="Publication"
-          value={publicationValue}
-          placeholder="Select Publication"
-          options={publicationOptions}
-          onchange={handlePublicationChange}
-        ></lightning-combobox>
-      </template>
+        <template if:true={publicationPicklistValues.data}>
+          <lightning-combobox
+            name="publication"
+            label="Publication"
+            value={publicationValue}
+            placeholder="Select Publication"
+            options={publicationOptions}
+            onchange={handlePublicationChange}
+          ></lightning-combobox>
+        </template>
 
-      <template if:true={publicationPicklistValues.error}>
-        <p>{publicationPicklistValues.error.body.message}</p>
-      </template>
+        <template if:true={publicationPicklistValues.error}>
+          <p>{publicationPicklistValues.error.body.message}</p>
+        </template>
 
-      <template if:true={categoryPicklistValues.data}>
-        <lightning-combobox
-          name="category"
-          label="Category"
-          value={categoryValue}
-          placeholder="Select Category"
-          options={categoryOptions}
-          onchange={handleCategoryChange}
-        ></lightning-combobox>
-      </template>
-      <template if:true={categoryPicklistValues.error}>
-        <p>{categoryPicklistValues.error.body.message}</p>
-      </template>
+        <template if:true={categoryPicklistValues.data}>
+          <lightning-combobox
+            name="category"
+            label="Category"
+            value={categoryValue}
+            placeholder="Select Category"
+            options={categoryOptions}
+            onchange={handleCategoryChange}
+          ></lightning-combobox>
+        </template>
+        <template if:true={categoryPicklistValues.error}>
+          <p>{categoryPicklistValues.error.body.message}</p>
+        </template>
 
-      <lightning-textarea
-        name="description"
-        label="Description"
-        placeholder="Description"
-        maxlength="32000"
-        message-when-too-long="Description is too long"
-        message-when-value-missing="Description would help your case"
-        onchange={handleDescriptionChange}
-      ></lightning-textarea>
+        <lightning-textarea
+          name="description"
+          label="Message"
+          placeholder="Message"
+          maxlength="32000"
+          message-when-too-long="Message is too long"
+          onchange={handleDescriptionChange}
+        ></lightning-textarea>
 
-      <lightning-button
-        label="Create Case"
-        variant="brand"
-        onclick={submitForm}
-      ></lightning-button>
-    </div>
-  </lightning-card>
+        <lightning-button
+          label="Create Case"
+          variant="brand"
+          onclick={submitForm}
+        ></lightning-button>
+      </div>
+    </lightning-card>
+  </template>
 </template>
