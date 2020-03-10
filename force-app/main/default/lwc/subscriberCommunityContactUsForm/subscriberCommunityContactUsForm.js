@@ -30,8 +30,8 @@ import USER_PHONE_FIELD from "@salesforce/schema/User.Phone";
 import USER_ACCOUNT_FIELD from "@salesforce/schema/User.AccountId";
 
 export default class SubscriberCommunityContactUsForm extends LightningElement {
-  contactId;
-  accountId;
+  @track contactId;
+  @track accountId;
   caseId;
   userId = USER_ID;
   error;
@@ -81,11 +81,19 @@ export default class SubscriberCommunityContactUsForm extends LightningElement {
     if (error) {
       this.error = error;
     } else if (data) {
+      //Set form prefill
       this.userEmail = data.fields.Email.value;
       this.userFirstName = data.fields.FirstName.value;
       this.userLastName = data.fields.LastName.value;
       this.userPhone = data.fields.Phone.value;
 
+      //Fill User data into contact
+      this.contactData.email = this.userEmail;
+      this.contactData.firstName = this.userFirstName;
+      this.contactData.lastName = this.userLastName;
+      this.contactData.phoneNumber = this.userPhone;
+
+      //Fill in contactID Value from User
       this.contactId = data.fields.ContactId.value;
       this.accountId = data.fields.AccountId.value; //Get user account ID
     }
@@ -134,6 +142,14 @@ export default class SubscriberCommunityContactUsForm extends LightningElement {
 
   get categoryOptions() {
     return this.categoryPicklistValues.data.values;
+  }
+
+  get getAccountId() {
+    return this.accountId;
+  }
+
+  get getContactId() {
+    return this.contactId;
   }
 
   /** FORM STATUS HANDLER */
