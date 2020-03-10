@@ -4,9 +4,9 @@
       <lightning-input-name
         label="Your Contact Infomation"
         required
-        first-name={userData.firstName}
+        first-name={userFirstNameValue}
         middle-name=""
-        last-name={userData.lastName}
+        last-name={userLastNameValue}
         informal-name=""
         suffix=""
         salutation=""
@@ -18,7 +18,7 @@
         type="tel"
         name="phoneNumber"
         label="Phone Number"
-        value={userData.phone}
+        value={userPhoneValue}
         onchange={handlePhoneNumberChange}
       ></lightning-input>
 
@@ -26,7 +26,7 @@
         type="email"
         name="email"
         label="Email Address"
-        value={userData.email}
+        value={userEmailValue}
         onchange={handleOnchangeEmailAddress}
       ></lightning-input>
 

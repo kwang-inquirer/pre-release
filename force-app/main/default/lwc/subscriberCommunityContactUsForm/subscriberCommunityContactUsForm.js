@@ -36,6 +36,25 @@ export default class SubscriberCommunityContactUsForm extends LightningElement {
   userId = USER_ID;
   error;
 
+  contactData = {
+    firstName: "",
+    lastName: "",
+    phoneNumber: "",
+    email: ""
+  };
+
+  caseData = {
+    publication: "",
+    category: "",
+    description: "",
+    message: ""
+  };
+
+  @track userFirstName;
+  @track userLastName;
+  @track userEmail;
+  @track userPhone;
+
   //get Current User
   @wire(getRecord, {
     recordId: USER_ID,
@@ -52,11 +71,12 @@ export default class SubscriberCommunityContactUsForm extends LightningElement {
     if (error) {
       this.error = error;
     } else if (data) {
-      this.userData.email = data.fields.Email.value;
-      this.userData.firstName = data.fields.FirstName.value;
-      this.userData.lastName = data.fields.LastName.value;
+      this.userEmail = data.fields.Email.value;
+      this.userFirstName = data.fields.FirstName.value;
+      this.userLastName = data.fields.LastName.value;
+      this.userPhone = data.fields.Phone.value;
+
       this.contactId = data.fields.ContactId.value;
-      this.userData.phone = data.fields.Phone.value;
       this.accountId = data.fields.AccountId.value; //Get user account ID
     }
   }
@@ -79,29 +99,20 @@ export default class SubscriberCommunityContactUsForm extends LightningElement {
   })
   categoryPicklistValues;
 
-  contactData = {
-    firstName: "",
-    lastName: "",
-    phoneNumber: "",
-    email: ""
-  };
-
-  caseData = {
-    publication: "",
-    category: "",
-    description: "",
-    message: ""
-  };
-
-  userData = {
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: ""
-  };
-
   contactDisplayFieldsList = ["firstName", "lastName"];
 
+  get userFirstNameValue() {
+    return this.userFirstName;
+  }
+  get userLastNameValue() {
+    return this.userLastName;
+  }
+  get userEmailValue() {
+    return this.userEmail;
+  }
+  get userPhoneValue() {
+    return this.userPhone;
+  }
   get contactDisplayFields() {
     return this.contactDisplayFieldsList;
   }
