@@ -114,6 +114,7 @@ export default class ChangeAddress extends LightningElement {
             else{
                 this.confirmationPage = true;
                 this.isLoading = false;
+                this.successMessage = 'The billing address was successfully changed'
             }   
         
        
