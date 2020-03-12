@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
     <labels>
         <fullName>Customer_Community_URL</fullName>
         <language>en_US</language>
@@ -25,7 +26,7 @@
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>RecurlyJs VFP Url</shortDescription>
-        <value>https://pmn--reqa--c.visualforce.com/apex/RecurlyJs</value>
+        <value>https://dev009-inquirer.cs23.force.com/subscribers/apex/RecurlyJs</value>
     </labels>
     <labels>
         <fullName>Recurly_Public_Key</fullName>
@@ -39,6 +40,6 @@
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>SubscriptionNewStartRestartTransactionCode</shortDescription>
-        <value>VR</value>
+        <value>SOL</value>
     </labels>
 </CustomLabels>
