@@ -4,8 +4,6 @@
 	<aura:attribute name="recordId" type="String" />
 	<aura:attribute name="UseCSS" type="String" default="this.green-upper" />
 	<aura:attribute name="TypeSettings" type="List" />
-	<aura:attribute name="CanEdit" type="Boolean" default="False" />
-	<aura:attribute name="CanCancel" type="Boolean" default="False" />
 
 	<aura:handler name="init" value="{!this}" action="{!c.doInit}" />	
 	<br />
@@ -70,24 +68,10 @@
 	
 	<lightning:layoutItem size="12" class="border">{!v.transactionLogToUse.Description}</lightning:layoutItem>
 
-	<!-- TO BE REMOVED -->
-	<lightning:layoutItem size="12" mediumDeviceSize="4" class="custhead">Entered By</lightning:layoutItem>
 	<lightning:layoutItem size="12" mediumDeviceSize="4" class="custhead">Entered On</lightning:layoutItem>
-	<lightning:layoutItem size="12" mediumDeviceSize="4" class="custhead">Actions</lightning:layoutItem>
-	<lightning:layoutItem size="12" mediumDeviceSize="4">{!v.transactionLogToUse.CreatedByName}</lightning:layoutItem>
+	<lightning:layoutItem size="12" mediumDeviceSize="4" class="custhead">Entered By</lightning:layoutItem>
 	<lightning:layoutItem size="12" mediumDeviceSize="4"><ui:outputDate format="MM/dd/yyyy" value="{!v.transactionLogToUse.Entry_Date}" /></lightning:layoutItem>
-	<aura:if isTrue="{!v.CanCancel}">
-		<lightning:layoutItem size="12" mediumDeviceSize="4">
-			<aura:if isTrue="{!v.CanEdit}">
-				<ui:button aura:id="updateButtonId" class="btn" label="Update" press="{!c.UpdateTransaction}" />
-			</aura:if>
-			<ui:button aura:id="cancelButtonId" class="btn" label="Cancel" press="{!c.CancelTransaction}" />
-		</lightning:layoutItem>
-		<aura:set attribute="else">
-			<lightning:layoutItem size="12" mediumDeviceSize="4"></lightning:layoutItem>
-		</aura:set>
-	</aura:if>
-	<!-- TO HERE -->
+	<lightning:layoutItem size="12" mediumDeviceSize="4">{!v.transactionLogToUse.CreatedByName}</lightning:layoutItem>
 
 	</lightning:layout>
 </aura:component>
