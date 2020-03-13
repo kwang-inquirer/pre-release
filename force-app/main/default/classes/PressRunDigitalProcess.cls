@@ -38,8 +38,6 @@ global class PressRunDigitalProcess implements Database.Batchable<SObject> {
    	global void execute(Database.BatchableContext context, List<Subscription__c> scope) {
 		List<Journal__c> journalsToInsert = new List<Journal__c>();
 		Decimal rate = 0.0;
-		Boolean splitJournals = false;
-		Decimal splitRate = 0.0;
 
         Set<Id> subIds = new Set<Id>();
         for(Subscription__c sub : scope){
@@ -65,21 +63,7 @@ global class PressRunDigitalProcess implements Database.Batchable<SObject> {
             }
             else continue;
 
-			/* Calculate Adjustments */
-			if(activePremium){
-				if(sub.Premium_Opt_Out__c || activeHoliday){ 
-					//UseRate = Offer Product.DailyRate
-					rate = op.Per_Copy__c;
-				}
-				else{
-					rate = op.Per_Copy__c;
-					splitJournals = true;
-					splitRate = op.Per_Copy_Sunday__c - op.Per_Copy__c;
-				}
-			}
-			else{
-				rate = dayOfWeek.equals('Sunday') ? op.Per_Copy_Sunday__c : op.Per_Copy__c;
-			}
+			rate = dayOfWeek.equals('Sunday') ? op.Per_Copy_Sunday__c : op.Per_Copy__c;
 
 			/* Create Journal Entry Record: Always inserts a Standard Entry Type Journal, except for Holidays.*/
 			Journal__c journal = new Journal__c(
