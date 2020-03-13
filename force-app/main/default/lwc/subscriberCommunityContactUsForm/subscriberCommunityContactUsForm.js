@@ -17,6 +17,7 @@ import CASE_PUBLICATION_FIELD from "@salesforce/schema/Case.Publication__c";
 import CASE_CATEGORY_FIELD from "@salesforce/schema/Case.Category__c";
 
 import USER_ID from "@salesforce/user/Id";
+import IS_GUEST from "@salesforce/user/isGuest";
 import USER_FIRSTNAME_FIELD from "@salesforce/schema/User.FirstName";
 import USER_LASTNAME_FIELD from "@salesforce/schema/User.LastName";
 import USER_EMAIL_FIELD from "@salesforce/schema/User.Email";
@@ -152,6 +153,9 @@ export default class SubscriberCommunityContactUsForm extends LightningElement {
     return this.formStatus === this.FORM_COMPLETED;
   }
 
+  get isGuest() {
+    return IS_GUEST;
+  }
   formIsReady() {
     this.formStatus = this.FORM_READY;
   }

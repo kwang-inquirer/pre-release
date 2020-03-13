@@ -1,5 +1,5 @@
 <template>
-  <template if:true={getContactId}>
+  <template if:false={isGuest}>
     <template if:true={isFormCompleted}>
       <lightning-card title="Your Case Information">
         <lightning-record-view-form record-id={caseId} object-api-name="Case">
