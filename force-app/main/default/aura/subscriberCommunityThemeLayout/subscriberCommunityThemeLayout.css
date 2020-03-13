@@ -24,6 +24,14 @@
 
 .THIS .profileName  {
     text-align: center;
-	color: t(colorTextDefault) !important;
+    color: t(colorTextDefault) !important;
     font-family: t(fontFamily);
+}
+
+.THIS li.profile.uiMenuItem {
+    display: none;        
+}
+
+.THIS li.home.uiMenuItem {
+    display: none;        
 }
