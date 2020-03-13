@@ -5,12 +5,10 @@ import { getPicklistValues } from "lightning/uiObjectInfoApi";
 import { getRecord } from "lightning/uiRecordApi";
 
 import CONTACT_OBJECT from "@salesforce/schema/Contact";
-import CONTACT_ID_FIELD from "@salesforce/schema/Contact.Id";
 import CONTACT_FIRSTNAME_FIELD from "@salesforce/schema/Contact.FirstName";
 import CONTACT_LASTNAME_FIELD from "@salesforce/schema/Contact.LastName";
 import CONTACT_PHONE_FIELD from "@salesforce/schema/Contact.Phone";
 import CONTACT_EMAIL_FIELD from "@salesforce/schema/Contact.Email";
-import CONTACT_ACCOUNT_FIELD from "@salesforce/schema/Contact.AccountId";
 
 import CASE_OBJECT from "@salesforce/schema/Case";
 import CASE_CONTACTID_FIELD from "@salesforce/schema/Case.ContactId";
@@ -18,22 +16,17 @@ import CASE_DESCRIPTION_FIELD from "@salesforce/schema/Case.Description";
 import CASE_PUBLICATION_FIELD from "@salesforce/schema/Case.Publication__c";
 import CASE_CATEGORY_FIELD from "@salesforce/schema/Case.Category__c";
 
-import ACCOUNT_OBJECT from "@salesforce/schema/Account";
-import ACCOUNT_NAME_FIELD from "@salesforce/schema/Account.Name";
-
 import USER_ID from "@salesforce/user/Id";
 import USER_FIRSTNAME_FIELD from "@salesforce/schema/User.FirstName";
 import USER_LASTNAME_FIELD from "@salesforce/schema/User.LastName";
 import USER_EMAIL_FIELD from "@salesforce/schema/User.Email";
 import USER_CONTACT_FIELD from "@salesforce/schema/User.ContactId";
 import USER_PHONE_FIELD from "@salesforce/schema/User.Phone";
-import USER_ACCOUNT_FIELD from "@salesforce/schema/User.AccountId";
 
 export default class SubscriberCommunityContactUsForm extends LightningElement {
   @track contactId;
-  @track accountId;
+
   caseId;
-  userId = USER_ID;
   error;
   contactData;
   caseData;
@@ -73,8 +66,7 @@ export default class SubscriberCommunityContactUsForm extends LightningElement {
       USER_LASTNAME_FIELD,
       USER_EMAIL_FIELD,
       USER_CONTACT_FIELD,
-      USER_PHONE_FIELD,
-      USER_ACCOUNT_FIELD
+      USER_PHONE_FIELD
     ]
   })
   wireuser({ error, data }) {
@@ -95,7 +87,6 @@ export default class SubscriberCommunityContactUsForm extends LightningElement {
 
       //Fill in contactID Value from User
       this.contactId = data.fields.ContactId.value;
-      this.accountId = data.fields.AccountId.value; //Get user account ID
     }
     this.formIsReady();
   }
@@ -142,10 +133,6 @@ export default class SubscriberCommunityContactUsForm extends LightningElement {
 
   get categoryOptions() {
     return this.categoryPicklistValues.data.values;
-  }
-
-  get getAccountId() {
-    return this.accountId;
   }
 
   get getContactId() {
@@ -207,6 +194,16 @@ export default class SubscriberCommunityContactUsForm extends LightningElement {
 
   //** FORM SUBMIT HANDLER */
   submitForm() {
+    if (!this.contactId) {
+      this.dispatchEvent(
+        new ShowToastEvent({
+          title: "Unable to submit form",
+          message: "You must be a subscriber to submit", //A community member will have a contact. Without contact, no form will be submit
+          variant: "error"
+        })
+      );
+      return;
+    }
     this.formIsWorking();
 
     const allValid = [
@@ -215,6 +212,7 @@ export default class SubscriberCommunityContactUsForm extends LightningElement {
       inputFields.reportValidity();
       return validSoFar && inputFields.checkValidity();
     }, true); //This should validate all inputs
+
     if (!allValid) {
       this.dispatchEvent(
         new ShowToastEvent({
@@ -227,10 +225,7 @@ export default class SubscriberCommunityContactUsForm extends LightningElement {
       return;
     }
 
-    this.createAccount()
-      .then(() => {
-        return this.createContact();
-      })
+    return this.updateContact() //Should Update Contact here?
       .then(() => {
         return this.createCase();
       })
@@ -250,20 +245,9 @@ export default class SubscriberCommunityContactUsForm extends LightningElement {
       });
   }
 
-  createContact() {
-    if (!this.accountId) {
-      //Can't create contact without an account.
-      return Promise.reject(
-        new ShowToastEvent({
-          title: "Account Error",
-          message: "No account found",
-          variant: "error"
-        })
-      );
-    }
+  updateContact() {
     const contactFields = {};
 
-    contactFields[CONTACT_ACCOUNT_FIELD.fieldApiName] = this.accountId;
     contactFields[
       CONTACT_FIRSTNAME_FIELD.fieldApiName
     ] = this.contactData.firstName; //First Name
@@ -277,33 +261,18 @@ export default class SubscriberCommunityContactUsForm extends LightningElement {
 
     const contactInput = {
       apiName: CONTACT_OBJECT.objectApiName,
-      fields: contactFields,
-      allowSaveOnDuplicate: true //Allow duplicate contact to be created.
+      fields: contactFields
     };
-    /** Code to update contact instead of making new one. Hide it for now however 
-    if (this.contactId) {
-      //If there's already a contact for the current User, update it
-      contactFields[CONTACT_ID_FIELD.objectApiName] = this.contactId;
-      return updateRecord(contactInput).then(contact => {
-        return Promise.resolve();
-      });
-    } else {
-     */
-    return createRecord(contactInput)
-      .then(contact => {
-        this.contactId = contact.id; //Store the newly created Contact ID
-        return Promise.resolve();
-      })
-      .catch(error => {
-        return Promise.reject(
-          new ShowToastEvent({
-            title: "Error creating contact",
-            message: error,
-            variant: "error"
-          })
-        );
-      });
-    // }
+
+    return updateRecord(contactInput).catch(error => {
+      return Promise.reject(
+        new ShowToastEvent({
+          title: "Error updating contact",
+          message: error,
+          variant: "error"
+        })
+      );
+    });
   }
 
   createCase() {
@@ -319,46 +288,14 @@ export default class SubscriberCommunityContactUsForm extends LightningElement {
       fields: caseFields
     };
     return createRecord(caseInput)
-      .then(caseOb => {
-        this.caseId = caseOb.id;
+      .then(caseRecord => {
+        this.caseId = caseRecord.id;
         return Promise.resolve();
       })
       .catch(error => {
         return Promise.reject(
           new ShowToastEvent({
             title: "Error creating Case",
-            message: error.body.message,
-            variant: "error"
-          })
-        );
-      });
-  }
-
-  createAccount() {
-    if (this.accountId) {
-      return Promise.resolve(); //Do not attempt to create an account if the current user already have one.
-    }
-
-    //Attempt to create a account inorder to create a Contact.
-    const accountFields = {};
-    accountFields[ACCOUNT_NAME_FIELD.fieldApiName] = [
-      this.contactData.firstName,
-      this.contactData.lastName
-    ].join(" "); //Using Contact name as account name
-    const accountInput = {
-      apiName: ACCOUNT_OBJECT.objectApiName,
-      fields: accountFields
-    };
-
-    return createRecord(accountInput)
-      .then(account => {
-        this.accountId = account.id;
-        return Promise.resolve();
-      })
-      .catch(error => {
-        return Promise.reject(
-          new ShowToastEvent({
-            title: "Error creating Account",
             message: error.body.message,
             variant: "error"
           })
