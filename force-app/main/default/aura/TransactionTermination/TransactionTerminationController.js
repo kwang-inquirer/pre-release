@@ -12,7 +12,7 @@
 				break;
 			}
 		}
-		
+
 		console.log('setting the hr class: ' + useCSS);
 		var TopHR = component.find("TopHR");
 		var BottomHR = component.find("BottomHR");
