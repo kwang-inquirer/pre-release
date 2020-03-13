@@ -70,7 +70,7 @@
 	
 	<lightning:layoutItem size="12" class="border">{!v.transactionLogToUse.Description}</lightning:layoutItem>
 
-	<!-- This code is on both TransactionProductChange and TransactionTermination -->
+	<!-- TO BE REMOVED -->
 	<lightning:layoutItem size="12" mediumDeviceSize="4" class="custhead">Entered By</lightning:layoutItem>
 	<lightning:layoutItem size="12" mediumDeviceSize="4" class="custhead">Entered On</lightning:layoutItem>
 	<lightning:layoutItem size="12" mediumDeviceSize="4" class="custhead">Actions</lightning:layoutItem>
@@ -87,6 +87,7 @@
 			<lightning:layoutItem size="12" mediumDeviceSize="4"></lightning:layoutItem>
 		</aura:set>
 	</aura:if>
+	<!-- TO HERE -->
 
 	</lightning:layout>
 </aura:component>
