@@ -1,22 +1,16 @@
-public with sharing class PressRunDigitalProcessTest {
-    public PressRunDigitalProcessTest() {
-
-    }
-}
 @isTest
 private class PressRunDigitalProcessTest {
     @testSetup 
     static void setup() {
 
          Account account = new Account(
-            Name = 'Digital A');
+            Name = 'Digital Account Test 1');
         insert account;
         
         Product2 digitalProduct = new Product2(Name = '160', IsDigital__c = true);
         insert digitalProduct;
-        Offer__c digitalOffer = new Offer__c(Name = 'Offer1');
+        Offer__c digitalOffer = new Offer__c(Name = 'All Digital');
         insert digitalOffer;
-
 
         Offer_Product__c digitalOfferProduct = new Offer_Product__c(
             Offer__c = digitalOffer.Id,
@@ -40,7 +34,7 @@ private class PressRunDigitalProcessTest {
     static testmethod void ShouldBatchRevenue() {        
         Test.startTest();
         PressRunDigitalProcess prp = new PressRunDigitalProcess();
-        //prp.activePremium = false;
+
         prp.dayOfWeek = 'Monday';
         Id batchId = Database.executeBatch(prp);
         prp.dayOfWeek = 'Tuesday';

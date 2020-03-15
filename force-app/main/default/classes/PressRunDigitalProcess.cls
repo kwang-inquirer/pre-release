@@ -1,8 +1,6 @@
 global class PressRunDigitalProcess implements Database.Batchable<SObject> {
 
 	global Date pressDay;
-	global Boolean activePremium;
-	global Boolean activeHoliday;
 	global String dayOfWeek;
 	
 
@@ -12,26 +10,11 @@ global class PressRunDigitalProcess implements Database.Batchable<SObject> {
 		Datetime processDayDT = (DateTime)pressDay;
 		processDayDT = processDayDT.addHours(12);
 		dayOfWeek = processDayDT.format('EEEE');
-		List<Premium_Day__mdt> premiumList = [SELECT Id, Press_Date__c, Type__c FROM Premium_Day__mdt WHERE Press_Date__c = :pressDay];
-		activePremium = premiumList.isEmpty() ? false : true;
-		activeHoliday = false;
-		if(!premiumList.isEmpty()){
-			for(Premium_Day__mdt pd : premiumList){
-				if(pd.Type__c == 'Holiday')
-					activeHoliday = true;
-			}
-		}
 	}
 	
 	global Database.QueryLocator start(Database.BatchableContext context) {
 		String dsQuery = '';
-		if(activePremium){
-			 //TODO: Review this query - Same as the other, but remove check for Day checkbox = true, and check for opt-out.
-			 dsQuery = 'SELECT Id, Premium_Opt_Out__c, subscription_Offer__c FROM Subscription__c WHERE Premium_Opt_Out__c != TRUE AND subscription_Status__c = \'Active\'';
-		}
-		else{
-			dsQuery = 'SELECT Id, Premium_Opt_Out__c, subscription_Offer__c FROM Subscription__c WHERE subscription_Status__c = \'Active\'';
-		}
+		dsQuery = 'SELECT Id, subscription_Offer__c FROM Subscription__c WHERE subscription_Status__c = \'Active\'';
 		return Database.getQueryLocator(dsQuery);
 	}
 
@@ -49,7 +32,6 @@ global class PressRunDigitalProcess implements Database.Batchable<SObject> {
             WHERE Id in (SELECT subscription_Offer__c FROM Subscription__c WHERE Id IN :subIds)
         ]);
         
-        
 		for(Subscription__c sub : scope){
 			Offer__c subsOffer;
             Offer_Product__c op;
@@ -65,24 +47,15 @@ global class PressRunDigitalProcess implements Database.Batchable<SObject> {
 
 			rate = dayOfWeek.equals('Sunday') ? op.Per_Copy_Sunday__c : op.Per_Copy__c;
 
-			/* Create Journal Entry Record: Always inserts a Standard Entry Type Journal, except for Holidays.*/
+			/* Create Journal Entry Record: Always inserts a Standard Entry Type Journal for Digital */
 			Journal__c journal = new Journal__c(
-				Entry_Type__c = activeHoliday ? 'Holiday' : 'Standard Delivery',
+				Entry_Type__c = 'Standard Delivery',
 				Entry_Date__c = pressday,
 				Debit__c = rate,
 				Subscription__c = sub.Id,
 				Publication__c = op.Product__c
 			);
 			journalsToInsert.add(journal);
-			if(splitJournals || Test.isRunningTest()){
-				journalsToInsert.add(new Journal__c(
-				Entry_Type__c = 'Premium Delivery',
-				Entry_Date__c = pressday,
-				Debit__c = splitRate,
-				Subscription__c = sub.Id,
-				Publication__c = op.Product__c
-				));
-			}
 		}
 		if(!journalsToInsert.isEmpty())
 			insert journalsToInsert;
