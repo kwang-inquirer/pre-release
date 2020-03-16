@@ -12,7 +12,7 @@ public with sharing class RecurlyApi {
         request.setHeader('Content-Type','application/xml; charset=utf-8');
         request.setHeader('Accept','application/xml');
         request.setHeader('X-Api-Version','2.20');
-        request.setEndpoint('https://inquirer.recurly.com/v2/accounts/' + account.account_code);
+        request.setEndpoint('https://' + recurlyApiKey.Subdomain__c + '.recurly.com/v2/accounts/' + account.account_code);
         request.setMethod('PUT');
         request.setBody(account.getXmlString());
         HttpResponse response = http.send(request);
@@ -56,7 +56,7 @@ public with sharing class RecurlyApi {
         request.setHeader('Content-Type','application/xml; charset=utf-8');
         request.setHeader('Accept','application/xml');
         request.setHeader('X-Api-Version','2.20');
-        request.setEndpoint('https://inquirer.recurly.com/v2/purchases');
+        request.setEndpoint('https://' + recurlyApiKey.Subdomain__c + '.recurly.com/v2/purchases');
         request.setMethod('POST');
         request.setBody(purchase.getXmlString());
         HttpResponse response = http.send(request);
