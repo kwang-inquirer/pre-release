@@ -71,7 +71,7 @@
 	<lightning:layoutItem size="12" mediumDeviceSize="4" class="custhead">Entered On</lightning:layoutItem>
 	<lightning:layoutItem size="12" mediumDeviceSize="8" class="custhead">Entered By</lightning:layoutItem>
 	<lightning:layoutItem size="12" mediumDeviceSize="4"><ui:outputDate format="MM/dd/yyyy" value="{!v.transactionLogToUse.Entry_Date}" /></lightning:layoutItem>
-	<lightning:layoutItem size="12" mediumDeviceSize="8">{!v.transactionLogToUse.CreatedByName}</lightning:layoutItem>
+    <lightning:layoutItem size="12" mediumDeviceSize="8">{!v.transactionLogToUse.CreatedByName}</lightning:layoutItem>
 
 	</lightning:layout>
 </aura:component>

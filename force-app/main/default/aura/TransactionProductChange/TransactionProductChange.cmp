@@ -33,7 +33,6 @@
 	
 	<lightning:layoutItem size="12" class="border">{!v.transactionLogToUse.Description}</lightning:layoutItem>
 
-	<!-- This code is on both TransactionProductChange and TransactionStartStop -->
 	<lightning:layoutItem size="12" mediumDeviceSize="4" class="custhead">Entered By</lightning:layoutItem>
 	<lightning:layoutItem size="12" mediumDeviceSize="4" class="custhead">Entered On</lightning:layoutItem>
 	<lightning:layoutItem size="12" mediumDeviceSize="4" class="custhead">Actions</lightning:layoutItem>
