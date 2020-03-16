@@ -5,7 +5,14 @@ global class PressRunDigitalProcess implements Database.Batchable<SObject> {
 	
 
 	global PressRunDigitalProcess() {
-		pressDay = Date.today().addDays(1);
+		LastDrawDate__c newDate = LastDrawDate__c.getInstance();
+		if(newDate != null) {
+			pressDay = newDate.Last_Date__c.addDays(1);
+		}
+		else {
+			pressDay = Date.today();
+		}
+
 		/* Cast Date to DateTime to retrieve day of week */
 		Datetime processDayDT = (DateTime)pressDay;
 		processDayDT = processDayDT.addHours(12);
@@ -66,6 +73,13 @@ global class PressRunDigitalProcess implements Database.Batchable<SObject> {
 	 * @param context contains the job ID
 	 */ 
 	global void finish(Database.BatchableContext context) {
-		
+		LastDrawDate__c newDate = LastDrawDate__c.getInstance();
+		if(newDate != null) {
+			newDate.Last_Date__c = Date.today();
+		}
+		else {
+			newDate = new LastDrawDate__c(SetupOwnerId=UserInfo.getOrganizationId(), Last_Date__c = Date.today());
+		}
+		upsert newDate;
 	}
 }

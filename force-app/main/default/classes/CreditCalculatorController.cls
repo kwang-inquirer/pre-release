@@ -186,7 +186,7 @@ global with sharing class CreditCalculatorController {
                 dateIterator = dateIterator.addDays(1);
             } else{
                 subscription.subscription_Current_Period_Ends_At__c = dateIterator.date();
-                subscription.Outstanding_Credit__c = balance;
+                //subscription.Outstanding_Credit__c = balance;
                 subscription.Expire_Balance__c = balance;
                 break;
             }

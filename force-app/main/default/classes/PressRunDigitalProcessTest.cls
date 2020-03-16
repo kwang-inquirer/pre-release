@@ -29,12 +29,15 @@ private class PressRunDigitalProcessTest {
             subscription_Offer__c = digitalOffer.Id
         );
         insert digitalSubscription;
+
+        LastDrawDate__c newDate = new LastDrawDate__c(Last_Date__c = Date.today().addDays(-2));
+		insert newDate;
         
     }
     static testmethod void ShouldBatchRevenue() {        
         Test.startTest();
         PressRunDigitalProcess prp = new PressRunDigitalProcess();
-
+        Double testCredit = [SELECT Outstanding_Credit__c FROM Subscription__c LIMIT 1].Outstanding_Credit__c;
         prp.dayOfWeek = 'Monday';
         Id batchId = Database.executeBatch(prp);
         prp.dayOfWeek = 'Tuesday';
@@ -43,8 +46,11 @@ private class PressRunDigitalProcessTest {
         // Test Subscription
         List<Journal__c> journalEntries = [SELECT Id FROM Journal__c];
         System.debug(journalEntries);
-        system.assert(journalEntries.size() > 0);
-
+        system.assert(journalEntries.size() == 2);
+        LastDrawDate__c CurrentDrawDate = LastDrawDate__c.getInstance();
+        system.assert(CurrentDrawDate.Last_Date__c == Date.today());
+        testCredit = [SELECT Outstanding_Credit__c FROM Subscription__c LIMIT 1].Outstanding_Credit__c;
+        system.assert(testCredit == 19.50);
         
     }
 }
