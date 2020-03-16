@@ -39,7 +39,7 @@
 					var compEvent = component.getEvent("TransactionLogEvent");
 					compEvent.setParam({ "MessageFromDetail": "Refresh" });
 					compEvent.fire();
-					helper.showToastMessage("Success!", "Updated successfully.", "success");
+					helper.showToastMessage("Success!", "The cancellation was removed.", "success");
 				} else {
 					helper.showToastMessage("Error", action.getReturnValue(), "error");
 				}
