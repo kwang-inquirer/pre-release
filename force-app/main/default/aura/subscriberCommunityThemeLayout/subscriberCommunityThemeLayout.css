@@ -35,3 +35,7 @@
 .THIS li.home.uiMenuItem {
     display: none;        
 }
+
+.THIS li.myAccount.uiMenuItem {
+    display: none;
+}
