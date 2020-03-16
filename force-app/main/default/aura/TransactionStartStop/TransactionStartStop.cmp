@@ -79,7 +79,7 @@
 	</lightning:layoutItem>
 	<aura:if isTrue="{!v.CanCancel}">
 		<lightning:layoutItem size="12" mediumDeviceSize="4">
-			<ui:button aura:id="cancelButtonId" class="btn" label="Cancel" press="{!c.CancelTransaction}" />
+			<ui:button aura:id="cancelButtonId" class="btn" label="Cancel" press="{!c.CancelStartStopTransaction}" />
 		</lightning:layoutItem>
 		<aura:set attribute="else">
 			<lightning:layoutItem size="12" mediumDeviceSize="4"></lightning:layoutItem>

@@ -28,7 +28,7 @@
 		$A.util.addClass(TopHR, useCSS);
 		$A.util.addClass(BottomHR, useCSS);
   	},
-	CancelTransaction: function (component, event, helper) {
+	CancelStartStopTransaction: function (component, event, helper) {
 		var a = component.get("c.CancelTransaction");
 		var thisTL = component.get('v.transactionLogToUse');
 		a.setParams({ strTransactionId: thisTL.Id });
