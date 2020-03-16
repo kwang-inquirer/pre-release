@@ -1,7 +1,7 @@
 @IsTest
-public class TestCreateUserAfterSubscription {
+public class SubscriptionTriggerHandlerTest {
     @IsTest
-    static void test(){
+    static void testCreateUserAfterSubscription(){
         Account acct = new Account(Name='Test Account');
         insert acct;
 
